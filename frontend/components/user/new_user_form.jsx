@@ -1,3 +1,5 @@
+import React from 'react';
+
 class NewUserForm extends React.Component {
 
 

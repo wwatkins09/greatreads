@@ -5,13 +5,14 @@ import NewUserFormContainer from './user/new_user_form_container';
 import UserShowContainer from './user/user_show_container';
 
 const App = () => {
+  return (
   <div>
     <Switch>
       <Route path="/" component={NavBar} />
-      <Route exact path="/" component={NewUserFormContainer} />
-      <Route exact path="/users/:userId" component={UserShowContainer} />
     </Switch>
-  </div>;
+    <Mainpage />
+  </div>
+  );
 };
 
 export default App;
