@@ -5,6 +5,7 @@ class SignInForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {username: "", password: ""};
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(field) {
@@ -13,16 +14,22 @@ class SignInForm extends React.Component {
     };
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+
+    this.props.signIn(this.state);
+  }
+
   render() {
       return (
-        <form onSubmit={() => this.props.signIn(this.state)}>
+        <form onSubmit={this.handleSubmit}>
           <label>Username:
-            <input onChange={this.handleChange('username')} type="text" value={this.state.text}></input>
+            <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.text}></input>
           </label>
           <label>Password:
-            <input onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
+            <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
           </label>
-          <button>Log In!</button>
+          <button className="button">Log In!</button>
         </form>
       );
     }
