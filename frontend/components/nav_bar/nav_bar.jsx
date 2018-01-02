@@ -16,9 +16,13 @@ class NavBar extends React.Component {
       component = <SignInFormContainer />;
     }
     return (
-      <main>
-        {component}
-        <div></div>
+      <main className="sign-in">
+        <p className="logo">
+          greatreads
+        </p>
+        <div className="sign-in-form">
+          {component}
+        </div>
       </main>
     );
   }
