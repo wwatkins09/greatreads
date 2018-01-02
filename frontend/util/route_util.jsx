@@ -1,13 +1,14 @@
 import {Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import SessionFormContainer from '../components/session/session_form_container.js';
+import SignInFormContainer from '../components/session/sign_in_form_container';
+import SignOutFormContainer from '../components/session/sign_out_form_container';
 import UserShowContainer from '../components/user/user_show_container.js';
 
 const Auth = function ({component: SessionFormContainer, path, loggedIn}) {
   return (
     <Route path={path} render={(props) => (
         !loggedIn ? (
-          <SessionFormContainer {...props}/>
+          <SignOutFormContainer {...props}/>
         ) : (
           <Redirect to="/" />
         )
@@ -19,7 +20,7 @@ const Protected = function ({component: UserShowContainer, path, loggedIn}) {
   return (
   <Route path={path} render={(props) => (
       loggedIn ? (
-      <Component {...props}/>
+      <UserShowContainer {...props}/>
     ) : (
       <Redirect to="/login"/>
     )
