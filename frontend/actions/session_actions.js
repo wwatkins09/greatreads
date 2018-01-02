@@ -9,10 +9,16 @@ export const signIn = function(credentials) {
   };
 };
 
-export const receiveCurrentUser = function(user) {
+export const signOut = function() {
+  return function(dispatch) {
+    return ApiSessionUtil.destroySession().then((user) => removeCurrentUser(user));
+  };
+};
+
+export const receiveCurrentUser = function(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
-    user
+    currentUser
   };
 };
 

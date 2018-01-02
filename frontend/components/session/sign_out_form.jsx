@@ -4,7 +4,9 @@ class SignOutForm extends React.Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <button onClick={this.props.signOut}>Sign Out</button>
+      </div>
     );
   }
 }

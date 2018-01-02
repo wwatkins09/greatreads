@@ -5,3 +5,10 @@ export const createSession = function(credentials) {
     data: {credentials}
   });
 };
+
+export const destroySession = function() {
+  return $.ajax({
+    method: 'DELETE',
+    url: 'api/session'
+  });
+};
