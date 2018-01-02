@@ -5,8 +5,10 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      {SessionFormContainer}
-      
+      <main>
+        <SessionFormContainer />
+        <div></div>
+      </main>
     );
   }
 
