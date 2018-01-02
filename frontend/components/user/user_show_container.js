@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import UserShow from './user_show';
-import {fetchCurrentUser} from '../actions/session_actions';
+import {fetchCurrentUser} from '../../actions/session_actions';
 
 const mapStateToProps = function (state, ownProps) {
   return {

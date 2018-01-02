@@ -1,4 +1,4 @@
-class Api::SessionsControllerController < ApplicationController
+class Api::SessionsController < ApplicationController
 
 
   def create
