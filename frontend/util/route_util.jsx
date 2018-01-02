@@ -4,11 +4,11 @@ import SignInFormContainer from '../components/session/sign_in_form_container';
 import SignOutFormContainer from '../components/session/sign_out_form_container';
 import UserShowContainer from '../components/user/user_show_container.js';
 
-const Auth = function ({component: SessionFormContainer, path, loggedIn}) {
+const Auth = function ({component: NewUserFormContainer, path, loggedIn}) {
   return (
     <Route path={path} render={(props) => (
         !loggedIn ? (
-          <SignOutFormContainer {...props}/>
+          <NewUserFormContainer {...props}/>
         ) : (
           <Redirect to="/" />
         )
