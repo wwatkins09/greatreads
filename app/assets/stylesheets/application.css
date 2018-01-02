@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+ .sign-in {
+   width: 900px;
+   background-color: #F4F1EA;
+   display: flex;
+ };
+
+.input-field {
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.button {
+  background-color: #382110;
+  color: white;
+  padding: 8px 12px;
+  border: 1px solid #382110;
+  border-radius: 3px;
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+}
+
+.button:hover {
+  background-color: #333333;
+}
