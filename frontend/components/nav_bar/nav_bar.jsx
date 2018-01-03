@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import SignInFormContainer from '../session/sign_in_form_container';
 import SignOutFormContainer from '../session/sign_out_form_container';
 
@@ -9,6 +10,7 @@ class NavBar extends React.Component {
   }
 
   render() {
+
     let component;
     if (this.props.currentUser) {
       component = <SignOutFormContainer currentUser={this.props.currentUser} />;
@@ -17,12 +19,13 @@ class NavBar extends React.Component {
     }
     return (
       <main className="sign-in">
-        <p className="logo">
+        <Link to="/" className="logo">
           greatreads
-        </p>
+        </Link>
         <div className="navbar-form-container">
           {component}
         </div>
+        
       </main>
     );
   }

@@ -5,7 +5,7 @@ import {createUser} from '../../actions/session_actions';
 
 const mapStateToProps = function(state) {
   return {
-
+    userErrors: state.errors.user
   };
 };
 

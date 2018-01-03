@@ -10,7 +10,9 @@ class NewUserForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(props) {
 
+  }
 
   handleChange(field) {
     return (event) => {
@@ -24,6 +26,10 @@ class NewUserForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.userErrors);
+    const errorsList = this.props.userErrors.map((error, idx) => {
+      return (<li className="user-error" key={idx}>{error}</li>);
+    });
     return (
       <div className="signup">
         <content className="signup-content">
@@ -38,6 +44,7 @@ class NewUserForm extends React.Component {
             <button className="signup-button">Sign Up!</button>
 
           </form>
+          <ul className="user-errors-list">{errorsList}</ul>
         </content>
       </div>
     );
