@@ -4,7 +4,7 @@ import {fetchCurrentUser} from '../../actions/session_actions';
 
 const mapStateToProps = function (state, ownProps) {
   return {
-    user: 2
+    currentUser: state.session.currentUser
   };
 };
 

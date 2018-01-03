@@ -23,7 +23,6 @@ class SignInForm extends React.Component {
       this.setState( {username: "", password: ""} )
       });
 
-    console.log(this.state);
   }
 
   render() {
