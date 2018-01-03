@@ -43,9 +43,11 @@ li {
 }
 
  .sign-in {
+   min-height: 100px;
    background-color: #F4F1EA;
    display: flex;
    justify-content: space-between;
+   align-items: center;
    border-bottom: 1px solid gray;
    margin: 0;
  }
@@ -61,6 +63,12 @@ li {
    display: flex;
    justify-content: flex-end;
    align-items: center;
+ }
+
+ .navbar {
+   display: flex;
+   flex-direction: column;
+   align-content: center;
  }
 
  .navbar-form {
@@ -126,8 +134,21 @@ li {
 .user-errors-list {
   padding: 0px;
   display: flex;
+  flex-direction: column;
 }
 
 .user-error {
   color: red;
+  padding: 10px;
+}
+
+.session-errors-list {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.session-error {
+  color: red;
+  padding: 10px;
 }

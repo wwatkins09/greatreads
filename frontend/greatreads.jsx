@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     delete window.currentUser;
   } else {
     store = configureStore();
-    window.store = store;
   }
 
   const rootEl = document.getElementById('root');

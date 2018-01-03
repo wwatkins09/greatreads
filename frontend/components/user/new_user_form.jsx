@@ -10,9 +10,6 @@ class NewUserForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(props) {
-
-  }
 
   handleChange(field) {
     return (event) => {
@@ -23,10 +20,11 @@ class NewUserForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createUser(this.state);
+    this.setState({username: "", password: ""})
+
   }
 
   render() {
-    console.log(this.props.userErrors);
     const errorsList = this.props.userErrors.map((error, idx) => {
       return (<li className="user-error" key={idx}>{error}</li>);
     });
