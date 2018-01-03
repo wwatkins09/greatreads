@@ -6,10 +6,10 @@ export const LOGOUT = 'LOGOUT';
 export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
-export const receiveCurrentUser = function(currentUser) {
+export const receiveCurrentUser = function(payload) {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    currentUser: payload.user
   };
 };
 

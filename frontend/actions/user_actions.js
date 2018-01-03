@@ -19,10 +19,11 @@ export const createUser = function(user) {
   };
 };
 
-export const receiveUser = function(user) {
+export const receiveUser = function(payload) {
   return {
     type: RECEIVE_USER,
-    user
+    user: payload.user,
+    bookshelves: payload.bookshelves
   };
 };
 
