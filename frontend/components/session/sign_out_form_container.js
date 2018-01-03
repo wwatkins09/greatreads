@@ -4,7 +4,7 @@ import {signOut} from '../../actions/session_actions';
 
 const mapStateToProps = function (state) {
   return {
-
+    currentUser: state.session.currentUser
   };
 };
 
