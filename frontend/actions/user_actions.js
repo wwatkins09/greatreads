@@ -9,5 +9,8 @@ export const createUser = function(user) {
 };
 
 export const receiveNewUser = function(user) {
-
+  return {
+    type: RECEIVE_NEW_USER,
+    user
+  };
 };
