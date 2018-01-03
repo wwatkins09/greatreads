@@ -4,7 +4,7 @@ import {signIn} from '../../actions/session_actions';
 
 const mapStateToProps = function (state) {
   return {
-
+    sessionErrors: state.errors.session
   };
 };
 

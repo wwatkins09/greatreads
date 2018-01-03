@@ -6,6 +6,7 @@ class SignInForm extends React.Component {
     super(props);
     this.state = {username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(field) {
@@ -14,23 +15,36 @@ class SignInForm extends React.Component {
     };
   }
 
+
   handleSubmit(event) {
     event.preventDefault();
 
-    this.props.signIn(this.state);
+    this.props.signIn(this.state).then(() => {}, () => {
+      this.setState( {username: "", password: ""} )
+      });
+
+    console.log(this.state);
   }
 
   render() {
+    const sessionErrorsList = this.props.sessionErrors.map((error, idx) => {
+      return (<li className="session-error" key={idx}>{error}</li>);
+    });
       return (
-        <form className="navbar-form" onSubmit={this.handleSubmit}>
-          <label>Username:
-            <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.text}></input>
-          </label>
-          <label>Password:
-            <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
-          </label>
-          <button className="signin-button">Log In!</button>
-        </form>
+          <content className="navbar">
+          <form className="navbar-form" onSubmit={this.handleSubmit}>
+            <label>Username:
+              <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.username}></input>
+            </label>
+            <label>Password:
+              <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
+            </label>
+            <button className="signin-button">Log In!</button>
+          </form>
+          <ul className="session-errors-list">
+            {sessionErrorsList}
+          </ul>
+      </content>
       );
     }
   }
