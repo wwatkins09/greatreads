@@ -1,14 +1,13 @@
+import React from 'react';
 import {Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import SignInFormContainer from '../components/session/sign_in_form_container';
-import SignOutFormContainer from '../components/session/sign_out_form_container';
-import UserShowContainer from '../components/user/user_show_container.js';
 
-const Auth = function ({component: NewUserFormContainer, path, loggedIn}) {
+
+const Auth = function ({component: Component, path, loggedIn}) {
   return (
     <Route path={path} render={(props) => (
         !loggedIn ? (
-          <NewUserFormContainer {...props}/>
+          <Component {...props}/>
         ) : (
           <Redirect to="/" />
         )
@@ -16,11 +15,11 @@ const Auth = function ({component: NewUserFormContainer, path, loggedIn}) {
   );
 };
 
-const Protected = function ({component: UserShowContainer, path, loggedIn}) {
+const Protected = function ({component: Component, path, loggedIn}) {
   return (
   <Route path={path} render={(props) => (
       loggedIn ? (
-      <UserShowContainer {...props}/>
+      <Component {...props}/>
     ) : (
       <Redirect to="/login"/>
     )
