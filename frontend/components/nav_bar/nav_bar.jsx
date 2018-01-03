@@ -12,8 +12,8 @@ class NavBar extends React.Component {
   render() {
 
     let component;
-    if (this.props.currentUser) {
-      component = <SignOutFormContainer currentUser={this.props.currentUser} />;
+    if (this.props.currentUserId) {
+      component = <SignOutFormContainer />;
     } else {
       component = <SignInFormContainer />;
     }
@@ -25,7 +25,7 @@ class NavBar extends React.Component {
         <div className="navbar-form-container">
           {component}
         </div>
-        
+
       </main>
     );
   }

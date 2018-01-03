@@ -3,7 +3,7 @@ import NavBar from './nav_bar';
 
 const mapStateToProps = function (state) {
   return {
-    currentUser: state.session.currentUser,
+    currentUserId: state.session.currentUserId,
   };
 };
 

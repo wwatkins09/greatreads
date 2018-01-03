@@ -1,4 +1,5 @@
 import * as ApiSessionUtil from '../util/api_session_util';
+import {fetchUser} from './user_actions.js';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT = 'LOGOUT';
@@ -47,15 +48,5 @@ export const signIn = function(credentials) {
 export const signOut = function() {
   return function(dispatch) {
     return ApiSessionUtil.destroySession().then(() => dispatch(removeCurrentUser()));
-  };
-};
-
-export const createUser = function(user) {
-  return function(dispatch) {
-    return ApiSessionUtil.createUser(user).then((user) => {
-      dispatch(receiveCurrentUser(user));
-    }, (errors) => {
-      dispatch(receiveUserErrors(errors.responseJSON));
-    });
   };
 };
