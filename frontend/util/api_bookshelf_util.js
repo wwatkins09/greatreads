@@ -1,4 +1,4 @@
-export const fetchBookshelves = function () {
+export const fetchUserBookshelves = function () {
   return $.ajax({
     method: 'GET',
     url: 'api/bookshelves'

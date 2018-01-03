@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class BookshelfIndexItem extends React.Component {
 
@@ -8,7 +9,9 @@ class BookshelfIndexItem extends React.Component {
 
   render() {
     return (
-      <li>{this.props.bookshelf.name}</li>
+      <li key={this.props.bookshelf.id}>
+        <Link to={`/bookshelves/${this.props.bookshelf.id}`}>{this.props.bookshelf.name}</Link>
+      </li>
     );
   }
 

@@ -8,12 +8,12 @@ class BookshelfIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBookshelves();
+    this.props.fetchUserBookshelves();
   }
 
   render() {
     const bookshelvesList = this.props.bookshelves.map((bookshelf) => {
-      return (<BookshelfIndexItem bookshelf={bookshelf} />);
+      return (<BookshelfIndexItem key={bookshelf.id} bookshelf={bookshelf} />);
     });
     return (
       <main>
