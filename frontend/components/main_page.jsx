@@ -15,7 +15,10 @@ const mapStateToProps = function (state) {
 const MainPage = (props) => {
   if (props.currentUserId) {
     return (
-      <Route exact path="/" component={UserShowContainer} />
+      <div>
+        <Route exact path="/" component={UserShowContainer} />
+        <Route exact path="/users/:userId" component={UserShowContainer} />
+      </div>
     );
   } else {
     return (

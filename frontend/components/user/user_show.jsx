@@ -16,7 +16,7 @@ class UserShow extends React.Component {
       <div>
         <h1>Welcome to your page, {this.props.user.username}!</h1>
         <content>
-          <BookshelfIndexContainer />
+          <BookshelfIndexContainer user={this.props.user} />
         </content>
       </div>
     );
