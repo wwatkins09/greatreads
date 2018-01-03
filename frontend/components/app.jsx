@@ -8,7 +8,7 @@ import Mainpage from './main_page';
 
 const App = () => {
   return (
-  <div>
+  <div className="app">
     <Route path="/" component={NavBarContainer} />
     <Mainpage />
   </div>
