@@ -1,18 +1,29 @@
 import {Route, Switch} from 'react-router-dom';
-import Auth from '../util/route_util.jsx';
+import { AuthRoute, ProtectedRoute}   from '../util/route_util.jsx';
 import React from 'react';
 import NewUserFormContainer from './user/new_user_form_container';
 import UserShowContainer from './user/user_show_container';
+import {connect} from 'react-redux';
 
-const MainPage = () => {
-  return (
-  <div>
-    <Switch>
-      <Route path="/" component={NewUserFormContainer} />
-      <Route exact path="/users/:userId" component={UserShowContainer} />
-    </Switch>
-  </div>
-  );
+const mapStateToProps = function (state) {
+  return {
+    currentUser: state.session.currentUser
+  };
 };
 
-export default MainPage;
+
+const MainPage = (props) => {
+  if (props.currentUser) {
+    return (
+      <Route exact path="/" component={UserShowContainer} />
+
+    );
+  } else {
+    return (
+
+      <Route path="/" component={NewUserFormContainer} />
+    );
+  }
+};
+
+export default connect(mapStateToProps, null)(MainPage);

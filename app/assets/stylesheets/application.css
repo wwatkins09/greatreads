@@ -17,11 +17,14 @@
    width: 900px;
    background-color: #F4F1EA;
    display: flex;
- };
+ }
 
 .input-field {
+  width: 120px;
   font-size: 13px;
   border-radius: 3px;
+  border: #DCD6CC 1px solid;
+  margin: 2px;
 }
 
 .button {
@@ -35,5 +38,6 @@
 }
 
 .button:hover {
-  background-color: #333333;
+  background-color: #58371F;
+  cursor: pointer;
 }

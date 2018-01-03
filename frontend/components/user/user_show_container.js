@@ -4,7 +4,7 @@ import {fetchCurrentUser} from '../../actions/session_actions';
 
 const mapStateToProps = function (state, ownProps) {
   return {
-    user: state.entities.users[ownProps.match.params.userId]
+    user: 2
   };
 };
 
