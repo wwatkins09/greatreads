@@ -28,3 +28,9 @@ export const signOut = function() {
     return ApiSessionUtil.destroySession().then(() => dispatch(removeCurrentUser()));
   };
 };
+
+export const createUser = function(user) {
+  return function(dispatch) {
+    return ApiSessionUtil.createUser(user).then((user) => dispatch(receiveCurrentUser(user)));
+  };
+};
