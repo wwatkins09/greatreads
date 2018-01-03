@@ -4,7 +4,7 @@ class SignOutForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="navbar-form">
         <button onClick={this.props.signOut}>Sign Out</button>
       </div>
     );

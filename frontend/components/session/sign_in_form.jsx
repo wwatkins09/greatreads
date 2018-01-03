@@ -22,14 +22,14 @@ class SignInForm extends React.Component {
 
   render() {
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form className="navbar-form" onSubmit={this.handleSubmit}>
           <label>Username:
             <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.text}></input>
           </label>
           <label>Password:
             <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
           </label>
-          <button className="button">Log In!</button>
+          <button className="signin-button">Log In!</button>
         </form>
       );
     }

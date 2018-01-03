@@ -25,18 +25,20 @@ class NewUserForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Don't have an account? Sign up for free now!</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>Username:
-            <input onChange={this.handleChange('username')} type="text" value={this.state.username}></input>
-          </label>
-          <label>Password:
-            <input onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
-          </label>
-          <button>Sign Up!</button>
+      <div className="signup">
+        <content className="signup-content">
+          <h3>Don't have an account? Sign up now for free!</h3>
+          <form  className="signup-form" onSubmit={this.handleSubmit}>
+            <label>Username:
+              <input onChange={this.handleChange('username')} type="text" value={this.state.username}></input>
+            </label>
+            <label>Password:
+              <input onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
+            </label>
+            <button className="signup-button">Sign Up!</button>
 
-        </form>
+          </form>
+        </content>
       </div>
     );
   }

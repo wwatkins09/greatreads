@@ -20,7 +20,7 @@ class NavBar extends React.Component {
         <p className="logo">
           greatreads
         </p>
-        <div className="sign-in-form">
+        <div className="navbar-form-container">
           {component}
         </div>
       </main>
