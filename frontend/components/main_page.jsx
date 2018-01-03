@@ -7,20 +7,18 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = function (state) {
   return {
-    currentUser: state.session.currentUser
+    currentUserId: state.session.currentUserId
   };
 };
 
 
 const MainPage = (props) => {
-  if (props.currentUser) {
+  if (props.currentUserId) {
     return (
       <Route exact path="/" component={UserShowContainer} />
-
     );
   } else {
     return (
-
       <Route path="/" component={NewUserFormContainer} />
     );
   }

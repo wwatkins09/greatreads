@@ -1,16 +1,23 @@
 import {connect} from 'react-redux';
 import UserShow from './user_show';
-import {fetchCurrentUser} from '../../actions/session_actions';
+import {fetchUser} from '../../actions/user_actions';
 
 const mapStateToProps = function (state, ownProps) {
+  let userId;
+  if (ownProps.match.params.userId) {
+    userId = ownProps.match.params.userId;
+  } else {
+    userId = state.session.currentUserId;
+  }
   return {
-    currentUser: state.session.currentUser
+    user: state.entities.users[userId] || {username: ""},
+    userId
   };
 };
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId))
+    fetchUser: (userId) => dispatch(fetchUser(userId))
   };
 };
 
