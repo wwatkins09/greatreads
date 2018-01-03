@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:credentials][:username], params[:credentials][:password])
     if @user
       login(@user)
-      render "api/users/show"
+      render "api/session/current_user"
     else
       render json: ["Invalid credentials"], status: 422
     end
@@ -15,7 +15,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      render "api/users/show"
+      render "api/session/current_user"
     else
       render json: "No one logged in", status: 404
     end

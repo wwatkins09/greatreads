@@ -4,9 +4,9 @@ export const RECEIVE_BOOKSHELVES = 'RECEIVE_BOOKSHELVES';
 export const RECEIVE_BOOKSHELF = 'RECEIVE_BOOKSHELF';
 export const REMOVE_BOOKSHELF = 'REMOVE_BOOKSHELF';
 
-export const fetchBookshelves = function() {
+export const fetchUserBookshelves = function() {
   return function(dispatch) {
-    return APIBookshelfUtil.fetchBookshelves().then((bookshelves) => dispatch(receiveBookshelves(bookshelves)));
+    return APIBookshelfUtil.fetchUserBookshelves().then((bookshelves) => dispatch(receiveBookshelves(bookshelves)));
   };
 };
 
