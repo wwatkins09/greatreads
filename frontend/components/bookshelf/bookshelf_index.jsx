@@ -14,6 +14,12 @@ class BookshelfIndex extends React.Component {
     this.props.fetchUserBookshelves(this.props.userId);
   }
 
+  componentWillReceiveProps(props) {
+    if (props.location.pathname !== this.props.location.pathname) {
+      this.props.fetchUserBookshelves(props.userId);
+    }
+  }
+
   handleCreate(event) {
     event.preventDefault();
     this.props.createBookshelf(this.state);
