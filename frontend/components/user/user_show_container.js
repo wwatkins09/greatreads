@@ -11,7 +11,8 @@ const mapStateToProps = function (state, ownProps) {
   }
   return {
     user: state.entities.users[userId] || {username: ""},
-    userId
+    userId,
+    bookshelfErrors: state.errors.bookshelf
   };
 };
 
