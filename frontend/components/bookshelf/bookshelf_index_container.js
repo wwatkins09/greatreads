@@ -1,23 +1,25 @@
 import {connect} from 'react-redux';
 import BookshelfIndex from './bookshelf_index.jsx';
-import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
+import {fetchUserBookshelves, createBookshelf} from '../../actions/bookshelf_actions';
+import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = function (state, ownProps) {
   let userId;
-  if (ownProps.match) {
-    userId = ownProps.match.params.userId;
+  if (ownProps.match.params.userId) {
+    userId = parseInt(ownProps.match.params.userId);
   } else {
     userId = state.session.currentUserId;
   }
   return {
-    userId
+    userId, currentUserId: state.session.currentUserId
   };
 };
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    fetchUserBookshelves: (userId) => dispatch(fetchUserBookshelves(userId))
+    fetchUserBookshelves: (userId) => dispatch(fetchUserBookshelves(userId)),
+    createBookshelf: (bookshelf) => dispatch(createBookshelf(bookshelf))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookshelfIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BookshelfIndex));
