@@ -24,7 +24,7 @@ export const createBookshelf = function(bookshelf) {
 
 export const updateBookshelf = function(bookshelf) {
   return function(dispatch) {
-    return APIBookshelfUtil.createBookshelf(bookshelf).then((bookshelf) => dispatch(receiveBookshelf(bookshelf)));
+    return APIBookshelfUtil.updateBookshelf(bookshelf).then((bookshelf) => dispatch(receiveBookshelf(bookshelf)));
   };
 };
 
