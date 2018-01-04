@@ -153,6 +153,10 @@ li {
   padding: 10px;
 }
 
+.user-show {
+  padding: 30px;
+}
+
 .bookshelf-link {
   color: blue;
 }

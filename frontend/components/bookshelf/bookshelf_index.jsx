@@ -16,7 +16,8 @@ class BookshelfIndex extends React.Component {
 
   handleCreate(event) {
     event.preventDefault();
-    this.props.createBookshelf(state);
+    this.props.createBookshelf(this.state);
+    this.setState({name: ''});
   }
 
   handleChange(event) {
@@ -27,8 +28,8 @@ class BookshelfIndex extends React.Component {
   render() {
 
     let bookshelvesList;
-    if (this.props.user.bookshelves) {
-      bookshelvesList = Object.values(this.props.user.bookshelves).map((bookshelf) => {
+    if (this.props.userBookshelves) {
+      bookshelvesList = this.props.userBookshelves.map((bookshelf) => {
         return (<BookshelfIndexItem key={bookshelf.id} bookshelf={bookshelf} />);
       });
     }
