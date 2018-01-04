@@ -206,3 +206,14 @@ li {
   cursor: pointer;
   background-color: #ede6d6;
 }
+
+.bookshelf-errors-list {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookshelf-error {
+  color: red;
+  padding: 10px;
+}

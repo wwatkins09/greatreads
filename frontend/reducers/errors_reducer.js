@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 import userErrorsReducer from './user_errors_reducer';
 import sessionErrorsReducer from './session_errors_reducer';
+import bookshelfErrorsReducer from './bookshelf_errors_reducer';
 
 export default combineReducers({
   user: userErrorsReducer,
-  session: sessionErrorsReducer
+  session: sessionErrorsReducer,
+  bookshelf: bookshelfErrorsReducer
 });

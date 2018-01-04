@@ -2,6 +2,7 @@ import * as APIBookshelfUtil from '../util/api_bookshelf_util';
 
 export const RECEIVE_BOOKSHELVES = 'RECEIVE_BOOKSHELVES';
 export const RECEIVE_BOOKSHELF = 'RECEIVE_BOOKSHELF';
+export const RECEIVE_BOOKSHELF_ERRORS = 'RECEIVE_BOOKSHELF_ERRORS';
 export const REMOVE_BOOKSHELF = 'REMOVE_BOOKSHELF';
 
 export const fetchUserBookshelves = function(userId) {
@@ -18,13 +19,22 @@ export const fetchBookshelf = function(bookshelfId) {
 
 export const createBookshelf = function(bookshelf) {
   return function(dispatch) {
-    return APIBookshelfUtil.createBookshelf(bookshelf).then((bookshelf) => dispatch(receiveBookshelf(bookshelf)));
+    return APIBookshelfUtil.createBookshelf(bookshelf).then((bookshelf) => {
+      dispatch(receiveBookshelf(bookshelf));
+    }, (errors) => {
+      dispatch(receiveBookshelfErrors(errors.responseJSON));
+    });
   };
 };
 
 export const updateBookshelf = function(bookshelf) {
   return function(dispatch) {
-    return APIBookshelfUtil.updateBookshelf(bookshelf).then((bookshelf) => dispatch(receiveBookshelf(bookshelf)));
+    return APIBookshelfUtil.updateBookshelf(bookshelf).then((bookshelf) => {
+      dispatch(receiveBookshelf(bookshelf));
+    }, (errors) => {
+      dispatch(receiveBookshelfErrors(errors.responseJSON));
+    }
+    );
   };
 };
 
@@ -46,6 +56,13 @@ export const receiveBookshelf = function(payload) {
     type: RECEIVE_BOOKSHELF,
     bookshelf: payload.bookshelf,
     user: payload.user
+  };
+};
+
+export const receiveBookshelfErrors = function(errors) {
+  return {
+    type: RECEIVE_BOOKSHELF_ERRORS,
+    errors
   };
 };
 
