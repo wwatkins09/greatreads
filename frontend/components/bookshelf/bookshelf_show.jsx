@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect, withRouter} from 'react-router-dom';
 
 class BookshelfShow extends React.Component {
 
@@ -21,13 +21,14 @@ class BookshelfShow extends React.Component {
   }
 
   handleUpdate(event) {
-    console.log(this.state);
     event.preventDefault();
     this.props.updateBookshelf(this.state);
   }
 
   handleDelete(event) {
     event.preventDefault();
+    this.props.deleteBookshelf(this.props.bookshelf.id);
+    this.props.history.push(`/users/${this.props.bookshelf.userId}`);
   }
 
   handleChange(event) {
@@ -65,4 +66,4 @@ class BookshelfShow extends React.Component {
   }
 }
 
-export default BookshelfShow;
+export default withRouter(BookshelfShow);
