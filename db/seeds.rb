@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(username: "Will", password: "starwars")
-
 Bookshelf.create(name: "Russian Novels", user_id: User.find_by_credentials("Will", "starwars").id)
 Bookshelf.create(name: "Southern Gothic", user_id: User.find_by_credentials("Will", "starwars").id)
+
+User.create(username: "Will2", password: "starwars")
+Bookshelf.create(name: "Fantasy", user_id: User.find_by_credentials("Will2", "starwars").id)
+Bookshelf.create(name: "Short story collections", user_id: User.find_by_credentials("Will2", "starwars").id)

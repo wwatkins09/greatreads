@@ -2,6 +2,7 @@ class Api::BookshelvesController < ApplicationController
 
   def create
     @bookshelf = Bookshelf.new(bookshelf_params)
+    @bookshelf.user_id = current_user.id
     if @bookshelf.save
       render "api/bookshelves/show"
     else
@@ -24,7 +25,7 @@ class Api::BookshelvesController < ApplicationController
   end
 
   def show
-    @bookshelf = current_user.bookshelves.find(params[:id])
+    @bookshelf = Bookshelf.find(params[:id])
     render "api/bookshelves/show"
   end
 

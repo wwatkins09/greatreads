@@ -5,12 +5,15 @@ class BookshelfIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
+
   }
+
+
 
   render() {
     return (
       <li key={this.props.bookshelf.id}>
-        <Link to={`/bookshelves/${this.props.bookshelf.id}`}>{this.props.bookshelf.name}</Link>
+        <Link className="bookshelf-link" to={`/bookshelves/${this.props.bookshelf.id}`}>{this.props.bookshelf.name}</Link>
       </li>
     );
   }
