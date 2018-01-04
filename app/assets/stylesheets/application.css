@@ -160,3 +160,49 @@ li {
 .bookshelf-link {
   color: blue;
 }
+
+.bookshelf-show {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.bookshelf-show > p {
+  padding-top: 20px;
+}
+
+.bookshelf-show-link {
+  display: inline;
+  color: blue;
+}
+
+.bookshelf-edit-button {
+  width: 50px;
+  height: 28px;
+  font-size: 13px;
+  background-color: #F4F1EA;
+  color: #333333;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+}
+
+.bookshelf-edit-button:hover {
+  cursor: pointer;
+  background-color: #ede6d6;
+}
+
+.bookshelf-delete-button {
+  width: 150px;
+  height: 28px;
+  font-size: 16px;
+  background-color: #F4F1EA;
+  color: #333333;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  margin-top: 30px;
+}
+
+.bookshelf-delete-button:hover {
+  cursor: pointer;
+  background-color: #ede6d6;
+}

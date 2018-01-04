@@ -1,7 +1,8 @@
-export const fetchUserBookshelves = function () {
+export const fetchUserBookshelves = function (userId) {
   return $.ajax({
     method: 'GET',
-    url: 'api/bookshelves'
+    url: 'api/bookshelves',
+    data: {user_id: userId}
   });
 };
 

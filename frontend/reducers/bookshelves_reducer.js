@@ -7,7 +7,7 @@ const bookshelvesReducer = function (oldState=[], action) {
     case RECEIVE_BOOKSHELVES:
       const bookshelfObject = {};
       action.bookshelves.forEach((bookshelf) => {
-         bookshelfObject[bookshelf.id] = bookshelf;
+         bookshelfObject[bookshelf.bookshelf.id] = bookshelf.bookshelf;
       });
       return bookshelfObject;
     case RECEIVE_BOOKSHELF:

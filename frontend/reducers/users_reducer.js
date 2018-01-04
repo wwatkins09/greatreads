@@ -11,9 +11,9 @@ const usersReducer = function(oldState={}, action) {
     case RECEIVE_CURRENT_USER:
       return merge({}, oldState, {[action.currentUser.id]: action.currentUser});
     case RECEIVE_BOOKSHELF:
-      let newState = merge({}, oldState);
-      if (!newState[action.bookshelf.user_id].bookshelf_ids.includes(action.bookshelf.id)) {
-        newState[action.bookshelf.user_id].bookshelf_ids.push(action.bookshelf.id);
+      let newState = Object.assign({}, oldState, action.user);
+      if (!newState[action.bookshelf.userId].bookshelfIds.includes(action.bookshelf.id)) {
+          newState[action.bookshelf.userId].bookshelfIds.push(action.bookshelf.id);
       }
       return newState;
     default:
