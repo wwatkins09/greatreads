@@ -12,7 +12,7 @@ const usersReducer = function(oldState={}, action) {
       return merge({}, oldState, {[action.currentUser.id]: action.currentUser});
     case RECEIVE_BOOKSHELF:
       let newState = Object.assign({}, oldState, action.user);
-      if (!newState[action.bookshelf.userId].bookshelfIds.includes(action.bookshelf.id)) {
+      if (newState[action.bookshelf] && !newState[action.bookshelf.userId].bookshelfIds.includes(action.bookshelf.id)) {
           newState[action.bookshelf.userId].bookshelfIds.push(action.bookshelf.id);
       }
       return newState;

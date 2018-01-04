@@ -23,9 +23,10 @@ class BookshelfShow extends React.Component {
 
   handleUpdate(event) {
     event.preventDefault();
-    const newBookshelf = Object.assign({}, this.props.bookshelf);
+    let newBookshelf = Object.assign({}, this.props.bookshelf);
     newBookshelf.name = this.state.name;
     this.props.updateBookshelf(newBookshelf);
+    this.state = {name: ""};
   }
 
   handleDelete(event) {
@@ -40,12 +41,14 @@ class BookshelfShow extends React.Component {
   }
 
   render() {
+
+
     let bookshelfEdit;
     if (this.props.currentUserId === this.props.bookshelf.userId) {
       bookshelfEdit = (
         <div>
           <form onSubmit={this.handleUpdate}>
-            <label>New bookshelf name:
+            <label>Change bookshelf name:
               <input type="text" onChange={this.handleChange} value={this.state.name}></input>
             </label>
             <input type="submit" className="bookshelf-edit-button" value="Edit"></input>
@@ -56,14 +59,22 @@ class BookshelfShow extends React.Component {
     } else {
       bookshelfEdit = (<div></div>);
     }
+
+    const errorsList = this.props.bookshelfErrors.map((error, idx) => {
+      return (<li className="bookshelf-error" key={idx}>{error}</li>);
+    });
+
     return (
       <main className="bookshelf-show">
-        <p>{this.props.bookshelf.name}</p>
+        <h3>{this.props.bookshelf.name}</h3>
         <p>Books go here!</p>
-        <div className="bookshelf-show-link">
-          <Link  to={`/users/${this.props.bookshelf.userId}`}>Back</Link>
-        </div>
         {bookshelfEdit}
+        <ul className="bookshelf-errors-list">
+          {errorsList}
+        </ul>
+        <div className="bookshelf-show-link">
+          <Link  to={`/users/${this.props.bookshelf.userId}`}>Back to bookshelves!</Link>
+        </div>
       </main>
     );
   }
