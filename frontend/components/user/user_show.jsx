@@ -11,6 +11,12 @@ class UserShow extends React.Component {
     this.props.fetchUser(this.props.userId)
   }
 
+  componentWillReceiveProps(props) {
+    if (this.props.match.params.userId !== props.match.params.userId) {
+      this.props.fetchUser(props.match.params.userId)
+    }
+  }
+
   render() {
     const errorsList = this.props.bookshelfErrors.map((error, idx) => {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);

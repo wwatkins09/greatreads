@@ -11,7 +11,8 @@ const mapStateToProps = function(state, ownProps) {
   return {
     bookshelfId: ownProps.match.params.bookshelfId,
     bookshelf,
-    currentUserId: state.session.currentUserId
+    currentUserId: state.session.currentUserId,
+    bookshelfErrors: state.errors.bookshelf
   };
 };
 

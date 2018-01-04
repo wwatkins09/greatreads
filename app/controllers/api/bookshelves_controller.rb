@@ -17,7 +17,7 @@ class Api::BookshelvesController < ApplicationController
     if @bookshelf.update_attributes(bookshelf_params)
       render "api/bookshelves/show"
     else
-      render json: @bookshelf.errors.full_messages
+      render json: @bookshelf.errors.full_messages, status: 422
     end
   end
 
