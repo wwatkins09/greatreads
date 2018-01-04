@@ -16,19 +16,22 @@ class BookshelfShow extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    this.setState(props.bookshelf);
-    this.setState({name: ""});
+    if (props.match.params.bookshelfId !== this.props.match.params.bookshelfId) {
+      this.props.fetchBookshelf(props.match.params.bookshelfId);
+    }
   }
 
   handleUpdate(event) {
     event.preventDefault();
-    this.props.updateBookshelf(this.state);
+    const newBookshelf = Object.assign({}, this.props.bookshelf);
+    newBookshelf.name = this.state.name;
+    this.props.updateBookshelf(newBookshelf);
   }
 
   handleDelete(event) {
     event.preventDefault();
-    this.props.deleteBookshelf(this.props.bookshelf.id);
     this.props.history.push(`/users/${this.props.bookshelf.userId}`);
+    this.props.deleteBookshelf(this.props.bookshelf.id);
   }
 
   handleChange(event) {
