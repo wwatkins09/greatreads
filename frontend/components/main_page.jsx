@@ -14,19 +14,19 @@ const mapStateToProps = function (state) {
 
 
 const MainPage = (props) => {
+  let slashRoute;
   if (props.currentUserId) {
+    slashRoute = (<Route exact path="/" component={UserShowContainer} />);
+  } else {
+    slashRoute = (<Route path="/" component={NewUserFormContainer} />);
+  }
     return (
       <div>
-        <Route exact path="/" component={UserShowContainer} />
-        <Route exact path="/users/:userId" component={UserShowContainer} />
-        <Route exact path="/bookshelves/:bookshelfId" component={BookshelfShowContainer}/>
+        {slashRoute}
+        <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
+        <ProtectedRoute exact path="/bookshelves/:bookshelfId" component={BookshelfShowContainer}/>
       </div>
     );
-  } else {
-    return (
-      <Route path="/" component={NewUserFormContainer} />
-    );
-  }
 };
 
 export default withRouter(connect(mapStateToProps, null)(MainPage));

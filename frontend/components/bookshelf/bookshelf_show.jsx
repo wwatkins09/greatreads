@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class BookshelfShow extends React.Component {
 
@@ -15,6 +16,7 @@ class BookshelfShow extends React.Component {
     return (
       <main>
         Books go here!
+        <Link to={`/users/${this.props.bookshelf.user_id}`}>Back</Link>
       </main>
     );
   }

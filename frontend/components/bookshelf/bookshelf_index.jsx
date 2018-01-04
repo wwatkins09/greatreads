@@ -26,7 +26,6 @@ class BookshelfIndex extends React.Component {
   }
 
   render() {
-
     let bookshelvesList;
     if (this.props.userBookshelves) {
       bookshelvesList = this.props.userBookshelves.map((bookshelf) => {
