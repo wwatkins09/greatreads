@@ -19,7 +19,7 @@ const mapDispatchToProps = function(dispatch) {
   return {
     fetchBookshelf: (bookshelfId) => dispatch(fetchBookshelf(bookshelfId)),
     updateBookshelf: (bookshelf) => dispatch(updateBookshelf(bookshelf)),
-    deleteBookshelf: (bookshelfId) => dispatch(fetchBookshelf(bookshelfId))
+    deleteBookshelf: (bookshelfId) => dispatch(deleteBookshelf(bookshelfId))
   };
 };
 
