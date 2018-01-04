@@ -24,7 +24,7 @@ export const createBookshelf = function(bookshelf) {
 export const updateBookshelf = function(bookshelf) {
   return $.ajax({
     method: 'PATCH',
-    url: 'api/bookshelves',
+    url: `api/bookshelves/${bookshelf.id}`,
     data: {bookshelf}
   });
 };

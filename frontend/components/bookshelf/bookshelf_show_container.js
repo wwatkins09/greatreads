@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import BookshelfShow from './bookshelf_show';
-import {fetchBookshelf, deleteBookshelf} from '../../actions/bookshelf_actions';
+import {fetchBookshelf, deleteBookshelf, updateBookshelf} from '../../actions/bookshelf_actions';
 
 const mapStateToProps = function(state, ownProps) {
   let bookshelf = state.entities.bookshelves[ownProps.match.params.bookshelfId];
@@ -10,14 +10,15 @@ const mapStateToProps = function(state, ownProps) {
   }
   return {
     bookshelfId: ownProps.match.params.bookshelfId,
-    bookshelf
+    bookshelf,
+    currentUserId: state.session.currentUserId
   };
 };
 
 const mapDispatchToProps = function(dispatch) {
   return {
     fetchBookshelf: (bookshelfId) => dispatch(fetchBookshelf(bookshelfId)),
-    editBookshelf: (bookshelf) => dispatch(editBookshelf(bookshelf)),
+    updateBookshelf: (bookshelf) => dispatch(updateBookshelf(bookshelf)),
     deleteBookshelf: (bookshelfId) => dispatch(fetchBookshelf(bookshelfId))
   };
 };
