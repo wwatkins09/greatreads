@@ -10,8 +10,18 @@ const mapStateToProps = function (state, ownProps) {
   } else {
     userId = state.session.currentUserId;
   }
+
+  let userBookshelves;
+  if (Object.keys(state.entities.bookshelves).length > 0) {
+    userBookshelves = state.entities.users[userId].bookshelf_ids.map((bookshelfId) => {
+      return state.entities.bookshelves[bookshelfId];
+    });
+  }
+
   return {
-    userId, currentUserId: state.session.currentUserId
+    userId,
+    currentUserId: state.session.currentUserId,
+    userBookshelves
   };
 };
 
