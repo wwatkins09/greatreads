@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105210112) do
+ActiveRecord::Schema.define(version: 20180105221418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20180105210112) do
     t.string "author", null: false
     t.integer "year", null: false
     t.float "average_score", null: false
+  end
+
+  create_table "bookshelf_ownerships", force: :cascade do |t|
+    t.integer "bookshelf_id", null: false
+    t.integer "book_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bookshelf_id", "book_id"], name: "index_bookshelf_ownerships_on_bookshelf_id_and_book_id", unique: true
   end
 
   create_table "bookshelves", force: :cascade do |t|
