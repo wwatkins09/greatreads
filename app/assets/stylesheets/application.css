@@ -175,6 +175,10 @@ li {
   padding-right: 5px;
 }
 
+.user-name-link {
+  color: #00635d;
+}
+
 .bookshelf-show-sidebar {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
