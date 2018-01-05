@@ -22,7 +22,10 @@ class SignInForm extends React.Component {
     this.props.signIn(this.state).then(() => {}, () => {
       this.setState( {username: "", password: ""} )
       });
+  }
 
+  componentWillDismount() {
+    this.props.clearSessionAndUserErrors();
   }
 
   render() {

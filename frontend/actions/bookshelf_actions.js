@@ -4,6 +4,7 @@ export const RECEIVE_BOOKSHELVES = 'RECEIVE_BOOKSHELVES';
 export const RECEIVE_BOOKSHELF = 'RECEIVE_BOOKSHELF';
 export const RECEIVE_BOOKSHELF_ERRORS = 'RECEIVE_BOOKSHELF_ERRORS';
 export const REMOVE_BOOKSHELF = 'REMOVE_BOOKSHELF';
+export const CLEAR_BOOKSHELF_ERRORS = 'CLEAR_BOOKSHELF_ERRORS';
 
 export const fetchUserBookshelves = function(userId) {
   return function(dispatch) {
@@ -70,5 +71,11 @@ export const removeBookshelf = function(bookshelfId) {
   return {
     type: REMOVE_BOOKSHELF,
     bookshelfId
+  };
+};
+
+export const clearBookshelfErrors = function() {
+  return {
+    type: CLEAR_BOOKSHELF_ERRORS
   };
 };

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import SignInForm from './sign_in_form';
-import {signIn} from '../../actions/session_actions';
+import {signIn, clearSessionAndUserErrors} from '../../actions/session_actions';
 
 const mapStateToProps = function (state) {
   return {
@@ -11,7 +11,8 @@ const mapStateToProps = function (state) {
 const mapDispatchToProps = function (dispatch) {
 
   return {
-    signIn: (credentials) => dispatch(signIn(credentials))
+    signIn: (credentials) => dispatch(signIn(credentials)),
+    clearSessionAndUserErrors: () => dispatch(clearSessionAndUserErrors())
   };
 };
 
