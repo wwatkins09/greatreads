@@ -13,12 +13,16 @@ class BookshelfShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserBookshelvesByBookshelfId(this.props.bookshelfId);
+    this.props.fetchUserBookshelvesByBookshelfId(this.props.bookshelfId).then(() => {}, () => {
+      this.props.history.push("/")
+    });
   }
 
   componentWillReceiveProps(props) {
     if (props.match.params.bookshelfId !== this.props.match.params.bookshelfId) {
-      this.props.fetchUserBookshelvesByBookshelfId(props.match.params.bookshelfId);
+      this.props.fetchUserBookshelvesByBookshelfId(props.match.params.bookshelfId).then(() => {}, () => {
+        this.props.history.push("/")
+      });
     }
   }
 
@@ -71,41 +75,47 @@ class BookshelfShow extends React.Component {
 
     //make headings links once urls exist!!
     return (
-      <main className="bookshelf-show">
-        <h3>{this.props.bookshelf.name}</h3>
-        <h4>Belongs to {this.props.owner.username}</h4>
-        <table className="book-index-table">
-          <tbody>
-            <tr>
-              <th className="table-field-cover">
-                cover
-              </th>
-              <th className="table-field-title">title</th>
-              <th className="table-field-author">author</th>
-              <th className="table-field-avg-rating">avg rating</th>
-              <th className="table-field-rating"></th>
-              <th>rating</th>
-            </tr>
-            <tr>
-              <td>
-                Filler!!!
-              </td>
-            </tr>
-          </tbody>
+      <div className="bookshelf-show">
 
-        </table>
-        {bookshelfEdit}
-        <ul className="bookshelf-errors-list">
-          {errorsList}
-        </ul>
-        <p>Other bookshelves belonging to this user:</p>
-        <ul>
-          <BookshelvesList bookshelves={this.props.bookshelves}/>
-        </ul>
-        <div className="bookshelf-show-link">
-          <Link  to={`/users/${this.props.bookshelf.userId}`}>Back to bookshelves!</Link>
-        </div>
-      </main>
+        <content className="bookshelf-show-sidebar">
+          <p className="bookshelf-show-sidebar-header">Bookshelves:</p>
+          <ul>
+            <BookshelvesList bookshelves={this.props.bookshelves}/>
+          </ul>
+        </content>
+
+        <main className="bookshelf-show-main">
+          <p className="bookshelf-show-header">{this.props.owner.username} > Books: {this.props.bookshelf.name}</p>
+          <table className="book-index-table">
+            <tbody>
+              <tr>
+                <th className="table-field-cover">
+                  cover
+                </th>
+                <th className="table-field-title">title</th>
+                <th className="table-field-author">author</th>
+                <th className="table-field-avg-rating">avg rating</th>
+                <th className="table-field-rating">rating</th>
+              </tr>
+              <tr>
+                <td className="table-field-cover">cover1</td>
+                <td className="table-field-title">title1</td>
+                <td className="table-field-author">author1</td>
+                <td className="table-field-avg-rating">avg rating1</td>
+                <td className="table-field-rating">rating1</td>
+              </tr>
+            </tbody>
+
+          </table>
+          {bookshelfEdit}
+          <ul className="bookshelf-errors-list">
+            {errorsList}
+          </ul>
+          <div className="bookshelf-show-link">
+            <Link  to={`/users/${this.props.bookshelf.userId}`}>Back to bookshelves!</Link>
+          </div>
+        </main>
+      </div>
     );
   }
 }

@@ -163,8 +163,35 @@ li {
 
 .bookshelf-show {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-left: 20px;
+}
+
+.bookshelf-show-header {
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.bookshelf-show-sidebar {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+
+}
+
+.bookshelf-show-sidebar-header {
+  font-weight: bold;
+  color: #382110;
+  line-height: 18px;
+}
+
+.bookshelf-show-sidebar ul {
+  width: 200px;
+  padding: 0;
+}
+
+.bookshelf-show-main {
+
 }
 
 
@@ -215,8 +242,24 @@ li {
   padding: 10px;
 }
 
-.book-index-table th {
+.book-index-table {
   color: #382110;
   font-weight: bold;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.book-index-table th {
+  height: 54px;
   font-size: 12px;
+  text-align: bottom;
+  padding: 12px 5px 5px 0;
+}
+
+.book-index-dable td {
+  color: #181818
+}
+
+.table-field-cover {
+  width: 50px;
 }

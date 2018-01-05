@@ -47,7 +47,10 @@ export const updateBookshelf = function(bookshelf) {
 
 export const deleteBookshelf = function(bookshelfId) {
   return function(dispatch) {
-    return APIBookshelfUtil.deleteBookshelf(bookshelfId).then((bookshelf) => dispatch(removeBookshelf(bookshelf.id)));
+    return APIBookshelfUtil.deleteBookshelf(bookshelfId).then((bookshelf) => {
+      dispatch(removeBookshelf(bookshelf.bookshelf.id));
+    }
+    );
   };
 };
 
