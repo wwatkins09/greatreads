@@ -64,10 +64,30 @@ class BookshelfShow extends React.Component {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);
     });
 
+    //make headings links once urls exist!!
     return (
       <main className="bookshelf-show">
         <h3>{this.props.bookshelf.name}</h3>
-        <p>Books go here!</p>
+        <table className="book-index-table">
+          <tbody>
+            <tr>
+              <th className="table-field-cover">
+                cover
+              </th>
+              <th className="table-field-title">title</th>
+              <th className="table-field-author">author</th>
+              <th className="table-field-avg-rating">avg rating</th>
+              <th className="table-field-rating"></th>
+              <th>rating</th>
+            </tr>
+            <tr>
+              <td>
+                Filler!!!
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
         {bookshelfEdit}
         <ul className="bookshelf-errors-list">
           {errorsList}
