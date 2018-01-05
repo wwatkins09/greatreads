@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, Redirect, withRouter} from 'react-router-dom';
+import BookshelvesList from './bookshelves_list';
 
 class BookshelfShow extends React.Component {
 
@@ -12,12 +13,12 @@ class BookshelfShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBookshelf(this.props.bookshelfId);
+    this.props.fetchUserBookshelvesByBookshelfId(this.props.bookshelfId);
   }
 
   componentWillReceiveProps(props) {
     if (props.match.params.bookshelfId !== this.props.match.params.bookshelfId) {
-      this.props.fetchBookshelf(props.match.params.bookshelfId);
+      this.props.fetchUserBookshelvesByBookshelfId(props.match.params.bookshelfId);
     }
   }
 
@@ -96,6 +97,10 @@ class BookshelfShow extends React.Component {
         {bookshelfEdit}
         <ul className="bookshelf-errors-list">
           {errorsList}
+        </ul>
+        <p>Other bookshelves belonging to this user:</p>
+        <ul>
+          <BookshelvesList bookshelves={this.props.bookshelves}/>
         </ul>
         <div className="bookshelf-show-link">
           <Link  to={`/users/${this.props.bookshelf.userId}`}>Back to bookshelves!</Link>

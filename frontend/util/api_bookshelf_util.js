@@ -6,6 +6,14 @@ export const fetchUserBookshelves = function (userId) {
   });
 };
 
+export const fetchUserBookshelvesByBookshelfId = function(bookshelfId) {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/bookshelves',
+    data: {bookshelf_id: bookshelfId}
+  });
+};
+
 export const fetchBookshelf = function (bookshelfId) {
   return $.ajax({
     method: 'GET',

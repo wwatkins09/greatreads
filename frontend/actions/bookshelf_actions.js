@@ -12,6 +12,12 @@ export const fetchUserBookshelves = function(userId) {
   };
 };
 
+export const fetchUserBookshelvesByBookshelfId = function(bookshelfId) {
+  return function(dispatch) {
+    return APIBookshelfUtil.fetchUserBookshelvesByBookshelfId(bookshelfId).then((bookshelves) => dispatch(receiveBookshelves(bookshelves)));
+  };
+};
+
 export const fetchBookshelf = function(bookshelfId) {
   return function(dispatch) {
     return APIBookshelfUtil.fetchBookshelf(bookshelfId).then((bookshelf) => dispatch(receiveBookshelf(bookshelf)));
@@ -45,10 +51,11 @@ export const deleteBookshelf = function(bookshelfId) {
   };
 };
 
-export const receiveBookshelves = function(bookshelves) {
+export const receiveBookshelves = function(payload) {
   return {
     type: RECEIVE_BOOKSHELVES,
-    bookshelves
+    bookshelves: payload.bookshelves,
+    user: payload.user
   };
 };
 
