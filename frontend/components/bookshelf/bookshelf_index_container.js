@@ -10,13 +10,11 @@ const mapStateToProps = function (state, ownProps) {
   } else {
     userId = state.session.currentUserId;
   }
-  let userBookshelves;
+  let userBookshelves = [];
   if (state.entities.users[userId]) {
     userBookshelves = state.entities.users[userId].bookshelfIds.map((bookshelfId) => {
       return state.entities.bookshelves[bookshelfId];
     });
-    } else {
-      userBookshelves = [];
     }
 
   return {

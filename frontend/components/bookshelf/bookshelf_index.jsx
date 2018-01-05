@@ -1,5 +1,6 @@
 import React from 'react';
 import BookshelfIndexItem from './bookshelf_index_item';
+import BookshelvesList from './bookshelves_list';
 
 class BookshelfIndex extends React.Component {
 
@@ -11,7 +12,6 @@ class BookshelfIndex extends React.Component {
   }
 
   componentDidMount() {
-    console.log("working");
     this.props.fetchUserBookshelves(this.props.userId);
   }
 
@@ -37,15 +37,6 @@ class BookshelfIndex extends React.Component {
   }
 
   render() {
-    let bookshelvesList;
-    if (this.props.userBookshelves) {
-      bookshelvesList = this.props.userBookshelves.map((bookshelf) => {
-        if (bookshelf) {
-          return (<BookshelfIndexItem key={bookshelf.id} bookshelf={bookshelf} />);
-        }
-      });
-    }
-
     let newBookshelfForm;
     if (this.props.currentUserId === this.props.userId) {
       newBookshelfForm = (
@@ -66,7 +57,7 @@ class BookshelfIndex extends React.Component {
       <main>
         <h3>Bookshelves:</h3>
         <ul>
-          {bookshelvesList}
+          <BookshelvesList bookshelves={this.props.userBookshelves}/>
         </ul>
         {newBookshelfForm}
       </main>

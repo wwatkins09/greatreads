@@ -5,13 +5,9 @@ const bookshelvesReducer = function (oldState=[], action) {
   switch(action.type) {
 
     case RECEIVE_BOOKSHELVES:
-      const bookshelfObject = {};
-      action.bookshelves.forEach((bookshelf) => {
-         bookshelfObject[bookshelf.bookshelf.id] = bookshelf.bookshelf;
-      });
-      return bookshelfObject;
+      return merge({}, oldState, action.bookshelves);
     case RECEIVE_BOOKSHELF:
-      return merge({}, oldState, {[action.bookshelf.id]: action.bookshelf});      
+      return merge({}, oldState, {[action.bookshelf.id]: action.bookshelf});
     default:
       return oldState;
   }
