@@ -21,6 +21,10 @@ class BookshelfShow extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearBookshelfErrors();
+  }
+
   handleUpdate(event) {
     event.preventDefault();
     let newBookshelf = Object.assign({}, this.props.bookshelf);

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import BookshelfIndex from './bookshelf_index.jsx';
-import {fetchUserBookshelves, createBookshelf} from '../../actions/bookshelf_actions';
+import {fetchUserBookshelves, createBookshelf, clearBookshelfErrors} from '../../actions/bookshelf_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = function (state, ownProps) {
@@ -29,7 +29,8 @@ const mapStateToProps = function (state, ownProps) {
 const mapDispatchToProps = function (dispatch) {
   return {
     fetchUserBookshelves: (userId) => dispatch(fetchUserBookshelves(userId)),
-    createBookshelf: (bookshelf) => dispatch(createBookshelf(bookshelf))
+    createBookshelf: (bookshelf) => dispatch(createBookshelf(bookshelf)),
+    clearBookshelfErrors: () => dispatch(clearBookshelfErrors())
   };
 };
 

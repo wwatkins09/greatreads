@@ -23,7 +23,7 @@ class NewUserForm extends React.Component {
     this.setState({username: "", password: ""})
   }
 
-  componentWillDismount() {
+  componentWillUnmount() {
     this.props.clearSessionAndUserErrors();
   }
 
