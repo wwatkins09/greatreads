@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, Redirect, withRouter} from 'react-router-dom';
 import BookshelvesList from './bookshelves_list';
+import BookIndexContainer from '../book/book_index_container';
 
 class BookshelfShow extends React.Component {
 
@@ -101,13 +102,7 @@ class BookshelfShow extends React.Component {
                 <th className="table-field-avg-rating">avg rating</th>
                 <th className="table-field-rating">rating</th>
               </tr>
-              <tr>
-                <td className="table-field-cover">cover1</td>
-                <td className="table-field-title">title1</td>
-                <td className="table-field-author">author1</td>
-                <td className="table-field-avg-rating">avg rating1</td>
-                <td className="table-field-rating">rating1</td>
-              </tr>
+              <BookIndexContainer></BookIndexContainer>
             </tbody>
 
           </table>
