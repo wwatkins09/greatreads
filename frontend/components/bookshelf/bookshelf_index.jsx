@@ -11,6 +11,7 @@ class BookshelfIndex extends React.Component {
   }
 
   componentDidMount() {
+    console.log("working");
     this.props.fetchUserBookshelves(this.props.userId);
   }
 
@@ -18,6 +19,10 @@ class BookshelfIndex extends React.Component {
     if (props.location.pathname !== this.props.location.pathname) {
       this.props.fetchUserBookshelves(props.userId);
     }
+  }
+
+  componentWillUnmount() {
+    this.props.clearBookshelfErrors();
   }
 
   handleCreate(event) {

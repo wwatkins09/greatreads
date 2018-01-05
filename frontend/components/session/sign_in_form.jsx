@@ -24,7 +24,7 @@ class SignInForm extends React.Component {
       });
   }
 
-  componentWillDismount() {
+  componentWillUnmount() {
     this.props.clearSessionAndUserErrors();
   }
 
