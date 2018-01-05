@@ -21,7 +21,10 @@ class NewUserForm extends React.Component {
     event.preventDefault();
     this.props.createUser(this.state);
     this.setState({username: "", password: ""})
+  }
 
+  componentWillDismount() {
+    this.props.clearSessionAndUserErrors();
   }
 
   render() {

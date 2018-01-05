@@ -26,6 +26,3 @@ export const receiveUser = function(payload) {
     bookshelves: payload.bookshelves
   };
 };
-
-// in receiveUser, change user input to 'payload', then in return object,
-// user: payload.user, bookshelves: payload.bookshelves
