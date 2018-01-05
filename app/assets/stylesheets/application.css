@@ -214,3 +214,9 @@ li {
   color: red;
   padding: 10px;
 }
+
+.book-index-table th {
+  color: #382110;
+  font-weight: bold;
+  font-size: 12px;
+}
