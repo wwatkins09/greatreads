@@ -91,27 +91,13 @@ class BookshelfShow extends React.Component {
             <p className="bookshelf-show-header"> > </p>
             <p className="bookshelf-show-header">Books: {this.props.bookshelf.name}</p>
           </content>
-          <table className="book-index-table">
-            <tbody>
-              <tr>
-                <th className="table-field-cover">
-                  cover
-                </th>
-                <th className="table-field-title">title</th>
-                <th className="table-field-author">author</th>
-                <th className="table-field-avg-rating">avg rating</th>
-                <th className="table-field-rating">rating</th>
-              </tr>
-              <BookIndexContainer></BookIndexContainer>
-            </tbody>
-
-          </table>
+          <BookIndexContainer bookshelf={this.props.bookshelf}></BookIndexContainer>
           {bookshelfEdit}
           <ul className="bookshelf-errors-list">
             {errorsList}
           </ul>
           <div className="bookshelf-show-link">
-            <Link  to={`/users/${this.props.bookshelf.userId}`}>Back to bookshelves!</Link>
+            <Link to={`/users/${this.props.bookshelf.userId}`}>Back to bookshelves!</Link>
           </div>
         </main>
       </div>

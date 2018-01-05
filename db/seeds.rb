@@ -23,3 +23,5 @@ Bookshelf.create(name: "Comedy", user_id: User.find_by_credentials("Will3", "sta
 User.create(username: "Will4", password: "starwars")
 Bookshelf.create(name: "History", user_id: User.find_by_credentials("Will4", "starwars").id)
 Bookshelf.create(name: "Sci-fi", user_id: User.find_by_credentials("Will4", "starwars").id)
+
+Book.create(title: "One Hundred Years of Solitude", author: "Gabriel Garcia Marquez", year: 1967, average_score: 5)

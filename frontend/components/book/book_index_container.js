@@ -1,17 +1,18 @@
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import BookIndex from './book_index';
-import {fetchBooks} from '../../actions/book_actions';
+import {fetchBooksByBookshelfId} from '../../actions/book_actions';
 
 const mapStateToProps = function (state) {
   return {
-
+    books: state.entities.books
   };
 };
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    fetchBooks: () => dispatch(fetchBooks())
+    fetchBooksByBookshelfId: (bookshelfId) => dispatch(fetchBooksByBookshelfId(bookshelfId))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BookIndex));

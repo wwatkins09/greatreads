@@ -3,9 +3,9 @@ import * as APIBookUtil from '../util/api_book_util';
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
 
-export const fetchBooks = function() {
+export const fetchBooksByBookshelfId = function(bookshelfId) {
   return function(dispatch) {
-    return APIBookUtil.fetchBooks().then((books) => dispatch(receiveBooks(books)));
+    return APIBookUtil.fetchBooksByBookshelfId(bookshelfId).then((books) => dispatch(receiveBooks(books)));
   };
 };
 
