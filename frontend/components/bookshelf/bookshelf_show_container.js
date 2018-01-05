@@ -5,14 +5,19 @@ import {fetchBookshelf, deleteBookshelf, updateBookshelf, clearBookshelfErrors} 
 
 const mapStateToProps = function(state, ownProps) {
   let bookshelf = state.entities.bookshelves[ownProps.match.params.bookshelfId];
-  if (!bookshelf) {
+  let owner;
+  if (bookshelf && state.entities.users[bookshelf.userId]) {
+    owner = state.entities.users[bookshelf.userId];
+  } else {
     bookshelf = {name: ""};
+    owner = {username: ""};
   }
   return {
     bookshelfId: ownProps.match.params.bookshelfId,
     bookshelf,
+    owner,
     currentUserId: state.session.currentUserId,
-    bookshelfErrors: state.errors.bookshelf
+    bookshelfErrors: state.errors.bookshelf,
   };
 };
 

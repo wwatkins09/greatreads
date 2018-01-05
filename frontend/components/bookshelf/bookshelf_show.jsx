@@ -72,6 +72,7 @@ class BookshelfShow extends React.Component {
     return (
       <main className="bookshelf-show">
         <h3>{this.props.bookshelf.name}</h3>
+        <h4>Belongs to {this.props.owner.username}</h4>
         <table className="book-index-table">
           <tbody>
             <tr>
