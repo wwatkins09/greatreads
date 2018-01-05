@@ -15,7 +15,7 @@ const mapStateToProps = function(state, ownProps) {
     });
   } else {
     bookshelf = {name: ""};
-    owner = {username: ""};
+    owner = {id: -1, username: ""};
   }
   return {
     bookshelfId: ownProps.match.params.bookshelfId,

@@ -171,6 +171,8 @@ li {
   font-family: "Merriweather", Georgia, "Times New Roman", serif;
   font-weight: bold;
   font-size: 20px;
+  display: inline-block;
+  padding-right: 5px;
 }
 
 .bookshelf-show-sidebar {
