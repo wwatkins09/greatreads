@@ -35,7 +35,7 @@ class BookshelfShow extends React.Component {
     let newBookshelf = Object.assign({}, this.props.bookshelf);
     newBookshelf.name = this.state.name;
     this.props.updateBookshelf(newBookshelf);
-    this.state = {name: ""};
+    this.setState({name: ""});
   }
 
   handleDelete(event) {
