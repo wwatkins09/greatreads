@@ -2,7 +2,7 @@ export const fetchBooksByBookshelfId = function(bookshelfId) {
   return $.ajax({
     method: 'GET',
     url: '/api/books',
-    data: {bookshelfId}
+    data: {bookshelf_id: bookshelfId}
   });
 };
 
