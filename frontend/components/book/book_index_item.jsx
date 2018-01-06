@@ -9,8 +9,10 @@ class BookIndexItem extends React.Component {
   render() {
     return (
       <tr>
-        <td>{this.props.book.title}</td>
-        <td>{this.props.book.author}</td>
+        <td className="table-field-cover">Cover</td>
+        <td className="table-field-title">{this.props.book.title}</td>
+        <td className="table-field-author">{this.props.book.author}</td>
+        <td className="table-field-avg-score">{this.props.book.averageScore}</td>
       </tr>
     );
   }

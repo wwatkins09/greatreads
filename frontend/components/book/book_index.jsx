@@ -25,13 +25,13 @@ class BookIndex extends React.Component {
     return (
       <table className="book-index-table">
         <tbody>
-          <tr>
+          <tr className="book-index-table-headers">
             <th className="table-field-cover">
               cover
             </th>
             <th className="table-field-title">title</th>
             <th className="table-field-author">author</th>
-            <th className="table-field-avg-rating">avg rating</th>
+            <th className="table-field-avg-score">avg rating</th>
             <th className="table-field-rating">rating</th>
           </tr>
           {booksList}
