@@ -11,7 +11,7 @@ const mapStateToProps = function(state, ownProps) {
 
   if (bookshelf) {
     owner = state.entities.users[bookshelf.userId];
-    bookshelves = owner.bookshelfIds.map((bookshelfId) => {
+    bookshelves = owner.bookshelfIds.sort().map((bookshelfId) => {
       return state.entities.bookshelves[bookshelfId];
     });
     books = bookshelf.bookIds.map((bookId) => {
