@@ -8,7 +8,9 @@ const usersReducer = function(oldState={}, action) {
   let newState;
   switch(action.type) {
     case RECEIVE_USER:
-      return merge({}, oldState, {[action.user.id]: action.user});
+      newState = merge({}, oldState);
+      delete newState[action.user.id];
+      return merge({}, newState, {[action.user.id]: action.user});
     case RECEIVE_CURRENT_USER:
       return merge({}, oldState, {[action.currentUser.id]: action.currentUser});
     case RECEIVE_BOOKSHELF:
