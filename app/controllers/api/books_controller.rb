@@ -1,7 +1,10 @@
 class Api::BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    if params[:bookshelf_id]
+      @bookshelf = Bookshelf.find(params[:bookshelf_id])
+    end
+    @books = @bookshelf.books
     render "api/books/index"
   end
 

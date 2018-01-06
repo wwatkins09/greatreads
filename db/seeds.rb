@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Book.destroy_all
 
 User.create(username: "Demo User", password: "starwars")
 
@@ -26,4 +27,15 @@ User.create(username: "Will4", password: "starwars")
 Bookshelf.create(name: "History", user_id: User.find_by_credentials("Will4", "starwars").id)
 Bookshelf.create(name: "Sci-fi", user_id: User.find_by_credentials("Will4", "starwars").id)
 
-Book.create(title: "One Hundred Years of Solitude", author: "Gabriel Garcia Marquez", year: 1967, average_score: 5)
+Book.create(title: "Anna Karenina", author: "Tolstoy", year: 1873, average_score: 5)
+Book.create(title: "Crime and Punishment", author: "Dostoevsky", year: 1866, average_score: 4.5)
+
+BookshelfOwnership.create(
+  bookshelf_id: Bookshelf.find_by(name: "Russian Novels", user_id: User.find_by_credentials("Will", "starwars").id).id,
+  book_id: Book.find_by(title: "Anna Karenina")
+)
+
+BookshelfOwnership.create(
+  bookshelf_id: Bookshelf.find_by(name: "Russian Novels", user_id: User.find_by_credentials("Will", "starwars").id).id,
+  book_id: Book.find_by(title: "Crime and Punishment")
+)

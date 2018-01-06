@@ -4,6 +4,7 @@ json.bookshelves do
       json.id bookshelf.id
       json.name bookshelf.name
       json.userId bookshelf.user_id
+      json.bookIds bookshelf.book_ids
     end
   end
 end

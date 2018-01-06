@@ -8,20 +8,25 @@ class BookIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBooksByBookshelfId(this.props.bookshelf.id);
+    this.props.fetchBooksByBookshelfId(this.props.bookshelfId);
+  }
+
+  componentWillReceiveProps(props) {
+    if (props.location.pathname !== this.props.location.pathname) {
+      this.props.fetchBooksByBookshelfId(props.bookshelfId);
+    }
   }
 
   render() {
     let booksList;
-    if (Object.values(this.props.books).length > 0) {
-      booksList = Object.values(this.props.books).map((book) => {
-        return (
-            <BookIndexItem book={book} key={book.id} />
-        );
+
+      booksList = Object.values(this.props.bookshelfBooks).map((book) => {
+        if (book) {
+          return (
+              <BookIndexItem book={book} key={book.id} />
+          );
+        }
       });
-    } else {
-      booksList = (<tr></tr>);
-    }
     return (
       <table className="book-index-table">
         <tbody>
