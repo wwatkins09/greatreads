@@ -14,7 +14,6 @@ const mapStateToProps = function(state, ownProps) {
     bookshelves = owner.bookshelfIds.map((bookshelfId) => {
       return state.entities.bookshelves[bookshelfId];
     });
-    debugger
     books = bookshelf.bookIds.map((bookId) => {
       return state.entities.books[bookId];
     });
