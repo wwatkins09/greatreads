@@ -18,7 +18,7 @@ class NavBar extends React.Component {
       component = <SignInFormContainer />;
     }
     return (
-      <main className="sign-in">
+      <main className="navbar">
         <Link to="/" className="logo">
           greatreads
         </Link>
