@@ -12,7 +12,7 @@ const mapStateToProps = function (state, ownProps) {
   }
   let userBookshelves = [];
   if (state.entities.users[userId]) {
-    userBookshelves = state.entities.users[userId].bookshelfIds.map((bookshelfId) => {
+    userBookshelves = state.entities.users[userId].bookshelfIds.sort().map((bookshelfId) => {
       return state.entities.bookshelves[bookshelfId];
     });
     }
