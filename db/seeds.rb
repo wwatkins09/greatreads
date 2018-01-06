@@ -32,10 +32,10 @@ Book.create(title: "Crime and Punishment", author: "Dostoevsky", year: 1866, ave
 
 BookshelfOwnership.create(
   bookshelf_id: Bookshelf.find_by(name: "Russian Novels", user_id: User.find_by_credentials("Will", "starwars").id).id,
-  book_id: Book.find_by(title: "Anna Karenina")
+  book_id: Book.find_by(title: "Anna Karenina").id
 )
 
 BookshelfOwnership.create(
   bookshelf_id: Bookshelf.find_by(name: "Russian Novels", user_id: User.find_by_credentials("Will", "starwars").id).id,
-  book_id: Book.find_by(title: "Crime and Punishment")
+  book_id: Book.find_by(title: "Crime and Punishment").id
 )
