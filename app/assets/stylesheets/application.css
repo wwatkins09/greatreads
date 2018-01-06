@@ -41,16 +41,16 @@ li {
   display: flex;
   flex-direction: column;
 }
+.navbar {
+  min-height: 100px;
+  background-color: #F4F1EA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  margin: 0;
+}
 
- .sign-in {
-   min-height: 100px;
-   background-color: #F4F1EA;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   border-bottom: 1px solid gray;
-   margin: 0;
- }
 
  .logo {
    font-size: 24px;
@@ -65,16 +65,16 @@ li {
    align-items: center;
  }
 
- .navbar {
-   display: flex;
-   flex-direction: column;
-   align-content: center;
- }
 
  .navbar-form {
    justify-content: flex-end;
  }
 
+ .sign-in {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+ }
 
 .signin-button {
   background-color: #382110;
@@ -89,6 +89,11 @@ li {
 .signin-button:hover {
   background-color: #58371F;
   cursor: pointer;
+}
+
+.signin-button-demo-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .signup {

@@ -7,6 +7,7 @@ class SignInForm extends React.Component {
     this.state = {username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleDemoSignin = this.handleDemoSignin.bind(this);
   }
 
   handleChange(field) {
@@ -24,6 +25,12 @@ class SignInForm extends React.Component {
       });
   }
 
+  handleDemoSignin(event) {
+    event.preventDefault();
+
+    this.props.signIn({username: "Demo User", password: "starwars"})
+  }
+
   componentWillUnmount() {
     this.props.clearSessionAndUserErrors();
   }
@@ -33,7 +40,7 @@ class SignInForm extends React.Component {
       return (<li className="session-error" key={idx}>{error}</li>);
     });
       return (
-          <content className="navbar">
+          <content className="signin">
           <form className="navbar-form" onSubmit={this.handleSubmit}>
             <label>Username:
               <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.username}></input>
@@ -41,8 +48,11 @@ class SignInForm extends React.Component {
             <label>Password:
               <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
             </label>
-            <button className="signin-button">Log In!</button>
+              <button className="signin-button">Log In!</button>
           </form>
+          <div className="signin-button-demo-container">
+            <button className="signin-button" onClick={this.handleDemoSignin} >Demo Login!</button>
+          </div>
           <ul className="session-errors-list">
             {sessionErrorsList}
           </ul>
