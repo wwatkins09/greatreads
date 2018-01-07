@@ -22,7 +22,7 @@ export const receiveBooks = function(books) {
   };
 };
 
-export const receveBook = function(book) {
+export const receiveBook = function(book) {
   return {
     type: RECEIVE_BOOK,
     book

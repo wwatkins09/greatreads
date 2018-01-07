@@ -6,7 +6,7 @@ const booksReducer = function( oldState = {}, action ) {
     case RECEIVE_BOOKS:
       return action.books;
     case RECEIVE_BOOK:
-      return action.book;
+      return merge({}, oldState, {[action.book.id]: action.book});
     default:
       return oldState;
   }
