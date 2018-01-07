@@ -290,6 +290,11 @@ li {
   width: 50px;
 }
 
+.table-field-cover img {
+  width: 50px;
+  display: block;
+}
+
 .table-field-title {
   width: 25%;
 }
