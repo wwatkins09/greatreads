@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class BookIndexItem extends React.Component {
 
@@ -10,7 +11,9 @@ class BookIndexItem extends React.Component {
     return (
       <tr>
         <td className="table-field-cover">Cover</td>
-        <td className="table-field-title">{this.props.book.title}</td>
+        <td className="table-field-title">
+          <Link to={`/books/${this.props.book.id}`}>{this.props.book.title}</Link>
+        </td>
         <td className="table-field-author">{this.props.book.author}</td>
         <td className="table-field-avg-score">{this.props.book.averageScore}</td>
       </tr>

@@ -284,3 +284,7 @@ li {
 .table-field-title {
   width: 25%;
 }
+
+.table-field-title a {
+  color: #00635d;
+}
