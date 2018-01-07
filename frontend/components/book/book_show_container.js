@@ -8,7 +8,7 @@ const mapStateToProps = function (state, ownProps) {
     if (book) {
 
     } else {
-      book = {title: "", author: "", year: null, average_score: null};
+      book = {title: "", author: "", year: null, average_score: null, coverUrl: ""};
     }
   return {
     bookId: ownProps.match.params.bookId,
