@@ -22,14 +22,20 @@ class BookShow extends React.Component {
   render() {
     return (
       <div className="book-show">
-        <img src={this.props.book.coverUrl} alt="Cover"></img>
-        <p>{this.props.book.title}</p>
-        <p>by {this.props.book.author}</p>
-        <select defaultValue="want to read">
-          <option value="want to read">Want to Read</option>
-          <option value="reading">Currently Reading</option>
-          <option value="read">Read</option>
-        </select>
+
+        <content className="book-show-image-column">
+          <img src={this.props.book.coverUrl} alt="Cover"></img>
+          <select defaultValue="want to read">
+            <option value="want to read">Want to Read</option>
+            <option value="reading">Currently Reading</option>
+            <option value="read">Read</option>
+          </select>
+        </content>
+
+        <main className="book-show-body">
+          <p className="book-show-body-title">{this.props.book.title}</p>
+          <p>by {this.props.book.author}</p>
+        </main>
       </div>
     );
   }
