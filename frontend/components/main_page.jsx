@@ -5,6 +5,7 @@ import NewUserFormContainer from './user/new_user_form_container';
 import UserShowContainer from './user/user_show_container';
 import {connect} from 'react-redux';
 import BookshelfShowContainer from './bookshelf/bookshelf_show_container';
+import BookShowContainer from './book/book_show_container';
 
 const mapStateToProps = function (state) {
   return {
@@ -25,6 +26,7 @@ const MainPage = (props) => {
         {slashRoute}
         <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
         <ProtectedRoute exact path="/bookshelves/:bookshelfId" component={BookshelfShowContainer}/>
+        <ProtectedRoute exact path="/books/:bookId" component={BookShowContainer}/>
       </div>
     );
 };
