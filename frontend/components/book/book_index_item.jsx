@@ -11,7 +11,9 @@ class BookIndexItem extends React.Component {
     return (
       <tr>
         <td className="table-field-cover">
-          <img src={this.props.book.coverUrl} />
+          <Link to={`/books/${this.props.book.id}`}>
+            <img src={this.props.book.coverUrl} />
+          </Link>
         </td>
         <td className="table-field-title">
           <Link to={`/books/${this.props.book.id}`}>{this.props.book.title}</Link>
