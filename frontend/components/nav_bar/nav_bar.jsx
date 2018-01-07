@@ -12,16 +12,27 @@ class NavBar extends React.Component {
   render() {
 
     let component;
+    let navLinks;
     if (this.props.currentUserId) {
       component = <SignOutFormContainer />;
+      navLinks = <span className="navbar-links">
+        <Link to="/">Home</Link>
+        <Link to="/books">Books</Link>
+      </span>;
     } else {
       component = <SignInFormContainer />;
+      navLinks = <span className="navbar-links"></span>;
     }
     return (
       <main className="navbar">
-        <Link to="/" className="logo">
-          greatreads
-        </Link>
+        <content className="navbar-left">
+          <Link to="/" className="logo">
+            greatreads
+          </Link>
+          <div className="navbar-links-container">
+            {navLinks}
+          </div>
+        </content>
         <div className="navbar-form-container">
           {component}
         </div>
