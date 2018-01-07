@@ -22,6 +22,7 @@ class BookShow extends React.Component {
   render() {
     return (
       <div className="book-show">
+        <img src={this.props.book.coverUrl} alt="Cover"></img>
         <p>{this.props.book.title}</p>
         <p>by {this.props.book.author}</p>
         <select defaultValue="want to read">
