@@ -21,7 +21,15 @@ class BookShow extends React.Component {
 
   render() {
     return (
-      <p>{this.props.book.title}</p>
+      <div className="book-show">
+        <p>{this.props.book.title}</p>
+        <p>by {this.props.book.author}</p>
+        <select defaultValue="want to read">
+          <option value="want to read">Want to Read</option>
+          <option value="reading">Currently Reading</option>
+          <option value="read">Read</option>
+        </select>
+      </div>
     );
   }
 
