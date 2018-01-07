@@ -49,10 +49,10 @@ class SignInForm extends React.Component {
               <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
             </label>
               <button className="signin-button">Log In!</button>
+              <div className="signin-button-demo-container">
+                <button className="signin-button" onClick={this.handleDemoSignin} >Demo Login!</button>
+              </div>
           </form>
-          <div className="signin-button-demo-container">
-            <button className="signin-button" onClick={this.handleDemoSignin} >Demo Login!</button>
-          </div>
           <ul className="session-errors-list">
             {sessionErrorsList}
           </ul>
