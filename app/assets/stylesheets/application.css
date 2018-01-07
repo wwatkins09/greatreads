@@ -118,15 +118,22 @@ li {
    align-items: center;
  }
 
+ .signout {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
  .signout-button {
    height: 20px;
+   margin-left: 20px;
  }
 
  .signin {
    display: flex;
    flex-direction: column;
-   align-items: center;
-   justify-content: center;
+   align-items: flex-end;
+   justify-content: flex-end;
  }
 
 .signin-button {
@@ -202,7 +209,8 @@ li {
 }
 
 .session-errors-list {
-  padding: 0px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .session-error {
