@@ -37,7 +37,7 @@ class BookIndex extends React.Component {
             <th className="table-field-title">title</th>
             <th className="table-field-author">author</th>
             <th className="table-field-avg-score">avg rating</th>
-            <th className="table-field-rating">rating</th>
+            <th className="table-field-delete"></th>
           </tr>
           {booksList}
         </tbody>
