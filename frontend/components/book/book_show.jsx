@@ -18,10 +18,15 @@ class BookShow extends React.Component {
 
   componentWillReceiveProps(props) {
     if (props.match.params.bookId !== this.props.match.params.bookId) {
+      this.props.clearBookshelfOwnershipErrors();
       this.props.fetchBook(props.match.params.bookId).then(() => {}, () => {
         this.props.history.push("/");
       });
     }
+  }
+
+  componentWillUnmount() {
+    this.props.clearBookshelfOwnershipErrors();
   }
 
   toggleBookshelves(event) {

@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import BookShow from './book_show';
 import {fetchBook} from '../../actions/book_actions';
 import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
-import {createBookshelfOwnership, fetchBookshelfOwnershipsByBookshelfId} from '../../actions/bookshelf_ownership_actions';
+import {createBookshelfOwnership, fetchBookshelfOwnershipsByBookshelfId, clearBookshelfOwnershipErrors} from '../../actions/bookshelf_ownership_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = function (state, ownProps) {
@@ -34,7 +34,8 @@ const mapDispatchToProps = function (dispatch) {
     fetchBook: (bookId) => dispatch(fetchBook(bookId)),
     fetchUserBookshelves: (userId) => dispatch(fetchUserBookshelves(userId)),
     createBookshelfOwnership: (bookshelfOwnership) => dispatch(createBookshelfOwnership(bookshelfOwnership)),
-    fetchBookshelfOwnershipsByBookshelfId: (bookshelfId) => dispatch(fetchBookshelfOwnershipsByBookshelfId(bookshelfId))
+    fetchBookshelfOwnershipsByBookshelfId: (bookshelfId) => dispatch(fetchBookshelfOwnershipsByBookshelfId(bookshelfId)),
+    clearBookshelfOwnershipErrors: () => dispatch(clearBookshelfOwnershipErrors())
   };
 };
 
