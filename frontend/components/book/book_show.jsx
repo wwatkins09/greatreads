@@ -49,8 +49,12 @@ class BookShow extends React.Component {
 
   render() {
     let readStatus = "Add to bookshelf:";
-    
-
+    const ctx = this;
+        this.props.userBookshelves.forEach((bookshelf) => {
+        if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(ctx.props.bookId))) {
+          readStatus = bookshelf.name;
+        }
+      })
 
     let toggleMenu;
     if (this.state.toggled) {
