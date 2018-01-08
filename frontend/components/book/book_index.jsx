@@ -23,7 +23,7 @@ class BookIndex extends React.Component {
       booksList = Object.values(this.props.bookshelfBooks).map((book) => {
         if (book) {
           return (
-              <BookIndexItem book={book} key={book.id} />
+              <BookIndexItem book={book} key={book.id} removeBookshelfOwnership={this.props.removeBookshelfOwnership} />
           );
         }
       });
