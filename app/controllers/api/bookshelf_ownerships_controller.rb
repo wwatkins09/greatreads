@@ -12,9 +12,18 @@ class Api::BookshelfOwnershipsController < ApplicationController
 
   def create
     @bookshelf_ownership = BookshelfOwnership.new(bookshelf_ownership_params)
-    default_names = []
 
-    # current_user.bookshelf_ownerships.where(book_id: @bookshelf_ownership.book_id).
+    if Bookshelf.find(@bookshelf_ownership.bookshelf_id).default_shelf == true
+      # get all bookshelf ownerships belonging to the current user and the book being added
+      current_user.bookshelf_ownerships.where({book_id: @bookshelf_ownership.book_id}).each do |bookshelf_ownership|
+        bookshelf = Bookshelf.find(bookshelf_ownership.bookshelf_id)
+        if bookshelf.default_shelf == true
+          bookshelf_ownership.destroy!
+        end
+      end
+
+
+    end
 
     if @bookshelf_ownership.save
       render "api/bookshelf_ownerships/show"
