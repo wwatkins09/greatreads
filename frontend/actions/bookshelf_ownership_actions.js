@@ -16,6 +16,14 @@ export const createBookshelfOwnership = function(bookshelfOwnership) {
   };
 };
 
+export const fetchBookshelfOwnershipsByBookId = function(bookId) {
+  return function(dispatch) {
+    return APIBookshelfOwnershipUtil.fetchBookshelfOwnershipsByBookId(bookId).then((bookshelfOwnerships) => {
+      dispatch(receiveBookshelfOwnerships(bookshelfOwnerships));
+    });
+  };
+};
+
 export const fetchBookshelfOwnershipsByBookshelfId = function(bookshelfId) {
   return function(dispatch) {
     return APIBookshelfOwnershipUtil.fetchBookshelfOwnershipsByBookshelfId(bookshelfId).then((bookshelfOwnerships) => {

@@ -5,6 +5,8 @@ const bookshelfOwnershipsReducer = function(oldState={}, action) {
   switch(action.type) {
     case RECEIVE_BOOKSHELF_OWNERSHIP:
       return merge({}, oldState, {[action.bookshelfOwnership.id]: action.bookshelfOwnership});
+    case RECEIVE_BOOKSHELF_OWNERSHIPS:
+      return merge({}, oldState, action.bookshelfOwnerships);
     default:
       return oldState;
   }

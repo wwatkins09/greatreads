@@ -2,7 +2,10 @@ class Api::BookshelfOwnershipsController < ApplicationController
 
   def index
     if params[:bookshelf_id]
-      @bookshelf_ownerships = BookshelfOwnership.find_by(bookshelf_id: bookshelf_id)
+      @bookshelf_ownerships = Bookshelf.find(params[:bookshelf_id]).bookshelf_ownerships
+      render "api/bookshelf_ownerships/index"
+    elsif params[:book_id]
+      @bookshelf_ownerships = Book.find(params[:book_id]).bookshelf_ownerships
       render "api/bookshelf_ownerships/index"
     end
   end
