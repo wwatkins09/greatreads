@@ -92,7 +92,7 @@ class BookShow extends React.Component {
 
         <main className="book-show-body">
           <p className="book-show-body-title">{this.props.book.title}</p>
-          <p>by {this.props.book.author}</p>
+          <p>by {this.props.book.author} ({this.props.book.year})</p>
           <p>{this.props.book.description}</p>
         </main>
       </div>
