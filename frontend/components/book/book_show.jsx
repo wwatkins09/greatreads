@@ -70,6 +70,9 @@ class BookShow extends React.Component {
             </button>
           </div>
           {toggleMenu}
+          <div className="bookshelf-ownership-errors">
+            {this.props.bookshelfOwnershipErrors}
+          </div>
         </content>
 
         <main className="book-show-body">

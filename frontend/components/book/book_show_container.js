@@ -24,7 +24,8 @@ const mapStateToProps = function (state, ownProps) {
     bookId: ownProps.match.params.bookId,
     book,
     currentUserId: state.session.currentUserId,
-    userBookshelves
+    userBookshelves,
+    bookshelfOwnershipErrors: state.errors.bookshelfOwnership
   };
 };
 
