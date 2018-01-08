@@ -2,6 +2,7 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
+  after_create :create_default_shelves
   after_initialize :ensure_session_token
 
   has_many :bookshelves, dependent: :destroy
@@ -38,6 +39,12 @@ class User < ApplicationRecord
     else
       nil
     end
+  end
+
+  def create_default_shelves
+    Bookshelf.create(name: "Read", user_id: self.id)
+    Bookshelf.create(name: "Currently Reading", user_id: self.id)
+    Bookshelf.create(name: "Want to Read", user_id: self.id)
   end
 
 

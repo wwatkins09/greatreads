@@ -1,11 +1,11 @@
   json.user do
     json.id user.id
     json.username user.username
-    json.bookshelfIds user.bookshelf_ids
+    json.bookshelfIds user.bookshelf_ids.sort
   end
 
   json.bookshelves do
-    user.bookshelves.each do |bookshelf|
+    user.bookshelves.sort_by {|bookshelf| bookshelf.id}.each do |bookshelf|
       json.set! bookshelf.id, bookshelf
     end
   end
