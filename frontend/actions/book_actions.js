@@ -9,6 +9,12 @@ export const fetchBooksByBookshelfId = function(bookshelfId) {
   };
 };
 
+export const fetchAllBooks = function() {
+  return function(dispatch) {
+    return APIBookUtil.fetchAllBooks().then((books) => dispatch(receiveBooks(books)));
+  };
+};
+
 export const fetchBook = function(bookId) {
   return function(dispatch) {
     return APIBookUtil.fetchBook(bookId).then((book) => dispatch(receiveBook(book)));
