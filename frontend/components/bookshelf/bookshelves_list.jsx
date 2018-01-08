@@ -10,7 +10,7 @@ export default function ({bookshelves}) {
   });
   return (
     <div>
-    { bookshelvesList}
+    { bookshelvesList }
     </div>
   );
 }
