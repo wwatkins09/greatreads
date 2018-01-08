@@ -5,6 +5,9 @@ class BookShow extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {toggled: false}
+
+    this.toggleBookshelves = this.toggleBookshelves.bind(this);
   }
 
   componentDidMount() {
@@ -19,17 +22,37 @@ class BookShow extends React.Component {
     }
   }
 
+  toggleBookshelves(event) {
+    event.preventDefault();
+    this.setState({toggled: !this.state.toggled})
+  }
+
   render() {
+    let bookshelfName = "Want to Read";
+
+    let toggleMenu;
+    if (this.state.toggled) {
+      toggleMenu = (
+        <ul className="book-show-toggle-list">
+          <li>Working!</li>
+          <li>Working!</li>
+        </ul>
+      );
+    }
+
     return (
       <div className="book-show">
 
         <content className="book-show-image-column">
           <img src={this.props.book.coverUrl} alt="Cover"></img>
-          <select defaultValue="want to read">
-            <option value="want to read">Want to Read</option>
-            <option value="reading">Currently Reading</option>
-            <option value="read">Read</option>
-          </select>
+          <div className="book-show-button-container">
+            <div className="book-show-bookshelf-name-container">
+              <span className="book-show-bookshelf-name">{bookshelfName}</span>
+            </div>
+            <button className="book-show-button" onClick={this.toggleBookshelves}>v
+            </button>
+          </div>
+          {toggleMenu}
         </content>
 
         <main className="book-show-body">
