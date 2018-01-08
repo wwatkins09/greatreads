@@ -1,5 +1,12 @@
 class Api::BookshelfOwnershipsController < ApplicationController
 
+  def index
+    if params[:bookshelf_id]
+      @bookshelf_ownerships = BookshelfOwnership.find_by(bookshelf_id: bookshelf_id)
+      render "api/bookshelf_ownerships/index"
+    end
+  end
+
   def create
     @bookshelf_ownership = BookshelfOwnership.new(bookshelf_ownership_params)
     if @bookshelf_ownership.save

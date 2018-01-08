@@ -1,3 +1,12 @@
+export const fetchBookshelfOwnershipsByBookshelfId = function(bookshelfId) {
+  return $.ajax({
+    method: 'GET',
+    url: `api/bookshelf_ownerships`,
+    data: {bookshelf_id: bookshelfId}
+  });
+};
+
+
 export const createBookshelfOwnership = function(bookshelfOwnership) {
   return $.ajax({
     method: 'POST',
