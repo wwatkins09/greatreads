@@ -30,8 +30,11 @@ class BookShow extends React.Component {
   }
 
   handleBookshelfSelect(bookshelf) {
-    return function(event) {
+    return (event) => {
       event.preventDefault();
+
+      this.props.createBookshelfOwnership({bookshelf_id: bookshelf.id, book_id: this.props.book.id})
+
     }
   }
 

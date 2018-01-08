@@ -1,10 +1,7 @@
-export const createBookshelfOwnership = function(bookshelfId, bookId) {
+export const createBookshelfOwnership = function(bookshelfOwnership) {
   return $.ajax({
-    method: 'GET',
+    method: 'POST',
     url: 'api/bookshelf_ownerships',
-    data: {
-      bookshelf_id: bookshelfId,
-      book_id: bookId
-    }
+    data: {bookshelf_ownership: bookshelfOwnership}
   });
 };
