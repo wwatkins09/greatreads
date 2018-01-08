@@ -13,7 +13,8 @@ class BookShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchBook(this.props.bookId);
-    this.props.fetchUserBookshelves(this.props.currentUserId)
+    this.props.fetchUserBookshelves(this.props.currentUserId);
+    this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId);
   }
 
   componentWillReceiveProps(props) {
@@ -38,7 +39,9 @@ class BookShow extends React.Component {
     return (event) => {
       event.preventDefault();
 
-      this.props.createBookshelfOwnership({bookshelf_id: bookshelf.id, book_id: this.props.book.id})
+      this.props.createBookshelfOwnership({bookshelf_id: bookshelf.id, book_id: this.props.book.id}).then(() => {
+        this.props.history.push(`/bookshelves/${bookshelf.id}`)
+      })
 
     }
   }

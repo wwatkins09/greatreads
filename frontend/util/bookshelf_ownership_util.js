@@ -6,6 +6,13 @@ export const fetchBookshelfOwnershipsByBookshelfId = function(bookshelfId) {
   });
 };
 
+export const fetchBookshelfOwnershipsByBookId = function(bookId) {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/bookshelf_ownerships',
+    data: {book_id: bookId}
+  });
+};
 
 export const createBookshelfOwnership = function(bookshelfOwnership) {
   return $.ajax({
