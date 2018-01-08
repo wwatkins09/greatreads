@@ -12,6 +12,7 @@ class BookShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchBook(this.props.bookId);
+    this.props.fetchUserBookshelves(this.props.currentUserId)
   }
 
   componentWillReceiveProps(props) {
@@ -50,7 +51,7 @@ class BookShow extends React.Component {
             <div className="book-show-bookshelf-name-container">
               <span className="book-show-bookshelf-name">{bookshelfName}</span>
             </div>
-            <button className="book-show-button" onClick={this.toggleBookshelves}>v
+            <button className="book-show-button" onClick={this.toggleBookshelves}>
             </button>
           </div>
           {toggleMenu}

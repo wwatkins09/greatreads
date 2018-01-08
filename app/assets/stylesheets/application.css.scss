@@ -422,9 +422,11 @@ li {
   width: 27px;
   padding: 5px;
   border-width: 0;
-  background-color: #90EE90;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  background-image: url(asset-path("dropdown-arrow.png"));
+  background-position: center center;
+  background-size: 27px 27px;
 }
 
 .book-show-button:hover {
@@ -442,5 +444,13 @@ li {
   border: 1px solid #cccccc;
   border-radius: 3px;
   font-size: 12px;
+}
 
+.book-show-toggle-list li {
+width: 100%
+}
+
+.book-show-toggle-list li:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
 }
