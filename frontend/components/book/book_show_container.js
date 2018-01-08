@@ -6,18 +6,24 @@ import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = function (state, ownProps) {
   let book = state.entities.books[ownProps.match.params.bookId];
+  let userBookshelves;
     if (book) {
     } else {
       book = {title: "", author: "", year: null, average_score: null, coverUrl: ""};
     }
     if (state.entities.users[state.session.currentUserId]) {
-      
+      userBookshelves = state.entities.users[state.session.currentUserId].bookshelfIds.map((bookshelfId) => {
+        return (
+          state.entities.bookshelves[bookshelfId]
+        );
+      });
     }
 
   return {
     bookId: ownProps.match.params.bookId,
     book,
-    currentUserId: state.session.currentUserId
+    currentUserId: state.session.currentUserId,
+    userBookshelves
   };
 };
 

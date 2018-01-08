@@ -33,11 +33,16 @@ class BookShow extends React.Component {
 
     let toggleMenu;
     if (this.state.toggled) {
+      const toggleMenuItems = this.props.userBookshelves.map((bookshelf) => {
+        if (bookshelf) {
+          return (
+            <li key={bookshelf.id}>{bookshelf.name}</li>
+          );
+        }
+      })
       toggleMenu = (
         <ul className="book-show-toggle-list">
-          <li>Working!</li>
-          <li>Working!</li>
-          <li>Working!</li>
+          {toggleMenuItems}
         </ul>
       );
     }
