@@ -10,7 +10,6 @@ class BookIndexItem extends React.Component {
 
   handleRemove(event) {
     event.preventDefault();
-    debugger
   }
 
   render() {
