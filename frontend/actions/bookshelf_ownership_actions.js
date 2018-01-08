@@ -3,6 +3,7 @@ import * as APIBookshelfOwnershipUtil from '../util/bookshelf_ownership_util.js'
 export const RECEIVE_BOOKSHELF_OWNERSHIP = 'RECEIVE_BOOKSHELF_OWNERSHIP';
 export const RECEIVE_BOOKSHELF_OWNERSHIPS = 'RECEIVE_BOOKSHELF_OWNERSHIPS';
 export const RECEIVE_BOOKSHELF_OWNERSHIP_ERRORS = 'RECEIVE_BOOKSHELF_OWNERSHIP_ERRORS';
+export const CLEAR_BOOKSHELF_OWNERSHIP_ERRORS = 'CLEAR_BOOKSHELF_OWNERSHIP_ERRORS';
 
 export const createBookshelfOwnership = function(bookshelfOwnership) {
   return function(dispatch) {
@@ -44,5 +45,11 @@ export const receiveBookshelfOwnershipErrors = function(errors) {
   return {
     type: RECEIVE_BOOKSHELF_OWNERSHIP_ERRORS,
     errors
+  };
+};
+
+export const clearBookshelfOwnershipErrors = function() {
+  return {
+    type: CLEAR_BOOKSHELF_OWNERSHIP_ERRORS
   };
 };
