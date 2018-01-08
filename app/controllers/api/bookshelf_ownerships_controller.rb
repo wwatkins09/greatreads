@@ -10,6 +10,13 @@ class Api::BookshelfOwnershipsController < ApplicationController
     end
   end
 
+  def show
+    @bookshelf_ownership = BookshelfOwnership.find_by(bookshelf_id: params[:bookshelf_id], book_id: params[:book_id])
+    if @bookshelf_ownership
+      render "api.bookshelf_ownerships/show"
+    end
+  end
+
   def create
     @bookshelf_ownership = BookshelfOwnership.new(bookshelf_ownership_params)
 
@@ -36,7 +43,7 @@ class Api::BookshelfOwnershipsController < ApplicationController
   end
 
   def destroy
-    @bookshelf_ownership = BookshelfOwnership.find(bookshelf_id: params[:bookshelf_id], book_id: params[:book_id])
+    @bookshelf_ownership = BookshelfOwnership.find(params[:bookshelf_ownership_id])
     @bookshelf_ownership.destroy
     render "api/bookshelf_ownerships/show"
   end

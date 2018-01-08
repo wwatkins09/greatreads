@@ -36,11 +36,9 @@ export const fetchBookshelfOwnershipsByBookshelfId = function(bookshelfId) {
   };
 };
 
-export const deleteBookshelfOwnership = function(bookshelfOwnershipId) {
+export const deleteBookshelfOwnership = function(params) {
   return function(dispatch) {
-    return APIBookshelfOwnershipUtil.deleteBookshelfOwnership(bookshelfOwnershipId).then((bookshelfOwnership) => {
-      dispatch(removeBookshelfOwnership(bookshelfOwnership));
-    });
+    return APIBookshelfOwnershipUtil.deleteBookshelfOwnership(params);
   };
 };
 

@@ -44,6 +44,12 @@ class Api::BookshelvesController < ApplicationController
     render "api/bookshelves/show"
   end
 
+  def delete_ownership
+    ownership = BookshelfOwnership.find_by(bookshelf_id: params[:id], book_id: params[:book_id])
+    ownership.destroy
+
+  end
+
   private
   def bookshelf_params
     params.require(:bookshelf).permit(:name, :user_id)
