@@ -8,6 +8,7 @@ class BookShow extends React.Component {
     this.state = {toggled: false}
 
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
+    this.handleBookshelfSelect = this.handleBookshelfSelect.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +29,12 @@ class BookShow extends React.Component {
     this.setState({toggled: !this.state.toggled})
   }
 
+  handleBookshelfSelect(bookshelf) {
+    return function(event) {
+      event.preventDefault();
+    }
+  }
+
   render() {
     let bookshelfName = "Want to Read";
 
@@ -36,7 +43,7 @@ class BookShow extends React.Component {
       const toggleMenuItems = this.props.userBookshelves.map((bookshelf) => {
         if (bookshelf) {
           return (
-            <li key={bookshelf.id}>{bookshelf.name}</li>
+            <li onClick={this.handleBookshelfSelect(bookshelf)} key={bookshelf.id}>{bookshelf.name}</li>
           );
         }
       })
