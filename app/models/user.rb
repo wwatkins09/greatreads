@@ -6,6 +6,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :bookshelves, dependent: :destroy
+  has_many :bookshelf_ownerships, through: :bookshelves
   has_many :reviews
   has_many :books,
   through: :bookshelves
@@ -42,9 +43,9 @@ class User < ApplicationRecord
   end
 
   def create_default_shelves
-    Bookshelf.create(name: "Read", user_id: self.id)
-    Bookshelf.create(name: "Currently Reading", user_id: self.id)
-    Bookshelf.create(name: "Want to Read", user_id: self.id)
+    Bookshelf.create(name: "Read", user_id: self.id, default_shelf: true)
+    Bookshelf.create(name: "Currently Reading", user_id: self.id, default_shelf: true)
+    Bookshelf.create(name: "Want to Read", user_id: self.id, default_shelf: true)
   end
 
 

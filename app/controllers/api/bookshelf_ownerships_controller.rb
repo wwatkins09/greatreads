@@ -12,10 +12,14 @@ class Api::BookshelfOwnershipsController < ApplicationController
 
   def create
     @bookshelf_ownership = BookshelfOwnership.new(bookshelf_ownership_params)
+    default_names = []
+
+    # current_user.bookshelf_ownerships.where(book_id: @bookshelf_ownership.book_id).
+
     if @bookshelf_ownership.save
       render "api/bookshelf_ownerships/show"
     else
-      render json: @bookshelf_ownership.errors.full_messages, status: 422
+      render json: ["Bookshelf already has this book!"], status: 422
     end
   end
 
