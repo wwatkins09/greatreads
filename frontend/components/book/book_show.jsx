@@ -36,6 +36,7 @@ class BookShow extends React.Component {
         <ul className="book-show-toggle-list">
           <li>Working!</li>
           <li>Working!</li>
+          <li>Working!</li>
         </ul>
       );
     }
