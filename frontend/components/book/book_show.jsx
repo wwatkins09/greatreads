@@ -46,8 +46,11 @@ class BookShow extends React.Component {
     }
   }
 
+
   render() {
-    let bookshelfName = "Want to Read";
+    let readStatus = "Add to bookshelf:";
+    
+
 
     let toggleMenu;
     if (this.state.toggled) {
@@ -72,7 +75,7 @@ class BookShow extends React.Component {
           <img src={this.props.book.coverUrl} alt="Cover"></img>
           <div className="book-show-button-container">
             <div className="book-show-bookshelf-name-container">
-              <span className="book-show-bookshelf-name">{bookshelfName}</span>
+              <span className="book-show-bookshelf-name">{readStatus}</span>
             </div>
             <button className="book-show-button" onClick={this.toggleBookshelves}>
             </button>
