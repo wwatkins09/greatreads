@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import BookShow from './book_show';
 import {fetchBook} from '../../actions/book_actions';
 import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
+import {createBookshelfOwnership} from '../../actions/bookshelf_ownership_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = function (state, ownProps) {
@@ -9,7 +10,7 @@ const mapStateToProps = function (state, ownProps) {
   let userBookshelves;
     if (book) {
     } else {
-      book = {title: "", author: "", year: null, average_score: null, coverUrl: ""};
+      book = {id: null, title: "", author: "", year: null, average_score: null, coverUrl: ""};
     }
     if (state.entities.users[state.session.currentUserId]) {
       userBookshelves = state.entities.users[state.session.currentUserId].bookshelfIds.map((bookshelfId) => {
@@ -30,7 +31,8 @@ const mapStateToProps = function (state, ownProps) {
 const mapDispatchToProps = function (dispatch) {
   return {
     fetchBook: (bookId) => dispatch(fetchBook(bookId)),
-    fetchUserBookshelves: (userId) => dispatch(fetchUserBookshelves(userId))
+    fetchUserBookshelves: (userId) => dispatch(fetchUserBookshelves(userId)),
+    createBookshelfOwnership: (bookshelfOwnership) => dispatch(createBookshelfOwnership(bookshelfOwnership))
   };
 };
 

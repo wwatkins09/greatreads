@@ -1,4 +1,4 @@
-class bookshelfOwnershipsController < ApplicationController
+class Api::BookshelfOwnershipsController < ApplicationController
 
   def create
     @bookshelf_ownership = BookshelfOwnership.new(bookshelf_ownership_params)

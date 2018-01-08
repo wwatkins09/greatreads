@@ -2,9 +2,9 @@ import * as APIBookshelfOwnershipUtil from '../util/bookshelf_ownership_util.js'
 
 export const RECEIVE_BOOKSHELF_OWNERSHIP = 'RECEIVE_BOOKSHELF_OWNERSHIP';
 
-export const createBookshelfOwnership = function(bookshelfId, bookId) {
+export const createBookshelfOwnership = function(bookshelfOwnership) {
   return function(dispatch) {
-    return APIBookshelfOwnershipUtil.createBookshelfOwnership(bookshelfId, bookId).then((bookshelfOwnership) => {
+    return APIBookshelfOwnershipUtil.createBookshelfOwnership(bookshelfOwnership).then((bookshelfOwnership) => {
       dispatch(receiveBookshelfOwnership(bookshelfOwnership));
     });
   };
