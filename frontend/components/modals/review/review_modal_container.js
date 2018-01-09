@@ -3,7 +3,8 @@ import ReviewModal from './review_modal';
 
 const mapStateToProps = function (state, {book}) {
   return {
-    book
+    book,
+    currentUserId: state.session.currentUserId
   };
 };
 
