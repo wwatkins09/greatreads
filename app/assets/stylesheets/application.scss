@@ -438,7 +438,7 @@ li {
 
 .book-show-bookshelf-name-container {
   margin-left: 50px;
-  width: 105px;
+  width: 110px;
   padding: 4px 0px 5px 0px;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
@@ -448,6 +448,7 @@ li {
 }
 
 .book-show-bookshelf-name {
+  padding: 0px 5px;
   width: 100%;
   font-size: 13px;
   font-family: "Lato", Arial, serif;
@@ -468,8 +469,6 @@ li {
   border-bottom-right-radius: 3px;
   color: white;
   background-color: #409D69;
-  background-position: center center;
-  background-size: 27px 27px;
 }
 
 .book-show-button:hover {

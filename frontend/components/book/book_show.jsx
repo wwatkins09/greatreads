@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Redirect, withRouter} from 'react-router-dom';
-import ReviewModal from '../review/review_modal';
+import ReviewModalContainer from '../modals/review/review_modal_container';
 
 class BookShow extends React.Component {
 
@@ -50,6 +50,7 @@ class BookShow extends React.Component {
 
   handleReview(event) {
     event.preventDefault();
+    this.props.toggleReviewModal();
   }
 
 
@@ -80,7 +81,7 @@ class BookShow extends React.Component {
 
     return (
       <div className="book-show">
-        <ReviewModal book={this.props.book} />
+        <ReviewModalContainer book={this.props.book} />
         <content className="book-show-image-column">
           <img src={this.props.book.coverUrl} alt="Cover"></img>
           <div className="book-show-button-container">
@@ -92,7 +93,7 @@ class BookShow extends React.Component {
           </div>
           {toggleMenu}
           <div className="review-toggle-button-container">
-            <button className="review-toggle-button">Leave a review!</button>
+            <button className="review-toggle-button" onClick={this.handleReview}>Leave a review!</button>
           </div>
           <div className="bookshelf-ownership-errors">
             {this.props.bookshelfOwnershipErrors}
