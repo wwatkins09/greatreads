@@ -557,6 +557,7 @@ width: 100%
   font-family: "Merriweather", serif;
   color: #333333;
   font-weight: bold;
+  margin-top: 0;
 }
 
 .review-modal-author {
@@ -574,11 +575,14 @@ width: 100%
   font-family: "Lato", sans-serif;
   font-size: 14px;
   color: #181818;
+  margin-bottom: 10px;
 }
 
 .review-modal-body textarea {
   width: 400px;
   height: 150px;
+  font-family: "Merriweather", serif;
+  font-size: 14px;
 }
 
 .full-screen-modal-toggled {
@@ -597,4 +601,30 @@ width: 100%
 
 .radio input {
   width: 20px;
+}
+
+.review-submit-button {
+  font-size: 14px;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  font-family: "Lato", sans-serif;
+  color: #333333;
+  background-color: #F4F1EA;
+  padding: 8px 12px;
+}
+
+.review-submit-button:hover {
+  cursor: pointer;
+  background-color: #ede6d6;
+}
+
+.review-modal-x {
+  padding: 2px 0px;
+  margin: 0;
+  font-family: sans-serif;
+  text-align: right;
+}
+
+.review-modal-x:hover {
+  cursor: pointer;
 }

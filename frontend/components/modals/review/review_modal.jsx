@@ -9,6 +9,7 @@ class ReviewModal extends React.Component {
     this.handleScoreChange = this.handleScoreChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
   }
 
   componentWillReceiveProps(props) {
@@ -16,18 +17,20 @@ class ReviewModal extends React.Component {
   }
 
   handleScoreChange(event) {
-    event.preventDefault();
     this.setState({score: event.currentTarget.value});
   }
 
   handleBodyChange(event) {
-    event.preventDefault();
     this.setState({body: event.currentTarget.value});
   }
 
   handleSubmit(event) {
     event.preventDefault();
     this.props.createReview(this.state);
+  }
+
+  handleModalClose(event) {
+    this.props.toggleReviewModal();
   }
 
   render() {
@@ -37,34 +40,34 @@ class ReviewModal extends React.Component {
     }
 
     if (this.props.book) {
-
     return (
       <div className="review-modal">
         <main className={className}>
+          <p onClick={this.handleModalClose} className="review-modal-x">x</p>
           <form onSubmit={this.handleSubmit}>
             <p className="review-modal-title">{this.props.book.title}</p>
             <p className="review-modal-author">by {this.props.book.author}</p>
             <p className="review-modal-rating">My rating: </p>
             <label className="radio">
-            <input type="radio" name="score" value="1" onChange={this.handleScoreChange}></input>Didn't like it
+            <input type="radio" name="score" value="1" checked={this.state.score === '1'} onChange={this.handleScoreChange} />Didn't like it
           </label>
           <label className="radio">
-            <input type="radio" name="score" value="2" onChange={this.handleScoreChange}></input>It was OK
+            <input type="radio" name="score" value="2" checked={this.state.score === '2'} onChange={this.handleScoreChange} />It was OK
           </label>
           <label className="radio">
-            <input type="radio" name="score" value="3" onChange={this.handleScoreChange}></input>Liked it
+            <input type="radio" name="score" value="3" checked={this.state.score === '3'} onChange={this.handleScoreChange} />Liked it
           </label>
           <label className="radio">
-            <input type="radio" name="score" value="4" onChange={this.handleScoreChange}></input>Really liked it
+            <input type="radio" name="score" value="4" checked={this.state.score === '4'} onChange={this.handleScoreChange} />Really liked it
           </label>
           <label className="radio">
-            <input type="radio" name="score" value="5" onChange={this.handleScoreChange}></input>It was amazing
+            <input type="radio" name="score" value="5" checked={this.state.score === '5'} onChange={this.handleScoreChange} />It was amazing
           </label>
             <div className="review-modal-body">
               <p>What did you think?</p>
               <textarea onChange={this.handleBodyChange} value={this.state.body}></textarea>
             </div>
-          <button>Submit review!</button>
+          <button className="review-submit-button">Submit review!</button>
         </form>
       </main>
       </div>
