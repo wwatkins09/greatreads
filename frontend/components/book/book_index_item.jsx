@@ -10,10 +10,14 @@ class BookIndexItem extends React.Component {
 
   handleRemove(event) {
     event.preventDefault();
-    this.props.deleteBookshelfOwnership({bookshelfId: this.props.bookshelfId, bookId: this.props.book.id});
+    this.props.deleteBookshelfOwnership({bookshelfId: this.props.bookshelf.id, bookId: this.props.book.id});
   }
 
   render() {
+    let button;
+    if (this.props.currentUserId === this.props.bookshelf.userId) {
+      button = (<button onClick={this.handleRemove}>Remove book</button>);
+    }
     return (
       <tr>
         <td className="table-field-cover">
@@ -27,7 +31,7 @@ class BookIndexItem extends React.Component {
         <td className="table-field-author">{this.props.book.author}</td>
         <td className="table-field-avg-score">{this.props.book.averageScore}</td>
         <td className="table-field-delete">
-          <button onClick={this.handleRemove}>Remove book</button>
+          {button}
         </td>
       </tr>
     );

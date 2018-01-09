@@ -24,9 +24,11 @@ class BookIndex extends React.Component {
         if (book) {
           return (
               <BookIndexItem book={book}
-                bookshelfId={this.props.bookshelfId}
                 key={book.id}
-                deleteBookshelfOwnership={this.props.deleteBookshelfOwnership} />
+                bookshelf={this.props.bookshelf}
+                deleteBookshelfOwnership={this.props.deleteBookshelfOwnership}
+                currentUserId={this.props.currentUserId}
+              />
           );
         }
       });

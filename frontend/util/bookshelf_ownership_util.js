@@ -22,9 +22,9 @@ export const createBookshelfOwnership = function(bookshelfOwnership) {
   });
 };
 
-export const deleteBookshelfOwnership = function(params) {
+export const deleteBookshelfOwnership = function(args) {
   return $.ajax({
     method: 'DELETE',
-    url: `api/bookshelves/${params.bookshelfId}/${params.bookId}`
+    url: `api/bookshelves/${args.bookshelfId}/${args.bookId}`
   });
 };
