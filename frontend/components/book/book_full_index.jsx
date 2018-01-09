@@ -1,5 +1,5 @@
 import React from 'react';
-import BookIndexItem from './book_index_item';
+import BookFullIndexItem from './book_full_index_item';
 
 class BookFullIndex extends React.Component {
 
@@ -17,7 +17,7 @@ class BookFullIndex extends React.Component {
       booksList = Object.values(this.props.books).map((book) => {
         if (book) {
           return (
-              <BookIndexItem book={book} key={book.id} />
+              <BookFullIndexItem book={book} key={book.id} />
           );
         }
       });
@@ -33,7 +33,6 @@ class BookFullIndex extends React.Component {
                 <th className="table-field-title">title</th>
                 <th className="table-field-author">author</th>
                 <th className="table-field-avg-score">avg rating</th>
-                <th className="table-field-rating">rating</th>
               </tr>
               {booksList}
             </tbody>
