@@ -81,7 +81,7 @@ class BookShow extends React.Component {
             <div className="book-show-bookshelf-name-container">
               <span className="book-show-bookshelf-name">{readStatus}</span>
             </div>
-            <button className="book-show-button" onClick={this.toggleBookshelves}>
+            <button className="book-show-button" onClick={this.toggleBookshelves}>▼
             </button>
           </div>
           {toggleMenu}
