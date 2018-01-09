@@ -21,6 +21,12 @@ export const fetchReviewsByBookId = function(bookId) {
   };
 };
 
+export const createReview = function(review) {
+  return function(dispatch) {
+    return APIReviewUtil.createReview(review).then((review) => dispatch(receiveReview(review)));
+  };
+};
+
 export const receiveReview = function(review) {
   return {
     type: RECEIVE_REVIEW,
