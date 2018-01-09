@@ -80,6 +80,7 @@ class BookShow extends React.Component {
 
     return (
       <div className="book-show">
+        <ReviewModal book={this.props.book} />
         <content className="book-show-image-column">
           <img src={this.props.book.coverUrl} alt="Cover"></img>
           <div className="book-show-button-container">
