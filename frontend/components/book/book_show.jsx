@@ -50,6 +50,7 @@ class BookShow extends React.Component {
 
   handleReview(event) {
     event.preventDefault();
+    this.props.clearReviewErrors();
     this.props.toggleReviewModal();
   }
 

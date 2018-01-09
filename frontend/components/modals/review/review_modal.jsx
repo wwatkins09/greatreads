@@ -4,7 +4,7 @@ class ReviewModal extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {userId: this.props.currentUserId, bookId: this.props.book.id, score: null, body: ""};
+    this.state = {userId: this.props.currentUserId, bookId: this.props.book.id, body: ""};
 
     this.handleScoreChange = this.handleScoreChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
@@ -26,10 +26,13 @@ class ReviewModal extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.props.clearReviewErrors();
     this.props.createReview(this.state);
   }
 
   handleModalClose(event) {
+    this.setState({score: null, body: ''});
+    this.props.clearReviewErrors();
     this.props.toggleReviewModal();
   }
 
@@ -38,6 +41,9 @@ class ReviewModal extends React.Component {
     if (this.props.toggled) {
       className = 'review-modal-not-hidden';
     }
+    const errorsList = this.props.errors.map((error, idx) => {
+      return (<li className="review-error" key={idx}>{error}</li>);
+    });
 
     if (this.props.book) {
     return (
@@ -69,6 +75,7 @@ class ReviewModal extends React.Component {
             </div>
           <button className="review-submit-button">Submit review!</button>
         </form>
+        <ul className="review-errors">{errorsList}</ul>
       </main>
       </div>
     );

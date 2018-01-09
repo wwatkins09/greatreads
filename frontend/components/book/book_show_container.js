@@ -5,6 +5,7 @@ import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
 import {createBookshelfOwnership, fetchBookshelfOwnershipsByBookId, fetchBookshelfOwnershipsByBookshelfId, clearBookshelfOwnershipErrors} from '../../actions/bookshelf_ownership_actions';
 import {toggleReviewModal} from '../../actions/ui_actions';
 import {withRouter} from 'react-router-dom';
+import {clearReviewErrors} from '../../actions/review_actions';
 
 const mapStateToProps = function (state, ownProps) {
   let book = state.entities.books[ownProps.match.params.bookId];
@@ -38,7 +39,8 @@ const mapDispatchToProps = function (dispatch) {
     fetchBookshelfOwnershipsByBookId: (bookId) => dispatch(fetchBookshelfOwnershipsByBookId(bookId)),
     fetchBookshelfOwnershipsByBookshelfId: (bookshelfId) => dispatch(fetchBookshelfOwnershipsByBookshelfId(bookshelfId)),
     clearBookshelfOwnershipErrors: () => dispatch(clearBookshelfOwnershipErrors()),
-    toggleReviewModal: () => dispatch(toggleReviewModal())
+    toggleReviewModal: () => dispatch(toggleReviewModal()),
+    clearReviewErrors: () => dispatch(clearReviewErrors())
   };
 };
 

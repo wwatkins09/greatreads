@@ -2,6 +2,8 @@ import * as APIReviewUtil from '../util/api_review_util';
 
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
+export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
+export const CLEAR_REVIEW_ERRORS = 'CLEAR_REVIEW_ERRORS';
 
 export const fetchReview = function(reviewId) {
   return function(dispatch) {
@@ -23,7 +25,10 @@ export const fetchReviewsByBookId = function(bookId) {
 
 export const createReview = function(review) {
   return function(dispatch) {
-    return APIReviewUtil.createReview(review).then((review) => dispatch(receiveReview(review)));
+    return APIReviewUtil.createReview(review).then((review) => dispatch(receiveReview(review)),
+    (errors) => {
+      return dispatch(receiveReviewErrors(errors.responseJSON));
+    });
   };
 };
 
@@ -38,5 +43,18 @@ export const receiveReviews = function(reviews) {
   return {
     type: RECEIVE_REVIEWS,
     reviews
+  };
+};
+
+export const receiveReviewErrors = function(errors) {
+  return {
+    type: RECEIVE_REVIEW_ERRORS,
+    errors
+  };
+};
+
+export const clearReviewErrors = function() {
+  return {
+    type: CLEAR_REVIEW_ERRORS
   };
 };
