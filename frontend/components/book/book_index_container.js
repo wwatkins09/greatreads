@@ -7,21 +7,25 @@ import {deleteBookshelfOwnership} from '../../actions/bookshelf_ownership_action
 const mapStateToProps = function (state, ownProps) {
   const bookshelfId = parseInt(ownProps.match.params.bookshelfId);
   let bookshelfBooks = [];
+  let bookshelf;
   if (state.entities.bookshelves[bookshelfId]) {
-    bookshelfBooks = state.entities.bookshelves[bookshelfId].bookIds.map((bookId) => {
+    bookshelf = state.entities.bookshelves[bookshelfId];
+    bookshelfBooks = bookshelf.bookIds.map((bookId) => {
       return state.entities.books[bookId];
     });
   }
   return {
     bookshelfId,
-    bookshelfBooks
+    bookshelf,
+    bookshelfBooks,
+    currentUserId: state.session.currentUserId
   };
 };
 
 const mapDispatchToProps = function (dispatch) {
   return {
     fetchBooksByBookshelfId: (bookshelfId) => dispatch(fetchBooksByBookshelfId(bookshelfId)),
-    deleteBookshelfOwnership: (bookshelfOwnershipId) => dispatch(deleteBookshelfOwnership(bookshelfOwnershipId))
+    deleteBookshelfOwnership: (args) => dispatch(deleteBookshelfOwnership(args))
   };
 };
 
