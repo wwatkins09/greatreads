@@ -27,8 +27,7 @@ class ReviewModal extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.clearReviewErrors();
-    this.props.createReview(this.state);
-    this.props.toggleReviewModal();
+    this.props.createReview(this.state).then(() => {this.props.toggleReviewModal();});
   }
 
   handleModalClose(event) {
