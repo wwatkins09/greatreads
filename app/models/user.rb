@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :bookshelves, dependent: :destroy
   has_many :bookshelf_ownerships, through: :bookshelves
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :books,
   through: :bookshelves
 
