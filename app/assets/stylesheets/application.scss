@@ -483,3 +483,21 @@ width: 100%
 .bookshelf-ownership-errors {
   color: red;
 }
+
+.book-score-header {
+  font-size: 11px;
+  height: 16px;
+  line-height: 14px;
+  color: #999999;
+  text-align: center;
+}
+
+.book-show-stars {
+  text-align: center;
+  font-size: 15px;
+  fill: white;
+}
+
+.book-show-stars :hover {
+  cursor: pointer;
+}
