@@ -6,7 +6,8 @@ import {createReview} from '../../../actions/review_actions';
 const mapStateToProps = function (state, ownProps) {
   return {
     book: ownProps.book,
-    currentUserId: state.session.currentUserId
+    currentUserId: state.session.currentUserId,
+    toggled: state.ui.reviewModal
   };
 };
 

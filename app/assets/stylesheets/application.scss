@@ -532,7 +532,12 @@ width: 100%
   background-color: #ede6d6;
 }
 
-.review-modal {
+.review-modal-hidden {
+  z-index: 0;
+  display: none;
+}
+
+.review-modal-not-hidden {
   position: fixed;
   top: 12%;
   left: 33%;
@@ -544,9 +549,6 @@ width: 100%
   background-color: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 4px;
-}
-
-.review-modal-content {
   padding: 15px 20px;
 }
 

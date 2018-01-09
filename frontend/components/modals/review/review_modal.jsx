@@ -31,11 +31,16 @@ class ReviewModal extends React.Component {
   }
 
   render() {
+    let className = 'review-modal-hidden';
+    if (this.props.toggled) {
+      className = 'review-modal-not-hidden';
+    }
+
     if (this.props.book) {
 
     return (
       <div className="review-modal">
-        <main className="review-modal-content">
+        <main className={className}>
           <form onSubmit={this.handleSubmit}>
             <p className="review-modal-title">{this.props.book.title}</p>
             <p className="review-modal-author">by {this.props.book.author}</p>
