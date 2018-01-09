@@ -10,6 +10,7 @@ class BookIndexItem extends React.Component {
 
   handleRemove(event) {
     event.preventDefault();
+    this.props.deleteBookshelfOwnership({bookshelfId: this.props.bookshelfId, bookId: this.props.book.id});
   }
 
   render() {
