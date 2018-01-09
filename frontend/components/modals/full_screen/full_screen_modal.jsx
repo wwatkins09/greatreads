@@ -8,7 +8,7 @@ const FullScreenModal = function({toggled}) {
   }
 
   return (
-    <div className={className}>WORKINGWORKINGWORKING@@@</div>
+    <div className={className}></div>
   );
 };
 

@@ -23,7 +23,7 @@ const MainPage = (props) => {
     slashRoute = (<Route path="/" component={NewUserFormContainer} />);
   }
     return (
-      <div>
+      <div className="main-page">
         {slashRoute}
         <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
         <ProtectedRoute exact path="/bookshelves/:bookshelfId" component={BookshelfShowContainer}/>
