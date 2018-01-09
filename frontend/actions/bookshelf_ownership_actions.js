@@ -74,6 +74,6 @@ export const clearBookshelfOwnershipErrors = function() {
 export const removeBookshelfOwnership = function(bookshelfOwnership) {
   return {
     type: REMOVE_BOOKSHELF_OWNERSHIP,
-    bookshelfOwnership
+    bookshelfOwnership: bookshelfOwnership.bookshelfOwnership
   };
 };
