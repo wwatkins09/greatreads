@@ -125,8 +125,20 @@ li {
  }
 
  .signout-button {
-   height: 20px;
+   display: inline-block;
+   background-color: #382110;
+   color: white;
+   padding: 5px 15px;
+   border: 1px solid #382110;
+   border-radius: 3px;
+   font-size: 13px;
+   margin: 2px;
    margin-left: 20px;
+ }
+
+ .signout-button:hover {
+   background-color: #58371F;
+   cursor: pointer;
  }
 
  .signin {
@@ -270,7 +282,7 @@ li {
 
 .bookshelf-show-link {
   display: inline;
-  color: blue;
+  color: #00635d;
 }
 
 .bookshelf-edit-button {
