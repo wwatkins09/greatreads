@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, Redirect, withRouter} from 'react-router-dom';
+import ReviewModal from '../review/review_modal';
 
 class BookShow extends React.Component {
 
@@ -79,7 +80,6 @@ class BookShow extends React.Component {
 
     return (
       <div className="book-show">
-
         <content className="book-show-image-column">
           <img src={this.props.book.coverUrl} alt="Cover"></img>
           <div className="book-show-button-container">

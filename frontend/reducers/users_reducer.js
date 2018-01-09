@@ -5,6 +5,10 @@ import {RECEIVE_BOOKSHELF, RECEIVE_BOOKSHELVES, REMOVE_BOOKSHELF} from '../actio
 
 
 const usersReducer = function(oldState={}, action) {
+  const sortNumber = function (a,b) {
+    return a - b;
+  };
+
   let newState;
   switch(action.type) {
 
@@ -17,10 +21,8 @@ const usersReducer = function(oldState={}, action) {
       return merge({}, oldState, {[action.currentUser.id]: action.currentUser});
 
     case RECEIVE_BOOKSHELF:
-      newState = merge({}, oldState, action.user);
-      if (newState[action.bookshelf] && !newState[action.bookshelf.userId].bookshelfIds.includes(action.bookshelf.id)) {
-          newState[action.bookshelf.userId].bookshelfIds.push(action.bookshelf.id);
-      }
+      newState = Object.assign({}, oldState, {[action.user.id]: action.user});
+      newState[action.user.id].bookshelfIds.sort(sortNumber);
       return newState;
 
     case RECEIVE_BOOKSHELVES:

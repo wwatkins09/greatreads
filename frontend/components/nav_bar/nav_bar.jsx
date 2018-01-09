@@ -27,7 +27,7 @@ class NavBar extends React.Component {
       <main className="navbar">
         <content className="navbar-left">
           <Link to="/" className="logo">
-            greatreads
+            
           </Link>
           <div className="navbar-links-container">
             {navLinks}

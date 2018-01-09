@@ -6,9 +6,7 @@ json.bookshelf do
   json.bookIds bookshelf.book_ids
 end
 json.user do
-  json.set! user.id do
-    json.id user.id
-    json.username user.username
-    json.bookshelfIds user.bookshelf_ids.sort
-  end
+  json.id user.id
+  json.username user.username
+  json.bookshelfIds user.bookshelf_ids
 end
