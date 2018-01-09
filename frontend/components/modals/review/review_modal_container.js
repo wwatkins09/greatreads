@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ReviewModal from './review_modal';
 import {createReview} from '../../../actions/review_actions';
+import {toggleReviewModal} from '../../../actions/ui_actions';
 
 const mapStateToProps = function (state, ownProps) {
   return {
@@ -13,7 +14,8 @@ const mapStateToProps = function (state, ownProps) {
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    createReview: (review) => dispatch(createReview(review))
+    createReview: (review) => dispatch(createReview(review)),
+    toggleReviewModal: () => dispatch(toggleReviewModal())
   };
 };
 
