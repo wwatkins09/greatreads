@@ -90,13 +90,8 @@ class BookShow extends React.Component {
             </button>
           </div>
           {toggleMenu}
-          <p className="book-score-header">Rate this book</p>
-          <div className="book-show-stars" onClick={this.handleReview}>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
+          <div className="review-toggle-button-container">
+            <button className="review-toggle-button">Leave a review!</button>
           </div>
           <div className="bookshelf-ownership-errors">
             {this.props.bookshelfOwnershipErrors}
