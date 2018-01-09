@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20180109155054) do
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "book_id", null: false
-    t.string "score_integer", null: false
-    t.string "body_string", default: "", null: false
+    t.integer "score", null: false
+    t.string "body", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id", "user_id"], name: "index_reviews_on_book_id_and_user_id", unique: true

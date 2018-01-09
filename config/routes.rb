@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :bookshelves, except: [:new, :edit]
     resources :books, only: [:index, :show]
     resources :bookshelf_ownerships, only: [:index, :show, :create, :update, :destroy]
+    resources :reviews, except: [:new, :edit]
     resource :session, only: [:new, :create, :destroy]
   end
 
