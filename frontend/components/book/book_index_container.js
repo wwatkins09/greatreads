@@ -21,7 +21,7 @@ const mapStateToProps = function (state, ownProps) {
 const mapDispatchToProps = function (dispatch) {
   return {
     fetchBooksByBookshelfId: (bookshelfId) => dispatch(fetchBooksByBookshelfId(bookshelfId)),
-    deleteBookshelfOwnership: (bookshelfOwnershipId) => dispatch(deleteBookshelfOwnership(bookshelfOwnershipId))
+    deleteBookshelfOwnership: (args) => dispatch(deleteBookshelfOwnership(args))
   };
 };
 
