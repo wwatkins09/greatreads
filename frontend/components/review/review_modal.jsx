@@ -15,7 +15,10 @@ class ReviewModal extends React.Component {
   render() {
     return (
       <div className="review-modal">
-
+        <p className="review-modal-title">{this.props.book.title}</p>
+        <p className="review-modal-author">by {this.props.book.author}</p>
+        <p className="review-modal-rating">My rating: </p>
+        <p className="review-modal-body">What did you think?</p>
 
         <button onClick={this.handleSubmit}>Submit review!</button>
       </div>

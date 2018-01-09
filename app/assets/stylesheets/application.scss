@@ -527,4 +527,40 @@ width: 100%
 }
 
 .review-modal {
+  position: fixed;
+  top: 12%;
+  left: 33%;
+  bottom: 75%;
+  right: 75%;
+  height: 500px;
+  width: 600px;
+  color: #333333;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+.review-modal-title {
+  font-size: 120%;
+  font-family: "Merriweather", serif;
+  color: #333333;
+  font-weight: bold;
+}
+
+.review-modal-author {
+  font-size: 14px;
+  font-family: "Merriweather", serif;
+  color: #333333;
+}
+
+.review-modal-rating {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+
+.review-modal-body {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #181818;
+
 }
