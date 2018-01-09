@@ -25,6 +25,11 @@ export const createReview = function(review) {
   return $.ajax({
     method: 'POST',
     url: 'api/reviews',
-    data: {review}
+    data: {review: {
+      user_id: review.userId,
+      book_id: review.bookId,
+      score: review.score,
+      body: review.body
+    }}
   });
 };
