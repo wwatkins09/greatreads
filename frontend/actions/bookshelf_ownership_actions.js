@@ -1,4 +1,4 @@
-import * as APIBookshelfOwnershipUtil from '../util/bookshelf_ownership_util.js';
+import * as APIBookshelfOwnershipUtil from '../util/api_bookshelf_ownership_util.js';
 
 export const RECEIVE_BOOKSHELF_OWNERSHIP = 'RECEIVE_BOOKSHELF_OWNERSHIP';
 export const RECEIVE_BOOKSHELF_OWNERSHIPS = 'RECEIVE_BOOKSHELF_OWNERSHIPS';

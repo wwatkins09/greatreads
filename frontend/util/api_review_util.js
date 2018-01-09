@@ -19,4 +19,12 @@ export const fetchReviewsByUserId = function(userId) {
     url: 'api/reviews',
     data: {user_id: userId}
   });
-}; 
+};
+
+export const createReview = function(review) {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/reviews',
+    data: {review}
+  });
+};
