@@ -13,6 +13,8 @@ class ReviewModal extends React.Component {
   }
 
   render() {
+    if (this.props.book) {
+
     return (
       <div className="review-modal">
         <p className="review-modal-title">{this.props.book.title}</p>
@@ -23,6 +25,11 @@ class ReviewModal extends React.Component {
         <button onClick={this.handleSubmit}>Submit review!</button>
       </div>
     );
+  } else {
+    return (
+      <div></div>
+    );
+  }
   }
 
 
