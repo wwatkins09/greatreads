@@ -3,6 +3,10 @@ import BookshelfIndex from './bookshelf_index.jsx';
 import {fetchUserBookshelves, createBookshelf, clearBookshelfErrors} from '../../actions/bookshelf_actions';
 import {withRouter} from 'react-router-dom';
 
+  const sortNumber = function (a,b) {
+    return a - b;
+  };
+
 const mapStateToProps = function (state, ownProps) {
   let userId;
   if (ownProps.match.params.userId) {
@@ -12,7 +16,7 @@ const mapStateToProps = function (state, ownProps) {
   }
   let userBookshelves = [];
   if (state.entities.users[userId]) {
-    userBookshelves = state.entities.users[userId].bookshelfIds.sort().map((bookshelfId) => {
+    userBookshelves = state.entities.users[userId].bookshelfIds.sort(sortNumber).map((bookshelfId) => {
       return state.entities.bookshelves[bookshelfId];
     });
     }

@@ -1,5 +1,5 @@
 json.bookshelves do
-  @bookshelves.sort_by {|bookshelf| bookshelf.id}.each do |bookshelf|
+  @bookshelves.each do |bookshelf|
     json.set! bookshelf.id do
       json.id bookshelf.id
       json.name bookshelf.name
@@ -14,6 +14,6 @@ json.user do
   json.set! @user.id do
     json.id @user.id
     json.username @user.username
-    json.bookshelfIds @user.bookshelf_ids.sort
+    json.bookshelfIds @user.bookshelf_ids
   end
 end
