@@ -9,6 +9,7 @@ class BookShow extends React.Component {
 
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
     this.handleBookshelfSelect = this.handleBookshelfSelect.bind(this);
+    this.handleReview = this.handleReview.bind(this);
   }
 
   componentDidMount() {
@@ -44,6 +45,10 @@ class BookShow extends React.Component {
       })
 
     }
+  }
+
+  handleReview(event) {
+    event.preventDefault();
   }
 
 
@@ -85,6 +90,14 @@ class BookShow extends React.Component {
             </button>
           </div>
           {toggleMenu}
+          <p className="book-score-header">Rate this book</p>
+          <div className="book-show-stars" onClick={this.handleReview}>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
           <div className="bookshelf-ownership-errors">
             {this.props.bookshelfOwnershipErrors}
           </div>
