@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  validates :title, :author, :year, :average_score, :description, presence: true
+  validates :title, :author, :year, :description, presence: true
   has_many :bookshelf_ownerships, dependent: :destroy
   has_many :bookshelves, through: :bookshelf_ownerships
   has_many :reviews, dependent: :destroy

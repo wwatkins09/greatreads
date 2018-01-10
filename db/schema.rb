@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109155054) do
+ActiveRecord::Schema.define(version: 20180110205751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20180109155054) do
     t.string "title", null: false
     t.string "author", null: false
     t.integer "year", null: false
-    t.float "average_score", null: false
     t.string "cover_file_name"
     t.string "cover_content_type"
     t.integer "cover_file_size"

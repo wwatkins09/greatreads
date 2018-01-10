@@ -11,7 +11,6 @@ json.book do
   json.title book.title
   json.author book.author
   json.year book.year
-  json.averageScore book.average_score
   json.description book.description
   json.bookshelfIds book.bookshelf_ids
   json.reviewIds book.review_ids

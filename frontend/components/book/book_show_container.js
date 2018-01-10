@@ -17,7 +17,7 @@ const mapStateToProps = function (state, ownProps) {
         return state.entities.reviews[reviewId];
       });
     } else {
-      book = {id: null, title: "", author: "", year: null, average_score: null, coverUrl: ""};
+      book = {id: null, title: "", author: "", year: null, coverUrl: ""};
     }
     if (state.entities.users[state.session.currentUserId]) {
       userBookshelves = state.entities.users[state.session.currentUserId].bookshelfIds.map((bookshelfId) => {
