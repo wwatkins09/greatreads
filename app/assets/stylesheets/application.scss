@@ -522,7 +522,7 @@ width: 100%
 
 .review-toggle-button {
   display: inline-block;
-  background-color: #f2f2f2;
+  background-color: #F4F1EA;
   color: #181818;
   padding: 5px 5px;
   border: 1px solid #dddddd;
@@ -670,4 +670,10 @@ width: 100%
 
 .review-score {
   margin-left: 5px;
+}
+
+.review-current-user {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #181818;
 }
