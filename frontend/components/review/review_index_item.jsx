@@ -15,7 +15,9 @@ class ReviewIndexItem extends React.Component {
           <div className="review-user-name">
             <Link to={`/users/${this.props.review.userId}`}>{username}</Link>
           </div>
-          <p className="review-current-user-rated-it"> rated it: </p>
+          <div className="review-current-user-rated-it">
+            <p> rated it: </p>
+          </div>
         <p className="review-score">{this.props.review.score}</p>
       </span>
       <p className="review-body">{this.props.review.body}</p>

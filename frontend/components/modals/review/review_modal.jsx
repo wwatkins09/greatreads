@@ -49,7 +49,9 @@ class ReviewModal extends React.Component {
     return (
       <div className="review-modal">
         <main className={className}>
-          <p onClick={this.handleModalClose} className="review-modal-x">x</p>
+          <div className="review-modal-x-container">
+            <p onClick={this.handleModalClose} className="review-modal-x">x</p>
+          </div>
           <form onSubmit={this.handleSubmit}>
             <p className="review-modal-title">{this.props.book.title}</p>
             <p className="review-modal-author">by {this.props.book.author}</p>
