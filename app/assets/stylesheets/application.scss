@@ -649,3 +649,25 @@ width: 100%
   color: #181818;
   font-family: "Lato", sans-serif;
 }
+
+.review-all {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-header {
+  display: flex;
+}
+
+.review-user-name {
+  color: #00635d;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.review-score {
+  margin-left: 5px;
+}
