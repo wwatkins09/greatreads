@@ -50,9 +50,12 @@ class ReviewModal extends React.Component {
     if (this.props.toggled) {
       className = 'review-modal-not-hidden';
     }
-    const errorsList = this.props.errors.map((error, idx) => {
-      return (<li className="review-error" key={idx}>{error}</li>);
-    });
+    let errorsList = [];
+    if (this.props.errors) {
+      const errorsList = this.props.errors.map((error, idx) => {
+        return (<li className="review-error" key={idx}>{error}</li>);
+      });
+    }
 
     if (this.props.book) {
     return (
