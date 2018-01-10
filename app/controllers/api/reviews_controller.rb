@@ -26,7 +26,13 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
-
+    @review = Review.find(params[:review][:id])
+    @book = Book.find(params[:review][:book_id])
+    if @review.update_attributes(review_params)
+      render "api/reviews/show"
+    else
+      render json: @review.errors.full_messages, status: 422
+    end
   end
 
   def destroy
