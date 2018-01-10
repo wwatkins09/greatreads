@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, Redirect, withRouter} from 'react-router-dom';
 import ReviewModalContainer from '../modals/review/review_modal_container';
+import ReviewIndexContainer from '../review/review_index_container';
 
 class BookShow extends React.Component {
 
@@ -17,7 +18,6 @@ class BookShow extends React.Component {
     this.props.fetchBook(this.props.bookId);
     this.props.fetchUserBookshelves(this.props.currentUserId);
     this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId);
-    this.props.fetchReviewsByBookId(this.props.bookId);
   }
 
   componentWillReceiveProps(props) {
@@ -65,6 +65,8 @@ class BookShow extends React.Component {
         }
       })
 
+
+
     let toggleMenu;
     if (this.state.toggled) {
       const toggleMenuItems = this.props.userBookshelves.map((bookshelf) => {
@@ -109,7 +111,7 @@ class BookShow extends React.Component {
             <p>{this.props.book.description}</p>
           </content>
           <content>
-            <p>reviews here!</p>
+            <ReviewIndexContainer />
           </content>
         </main>
       </div>
