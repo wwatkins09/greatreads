@@ -21,7 +21,8 @@ class ReviewIndex extends React.Component {
 
   handleDelete(event) {
     event.preventDefault();
-    
+    const currentUserReview = this.props.bookReviews.filter((review) => review.userId === this.props.currentUserId)[0]
+    this.props.deleteReview(currentUserReview.id);
   }
 
   render() {

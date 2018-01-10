@@ -30,7 +30,10 @@ class Api::ReviewsController < ApplicationController
   end
 
   def destroy
-
+    @review = current_user.reviews.find(params[:id])
+    @book = Book.find(@review.book_id)
+    @review.destroy
+    render "api/reviews/show"
   end
 
   private

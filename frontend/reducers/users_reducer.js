@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import {RECEIVE_USER} from '../actions/user_actions';
 import {RECEIVE_CURRENT_USER} from '../actions/session_actions';
 import {RECEIVE_BOOKSHELF, RECEIVE_BOOKSHELVES, REMOVE_BOOKSHELF} from '../actions/bookshelf_actions';
-import {RECEIVE_REVIEW, RECEIVE_REVIEWS} from '../actions/review_actions';
+import {RECEIVE_REVIEW, RECEIVE_REVIEWS, REMOVE_REVIEW} from '../actions/review_actions';
 
 
 const usersReducer = function(oldState={}, action) {
@@ -39,6 +39,11 @@ const usersReducer = function(oldState={}, action) {
 
     case RECEIVE_REVIEWS:
       return merge({}, oldState, action.users);
+
+    case REMOVE_REVIEW:
+      newState = merge({}, oldState);
+      newState[action.user.id].reviewIds = newState[action.user.id].reviewIds.filter(el => el !== action.review.id);
+      return newState;
 
     default:
       return oldState;

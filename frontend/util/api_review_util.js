@@ -33,3 +33,10 @@ export const createReview = function(review) {
     }}
   });
 };
+
+export const deleteReview = function(reviewId) {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/reviews/${reviewId}`
+  });
+};
