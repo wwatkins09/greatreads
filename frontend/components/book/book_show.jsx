@@ -86,7 +86,7 @@ class BookShow extends React.Component {
 
     return (
       <div className="book-show">
-        <ReviewModalContainer book={this.props.book} />
+        <ReviewModalContainer book={this.props.book} review={this.props.currentUserReview} />
         <content className="book-show-image-column">
           <img src={this.props.book.coverUrl} alt="Cover"></img>
           <div className="book-show-button-container">
