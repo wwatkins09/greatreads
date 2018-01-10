@@ -22,7 +22,7 @@ class ReviewIndex extends React.Component {
     const reviewsList = Object.values(this.props.bookReviews).map((review) => {
       if (review) {
         return (
-            <ReviewIndexItem review={review} />
+            <ReviewIndexItem review={review} key={review.id} />
         );
       }
     });

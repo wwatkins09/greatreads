@@ -1,3 +1,5 @@
+json.reviews do
+
 @reviews.each do |review|
     json.set! review.id do
       json.id review.id
@@ -7,3 +9,16 @@
       json.body review.body
     end
   end
+end
+
+json.book do
+  json.id @book.id
+  json.title @book.title
+  json.author @book.author
+  json.year @book.year
+  json.averageScore @book.average_score
+  json.description @book.description
+  json.bookshelfIds @book.bookshelf_ids
+  json.reviewIds @book.review_ids
+  json.coverUrl asset_path(@book.cover.url)
+end
