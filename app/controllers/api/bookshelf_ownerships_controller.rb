@@ -35,7 +35,7 @@ class Api::BookshelfOwnershipsController < ApplicationController
     if @bookshelf_ownership.save
       render "api/bookshelf_ownerships/show"
     else
-      render json: ["This book is already on this bookshelf!"], status: 422
+      render json: ["This book is already on that bookshelf!"], status: 422
     end
   end
 

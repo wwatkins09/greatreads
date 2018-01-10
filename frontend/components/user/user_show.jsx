@@ -21,10 +21,16 @@ class UserShow extends React.Component {
     const errorsList = this.props.bookshelfErrors.map((error, idx) => {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);
     });
+    let finalTitle;
+    if (this.props.userId === this.props.currentUserId) {
+      finalTitle = this.props.title + this.props.user.username + '!';
+    } else {
+      finalTitle = this.props.user.username + this.props.title
+    }
 
     return (
       <div className="user-show">
-        <h1>Welcome to your page, {this.props.user.username}!</h1>
+        <h1>{finalTitle}</h1>
         <content>
           <BookshelfIndexContainer user={this.props.user} />
           <ul className="bookshelf-errors-list">{errorsList}</ul>
