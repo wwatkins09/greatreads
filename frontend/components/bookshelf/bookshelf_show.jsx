@@ -52,9 +52,8 @@ class BookshelfShow extends React.Component {
 
   render() {
 
-    const defaultShelves = ['Read', 'Currently Reading', 'Want to Read']
     let bookshelfEdit;
-    if (this.props.currentUserId === this.props.bookshelf.userId && !defaultShelves.includes(this.props.bookshelf.name)) {
+    if (this.props.currentUserId === this.props.bookshelf.userId && !this.props.bookshelf.defaultShelf) {
       bookshelfEdit = (
         <div>
           <form onSubmit={this.handleUpdate}>

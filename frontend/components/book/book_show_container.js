@@ -11,6 +11,7 @@ const mapStateToProps = function (state, ownProps) {
   let book = state.entities.books[ownProps.match.params.bookId];
   let userBookshelves;
   let bookReviews = [];
+  let currentUserReview;
     if (book) {
       bookReviews = book.reviewIds.map((reviewId) => {
         return state.entities.reviews[reviewId];
@@ -26,12 +27,18 @@ const mapStateToProps = function (state, ownProps) {
       });
     }
 
+    if (bookReviews !== []) {
+      currentUserReview = bookReviews.filter((review) => review && review.userId === state.session.currentUserId)[0];
+    }
+
   return {
     bookId: ownProps.match.params.bookId,
     book,
+    bookReviews,
     currentUserId: state.session.currentUserId,
     userBookshelves,
-    bookshelfOwnershipErrors: state.errors.bookshelfOwnership
+    bookshelfOwnershipErrors: state.errors.bookshelfOwnership,
+    currentUserReview
   };
 };
 
