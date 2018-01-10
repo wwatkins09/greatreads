@@ -32,17 +32,19 @@ export const createReview = function(review) {
   };
 };
 
-export const receiveReview = function(review) {
+export const receiveReview = function(payload) {
   return {
     type: RECEIVE_REVIEW,
-    review
+    review: payload.review,
+    book: payload.book
   };
 };
 
-export const receiveReviews = function(reviews) {
+export const receiveReviews = function(payload) {
   return {
     type: RECEIVE_REVIEWS,
-    reviews
+    reviews: payload.reviews,
+    book: payload.book
   };
 };
 
