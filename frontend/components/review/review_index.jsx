@@ -5,6 +5,8 @@ class ReviewIndex extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -15,6 +17,11 @@ class ReviewIndex extends React.Component {
     if (props.location.pathname !== this.props.location.pathname) {
       this.props.fetchReviewsByBookId(props.bookId);
     }
+  }
+
+  handleDelete(event) {
+    event.preventDefault();
+    
   }
 
   render() {
@@ -38,6 +45,7 @@ class ReviewIndex extends React.Component {
         <content className="review-current-user">
           <p>Your review:</p>
           <ReviewIndexItem review={currentUserReview} key={currentUserReview.id} user={this.props.users[this.props.currentUserId]} />
+          <button className="review-delete-button" onClick={this.handleDelete}>Delete</button>
         </content>
       );
     }
