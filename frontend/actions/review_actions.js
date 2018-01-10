@@ -3,6 +3,7 @@ import * as APIReviewUtil from '../util/api_review_util';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
+export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const CLEAR_REVIEW_ERRORS = 'CLEAR_REVIEW_ERRORS';
 
 export const fetchReview = function(reviewId) {
@@ -32,6 +33,12 @@ export const createReview = function(review) {
   };
 };
 
+export const deleteReview = function(reviewId) {
+  return function(dispatch) {
+    return APIReviewUtil.deleteReview(reviewId).then((review) => dispatch(removeReview(review)));
+  };
+};
+
 export const receiveReview = function(payload) {
   return {
     type: RECEIVE_REVIEW,
@@ -47,6 +54,15 @@ export const receiveReviews = function(payload) {
     reviews: payload.reviews,
     book: payload.book,
     users: payload.users
+  };
+};
+
+export const removeReview = function(payload) {
+  return {
+    type: REMOVE_REVIEW,
+    review: payload.review,
+    book: payload.book,
+    user: payload.user
   };
 };
 

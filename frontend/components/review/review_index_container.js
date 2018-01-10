@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ReviewIndex from './review_index';
-import {fetchReviewsByBookId} from '../../actions/review_actions';
+import {fetchReviewsByBookId, deleteReview} from '../../actions/review_actions';
 
 const mapStateToProps = function (state, ownProps) {
   const bookId = parseInt(ownProps.match.params.bookId);
@@ -26,7 +26,8 @@ const mapStateToProps = function (state, ownProps) {
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    fetchReviewsByBookId: (bookId) => dispatch(fetchReviewsByBookId(bookId))
+    fetchReviewsByBookId: (bookId) => dispatch(fetchReviewsByBookId(bookId)),
+    deleteReview: (reviewId) => dispatch(deleteReview(reviewId))
   };
 };
 
