@@ -82,6 +82,7 @@ class BookShow extends React.Component {
         </ul>
       );
     }
+    const buttonText = (this.props.currentUserReview ? 'Edit review' : 'Leave a review!')
 
     return (
       <div className="book-show">
@@ -97,7 +98,7 @@ class BookShow extends React.Component {
           </div>
           {toggleMenu}
           <div className="review-toggle-button-container">
-            <button className="review-toggle-button" onClick={this.handleReview}>Leave a review!</button>
+            <button className="review-toggle-button" onClick={this.handleReview}>{buttonText}</button>
           </div>
           <div className="bookshelf-ownership-errors">
             {this.props.bookshelfOwnershipErrors}
