@@ -30,6 +30,7 @@ class ReviewModal extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log(this.state);
     this.props.clearReviewErrors();
     if (this.state.id) {
       this.props.updateReview(this.state).then(() => this.props.toggleReviewModal());
@@ -51,7 +52,6 @@ class ReviewModal extends React.Component {
       className = 'review-modal-not-hidden';
     }
     let errorsList = [];
-    console.log(this.props.errors);
     if (this.props.errors) {
       const errorsList = this.props.errors.map((error, idx) => {
         return (<li className="review-error" key={idx}>{error}</li>);
