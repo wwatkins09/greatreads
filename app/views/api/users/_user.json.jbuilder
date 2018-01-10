@@ -2,6 +2,7 @@
     json.id user.id
     json.username user.username
     json.bookshelfIds user.bookshelf_ids
+    json.reviewIds user.review_ids
   end
 
   json.bookshelves do
