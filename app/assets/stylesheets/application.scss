@@ -426,6 +426,12 @@ li {
   flex-direction: column;
 }
 
+.book-show-body {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #181818;
+}
+
 .book-show-body-title {
   font-size: 20px;
   color: #382110;
