@@ -33,6 +33,15 @@ export const createReview = function(review) {
   };
 };
 
+export const updateReview = function(review) {
+  return function(dispatch) {
+    return APIReviewUtil.updateReview(review).then((review) => dispatch(receiveReview(review)),
+    (errors) => {
+      return dispatch(receiveReviewErrors(errors.responseJSON));
+    });
+  };
+};
+
 export const deleteReview = function(reviewId) {
   return function(dispatch) {
     return APIReviewUtil.deleteReview(reviewId).then((review) => dispatch(removeReview(review)));

@@ -27,9 +27,7 @@ const mapStateToProps = function (state, ownProps) {
       });
     }
 
-    if (bookReviews !== []) {
       currentUserReview = bookReviews.filter((review) => review && review.userId === state.session.currentUserId)[0];
-    }
 
   return {
     bookId: ownProps.match.params.bookId,
