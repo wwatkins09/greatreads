@@ -17,3 +17,8 @@ json.book do
   json.reviewIds book.review_ids
   json.coverUrl asset_path(book.cover.url)
 end
+
+json.user do
+  json.id review.user.id
+  json.username review.user.username
+end

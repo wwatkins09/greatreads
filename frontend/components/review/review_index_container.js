@@ -19,7 +19,8 @@ const mapStateToProps = function (state, ownProps) {
     currentUserId: state.session.currentUserId,
     bookId,
     book,
-    bookReviews
+    bookReviews,
+    users: state.entities.users
   };
 };
 
