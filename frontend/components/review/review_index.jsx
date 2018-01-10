@@ -18,7 +18,6 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props.users);
     const reviewsList = Object.values(this.props.bookReviews).map((review) => {
       if (review) {
         return (
