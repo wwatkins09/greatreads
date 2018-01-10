@@ -16,7 +16,7 @@ class ReviewModal extends React.Component {
     if (props.review) {
       this.setState(props.review);
     } else {
-      this.setState({bookId: props.book.id});
+      this.setState({score: 0, body: "", bookId: props.book.id, id: undefined});
     }
   }
 

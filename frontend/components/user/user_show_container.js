@@ -4,15 +4,20 @@ import {fetchUser} from '../../actions/user_actions';
 
 const mapStateToProps = function (state, ownProps) {
   let userId;
+  let title;
   if (ownProps.match.params.userId) {
     userId = ownProps.match.params.userId;
+    title = "'s page";
   } else {
     userId = state.session.currentUserId;
+    title = "Welcome to your page, ";
   }
   return {
     user: state.entities.users[userId] || {username: ""},
     userId,
-    bookshelfErrors: state.errors.bookshelf
+    bookshelfErrors: state.errors.bookshelf,
+    title,
+    currentUserId: state.session.currentUserId
   };
 };
 
