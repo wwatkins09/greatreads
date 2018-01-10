@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class ReviewIndexItem extends React.Component {
 
@@ -8,9 +9,15 @@ class ReviewIndexItem extends React.Component {
 
   render() {
     return (
-      <li>
-        <p>{this.props.review.score}</p>
-        <p>{this.props.review.body}</p>
+      <li className="review-all">
+        <span className="review-header">
+          <div className="review-user-name">
+            <Link to={`/users/${this.props.review.userId}`}>User</Link>
+          </div>
+          <p> rated it: </p>
+        <p className="review-score">{this.props.review.score}</p>
+      </span>
+      <p>{this.props.review.body}</p>
       </li>
     );
   }
