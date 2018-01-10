@@ -18,19 +18,37 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
+
+    let currentUserReview;
+
     const reviewsList = Object.values(this.props.bookReviews).map((review) => {
       if (review) {
+        if (review.userId === this.props.currentUserId) {
+          currentUserReview = review;
+        } else {
         return (
             <ReviewIndexItem review={review} key={review.id} user={this.props.users[review.userId]} />
         );
       }
+      }
     });
-
+    let currentUserReviewEl;
+    if (currentUserReview) {
+      currentUserReviewEl = (
+        <content className="review-current-user">
+          <p>Your review:</p>
+          <ReviewIndexItem review={currentUserReview} key={currentUserReview.id} user={this.props.users[this.props.currentUserId]} />
+        </content>
+      );
+    }
 
     return (
-      <ul className="reviews-list">
-        {reviewsList}
-      </ul>
+      <div>
+        {currentUserReviewEl}
+        <ul className="reviews-list">
+          {reviewsList}
+        </ul>
+      </div>
     );
   }
 
