@@ -15,7 +15,7 @@ const mapStateToProps = function (state, ownProps) {
     userId = state.session.currentUserId;
   }
   let userBookshelves = [];
-  if (state.entities.users[userId]) {
+  if (state.entities.users[userId] && state.entities.users[userId].bookshelfIds) {
     userBookshelves = state.entities.users[userId].bookshelfIds.sort(sortNumber).map((bookshelfId) => {
       return state.entities.bookshelves[bookshelfId];
     });
