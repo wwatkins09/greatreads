@@ -9,7 +9,8 @@ const mapStateToProps = function (state, ownProps) {
     book: ownProps.book,
     currentUserId: state.session.currentUserId,
     toggled: state.ui.reviewModal,
-    errors: state.errors.review
+    errors: state.errors.review,
+    review: ownProps.review
   };
 };
 

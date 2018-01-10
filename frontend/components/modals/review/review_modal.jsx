@@ -4,7 +4,7 @@ class ReviewModal extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {userId: this.props.currentUserId, bookId: this.props.book.id, body: ""};
+    this.state = (props.review ? props.review : {userId: this.props.currentUserId, bookId: this.props.book.id, score: '0', body: ""});
 
     this.handleScoreChange = this.handleScoreChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
@@ -13,7 +13,11 @@ class ReviewModal extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    this.setState({bookId: props.book.id});
+    if (props.review) {
+      this.setState(props.review);
+    } else {
+      this.setState({bookId: props.book.id});
+    }
   }
 
   handleScoreChange(event) {
@@ -57,19 +61,19 @@ class ReviewModal extends React.Component {
             <p className="review-modal-author">by {this.props.book.author}</p>
             <p className="review-modal-rating">My rating: </p>
             <label className="radio">
-            <input type="radio" name="score" value="1" checked={this.state.score === '1'} onChange={this.handleScoreChange} />Didn't like it
+            <input type="radio" name="score" value="1" checked={this.state.score.toString() === '1'} onChange={this.handleScoreChange} />Didn't like it
           </label>
           <label className="radio">
-            <input type="radio" name="score" value="2" checked={this.state.score === '2'} onChange={this.handleScoreChange} />It was OK
+            <input type="radio" name="score" value="2" checked={this.state.score.toString() === '2'} onChange={this.handleScoreChange} />It was OK
           </label>
           <label className="radio">
-            <input type="radio" name="score" value="3" checked={this.state.score === '3'} onChange={this.handleScoreChange} />Liked it
+            <input type="radio" name="score" value="3" checked={this.state.score.toString() === '3'} onChange={this.handleScoreChange} />Liked it
           </label>
           <label className="radio">
-            <input type="radio" name="score" value="4" checked={this.state.score === '4'} onChange={this.handleScoreChange} />Really liked it
+            <input type="radio" name="score" value="4" checked={this.state.score.toString() === '4'} onChange={this.handleScoreChange} />Really liked it
           </label>
           <label className="radio">
-            <input type="radio" name="score" value="5" checked={this.state.score === '5'} onChange={this.handleScoreChange} />It was amazing
+            <input type="radio" name="score" value="5" checked={this.state.score.toString() === '5'} onChange={this.handleScoreChange} />It was amazing
           </label>
             <div className="review-modal-body">
               <p>What did you think?</p>
