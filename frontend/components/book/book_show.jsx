@@ -101,10 +101,15 @@ class BookShow extends React.Component {
           </div>
         </content>
 
-        <main className="book-show-body">
-          <p className="book-show-body-title">{this.props.book.title}</p>
-          <p>by {this.props.book.author} ({this.props.book.year})</p>
-          <p>{this.props.book.description}</p>
+        <main className="book-show-main">
+          <content className="book-show-body">
+            <p className="book-show-body-title">{this.props.book.title}</p>
+            <p>by {this.props.book.author} ({this.props.book.year})</p>
+            <p>{this.props.book.description}</p>
+          </content>
+          <content>
+            <p>reviews here!</p>
+          </content>
         </main>
       </div>
     );
