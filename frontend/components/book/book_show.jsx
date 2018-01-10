@@ -57,8 +57,8 @@ class BookShow extends React.Component {
 
 
   render() {
-    let readStatus = "Add to bookshelf:";
     const ctx = this;
+    let readStatus = "Add to bookshelf:";
         this.props.userBookshelves.forEach((bookshelf) => {
         if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(ctx.props.bookId))) {
           readStatus = bookshelf.name;

@@ -44,7 +44,7 @@ class ReviewIndex extends React.Component {
     if (currentUserReview) {
       currentUserReviewEl = (
         <content className="review-current-user">
-          <p>Your review:</p>
+          <p className="review-current-user-header">Your review:</p>
           <ReviewIndexItem review={currentUserReview} key={currentUserReview.id} user={this.props.users[this.props.currentUserId]} />
           <button className="review-delete-button" onClick={this.handleDelete}>Delete</button>
         </content>

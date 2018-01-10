@@ -12,9 +12,9 @@ const booksReducer = function( oldState = {}, action ) {
     case RECEIVE_REVIEW:
       return merge({}, oldState, {[action.book.id]: action.book});
     case REMOVE_REVIEW:
-    newState = merge({}, oldState);
-    newState[action.book.id].reviewIds = newState[action.book.id].reviewIds.filter(el => el !== action.review.id);
-    return newState;
+      newState = merge({}, oldState);
+      newState[action.book.id].reviewIds = newState[action.book.id].reviewIds.filter(el => el !== action.review.id);
+      return newState;
     default:
       return oldState;
   }
