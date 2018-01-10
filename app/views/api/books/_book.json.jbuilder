@@ -5,4 +5,5 @@ json.year book.year
 json.averageScore book.average_score
 json.description book.description
 json.bookshelfIds book.bookshelf_ids
+json.reviewIds book.review_ids
 json.coverUrl asset_path(book.cover.url)

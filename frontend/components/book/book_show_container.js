@@ -5,12 +5,16 @@ import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
 import {createBookshelfOwnership, fetchBookshelfOwnershipsByBookId, fetchBookshelfOwnershipsByBookshelfId, clearBookshelfOwnershipErrors} from '../../actions/bookshelf_ownership_actions';
 import {toggleReviewModal} from '../../actions/ui_actions';
 import {withRouter} from 'react-router-dom';
-import {clearReviewErrors} from '../../actions/review_actions';
+import {fetchReviewsByBookId, clearReviewErrors} from '../../actions/review_actions';
 
 const mapStateToProps = function (state, ownProps) {
   let book = state.entities.books[ownProps.match.params.bookId];
   let userBookshelves;
+  let bookReviews = [];
     if (book) {
+      bookReviews = book.reviewIds.map((reviewId) => {
+        return state.entities.reviews[reviewId];
+      });
     } else {
       book = {id: null, title: "", author: "", year: null, average_score: null, coverUrl: ""};
     }
@@ -40,6 +44,7 @@ const mapDispatchToProps = function (dispatch) {
     fetchBookshelfOwnershipsByBookshelfId: (bookshelfId) => dispatch(fetchBookshelfOwnershipsByBookshelfId(bookshelfId)),
     clearBookshelfOwnershipErrors: () => dispatch(clearBookshelfOwnershipErrors()),
     toggleReviewModal: () => dispatch(toggleReviewModal()),
+    fetchReviewsByBookId: (bookId) => dispatch(fetchReviewsByBookId(bookId)),
     clearReviewErrors: () => dispatch(clearReviewErrors())
   };
 };
