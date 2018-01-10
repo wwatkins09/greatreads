@@ -36,7 +36,8 @@ export const receiveReview = function(payload) {
   return {
     type: RECEIVE_REVIEW,
     review: payload.review,
-    book: payload.book
+    book: payload.book,
+    user: payload.user
   };
 };
 
@@ -44,7 +45,8 @@ export const receiveReviews = function(payload) {
   return {
     type: RECEIVE_REVIEWS,
     reviews: payload.reviews,
-    book: payload.book
+    book: payload.book,
+    users: payload.users
   };
 };
 

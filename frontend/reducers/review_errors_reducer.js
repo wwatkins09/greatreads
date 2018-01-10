@@ -3,7 +3,6 @@ import {RECEIVE_REVIEW_ERRORS, CLEAR_REVIEW_ERRORS} from '../actions/review_acti
 const errorsReducer = function( oldState=[], action ) {
   switch(action.type) {
     case RECEIVE_REVIEW_ERRORS:
-    debugger
       return action.errors;
     case CLEAR_REVIEW_ERRORS:
       return [];

@@ -22,6 +22,9 @@ class NavBar extends React.Component {
         <div className="navbar-link-container">
           <Link to="/books">Books</Link>
         </div>
+        <div className="navbar-link-random">
+
+        </div>
       </span>;
     } else {
       component = <SignInFormContainer />;

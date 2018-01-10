@@ -18,14 +18,15 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-
+    console.log(this.props.users);
     const reviewsList = Object.values(this.props.bookReviews).map((review) => {
       if (review) {
         return (
-            <ReviewIndexItem review={review} key={review.id} />
+            <ReviewIndexItem review={review} key={review.id} user={this.props.users[review.userId]} />
         );
       }
     });
+
 
     return (
       <ul className="reviews-list">
