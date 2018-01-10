@@ -40,7 +40,7 @@ class ReviewModal extends React.Component {
   }
 
   handleModalClose(event) {
-    this.setState({score: null, body: ''});
+    this.setState({score: '0', body: ''});
     this.props.clearReviewErrors();
     this.props.toggleReviewModal();
   }
