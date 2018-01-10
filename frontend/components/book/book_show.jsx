@@ -17,6 +17,7 @@ class BookShow extends React.Component {
     this.props.fetchBook(this.props.bookId);
     this.props.fetchUserBookshelves(this.props.currentUserId);
     this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId);
+    this.props.fetchReviewsByBookId(this.props.bookId);
   }
 
   componentWillReceiveProps(props) {
