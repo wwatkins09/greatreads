@@ -96,7 +96,7 @@ class BookshelfShow extends React.Component {
             {errorsList}
           </ul>
           <div className="bookshelf-show-link">
-            <Link to={`/users/${this.props.bookshelf.userId}`}>Back to bookshelves!</Link>
+            <Link to={`/users/${this.props.bookshelf.userId}`}>Back to bookshelves</Link>
           </div>
         </main>
       </div>

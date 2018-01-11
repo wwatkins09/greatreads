@@ -87,7 +87,7 @@ class ReviewModal extends React.Component {
               <p>What did you think?</p>
               <textarea onChange={this.handleBodyChange} value={this.state.body}></textarea>
             </div>
-          <button className="review-submit-button">Submit review!</button>
+          <button className="review-submit-button">Submit review</button>
         </form>
         <ul className="review-errors">{errorsList}</ul>
       </main>
