@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export default function ({book}) {
+export default function ({book, clearSearch}) {
 
 
   return (
     <li className="search-bar-item-container">
-      <Link className="search-bar-item" to={`/books/${book.id}`}>
+      <Link className="search-bar-item" to={`/books/${book.id}`} onClick={clearSearch}>
         <div className="search-bar-item-left">
           <img src={book.coverUrl}/>
         </div>

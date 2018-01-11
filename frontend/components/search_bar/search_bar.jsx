@@ -5,9 +5,10 @@ class SearchBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {input: ""};
+    this.state = {input: ''};
 
     this.handleChange = this.handleChange.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +19,10 @@ class SearchBar extends React.Component {
     this.setState({input: event.target.value});
   }
 
+  clearSearch() {
+    this.setState({input: ''});
+  }
+
   render() {
     let bookList = [];
     let booksExist = false;
@@ -26,7 +31,7 @@ class SearchBar extends React.Component {
         if (book.title.toLowerCase().includes(this.state.input.toLowerCase())) {
           booksExist = true;
           return (
-            <SearchBarItem book={book} key={book.id} />
+            <SearchBarItem book={book} key={book.id} clearSearch={this.clearSearch} />
           );
         }
       });
@@ -37,7 +42,7 @@ class SearchBar extends React.Component {
 
     return (
       <div className="search-bar">
-        <input onChange={this.handleChange} className="search-bar-input"></input>
+        <input onChange={this.handleChange} className="search-bar-input" value={this.state.input}></input>
           {bookListComponent}
       </div>
     );
