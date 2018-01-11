@@ -4,8 +4,10 @@ export default function ({book}) {
 
 
   return (
-    <span className="search-bar-item">
-      {book.title}
-    </span>
+    <li>
+      <span className="search-bar-item">
+        {book.title}
+      </span>
+    </li>
   );
 }
