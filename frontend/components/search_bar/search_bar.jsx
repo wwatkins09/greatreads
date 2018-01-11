@@ -18,6 +18,7 @@ class SearchBar extends React.Component {
   componentWillReceiveProps(props) {
     if (props.location.pathname !== this.props.location.pathname) {
       this.setState({input: ""});
+      this.props.fetchAllBooks();
     }
   }
 
