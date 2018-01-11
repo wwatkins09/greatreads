@@ -22,6 +22,7 @@ class SearchBar extends React.Component {
   }
 
   handleChange(event) {
+    this.props.toggleSearchBar();
     this.setState({input: event.target.value});
   }
 
@@ -32,7 +33,7 @@ class SearchBar extends React.Component {
   render() {
     let bookList = [];
     let booksExist = false;
-    if (this.state.input.length > 0) {
+    if (this.props.toggled) {
       bookList = Object.values(this.props.books).map((book) => {
         if (book.title.toLowerCase().includes(this.state.input.toLowerCase())) {
           booksExist = true;
