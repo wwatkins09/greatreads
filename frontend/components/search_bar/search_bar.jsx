@@ -48,7 +48,7 @@ class SearchBar extends React.Component {
 
     return (
       <div className="search-bar">
-        <input onChange={this.handleChange} className="search-bar-input" value={this.state.input}></input>
+        <input onChange={this.handleChange} className="search-bar-input" value={this.state.input} placeholder="Search books"></input>
         <div className="search-button-container">
           <button className="search-button"></button>
         </div>
