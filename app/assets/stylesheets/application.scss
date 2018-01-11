@@ -903,3 +903,19 @@ width: 100%
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.add-bookshelf-button {
+  display: inline-block;
+  background-color: #382110;
+  color: white;
+  padding: 5px 15px;
+  border: 1px solid #382110;
+  border-radius: 3px;
+  font-size: 13px;
+  margin: 2px;
+}
+
+.add-bookshelf-button:hover {
+  background-color: #58371F;
+  cursor: pointer;
+}
