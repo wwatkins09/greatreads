@@ -16,7 +16,7 @@ class BookIndexItem extends React.Component {
   render() {
     let button;
     if (this.props.currentUserId === this.props.bookshelf.userId) {
-      button = (<button onClick={this.handleRemove}>Remove book</button>);
+      button = (<button className="remove-book-button" onClick={this.handleRemove}>Remove book</button>);
     }
     return (
       <tr>

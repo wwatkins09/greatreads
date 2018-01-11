@@ -375,7 +375,7 @@ li {
 }
 
 .table-field-cover {
-  width: 30px;
+  min-width: 50px;
 }
 
 
@@ -385,7 +385,8 @@ li {
 }
 
 .table-field-title {
-  width: 25%;
+  min-width: 60px;
+  max-width: 25%;
 }
 
 .table-field-title a {
@@ -401,7 +402,11 @@ li {
 }
 
 .table-field-delete {
+  height: 79px;
   border-bottom: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -720,4 +725,18 @@ width: 100%
   font-family: "Lato", sans-serif;
   display: flex;
   align-items: center;
+}
+
+.remove-book-button {
+  width: 125px;
+  height: 28px;
+  font-size: 14px;
+  background-color: #B80F28;
+  color: white;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+}
+
+.remove-book-button:hover {
+  cursor: pointer;
 }
