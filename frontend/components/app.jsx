@@ -6,6 +6,7 @@ import NewUserFormContainer from './user/new_user_form_container';
 import UserShowContainer from './user/user_show_container';
 import Mainpage from './main_page';
 import FullScreenModalContainer from './modals/full_screen/full_screen_modal_container';
+import Footer from './footer/footer';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
     <FullScreenModalContainer />
     <Route path="/" component={NavBarContainer} />
     <Mainpage />
+    <Route path="/" component={Footer} />
   </div>
   );
 };
