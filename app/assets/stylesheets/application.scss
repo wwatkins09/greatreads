@@ -66,13 +66,26 @@ li {
   display: flex;
 }
 
- .logo {
+ .logo-homepage {
+   font-size: 24px;
+   width: 200px;
+   height: 130px;
+   justify-content: center;
+   padding: 0px 20px;
+   margin-left: 40px;
+   display: flex;
+   align-items: center;
+   background: image-url('greatreads.png');
+   background-size: 100%;
+ }
+
+ .logo-logged-in {
    font-size: 24px;
    width: 100px;
    height: 80px;
    justify-content: center;
    padding: 0px 20px;
-   margin-left: 40px;
+   margin-left: 20px;
    display: flex;
    align-items: center;
    background: image-url('greatreads.png');
@@ -129,7 +142,6 @@ li {
    display: flex;
    justify-content: center;
    align-items: flex-end;
-   padding-top: 20px;
  }
 
  .navbar-form * {
@@ -167,7 +179,6 @@ li {
 
  .signin {
    display: flex;
-   flex-direction: column;
    align-items: flex-end;
    justify-content: flex-end;
  }
