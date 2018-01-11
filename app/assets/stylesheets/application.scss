@@ -774,22 +774,32 @@ width: 100%
   border-right: 0;
 }
 
+.search-bar-input:focus {
+  outline: 0;
+  border-color: #B9AD99;
+}
+
 .search-bar-list {
   position: absolute;
   padding-left: 0;
   top: 12px;
-  left: 3px;
-  border: 1px solid black;
+  left: 2px;
+  border: 1px solid #E8E8E8;
   width: 375px;
-  background-color: #F4F1EA;
+  background-color: white;
 }
 
 .search-bar-item {
-  width: 272px;
   height: 55px;
   overflow: hidden;
   display: flex;
   padding: 8px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.search-bar-item:hover {
+  background-color: #F4F1EA;
+  cursor: pointer;
 }
 
 .search-bar-item-left img {
