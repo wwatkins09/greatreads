@@ -897,3 +897,9 @@ width: 100%
   background-color: #F4F1EA;
   margin-bottom: 0;
 }
+
+.book-show-toggle-list-item {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -78,7 +78,7 @@ class BookShow extends React.Component {
       const toggleMenuItems = this.props.userBookshelves.sort(sortBookshelf).map((bookshelf) => {
         if (bookshelf) {
           return (
-            <li onClick={this.handleBookshelfSelect(bookshelf)} key={bookshelf.id}>{bookshelf.name}</li>
+            <li className="book-show-toggle-list-item" onClick={this.handleBookshelfSelect(bookshelf)} key={bookshelf.id}>{bookshelf.name}</li>
           );
         }
       })
