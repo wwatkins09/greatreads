@@ -49,7 +49,6 @@ li {
 
 .main-page {
   border-bottom: 1px solid gray;
-  padding-bottom: 200px;
   min-height: calc(100vh - 150px);
 }
 
@@ -212,14 +211,16 @@ li {
   background: image-url("books.jpeg");
   background-size: 100%;
   display: flex;
-  justify-content: space-around;
-  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
   height: 700px;
 }
 
 .signup-content {
   width: 200px;
   margin-bottom: 50px;
+  margin-right: 150px;
 }
 
 .signup-form {
@@ -769,6 +770,7 @@ width: 100%
 .homepage-quote-text {
   font-size: 32px;
   font-family: "IM Fell English", serif;
+  margin-right: 50px;
 }
 
 .homepage-quote-author {
