@@ -823,6 +823,8 @@ width: 100%
 
 .search-bar-item-title {
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
   width: 272px;
+  padding: 4px 0;
 }
