@@ -761,6 +761,24 @@ width: 100%
   font-size: 24px;
 }
 
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .search-bar-input {
   width: 200px;
+  height: 20px;
+  padding: 2px;
+  border-right: 0;
+}
+
+.search-bar-list {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid black;
+  width: 375px;
+  background-color: #F4F1EA;
 }

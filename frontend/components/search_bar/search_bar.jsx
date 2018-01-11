@@ -19,25 +19,26 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    let bookList;
-    if (this.state.input === "") {
-      bookList = [];
-    } else {
+    let bookList = [];
+    let booksExist = false;
+    if (this.state.input.length > 0) {
       bookList = Object.values(this.props.books).map((book) => {
-        if (book.title.toLowerCase().includes(this.state.input.toLowerCase()))
-        return (
-          <SearchBarItem book={book} key={book.id}/>
-        );
+        if (book.title.toLowerCase().includes(this.state.input.toLowerCase())) {
+          booksExist = true;
+          return (
+            <SearchBarItem book={book} key={book.id} />
+          );
+        }
       });
     }
 
 
+    let bookListComponent = (booksExist) ? <ul className="search-bar-list">{bookList}</ul> : null;
+
     return (
       <div className="search-bar">
         <input onChange={this.handleChange} className="search-bar-input"></input>
-        <content className="search-bar-list">
-          {bookList}
-        </content>
+          {bookListComponent}
       </div>
     );
   }
