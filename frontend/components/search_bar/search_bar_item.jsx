@@ -4,8 +4,8 @@ export default function ({book}) {
 
 
   return (
-    <div>
-
-    </div>
+    <span className="search-bar-item">
+      {book.title}
+    </span>
   );
 }
