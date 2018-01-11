@@ -46,7 +46,7 @@ class NewUserForm extends React.Component {
             <label>Password:
               <input onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
             </label>
-            <button className="signup-button">Sign Up!</button>
+            <button className="signup-button">Sign Up</button>
 
           </form>
           <ul className="user-errors-list">{errorsList}</ul>

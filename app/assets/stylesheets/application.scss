@@ -50,7 +50,7 @@ li {
 .main-page {
   border-bottom: 1px solid gray;
   padding-bottom: 200px;
-  min-height: 500px;
+  min-height: calc(100vh - 150px);
 }
 
 
@@ -476,7 +476,7 @@ li {
 }
 
 .book-show-bookshelf-name-container {
-  width: 110px;
+  width: 115px;
   padding: 4px 0px 5px 0px;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
@@ -558,7 +558,7 @@ width: 100%
   font-weight: bold;
   font-family: "Lato", Arial, serif;
   margin-top: 10px;
-  width: 137px;
+  width: 144px;
 }
 
 .review-toggle-button:hover {
