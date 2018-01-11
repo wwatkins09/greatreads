@@ -24,8 +24,9 @@ class SearchBar extends React.Component {
       bookList = [];
     } else {
       bookList = Object.values(this.props.books).map((book) => {
+        if (book.title.toLowerCase().includes(this.state.input.toLowerCase()))
         return (
-          <SearchBarItem book={book} />
+          <SearchBarItem book={book} key={book.id}/>
         );
       });
     }
@@ -35,6 +36,7 @@ class SearchBar extends React.Component {
       <div className="search-bar">
         <input onChange={this.handleChange} className="search-bar-input"></input>
         <content className="search-bar-list">
+          {bookList}
         </content>
       </div>
     );
