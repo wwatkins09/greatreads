@@ -13,7 +13,9 @@ class NavBar extends React.Component {
 
     let component;
     let navLinks;
+    let logoClassName;
     if (this.props.currentUserId) {
+      logoClassName = 'logo-logged-in';
       component = <SignOutFormContainer />;
       navLinks = <span className="navbar-links">
         <div className="navbar-link-container">
@@ -27,13 +29,14 @@ class NavBar extends React.Component {
         </div>
       </span>;
     } else {
+      logoClassName = 'logo-homepage';
       component = <SignInFormContainer />;
       navLinks = <span className="navbar-links"></span>;
     }
     return (
       <main className="navbar">
         <content className="navbar-left">
-          <Link to="/" className="logo">
+          <Link to="/" className={logoClassName}>
 
           </Link>
           <div className="navbar-links-container">

@@ -57,6 +57,12 @@ class BookShow extends React.Component {
 
 
   render() {
+
+    const sortBookshelf = function (bookshelf1, bookshelf2) {
+      return bookshelf1.id - bookshelf2.id;
+    };
+
+
     const ctx = this;
     let readStatus = "Add to bookshelf:";
         this.props.userBookshelves.forEach((bookshelf) => {
@@ -69,7 +75,7 @@ class BookShow extends React.Component {
 
     let toggleMenu;
     if (this.state.toggled) {
-      const toggleMenuItems = this.props.userBookshelves.map((bookshelf) => {
+      const toggleMenuItems = this.props.userBookshelves.sort(sortBookshelf).map((bookshelf) => {
         if (bookshelf) {
           return (
             <li onClick={this.handleBookshelfSelect(bookshelf)} key={bookshelf.id}>{bookshelf.name}</li>
