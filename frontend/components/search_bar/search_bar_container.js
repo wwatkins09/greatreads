@@ -7,14 +7,14 @@ import {toggleSearchBar} from '../../actions/ui_actions';
 const mapStateToProps = function(state) {
   return {
     books: state.entities.books,
-    toggled: state.ui.searchBar
+    toggled: state.ui.searchBar,
   };
 };
 
 const mapDispatchToProps = function(dispatch) {
   return {
     fetchAllBooks: () => dispatch(fetchAllBooks()),
-    toggleSearchBar: () => dispatch(toggleSearchBar())
+    toggleSearchBar: () => dispatch(toggleSearchBar()),
   };
 };
 

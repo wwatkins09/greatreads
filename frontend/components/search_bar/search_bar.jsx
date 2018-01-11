@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
 
   componentWillReceiveProps(props) {
     if (props.location.pathname !== this.props.location.pathname) {
-      this.clearSearch();
+      this.setState({input: ""});
     }
   }
 
@@ -53,7 +53,7 @@ class SearchBar extends React.Component {
         <div className="search-button-container">
           <button className="search-button"></button>
         </div>
-          {bookListComponent}
+          {this.state.input.length ? bookListComponent : null}
       </div>
     );
   }
