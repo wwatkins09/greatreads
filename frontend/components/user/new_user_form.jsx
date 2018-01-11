@@ -34,7 +34,7 @@ class NewUserForm extends React.Component {
     return (
       <div className="signup">
         <content className="homepage-quote">
-          <p className="homepage-quote-text">I have always imagined Paradise as a kind of library.</p>
+          <p className="homepage-quote-text">​‌“I have always imagined Paradise as a kind of library.”</p>
           <p className="homepage-quote-author">Jorge Luis Borges</p>
         </content>
         <content className="signup-content">
