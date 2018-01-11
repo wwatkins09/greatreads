@@ -893,9 +893,13 @@ width: 100%
 }
 
 .footer {
-  padding-bottom: 50px;
+  margin: 0;
+  height: 40px;
   background-color: #F4F1EA;
-  margin-bottom: 0;
+  font-size: 11px;
+  color: #666;
+  display: flex;
+  align-items: center;
 }
 
 .book-show-toggle-list-item {
@@ -918,4 +922,9 @@ width: 100%
 .add-bookshelf-button:hover {
   background-color: #58371F;
   cursor: pointer;
+}
+
+.logo-credit {
+  margin: 0;
+  padding: 0px 20px;
 }
