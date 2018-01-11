@@ -52,7 +52,7 @@ class ReviewModal extends React.Component {
     }
     let errorsList = [];
     if (this.props.errors) {
-      const errorsList = this.props.errors.map((error, idx) => {
+      errorsList = this.props.errors.map((error, idx) => {
         return (<li className="review-error" key={idx}>{error}</li>);
       });
     }
