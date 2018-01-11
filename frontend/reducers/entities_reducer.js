@@ -10,5 +10,5 @@ export default combineReducers({
   bookshelves: bookshelvesReducer,
   books: booksReducer,
   bookshelfOwnerships: bookshelfOwnershipsReducer,
-  reviews: reviewsReducer
+  reviews: reviewsReducer,
 });
