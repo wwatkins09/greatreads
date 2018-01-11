@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import SignInFormContainer from '../session/sign_in_form_container';
 import SignOutFormContainer from '../session/sign_out_form_container';
+import SearchBarContainer from '../search_bar/search_bar_container';
 
 class NavBar extends React.Component {
 
@@ -24,8 +25,8 @@ class NavBar extends React.Component {
         <div className="navbar-link-container">
           <Link to="/books">Books</Link>
         </div>
-        <div className="navbar-link-random">
-
+        <div className="navbar-search-bar">
+          <SearchBarContainer />
         </div>
       </span>;
     } else {
