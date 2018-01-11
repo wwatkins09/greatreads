@@ -6,7 +6,7 @@ import NewUserFormContainer from '../user/new_user_form_container';
 import UserShowContainer from '../user/user_show_container';
 import Mainpage from '../main_page';
 import FullScreenModalContainer from '../modals/full_screen/full_screen_modal_container';
-import Footer from '../footer/footer';
+import FooterContainer from '../footer/footer_container';
 
 class App extends React.Component {
 
@@ -26,7 +26,7 @@ class App extends React.Component {
       <FullScreenModalContainer />
       <Route path="/" component={NavBarContainer} />
       <Mainpage />
-      <Route path="/" component={Footer} />
+      <Route path="/" component={FooterContainer} />
     </div>
     );
   }

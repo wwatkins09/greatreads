@@ -36,6 +36,11 @@ input {
   border-radius: 3px;
   border: #DCD6CC 1px solid;
   margin: 2px;
+  outline: 0;
+}
+
+input:focus {
+  border-color: #B9AD99;
 }
 
 li {
@@ -49,7 +54,7 @@ li {
 
 .main-page {
   border-bottom: 1px solid gray;
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 122px);
 }
 
 
@@ -214,7 +219,7 @@ li {
   justify-content: flex-start;
   align-items: flex-end;
   flex-direction: column;
-  height: 700px;
+  min-height: calc(100vh - 70px);
 }
 
 .signup-content {
@@ -227,6 +232,10 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+.signup-form input {
+  margin: 10px 0px;
 }
 
 .signup-button {
@@ -798,6 +807,7 @@ width: 100%
 
 .search-bar-input:focus {
   outline: 0;
+  border-color: #DCD6CC;
 }
 
 .search-bar-list {
@@ -898,7 +908,7 @@ width: 100%
   outline: 0;
 }
 
-.footer {
+.footer-logged-in {
   margin: 0;
   height: 40px;
   background-color: #F4F1EA;
@@ -906,6 +916,15 @@ width: 100%
   color: #666;
   display: flex;
   align-items: center;
+}
+
+.footer-homepage {
+  margin: 0;
+  background-color: #F4F1EA;
+  color: #666;
+  display: flex;
+  align-items: center;
+  height: 80px;
 }
 
 .book-show-toggle-list-item {
