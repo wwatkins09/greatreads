@@ -1,6 +1,7 @@
 export const TOGGLE_REVIEW_MODAL = 'TOGGLE_REVIEW_MODAL';
 export const TOGGLE_SEARCH_BAR = 'TOGGLE_SEARCH_BAR';
 export const CLEAR_SEARCH_BAR = 'CLEAR_SEARCH_BAR';
+export const CLEAR_MODALS = 'CLEAR_MODALS';
 
 export const toggleReviewModal = function() {
   return {
@@ -17,5 +18,11 @@ export const toggleSearchBar = function() {
 export const clearSearchBar = function() {
   return {
     type: CLEAR_SEARCH_BAR
+  };
+};
+
+export const clearModals = function() {
+  return {
+    type: CLEAR_MODALS
   };
 };
