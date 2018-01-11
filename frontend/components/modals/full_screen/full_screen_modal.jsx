@@ -1,15 +1,31 @@
 import React from 'react';
 
-const FullScreenModal = function({toggled}) {
+class FullScreenModal extends React.Component {
 
-  let className = "full-screen-modal";
-  if (toggled) {
-    className = "full-screen-modal-toggled";
+  constructor(props) {
+    super(props);
+
+    this.handleClear = this.handleClear.bind(this);
   }
 
-  return (
-    <div className={className}></div>
-  );
-};
+  handleClear(event) {
+    event.stopPropagation();
+    this.props.clearModals();
+  }
+
+  render() {
+
+    let className = "full-screen-modal";
+    if (this.props.toggled) {
+      className = "full-screen-modal-toggled";
+    }
+
+    return (
+      <div className={className} onClick={this.handleClear}></div>
+    );
+  }
+
+}
+
 
 export default FullScreenModal;
