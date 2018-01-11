@@ -20,7 +20,7 @@ const mapStateToProps = function (state, ownProps) {
       book = {id: null, title: "", author: "", year: null, coverUrl: ""};
     }
     if (state.entities.users[state.session.currentUserId]) {
-      userBookshelves = state.entities.users[state.session.currentUserId].bookshelfIds.map((bookshelfId) => {
+      userBookshelves = state.entities.users[state.session.currentUserId].bookshelfIds.sort().map((bookshelfId) => {
         return (
           state.entities.bookshelves[bookshelfId]
         );
