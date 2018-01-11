@@ -209,9 +209,12 @@ li {
 
 .signup {
   background-color: #F4F1EA;
+  background: image-url("books.jpeg");
+  background-size: 100%;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  height: 700px;
 }
 
 .signup-content {
