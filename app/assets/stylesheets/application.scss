@@ -118,14 +118,14 @@ li {
    background-color: #382110;
  }
 
- .navbar-links a {
+ .navbar-link-container a {
 
    padding: 0px 30px;
    font-family: "Lato", sans-serif;
    line-height: 50px;
  }
 
- .navbar-links a:hover {
+ .navbar-link-container a:hover {
    text-decoration: none;
 
  }
@@ -789,17 +789,25 @@ width: 100%
   background-color: white;
 }
 
-.search-bar-item {
+.search-bar-item-container {
   height: 55px;
   overflow: hidden;
   display: flex;
-  padding: 8px;
   border-bottom: 1px solid #E8E8E8;
+
+
+}
+
+.search-bar-item {
+  padding: 0;
+  display: flex;
+  width: 100%;
 }
 
 .search-bar-item:hover {
   background-color: #F4F1EA;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .search-bar-item-left img {
