@@ -15,6 +15,12 @@ class SearchBar extends React.Component {
     this.props.fetchAllBooks();
   }
 
+  componentWillReceiveProps(props) {
+    if (props.location.pathname !== this.props.location.pathname) {
+      this.clearSearch();
+    }
+  }
+
   handleChange(event) {
     this.setState({input: event.target.value});
   }

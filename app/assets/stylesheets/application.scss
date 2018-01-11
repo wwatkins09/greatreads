@@ -256,14 +256,17 @@ li {
 
 .session-errors-list {
   padding: 0px;
+  margin: 0;
+  height: 32px;
   display: flex;
   flex-direction: column;
   padding-right: 50px;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .session-error {
   color: red;
-  padding: 10px 0px;
 }
 
 .user-show {
@@ -827,4 +830,14 @@ width: 100%
   text-overflow: ellipsis;
   width: 272px;
   padding: 4px 0;
+  font-weight: bold;
+  color: #333333;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+}
+
+.search-bar-item-author {
+  font-size: 12px;
+  color: #333333;
+  font-family: "Merriweather", sans-serif;
 }
