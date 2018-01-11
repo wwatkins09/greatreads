@@ -196,13 +196,12 @@ li {
 .signup {
   background-color: #F4F1EA;
   display: flex;
-  align-items: flex-end;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
 .signup-content {
   width: 200px;
-  padding: 0px 150px;
   margin-bottom: 50px;
 }
 
@@ -739,4 +738,14 @@ width: 100%
 
 .remove-book-button:hover {
   cursor: pointer;
+}
+
+.homepage-quote-text {
+  font-size: 32px;
+  font-family: "Radley";
+}
+
+.homepage-quote-author {
+  font-family: "Tangerine";
+  font-size: 24px;
 }
