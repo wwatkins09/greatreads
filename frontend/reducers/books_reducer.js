@@ -6,7 +6,7 @@ const booksReducer = function( oldState = {}, action ) {
   let newState;
   switch(action.type) {
     case RECEIVE_BOOKS:
-      return action.books;
+      return merge({}, oldState, action.books);
     case RECEIVE_BOOK:
       return merge({}, oldState, {[action.book.id]: action.book});
     case RECEIVE_REVIEW:
