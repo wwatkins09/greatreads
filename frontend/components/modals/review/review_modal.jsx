@@ -84,7 +84,7 @@ class ReviewModal extends React.Component {
             <input type="radio" name="score" value="5" checked={this.state.score.toString() === '5'} onChange={this.handleScoreChange} />It was amazing
           </label>
             <div className="review-modal-body">
-              <p>What did you think?</p>
+              <p>What did you think? (optional)</p>
               <textarea onChange={this.handleBodyChange} value={this.state.body}></textarea>
             </div>
           <button className="review-submit-button">Submit review</button>
