@@ -212,7 +212,7 @@ li {
 }
 
 .signup {
-  background-color: #F4F1EA;
+  background: linear-gradient(45deg, transparent, #F4F1EA);
   background: image-url("books.jpeg");
   background-size: 100%;
   display: flex;
@@ -223,9 +223,24 @@ li {
 }
 
 .signup-content {
-  width: 200px;
+  width: 280px;
+  height: 158;
   margin-bottom: 50px;
-  margin-right: 150px;
+  margin-right: 200px;
+  margin-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F4F1EA;
+}
+
+.signup-content p {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #000;
 }
 
 .signup-form {
@@ -778,7 +793,8 @@ width: 100%
 
 .homepage-quote-text {
   font-size: 32px;
-  font-family: "IM Fell English", serif;
+  font-family: 'Homemade Apple', cursive;
+
   margin-right: 50px;
 }
 

@@ -38,7 +38,8 @@ class NewUserForm extends React.Component {
           <p className="homepage-quote-author">Jorge Luis Borges</p>
         </content>
         <content className="signup-content">
-          <h3>Don't have an account? Sign up now for free!</h3>
+          <p>Don't have an account?</p>
+          <p>Sign up now for free!</p>
           <form  className="signup-form" onSubmit={this.handleSubmit}>
               <input onChange={this.handleChange('username')} type="text" value={this.state.username} placeholder="Username"></input>
               <input onChange={this.handleChange('password')} type="password" value={this.state.password} placeholder="Password"></input>

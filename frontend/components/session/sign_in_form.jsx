@@ -42,12 +42,8 @@ class SignInForm extends React.Component {
       return (
           <content className="signin">
           <form className="navbar-form" onSubmit={this.handleSubmit}>
-            <label>Username:
-              <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.username}></input>
-            </label>
-            <label>Password:
-              <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
-            </label>
+              <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.username} placeholder="Username"></input>
+              <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password} placeholder="Password"></input>
               <button className="signin-button">Log In</button>
               <div className="signin-button-demo-container">
                 <button className="signin-button" onClick={this.handleDemoSignin} >Demo Login</button>
