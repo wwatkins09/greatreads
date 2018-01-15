@@ -7,7 +7,7 @@ class BookShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {toggled: false, onDefaultShelf: false}
+    this.state = {toggled: false, onDefaultShelf: false, readStatus: null}
 
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
     this.handleBookshelfSelect = this.handleBookshelfSelect.bind(this);
@@ -21,6 +21,11 @@ class BookShow extends React.Component {
     });
     this.props.fetchUserBookshelves(this.props.currentUserId);
     this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId);
+    this.props.userBookshelves.forEach((bookshelf) => {
+    if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(this.props.bookId))) {
+      this.setState({onDefaultShelf: true, readStatus: bookshelf.name})
+    }
+  })
   }
 
   componentWillReceiveProps(props) {
@@ -29,6 +34,13 @@ class BookShow extends React.Component {
       this.props.fetchBook(props.match.params.bookId).then(() => {}, () => {
         this.props.history.push("/");
       });
+
+      this.props.userBookshelves.forEach((bookshelf) => {
+      if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(this.props.bookId))) {
+        this.setState({onDefaultShelf: true, readStatus: bookshelf.name})
+      }
+    })
+
     }
   }
 
@@ -74,19 +86,8 @@ class BookShow extends React.Component {
 
     const ctx = this;
     let readStatus = 'Want to Read';
-    let bookClassName = 'not-on-default-shelf';
-    let onDefaultShelf = this.state.onDefaultShelf;
-        this.props.userBookshelves.forEach((bookshelf) => {
-        if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(ctx.props.bookId))) {
-          readStatus = bookshelf.name;
-          bookClassName = 'on-default-shelf';
-          onDefaultShelf = true
-        }
-      })
+    let bookClassName = this.state.onDefaultShelf ? 'on-default-shelf' : 'not-on-default-shelf';
 
-    if (this.state.onDefaultShelf != onDefaultShelf) {
-      this.setState({onDefaultShelf})
-    }
 
 
     let toggleMenu;
@@ -115,7 +116,7 @@ class BookShow extends React.Component {
           </div>
           <div className="book-show-button-container">
             <div className={`${bookClassName}-container`}>
-              <span className={bookClassName} onClick={this.handleAddToDefault}>{readStatus} </span>
+              <span className={bookClassName} onClick={this.handleAddToDefault}>{this.state.readStatus ? this.state.readStatus : 'Want to Read'} </span>
             </div>
             <button className="book-show-button" onClick={this.toggleBookshelves}>▼
             </button>
