@@ -4,8 +4,10 @@ class Api::BooksController < ApplicationController
     if params[:bookshelf_id]
       @bookshelf = Bookshelf.find(params[:bookshelf_id])
       @books = @bookshelf.books
+      @user = User.find(@bookshelf.user_id)
     else
       @books = Book.all
+      @user = nil
     end
     render "api/books/index"
   end
