@@ -19,7 +19,8 @@ const mapStateToProps = function (state, ownProps) {
     bookshelfId,
     bookshelf,
     bookshelfBooks,
-    currentUserId: state.session.currentUserId
+    currentUserId: state.session.currentUserId,
+    reviews: ownProps.reviews
   };
 };
 

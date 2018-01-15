@@ -2,12 +2,14 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import BookshelfShow from './bookshelf_show';
 import {fetchBookshelf, deleteBookshelf, updateBookshelf, clearBookshelfErrors, fetchUserBookshelvesByBookshelfId} from '../../actions/bookshelf_actions';
+import {fetchReviewsByUserId} from '../../actions/review_actions';
 
 const mapStateToProps = function(state, ownProps) {
   let bookshelf = state.entities.bookshelves[ownProps.match.params.bookshelfId];
   let bookshelves = [];
   let owner;
   let books = [];
+  let reviews = [];
 
   if (bookshelf) {
     owner = state.entities.users[bookshelf.userId];
@@ -22,6 +24,13 @@ const mapStateToProps = function(state, ownProps) {
     owner = {id: -1, username: ""};
   }
 
+  reviews = books.map((book) => {
+    if (book) {
+      return Object.values(state.entities.reviews).find((review) => (review.bookId === book.id))
+    }
+  })
+
+
 
 
   return {
@@ -31,7 +40,8 @@ const mapStateToProps = function(state, ownProps) {
     owner,
     currentUserId: state.session.currentUserId,
     bookshelfErrors: state.errors.bookshelf,
-    books
+    books,
+    reviews
   };
 };
 
@@ -42,6 +52,7 @@ const mapDispatchToProps = function(dispatch) {
     deleteBookshelf: (bookshelfId) => dispatch(deleteBookshelf(bookshelfId)),
     clearBookshelfErrors: () => dispatch(clearBookshelfErrors()),
     fetchBookshelf: (bookshelfId) => dispatch(fetchBookshelf(bookshelfId)),
+    fetchReviewsByUserId: (userId) => dispatch(fetchReviewsByUserId(userId))
   };
 };
 
