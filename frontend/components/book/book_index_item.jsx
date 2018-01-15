@@ -29,6 +29,7 @@ class BookIndexItem extends React.Component {
           <Link to={`/books/${this.props.book.id}`}>{this.props.book.title}</Link>
         </td>
         <td className="table-field-author">{this.props.book.author}</td>
+        <td className="table-field-score">score</td>
         <td className="table-field-delete">
           {button}
         </td>
