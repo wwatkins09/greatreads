@@ -20,7 +20,7 @@ const mapStateToProps = function(state, ownProps) {
       return state.entities.books[bookId];
     });
   } else {
-    bookshelf = {name: ""};
+    bookshelf = {name: "", userId: null};
     owner = {id: -1, username: ""};
   }
 

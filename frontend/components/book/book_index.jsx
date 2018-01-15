@@ -18,10 +18,9 @@ class BookIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props.reviews);
     let booksList;
 
-      booksList = Object.values(this.props.bookshelfBooks).map((book) => {
+      booksList = Object.values(this.props.bookshelfBooks).map((book, idx) => {
         if (book) {
           return (
               <BookIndexItem book={book}
@@ -29,7 +28,7 @@ class BookIndex extends React.Component {
                 bookshelf={this.props.bookshelf}
                 deleteBookshelfOwnership={this.props.deleteBookshelfOwnership}
                 currentUserId={this.props.currentUserId}
-                review={this.props.reviews.find((review) => (review && review.bookId === book.id))}
+                review={this.props.reviews[idx]}
               />
           );
         }
