@@ -18,6 +18,7 @@ class BookIndexItem extends React.Component {
     if (this.props.currentUserId === this.props.bookshelf.userId) {
       button = (<button className="remove-book-button" onClick={this.handleRemove}>Remove book</button>);
     }
+    const reviewScore = this.props.review ? this.props.review.score : null;
     return (
       <tr>
         <td className="table-field-cover">
@@ -29,7 +30,7 @@ class BookIndexItem extends React.Component {
           <Link to={`/books/${this.props.book.id}`}>{this.props.book.title}</Link>
         </td>
         <td className="table-field-author">{this.props.book.author}</td>
-        <td className="table-field-score">score</td>
+        <td className="table-field-score">{reviewScore}</td>
         <td className="table-field-delete">
           {button}
         </td>

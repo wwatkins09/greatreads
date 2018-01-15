@@ -14,22 +14,22 @@ class BookshelfShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserBookshelvesByBookshelfId(this.props.bookshelfId).then(() => {}, () => {
+    this.props.fetchUserBookshelvesByBookshelfId(this.props.bookshelfId).then((payload) => {
+      let userId = Object.keys(payload.user)[0];
+      this.props.fetchReviewsByUserId(userId);
+    }, () => {
       this.props.history.push("/")
     });
-    if (this.props.owner.id > -1) {
-      this.props.fetchReviewsByUserId(this.props.owner.id);
-    }
   }
 
   componentWillReceiveProps(props) {
     if (props.match.params.bookshelfId !== this.props.match.params.bookshelfId) {
-      this.props.fetchUserBookshelvesByBookshelfId(props.match.params.bookshelfId).then(() => {}, () => {
+      this.props.fetchUserBookshelvesByBookshelfId(props.match.params.bookshelfId).then((payload) => {
+        let userId = Object.keys(payload.user)[0]
+        this.props.fetchReviewsByUserId(userId)
+      }, () => {
         this.props.history.push("/")
       });
-      if (props.owner && props.owner.id > -1) {
-        this.props.fetchReviewsByUserId(props.owner.id);
-      }
     }
   }
 
