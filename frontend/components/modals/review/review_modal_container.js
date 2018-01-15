@@ -6,6 +6,7 @@ import {toggleReviewModal} from '../../../actions/ui_actions';
 
 const mapStateToProps = function (state, ownProps) {
   return {
+    bookId: ownProps.match.params.bookId,
     book: ownProps.book,
     currentUserId: state.session.currentUserId,
     toggled: state.ui.reviewModal,

@@ -4,19 +4,25 @@ class ReviewModal extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = (props.review ? props.review : {userId: this.props.currentUserId, bookId: this.props.book.id, score: '0', body: ""});
+    this.state = (props.review ? props.review : {userId: this.props.currentUserId,
+      bookId: this.props.bookId,
+      score: 0,
+      body: "",
+      starsFilled: 0
+    });
 
     this.handleScoreChange = this.handleScoreChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
+    this.fillStar = this.fillStar.bind(this);
+    this.emptyStars = this.emptyStars.bind(this);
+    this.handleStarSelect = this.handleStarSelect.bind(this);
   }
 
   componentWillReceiveProps(props) {
     if (props.review) {
       this.setState(props.review);
-    } else {
-      this.setState({score: 0, body: "", bookId: props.book.id, id: undefined});
     }
   }
 
@@ -45,6 +51,30 @@ class ReviewModal extends React.Component {
     this.props.toggleReviewModal();
   }
 
+  fillStar(number) {
+    return (event) => {
+      this.setState({starsFilled: number})
+    };
+  }
+
+  emptyStars(event) {
+    this.setState({starsFilled: this.state.score})
+  }
+
+  classNameGenerator(score, starValue) {
+    if (score >= starValue) {
+      return 'star-filled';
+    } else {
+      return 'star-empty';
+    }
+  }
+
+  handleStarSelect(score) {
+    return (event) => {
+      this.setState({score})
+    }
+  }
+
   render() {
     let className = 'review-modal-hidden';
     if (this.props.toggled) {
@@ -68,21 +98,13 @@ class ReviewModal extends React.Component {
             <p className="review-modal-title">{this.props.book.title}</p>
             <p className="review-modal-author">by {this.props.book.author}</p>
             <p className="review-modal-rating">My rating: </p>
-            <label className="radio">
-            <input type="radio" name="score" value="1" checked={this.state.score.toString() === '1'} onChange={this.handleScoreChange} />Didn't like it
-          </label>
-          <label className="radio">
-            <input type="radio" name="score" value="2" checked={this.state.score.toString() === '2'} onChange={this.handleScoreChange} />It was OK
-          </label>
-          <label className="radio">
-            <input type="radio" name="score" value="3" checked={this.state.score.toString() === '3'} onChange={this.handleScoreChange} />Liked it
-          </label>
-          <label className="radio">
-            <input type="radio" name="score" value="4" checked={this.state.score.toString() === '4'} onChange={this.handleScoreChange} />Really liked it
-          </label>
-          <label className="radio">
-            <input type="radio" name="score" value="5" checked={this.state.score.toString() === '5'} onChange={this.handleScoreChange} />It was amazing
-          </label>
+            <div className="review-modal-stars">
+              <span className={this.classNameGenerator(this.state.starsFilled, 1)} onMouseEnter={this.fillStar(1)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(1)}></span>
+              <span className={this.classNameGenerator(this.state.starsFilled, 2)} onMouseEnter={this.fillStar(2)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(2)}></span>
+              <span className={this.classNameGenerator(this.state.starsFilled, 3)} onMouseEnter={this.fillStar(3)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(3)}></span>
+              <span className={this.classNameGenerator(this.state.starsFilled, 4)} onMouseEnter={this.fillStar(4)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(4)}></span>
+              <span className={this.classNameGenerator(this.state.starsFilled, 5)} onMouseEnter={this.fillStar(5)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(5)}></span>
+            </div>
             <div className="review-modal-body">
               <p>What did you think? (optional)</p>
               <textarea onChange={this.handleBodyChange} value={this.state.body}></textarea>
