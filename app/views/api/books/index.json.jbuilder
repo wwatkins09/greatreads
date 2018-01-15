@@ -10,5 +10,3 @@
       json.coverUrl asset_path(book.cover.url)
     end
   end
-
-json.user @user

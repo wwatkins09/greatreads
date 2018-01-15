@@ -17,6 +17,9 @@ class BookshelfShow extends React.Component {
     this.props.fetchUserBookshelvesByBookshelfId(this.props.bookshelfId).then(() => {}, () => {
       this.props.history.push("/")
     });
+    if (this.props.owner.id > -1) {
+      this.props.fetchReviewsByUserId(this.props.owner.id);
+    }
   }
 
   componentWillReceiveProps(props) {
@@ -24,6 +27,9 @@ class BookshelfShow extends React.Component {
       this.props.fetchUserBookshelvesByBookshelfId(props.match.params.bookshelfId).then(() => {}, () => {
         this.props.history.push("/")
       });
+      if (props.owner && props.owner.id > -1) {
+        this.props.fetchReviewsByUserId(props.owner.id);
+      }
     }
   }
 
@@ -90,7 +96,7 @@ class BookshelfShow extends React.Component {
             <p className="bookshelf-show-header"> > </p>
             <p className="bookshelf-show-header">Books: {this.props.bookshelf.name}</p>
           </content>
-          <BookIndexContainer bookshelf={this.props.bookshelf}></BookIndexContainer>
+          <BookIndexContainer bookshelf={this.props.bookshelf} reviews={this.props.reviews}></BookIndexContainer>
           {bookshelfEdit}
           <ul className="bookshelf-errors-list">
             {errorsList}

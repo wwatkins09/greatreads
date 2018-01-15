@@ -2,6 +2,7 @@ import * as APIReviewUtil from '../util/api_review_util';
 
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
+export const RECEIVE_REVIEWS_WITH_USER = 'RECEIVE_REVIEWS_WITH_USER';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const CLEAR_REVIEW_ERRORS = 'CLEAR_REVIEW_ERRORS';
@@ -14,7 +15,7 @@ export const fetchReview = function(reviewId) {
 
 export const fetchReviewsByUserId = function(userId) {
   return function(dispatch) {
-    return APIReviewUtil.fetchReviewsByUserId(userId).then((reviews) => dispatch(receiveReviews(reviews)));
+    return APIReviewUtil.fetchReviewsByUserId(userId).then((reviews) => dispatch(receiveReviewsWithUser(reviews)));
   };
 };
 
@@ -65,6 +66,15 @@ export const receiveReviews = function(payload) {
     users: payload.users
   };
 };
+
+export const receiveReviewsWithUser = function(payload) {
+  return {
+    type: RECEIVE_REVIEWS_WITH_USER,
+    reviews: payload.reviews,
+    user: payload.user,
+    books: payload.books
+  }
+}
 
 export const removeReview = function(payload) {
   return {
