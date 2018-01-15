@@ -7,11 +7,12 @@ class BookShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {toggled: false}
+    this.state = {toggled: false, onDefaultShelf: false}
 
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
     this.handleBookshelfSelect = this.handleBookshelfSelect.bind(this);
     this.handleReview = this.handleReview.bind(this);
+    this.handleAddToDefault = this.handleAddToDefault.bind(this);
   }
 
   componentDidMount() {
@@ -57,6 +58,12 @@ class BookShow extends React.Component {
     this.props.toggleReviewModal();
   }
 
+  handleAddToDefault(event) {
+    if (this.state.onDefaultShelf === false) {
+      console.log("Working!");
+    }
+  }
+
 
   render() {
 
@@ -66,13 +73,20 @@ class BookShow extends React.Component {
 
 
     const ctx = this;
-    let readStatus = "Add to bookshelf:";
+    let readStatus = 'Want to Read';
+    let bookClassName = 'not-on-default-shelf';
+    let onDefaultShelf = this.state.onDefaultShelf;
         this.props.userBookshelves.forEach((bookshelf) => {
         if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(ctx.props.bookId))) {
           readStatus = bookshelf.name;
+          bookClassName = 'on-default-shelf';
+          onDefaultShelf = true
         }
       })
 
+    if (this.state.onDefaultShelf != onDefaultShelf) {
+      this.setState({onDefaultShelf})
+    }
 
 
     let toggleMenu;
@@ -100,8 +114,8 @@ class BookShow extends React.Component {
             <img src={this.props.book.coverUrl} alt="Cover"></img>
           </div>
           <div className="book-show-button-container">
-            <div className="book-show-bookshelf-name-container">
-              <span className="book-show-bookshelf-name">{readStatus}</span>
+            <div className={`${bookClassName}-container`}>
+              <span className={bookClassName} onClick={this.handleAddToDefault}>{readStatus} </span>
             </div>
             <button className="book-show-button" onClick={this.toggleBookshelves}>▼
             </button>
