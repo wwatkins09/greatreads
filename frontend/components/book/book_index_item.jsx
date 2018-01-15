@@ -13,6 +13,14 @@ class BookIndexItem extends React.Component {
     this.props.deleteBookshelfOwnership({bookshelfId: this.props.bookshelf.id, bookId: this.props.book.id});
   }
 
+  classNameGenerator(score, starValue) {
+    if (score >= starValue) {
+      return 'star-filled';
+    } else {
+      return 'star-empty';
+    }
+  }
+
   render() {
     let button;
     if (this.props.currentUserId === this.props.bookshelf.userId) {
@@ -30,7 +38,15 @@ class BookIndexItem extends React.Component {
           <Link to={`/books/${this.props.book.id}`}>{this.props.book.title}</Link>
         </td>
         <td className="table-field-author">{this.props.book.author}</td>
-        <td className="table-field-score">{reviewScore}</td>
+        <td className="table-field-score">
+          <div className="review-header">
+            <span className={this.classNameGenerator(reviewScore, 1)}></span>
+            <span className={this.classNameGenerator(reviewScore, 2)}></span>
+            <span className={this.classNameGenerator(reviewScore, 3)}></span>
+            <span className={this.classNameGenerator(reviewScore, 4)}></span>
+            <span className={this.classNameGenerator(reviewScore, 5)}></span>
+          </div>
+        </td>
         <td className="table-field-delete">
           {button}
         </td>
