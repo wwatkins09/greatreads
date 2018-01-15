@@ -23,6 +23,7 @@ class ReviewModal extends React.Component {
   componentWillReceiveProps(props) {
     if (props.review) {
       this.setState(props.review);
+      this.setState({starsFilled: props.review.score})
     }
   }
 
@@ -63,9 +64,9 @@ class ReviewModal extends React.Component {
 
   classNameGenerator(score, starValue) {
     if (score >= starValue) {
-      return 'star-filled';
+      return 'star-filled-selectable';
     } else {
-      return 'star-empty';
+      return 'star-empty-selectable';
     }
   }
 
