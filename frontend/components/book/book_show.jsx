@@ -59,8 +59,8 @@ class BookShow extends React.Component {
   }
 
   handleAddToDefault(event) {
-    if (this.state.onDefaultShelf === false) {
-      console.log("Working!");
+    if (this.state.onDefaultShelf === false && this.props.wantToReadBookshelf) {
+      this.handleBookshelfSelect(this.props.wantToReadBookshelf)(event);
     }
   }
 

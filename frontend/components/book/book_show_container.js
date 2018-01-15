@@ -12,6 +12,7 @@ const mapStateToProps = function (state, ownProps) {
   let userBookshelves;
   let bookReviews = [];
   let currentUserReview;
+  let wantToReadBookshelf;
     if (book) {
       bookReviews = book.reviewIds.map((reviewId) => {
         return state.entities.reviews[reviewId];
@@ -21,6 +22,9 @@ const mapStateToProps = function (state, ownProps) {
     }
     if (state.entities.users[state.session.currentUserId]) {
       userBookshelves = state.entities.users[state.session.currentUserId].bookshelfIds.sort().map((bookshelfId) => {
+        if (state.entities.bookshelves[bookshelfId] && state.entities.bookshelves[bookshelfId].name === "Want to Read") {
+          wantToReadBookshelf = state.entities.bookshelves[bookshelfId];
+        }
         return (
           state.entities.bookshelves[bookshelfId]
         );
@@ -36,7 +40,8 @@ const mapStateToProps = function (state, ownProps) {
     currentUserId: state.session.currentUserId,
     userBookshelves,
     bookshelfOwnershipErrors: state.errors.bookshelfOwnership,
-    currentUserReview
+    currentUserReview,
+    wantToReadBookshelf
   };
 };
 
