@@ -19,7 +19,6 @@ class BookIndex extends React.Component {
 
   render() {
     let booksList;
-
       booksList = Object.values(this.props.bookshelfBooks).map((book, idx) => {
         if (book) {
           return (

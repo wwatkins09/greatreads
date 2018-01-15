@@ -25,8 +25,8 @@ const mapStateToProps = function(state, ownProps) {
   }
 
   reviews = books.map((book) => {
-    if (book) {
-      return Object.values(state.entities.reviews).find((review) => (review.bookId === book.id))
+    if (book && owner) {
+      return Object.values(state.entities.reviews).find((review) => (review.bookId === book.id && review.userId === owner.id))
     }
   })
 
