@@ -16,7 +16,6 @@ class ReviewIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.review.score);
     const username = (this.props.user ? this.props.user.username : "");
     return (
       <li className="review-all">
