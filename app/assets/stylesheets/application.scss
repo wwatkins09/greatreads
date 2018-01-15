@@ -761,8 +761,8 @@ width: 100%
 
 .review-score {
   margin-left: 5px;
-  font-weight: normal;
-  font-size: 14px;
+  display: flex;
+  align-items: center;
 }
 
 .review-current-user {
@@ -996,4 +996,18 @@ width: 100%
 .logo-credit {
   margin: 0;
   padding: 0px 20px;
+}
+
+.star-filled {
+  background: image-url('filled_star.png');
+  background-size: 100%;
+  height: 17px;
+  width: 17px;
+}
+
+.star-empty {
+  background: image-url('empty_star.png');
+  background-size: 100%;
+  height: 17px;
+  width: 17px;
 }
