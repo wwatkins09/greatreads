@@ -34,7 +34,7 @@ class UserShow extends React.Component {
 
     return (
       <div className="user-show">
-        <h1>{finalTitle}</h1></content>
+        <h1>{finalTitle}</h1>
         <content>
           <BookshelfIndexContainer user={this.props.user} />
           <ul className="bookshelf-errors-list">{errorsList}</ul>
