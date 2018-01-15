@@ -36,7 +36,9 @@ class SearchBar extends React.Component {
     let booksExist = false;
     if (this.props.toggled) {
       bookList = Object.values(this.props.books).map((book) => {
-        if (book.title.toLowerCase().includes(this.state.input.toLowerCase())) {
+        if (book.title.toLowerCase().includes(this.state.input.toLowerCase())
+        ||
+        book.author.toLowerCase().includes(this.state.input.toLowerCase())) {
           booksExist = true;
           return (
             <SearchBarItem book={book} key={book.id} clearSearch={this.clearSearch} />
