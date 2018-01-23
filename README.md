@@ -1,6 +1,6 @@
 # README
 
-<a href="https://aa-greatreads.heroku-app.com">
+<a href="https://aa-greatreads.herokuapp.com">
 <img width=25% height=25% src="https://i.imgur.com/SKhVy5z.png" />
 </a>
 
