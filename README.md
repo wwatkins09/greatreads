@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<a href="http://aa-greatreads.heroku-app.com">
+<img src="https://imgur.com/SKhVy5z" />
+</a>
 
-Things you may want to cover:
+Greatreads is a web-app inspired by Goodreads that allows users to discover, organize, and review various books. It operates with Ruby on Rails and a Postgresql database on the backend, as well as with React and Redux architecture on the frontend.
 
-* Ruby version
+## Key Features
 
-* System dependencies
+* User Authentication
 
-* Configuration
+* Bookshelves
 
-* Database creation
+* Books
 
-* Database initialization
+* Reviews
 
-* How to run the test suite
+## User Authentication
 
-* Services (job queues, cache servers, search engines, etc.)
+## Books and Bookshelves
 
-* Deployment instructions
-
-* ...
+## Reviews
