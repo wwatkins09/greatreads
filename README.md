@@ -28,6 +28,7 @@ After logging/signing in, users are redirected to their profile page, which list
 
 Book reviews on Greatreads consist of two parts: a numerical rating on a scale of 1-5, and an optional comment. A user can leave one review for each book, as well as edit and delete them. All users' reviews are visible on a book's page.
 
-## Read Status
+## Future Directions
 
-Greatreads lets
+* Allow users to add photo to profile
+* Allow users to interact with each other via comments on reviews, friendships, etc.
