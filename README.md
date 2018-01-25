@@ -22,9 +22,19 @@ Greatreads is a web-app inspired by Goodreads that allows users to discover, org
 
 From the homepage, users can enter the site by either signing up or logging into a previously existing account. To bypass this step, users can also log in via a demo account.
 
-## Books and Bookshelves
+## Bookshelves
+
+<img src="https://i.imgur.com/zX6K1Nn.png" />
 
 After logging/signing in, users are redirected to their profile page, which lists all of the bookshelves that they own. Every user has three bookshelves by default: Read, Currently Reading, and Want to Read. These bookshelves are mutually exclusive, meaning that if a book is added to "Want to Read" and then added to "Currently Reading", it will no longer exist on "Want to Read". Aside from these, users may create their own bookshelves, as well as edit and delete them.
+
+## Books
+
+<img src="https://i.imgur.com/mFBUVJP.png" />
+
+<img src="https://i.imgur.com/6NdXsvj.png" />
+
+Books can be found by either browsing the site's complete list or by searching for the title or author. On a book's individual page, a user can choose to add it to any of their bookshelves.
 
 ## Reviews
 
