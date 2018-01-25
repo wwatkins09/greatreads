@@ -38,6 +38,8 @@ Books can be found by either browsing the site's complete list or by searching f
 
 ## Reviews
 
+<img src="https://i.imgur.com/9I12itj.png" />
+
 Book reviews on Greatreads consist of two parts: a numerical rating on a scale of 1-5, and an optional comment. A user can leave one review for each book, as well as edit and delete them. All users' reviews are visible on a book's page.
 
 ## Future Directions
