@@ -18,6 +18,8 @@ Greatreads is a web-app inspired by Goodreads that allows users to discover, org
 
 ## User Authentication
 
+<img src="https://i.imgur.com/5JLsW47.png" />
+
 From the homepage, users can enter the site by either signing up or logging into a previously existing account. To bypass this step, users can also log in via a demo account.
 
 ## Books and Bookshelves
