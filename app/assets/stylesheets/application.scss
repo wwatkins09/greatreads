@@ -961,6 +961,7 @@ width: 100%
   color: #666;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .footer-homepage {
@@ -969,6 +970,7 @@ width: 100%
   color: #666;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 80px;
 }
 
@@ -1037,4 +1039,19 @@ width: 100%
 
 .review-modal-stars {
   display: flex;
+}
+
+.credits {
+  display: flex;
+  font-size: 14px;
+}
+
+.personal-links {
+  display: flex;
+  margin-right: 30px;
+}
+
+.personal-links a {
+  margin: 0 10px;
+  font-size: 16px;
 }
