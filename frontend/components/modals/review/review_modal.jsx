@@ -4,11 +4,13 @@ class ReviewModal extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = (props.review ? props.review : {userId: this.props.currentUserId,
+    this.state = (props.review ? props.review : {id: undefined,
+      userId: this.props.currentUserId,
       bookId: this.props.bookId,
       score: 0,
       body: "",
-      starsFilled: 0
+      starsFilled: 0,
+      empty: true
     });
 
     this.handleScoreChange = this.handleScoreChange.bind(this);
@@ -23,7 +25,15 @@ class ReviewModal extends React.Component {
   componentWillReceiveProps(props) {
     if (props.review) {
       this.setState(props.review);
-      this.setState({starsFilled: props.review.score})
+      this.setState({starsFilled: props.review.score, empty: false})
+    } else if (!props.review && !this.state.empty) {
+      this.setState({id: undefined,
+        userId: this.props.currentUserId,
+        bookId: this.props.bookId,
+        score: 0,
+        body: "",
+        starsFilled: 0,
+        empty: true})
     }
   }
 
