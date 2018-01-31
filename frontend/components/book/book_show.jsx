@@ -16,6 +16,7 @@ class BookShow extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearModals();
     this.props.fetchBook(this.props.bookId).then(() => {}, () => {
       this.props.history.push("/");
     }).then(() => this.props.fetchUserBookshelves(this.props.currentUserId)).then(() => this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId)).then(() => this.props.userBookshelves.forEach((bookshelf) => {
@@ -30,6 +31,7 @@ class BookShow extends React.Component {
   componentWillReceiveProps(props) {
     if (props.match.params.bookId !== this.props.match.params.bookId) {
       this.props.clearBookshelfOwnershipErrors();
+      this.props.clearModals();
       this.props.fetchBook(props.match.params.bookId).then(() => {}, () => {
         this.props.history.push("/");
       });

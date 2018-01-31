@@ -3,7 +3,7 @@ import BookShow from './book_show';
 import {fetchBook} from '../../actions/book_actions';
 import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
 import {createBookshelfOwnership, fetchBookshelfOwnershipsByBookId, fetchBookshelfOwnershipsByBookshelfId, clearBookshelfOwnershipErrors} from '../../actions/bookshelf_ownership_actions';
-import {toggleReviewModal, toggleBookshelfModal} from '../../actions/ui_actions';
+import {toggleReviewModal, toggleBookshelfModal, clearModals} from '../../actions/ui_actions';
 import {withRouter} from 'react-router-dom';
 import {clearReviewErrors} from '../../actions/review_actions';
 
@@ -56,7 +56,8 @@ const mapDispatchToProps = function (dispatch) {
     clearBookshelfOwnershipErrors: () => dispatch(clearBookshelfOwnershipErrors()),
     toggleReviewModal: () => dispatch(toggleReviewModal()),
     toggleBookshelfModal: () => dispatch(toggleBookshelfModal()),
-    clearReviewErrors: () => dispatch(clearReviewErrors())
+    clearReviewErrors: () => dispatch(clearReviewErrors()),
+    clearModals: () => dispatch(clearModals())
   };
 };
 
