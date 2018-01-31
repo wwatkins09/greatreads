@@ -121,6 +121,7 @@ class ReviewModal extends React.Component {
             <div className="review-modal-body">
               <p>What did you think? (optional)</p>
               <textarea onChange={this.handleBodyChange} value={this.state.body}></textarea>
+              <p className="characters-left">{1000 - this.state.body.length} characters left.</p>
             </div>
           <button className="review-submit-button">Submit review</button>
         </form>
