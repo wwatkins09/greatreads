@@ -466,6 +466,7 @@ li {
 .book-show img {
   max-width: 150px;
   margin: 20px;
+  height: 230px;
   box-shadow: 0px 5px 5px black;
   font-family: "Merriweather", serif;
 }
@@ -475,6 +476,7 @@ li {
   flex-direction: column;
   align-items: center;
   position: relative;
+  height: 334px;
 }
 
 .book-show-image-container {
