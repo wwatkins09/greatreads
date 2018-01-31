@@ -8,6 +8,7 @@ class BookFullIndex extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearModals();
     this.props.fetchAllBooks();
   }
 
