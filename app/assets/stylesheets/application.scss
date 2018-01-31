@@ -711,7 +711,11 @@ width: 100%
 .review-modal-x {
   padding: 2px 0px;
   margin: 0;
+  width: 17px;
+  height: 13px;
   font-family: sans-serif;
+  background: image-url('exit.png');
+  background-size: 100%;
 }
 
 .review-modal-x:hover {

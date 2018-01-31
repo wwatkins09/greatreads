@@ -105,7 +105,7 @@ class ReviewModal extends React.Component {
       <div className="review-modal">
         <main className={className}>
           <div className="review-modal-x-container">
-            <p onClick={this.handleModalClose} className="review-modal-x">x</p>
+            <span onClick={this.handleModalClose} className="review-modal-x"></span>
           </div>
           <form onSubmit={this.handleSubmit}>
             <p className="review-modal-title">{this.props.book.title}</p>
