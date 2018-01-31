@@ -42,7 +42,9 @@ class ReviewModal extends React.Component {
   }
 
   handleBodyChange(event) {
-    this.setState({body: event.currentTarget.value});
+    if (event.currentTarget.value.length <= 1000) {
+      this.setState({body: event.currentTarget.value});
+    }
   }
 
   handleSubmit(event) {
