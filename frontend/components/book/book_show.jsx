@@ -90,7 +90,9 @@ class BookShow extends React.Component {
 
 
 
-    let toggleMenu;
+    let toggleMenu = (
+      <ul className="book-show-toggle-list-hidden" />
+    );
     if (this.state.toggled) {
       const toggleMenuItems = this.props.userBookshelves.sort(sortBookshelf).map((bookshelf) => {
         if (bookshelf) {

@@ -330,6 +330,8 @@ li {
 .bookshelf-show-sidebar {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
+  margin-right: 25px;
+  overflow: hidden;
 
 }
 
@@ -568,12 +570,17 @@ li {
 
 .book-show-button:hover {
   cursor: pointer;
+  background-color: #3d9363;
+}
+
+.book-show-button:focus {
+  outline: none;
 }
 
 .book-show-toggle-list {
   padding: 0;
-  margin: 1px;
-  width: 180px;
+  margin: 0px;
+  width: 147px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -581,10 +588,26 @@ li {
   border: 1px solid #cccccc;
   border-radius: 3px;
   font-size: 12px;
+  margin-left: 1px;
+  height: 80px;
+  transition: height 0.5s ease-out;
+  z-index: 20;
+  overflow: scroll;
+}
+
+.book-show-toggle-list-hidden {
+  padding: 0;
+  margin: 0px;
+  height: 0px;
+  margin-left: 1px;
+  transition: height 0.2s ease-out;
+  z-index: 0;
+  font-size: 12px;
 }
 
 .book-show-toggle-list li {
-width: 100%
+  width: 100%;
+  overflow: none;
 }
 
 .book-show-toggle-list li:hover {
@@ -975,7 +998,6 @@ width: 100%
 }
 
 .book-show-toggle-list-item {
-  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
