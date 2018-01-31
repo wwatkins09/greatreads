@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import App from './app';
-import {clearSearchBar} from '../../actions/ui_actions';
+import {clearSearchBar, clearBookshelfModal} from '../../actions/ui_actions';
 
 const mapStateToProps = function(state) {
   return {
@@ -11,7 +11,8 @@ const mapStateToProps = function(state) {
 
 const mapDispatchToProps = function(dispatch) {
   return {
-    clearSearchBar: () => dispatch(clearSearchBar())
+    clearSearchBar: () => dispatch(clearSearchBar()),
+    clearBookshelfModal: () => dispatch(clearBookshelfModal())
   };
 };
 

@@ -13,16 +13,20 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.closeSearchBar = this.closeSearchBar.bind(this);
+    this.closeModals = this.closeModals.bind(this);
+
   }
 
-  closeSearchBar() {
+  closeModals(event) {
     this.props.clearSearchBar();
+    if (event.target.innerHTML != '▼') {
+      this.props.clearBookshelfModal();
+    }
   }
 
   render() {
     return (
-    <div className="app" onClick={this.closeSearchBar}>
+    <div className="app" onClick={this.closeModals}>
       <FullScreenModalContainer />
       <Route path="/" component={NavBarContainer} />
       <Mainpage />

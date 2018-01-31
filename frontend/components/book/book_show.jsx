@@ -7,7 +7,7 @@ class BookShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {toggled: false, onDefaultShelf: false, readStatus: null}
+    this.state = {toggled: props.bookshelfModalToggled, onDefaultShelf: false, readStatus: null}
 
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
     this.handleBookshelfSelect = this.handleBookshelfSelect.bind(this);
@@ -41,6 +41,8 @@ class BookShow extends React.Component {
     })
 
     }
+
+    this.setState({toggled: props.bookshelfModalToggled});
   }
 
   componentWillUnmount() {
@@ -48,8 +50,7 @@ class BookShow extends React.Component {
   }
 
   toggleBookshelves(event) {
-    event.preventDefault();
-    this.setState({toggled: !this.state.toggled})
+    this.props.toggleBookshelfModal();
   }
 
   handleBookshelfSelect(bookshelf) {
@@ -77,7 +78,6 @@ class BookShow extends React.Component {
 
 
   render() {
-
     const sortBookshelf = function (bookshelf1, bookshelf2) {
       return bookshelf1.id - bookshelf2.id;
     };
@@ -89,8 +89,9 @@ class BookShow extends React.Component {
 
 
 
+    let toggleMenuClass = this.state.toggled ? "book-show-toggle-list" : "book-show-toggle-list-hidden";
     let toggleMenu = (
-      <ul className="book-show-toggle-list-hidden" />
+      <ul className={toggleMenuClass}/>
     );
     if (this.state.toggled) {
       const toggleMenuItems = this.props.userBookshelves.sort(sortBookshelf).map((bookshelf) => {
@@ -99,9 +100,9 @@ class BookShow extends React.Component {
             <li className="book-show-toggle-list-item" onClick={this.handleBookshelfSelect(bookshelf)} key={bookshelf.id}>{bookshelf.name}</li>
           );
         }
-      })
+      });
       toggleMenu = (
-        <ul className="book-show-toggle-list">
+        <ul className={toggleMenuClass}>
           {toggleMenuItems}
         </ul>
       );
