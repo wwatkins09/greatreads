@@ -627,22 +627,17 @@ width: 100%
 }
 
 .review-modal-not-hidden {
-  z-index: 50;
-}
-
-.review-modal-not-hidden {
   position: fixed;
   top: 12%;
   left: 33%;
-  bottom: 75%;
-  right: 75%;
   height: 500px;
-  width: 700px;
+  width: 600px;
   color: #333333;
-  background-color: #FFFFFF;
+  background-color: #F4F1EA;
   border: 1px solid #000000;
   border-radius: 4px;
   padding: 15px 20px;
+  z-index: 50;
 }
 
 .review-modal-title {
@@ -672,6 +667,7 @@ width: 100%
 }
 
 .review-modal-body textarea {
+  resize: none;
   width: 400px;
   height: 150px;
   font-family: "Merriweather", serif;
