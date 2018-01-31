@@ -18,14 +18,13 @@ class BookShow extends React.Component {
   componentDidMount() {
     this.props.fetchBook(this.props.bookId).then(() => {}, () => {
       this.props.history.push("/");
-    });
-    this.props.fetchUserBookshelves(this.props.currentUserId);
-    this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId);
-    this.props.userBookshelves.forEach((bookshelf) => {
+    }).then(() => this.props.fetchUserBookshelves(this.props.currentUserId)).then(() => this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId)).then(() => this.props.userBookshelves.forEach((bookshelf) => {
     if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(this.props.bookId))) {
       this.setState({onDefaultShelf: true, readStatus: bookshelf.name})
-    }
-  })
+        }
+      })
+    );
+
   }
 
   componentWillReceiveProps(props) {
