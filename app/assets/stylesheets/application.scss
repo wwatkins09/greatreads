@@ -516,6 +516,7 @@ li {
   justify-content: center;
   background: #f2f2f2;
   background-color: #F4F1EA;
+  border: 1px solid #dddddd;
 }
 
 .not-on-default-shelf-container {
@@ -580,13 +581,14 @@ li {
 
 .book-show-toggle-list {
   padding: 0;
-  margin: 0px;
+  margin: 2px;
   width: 147px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #ffffff;
   border: 1px solid #cccccc;
+  border-top: none;
   border-radius: 3px;
   font-size: 12px;
   margin-left: 1px;
