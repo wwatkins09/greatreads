@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import BookshelfShow from './bookshelf_show';
 import {fetchBookshelf, deleteBookshelf, updateBookshelf, clearBookshelfErrors, fetchUserBookshelvesByBookshelfId} from '../../actions/bookshelf_actions';
 import {fetchReviewsByUserId} from '../../actions/review_actions';
+import {clearModals} from '../../actions/ui_actions';
 
 const mapStateToProps = function(state, ownProps) {
   let bookshelf = state.entities.bookshelves[ownProps.match.params.bookshelfId];

@@ -14,6 +14,7 @@ class BookshelfShow extends React.Component {
   }
 
   componentDidMount() {
+    this.props.clearModals();
     this.props.fetchUserBookshelvesByBookshelfId(this.props.bookshelfId).then((payload) => {
       let userId = Object.keys(payload.user)[0];
       this.props.fetchReviewsByUserId(userId);
