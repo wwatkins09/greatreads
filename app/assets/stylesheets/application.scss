@@ -1107,7 +1107,7 @@ li {
 .reading-challenge-title {
   font-weight: bold;
   padding-top: 20px;
-  width: 254px;
+  width: 360px;
   border-top: 1px solid #D8D8D8;
 }
 
@@ -1171,6 +1171,12 @@ progress::-moz-progress-bar {
 
 .user-show-current {
   display: flex;
+}
+
+.user-show-current-header {
+  width: 360px;
+  padding-top: 20px;
+  border-top: 1px solid #D8D8D8;
 }
 
 .user-show-current-info {
