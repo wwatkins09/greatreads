@@ -23,6 +23,9 @@ class ReviewModal extends React.Component {
   }
 
   componentWillReceiveProps(props) {
+    if (!this.props.toggled) {
+      this.setState({score: 0, starsFilled: 0});
+    }
     if (props.review) {
       this.setState(props.review);
       this.setState({starsFilled: props.review.score, empty: false})
