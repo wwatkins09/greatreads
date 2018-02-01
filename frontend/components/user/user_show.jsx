@@ -79,7 +79,7 @@ class UserShow extends React.Component {
             {currentCover}
             <span className="user-show-current-info">
               {currentTitle}
-              <p className="user-show-current-author">{`by ${currentAuthor}`}</p>
+              <p className="user-show-current-author">{currentAuthor}</p>
             </span>
           </content>
       </div>
