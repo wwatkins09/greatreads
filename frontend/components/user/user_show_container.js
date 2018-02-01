@@ -23,9 +23,11 @@ const mapStateToProps = function (state, ownProps) {
     user = state.entities.users[userId];
     if (state.entities.bookshelves[user.bookshelfIds[0]]) {
       readBookshelf = state.entities.bookshelves[user.bookshelfIds[0]];
-      currentBookId = state.entities.bookshelves[user.bookshelfIds[1]].bookIds[0];
-      if (state.entities.bookshelves[user.bookshelfIds[1]].bookIds.length > 0) {
-        currentBook = state.entities.books[state.entities.bookshelves[user.bookshelfIds[1]].bookIds[0]];
+      if (state.entities.bookshelves[user.bookshelfIds[1]]) {
+        currentBookId = state.entities.bookshelves[user.bookshelfIds[1]].bookIds[0];
+        if (state.entities.bookshelves[user.bookshelfIds[1]].bookIds.length > 0) {
+          currentBook = state.entities.books[state.entities.bookshelves[user.bookshelfIds[1]].bookIds[0]];
+        }
       }
     }
   } else {
