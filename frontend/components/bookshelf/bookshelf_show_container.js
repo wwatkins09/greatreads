@@ -53,7 +53,8 @@ const mapDispatchToProps = function(dispatch) {
     deleteBookshelf: (bookshelfId) => dispatch(deleteBookshelf(bookshelfId)),
     clearBookshelfErrors: () => dispatch(clearBookshelfErrors()),
     fetchBookshelf: (bookshelfId) => dispatch(fetchBookshelf(bookshelfId)),
-    fetchReviewsByUserId: (userId) => dispatch(fetchReviewsByUserId(userId))
+    fetchReviewsByUserId: (userId) => dispatch(fetchReviewsByUserId(userId)),
+    clearModals: () => dispatch(clearModals())
   };
 };
 
