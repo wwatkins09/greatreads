@@ -9,7 +9,9 @@ class UserShow extends React.Component {
 
   componentDidMount() {
     this.props.clearModals();
-    this.props.fetchUser(this.props.userId).then(() => {}, () => {
+    this.props.fetchUser(this.props.userId).then(() => {
+      this.props.fetchBookshelf(this.props.user.bookshelfIds[0])
+    }, () => {
       this.props.history.push("/");
     });
   }
@@ -32,14 +34,23 @@ class UserShow extends React.Component {
     } else {
       finalTitle = this.props.user.username + this.props.title
     }
+    const bookNum = this.props.readBookshelf.bookIds.length;
 
     return (
       <div className="user-show">
-        <h1>{finalTitle}</h1>
-        <content>
-          <BookshelfIndexContainer user={this.props.user} />
-          <ul className="bookshelf-errors-list">{errorsList}</ul>
-        </content>
+        <main className="user-show-left">
+          <h1>{finalTitle}</h1>
+          <content>
+            <BookshelfIndexContainer user={this.props.user} />
+            <ul className="bookshelf-errors-list">{errorsList}</ul>
+          </content>
+        </main>
+        <span className="user-show-right">
+          <h3>2018 Reading Challenge</h3>
+          <p>Books read so far: {bookNum}.</p>
+          <p>Book goal: 50 books.</p>
+          <p>You're {bookNum * 2}% there!</p>
+        </span>
       </div>
     );
   }
