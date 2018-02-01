@@ -38,14 +38,9 @@ class UserShow extends React.Component {
 
     return (
       <div className="user-show">
-        <main className="user-show-left">
           <h1>{finalTitle}</h1>
-          <content>
             <BookshelfIndexContainer user={this.props.user} />
             <ul className="bookshelf-errors-list">{errorsList}</ul>
-          </content>
-        </main>
-        <span className="user-show-right">
           <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
           <content className="reading-challenge-content">
             <div className="reading-challenge-left">
@@ -60,7 +55,6 @@ class UserShow extends React.Component {
               <p>You're {bookNum * 2}% there!</p>
             </div>
           </content>
-        </span>
       </div>
     );
   }

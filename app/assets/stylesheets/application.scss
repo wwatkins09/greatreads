@@ -305,19 +305,6 @@ li {
 .user-show {
   padding: 30px;
   display: flex;
-}
-
-.user-show-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.user-show-right {
-  margin-left: 50px;
-  color: #333333;
-  font-family: "Lato", sans-serif;
-  font-size: 14px;
-  display: flex;
   flex-direction: column;
 }
 
@@ -403,7 +390,8 @@ li {
 }
 
 .bookshelf-errors-list {
-  padding: 0px;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
@@ -1113,6 +1101,9 @@ li {
 
 .reading-challenge-title {
   font-weight: bold;
+  padding-top: 20px;
+  width: 254px;
+  border-top: 1px solid #D8D8D8;
 }
 
 .reading-challenge-content {
