@@ -48,8 +48,8 @@ class BookshelfShow extends React.Component {
 
   handleDelete(event) {
     event.preventDefault();
-    this.props.history.push(`/users/${this.props.bookshelf.userId}`);
-    this.props.deleteBookshelf(this.props.bookshelf.id);
+    const userId = this.props.bookshelf.userId
+    this.props.deleteBookshelf(this.props.bookshelf.id).then(() => this.props.history.push(`/users/${userId}`));
   }
 
   handleChange(event) {
