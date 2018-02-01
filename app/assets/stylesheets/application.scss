@@ -304,6 +304,16 @@ li {
 
 .user-show {
   padding: 30px;
+  display: flex;
+}
+
+.user-show-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-show-right {
+  margin-left: 50px;
 }
 
 .bookshelf-link {

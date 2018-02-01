@@ -20,4 +20,5 @@ end
 json.user do
   json.id review.user.id
   json.username review.user.username
+  json.bookshelfIds review.user.bookshelf_ids
 end

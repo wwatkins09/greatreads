@@ -15,6 +15,7 @@ json.user do
   json.id @user.id
   json.username @user.username
   json.reviewIds @user.review_ids
+  json.bookshelfIds @user.bookshelf_ids
 end
 
 json.books do

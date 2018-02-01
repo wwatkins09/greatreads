@@ -27,6 +27,7 @@ json.users do
     json.set! review.user_id do
       json.id review.user.id
       json.username review.user.username
+      json.bookshelfIds review.user.bookshelf_ids
     end
   end
 end
