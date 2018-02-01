@@ -1,5 +1,6 @@
 import React from 'react';
 import BookshelfIndexContainer from '../bookshelf/bookshelf_index_container';
+import {Link} from 'react-router-dom';
 
 class UserShow extends React.Component {
 
@@ -41,13 +42,16 @@ class UserShow extends React.Component {
     const bookNum = this.props.readBookshelf.bookIds.length;
 
 
-    let currentTitle = '';
+    let currentTitle = <p></p>;
     let currentAuthor = '';
     let currentCover;
     if (this.props.currentBook) {
-      currentTitle = this.props.currentBook.title;
+      currentTitle = <Link className="user-show-title" to={`/books/${this.props.currentBookId}`}>{this.props.currentBook.title}</Link>
       currentAuthor = this.props.currentBook.author;
-      currentCover = (<img src={this.props.currentBook.coverUrl} className="user-show-current-cover" />);
+      currentCover = (<Link className="user-show-current-cover" to={`/books/${this.props.currentBookId}`}>
+          <img src={this.props.currentBook.coverUrl} className="user-show-current-cover" />
+          </Link>
+        );
     }
 
     return (
@@ -74,8 +78,8 @@ class UserShow extends React.Component {
           <content className="user-show-current">
             {currentCover}
             <span className="user-show-current-info">
-              <p className="user-show-current-title">{currentTitle}</p>
-              <p className="user-show-current-author">{currentAuthor}</p>
+              {currentTitle}
+              <p className="user-show-current-author">{`by ${currentAuthor}`}</p>
             </span>
           </content>
       </div>

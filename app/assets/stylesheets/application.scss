@@ -1176,9 +1176,27 @@ progress::-moz-progress-bar {
 .user-show-current-info {
   display: flex;
   flex-direction: column;
+  color: #333333;
+  font-family: "Merriweather", serif;
+}
+
+.user-show-current-info p {
+  margin: 0;
+}
+
+.user-show-current-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.user-show-current-author {
+  font-size: 12px;
+  margin-top: 4px;
 }
 
 .user-show-current-cover {
   width: 95px;
   height: 136px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin-right: 10px;
 }
