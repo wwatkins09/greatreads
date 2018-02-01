@@ -46,7 +46,7 @@ class UserShow extends React.Component {
     let currentAuthor = '';
     let currentCover;
     if (this.props.currentBook) {
-      currentTitle = <Link className="user-show-title" to={`/books/${this.props.currentBookId}`}>{this.props.currentBook.title}</Link>
+      currentTitle = <Link className="user-show-current-title" to={`/books/${this.props.currentBookId}`}>{this.props.currentBook.title}</Link>
       currentAuthor = this.props.currentBook.author;
       currentCover = (<Link className="user-show-current-cover" to={`/books/${this.props.currentBookId}`}>
           <img src={this.props.currentBook.coverUrl} className="user-show-current-cover" />
