@@ -38,7 +38,7 @@ class UserShow extends React.Component {
 
     return (
       <div className="user-show">
-          <h1>{finalTitle}</h1>
+          <h1 className="user-show-title">{finalTitle}</h1>
             <BookshelfIndexContainer user={this.props.user} />
             <ul className="bookshelf-errors-list">{errorsList}</ul>
           <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
@@ -50,7 +50,7 @@ class UserShow extends React.Component {
               <span className="reading-challenge-message-2">CHALLENGE</span>
             </div>
             <div className="reading-challenge-right">
-              <p>Challenge yourself to read 50 books this year!</p>
+              <p className="reading-challenge-challenge">Challenge yourself to read 50 books this year!</p>
               <p>Books read so far: {bookNum}.</p>
               <p>You're {bookNum * 2}% there!</p>
             </div>
