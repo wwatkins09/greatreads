@@ -1150,3 +1150,21 @@ li {
 .reading-challenge-challenge {
   margin: 0;
 }
+
+progress{
+  height: 1rem;
+  width: 10rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #D8D8D8;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+progress::-webkit-progress-bar{ background-color: #ffffff; }
+progress::-webkit-progress-value{ background-color: #00ff7f; }
+
+progress::-moz-progress-bar {
+  background-color: #3c00ff;
+}
