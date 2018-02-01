@@ -51,7 +51,7 @@ class UserShow extends React.Component {
             </div>
             <div className="reading-challenge-right">
               <p className="reading-challenge-challenge">Challenge yourself to read 50 books this year!</p>
-              <p>Books read so far: {bookNum}.</p>
+              <p>Books read so far: {bookNum}</p>
               <p>You're {bookNum * 2}% there!</p>
             </div>
           </content>
