@@ -46,10 +46,20 @@ class UserShow extends React.Component {
           </content>
         </main>
         <span className="user-show-right">
-          <h3>2018 Reading Challenge</h3>
-          <p>Books read so far: {bookNum}.</p>
-          <p>Book goal: 50 books.</p>
-          <p>You're {bookNum * 2}% there!</p>
+          <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
+          <content className="reading-challenge-content">
+            <div className="reading-challenge-left">
+              <span className="reading-challenge-year">2018</span>
+              <span className="reading-challenge-image"></span>
+              <span className="reading-challenge-message-1">READING</span>
+              <span className="reading-challenge-message-2">CHALLENGE</span>
+            </div>
+            <div className="reading-challenge-right">
+              <p>Challenge yourself to read 50 books this year!</p>
+              <p>Books read so far: {bookNum}.</p>
+              <p>You're {bookNum * 2}% there!</p>
+            </div>
+          </content>
         </span>
       </div>
     );

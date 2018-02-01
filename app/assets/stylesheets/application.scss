@@ -314,6 +314,11 @@ li {
 
 .user-show-right {
   margin-left: 50px;
+  color: #333333;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 .bookshelf-link {
@@ -1102,4 +1107,46 @@ li {
   margin: 0;
   width: 517px;
   text-align: right;
+}
+
+
+
+.reading-challenge-title {
+  font-weight: bold;
+}
+
+.reading-challenge-content {
+  display: flex;
+}
+
+.reading-challenge-left {
+  width: 110px;
+  height: 130px;
+  background-color: #FA604A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.reading-challenge-year {
+  font-size: 40px;
+}
+
+.reading-challenge-image {
+  width: 96px;
+  height: 20px;
+  background: image-url('reading_challenge.svg');
+  background-size: 100%;
+  padding: 8px 4px 4px 4px;
+}
+
+.reading-challenge-message-1 {
+  font-size: 21px;
+}
+
+.reading-challenge-message-2 {
+  font-size: 16px;
 }
