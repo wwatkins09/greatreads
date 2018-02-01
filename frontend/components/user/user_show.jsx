@@ -13,6 +13,10 @@ class UserShow extends React.Component {
       this.props.fetchBookshelf(this.props.user.bookshelfIds[0])
     }, () => {
       this.props.history.push("/");
+    }).then(() => {
+      if (this.props.currentBookId) {
+        this.props.fetchBook(this.props.currentBookId);
+      }
     });
   }
 
@@ -36,6 +40,16 @@ class UserShow extends React.Component {
     }
     const bookNum = this.props.readBookshelf.bookIds.length;
 
+
+    let currentTitle = '';
+    let currentAuthor = '';
+    let currentCover;
+    if (this.props.currentBook) {
+      currentTitle = this.props.currentBook.title;
+      currentAuthor = this.props.currentBook.author;
+      currentCover = (<img src={this.props.currentBook.coverUrl} className="user-show-current-cover" />);
+    }
+
     return (
       <div className="user-show">
           <h1 className="user-show-title">{finalTitle}</h1>
@@ -55,6 +69,14 @@ class UserShow extends React.Component {
               <p>You're {bookNum * 2}% there!</p>
               <progress value={`${bookNum * 2}`} max="100"></progress>
             </div>
+          </content>
+          <h3 className="user-show-current-header">CURRENTLY READING</h3>
+          <content className="user-show-current">
+            {currentCover}
+            <span className="user-show-current-info">
+              <p className="user-show-current-title">{currentTitle}</p>
+              <p className="user-show-current-author">{currentAuthor}</p>
+            </span>
           </content>
       </div>
     );

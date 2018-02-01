@@ -1168,3 +1168,17 @@ progress::-webkit-progress-value{ background-color: #00ff7f; }
 progress::-moz-progress-bar {
   background-color: #3c00ff;
 }
+
+.user-show-current {
+  display: flex;
+}
+
+.user-show-current-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-show-current-cover {
+  width: 95px;
+  height: 136px;
+}
