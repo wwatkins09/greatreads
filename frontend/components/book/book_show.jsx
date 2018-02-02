@@ -8,7 +8,6 @@ class BookShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {toggled: props.bookshelfModalToggled, onDefaultShelf: false, readStatus: null}
-
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
     this.handleBookshelfSelect = this.handleBookshelfSelect.bind(this);
     this.handleReview = this.handleReview.bind(this);
@@ -19,7 +18,9 @@ class BookShow extends React.Component {
     this.props.clearModals();
     this.props.fetchBook(this.props.bookId).then(() => {}, () => {
       this.props.history.push("/");
-    }).then(() => this.props.fetchUserBookshelves(this.props.currentUserId)).then(() => this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId)).then(() => this.props.userBookshelves.forEach((bookshelf) => {
+    }).then(() => this.props.fetchUserBookshelves(this.props.currentUserId)).then(
+      () => this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId)).then(
+        () => this.props.userBookshelves.forEach((bookshelf) => {
     if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(this.props.bookId))) {
       this.setState({onDefaultShelf: true, readStatus: bookshelf.name})
         }
@@ -29,22 +30,23 @@ class BookShow extends React.Component {
   }
 
   componentWillReceiveProps(props) {
+    let onDefaultShelf = this.state.onDefaultShelf;
+    let readStatus = 'Want to Read';
     if (props.match.params.bookId !== this.props.match.params.bookId) {
       this.props.clearBookshelfOwnershipErrors();
       this.props.clearModals();
       this.props.fetchBook(props.match.params.bookId).then(() => {}, () => {
         this.props.history.push("/");
       });
-
       this.props.userBookshelves.forEach((bookshelf) => {
       if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(this.props.bookId))) {
-        this.setState({onDefaultShelf: true, readStatus: bookshelf.name})
+        onDefaultShelf = true;
+        readStatus = bookshelf.name;
       }
     })
 
     }
-
-    this.setState({toggled: props.bookshelfModalToggled});
+    this.setState({onDefaultShelf, readStatus, toggled: props.bookshelfModalToggled});
   }
 
   componentWillUnmount() {
