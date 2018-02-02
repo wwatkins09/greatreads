@@ -57,8 +57,11 @@ class UserShow extends React.Component {
     return (
       <div className="user-show">
           <h1 className="user-show-title">{finalTitle}</h1>
-            <BookshelfIndexContainer user={this.props.user} />
-            <ul className="bookshelf-errors-list">{errorsList}</ul>
+          <form>
+            <button>Upload a photo</button>
+          </form>
+          <BookshelfIndexContainer user={this.props.user} />
+          <ul className="bookshelf-errors-list">{errorsList}</ul>
           <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
           <content className="reading-challenge-content">
             <div className="reading-challenge-left">
