@@ -31,15 +31,17 @@ class BookShow extends React.Component {
 
   componentWillReceiveProps(props) {
     let onDefaultShelf = this.state.onDefaultShelf;
-    let readStatus = 'Want to Read';
+    let readStatus = this.state.readStatus || 'Want to Read';
     if (props.match.params.bookId !== this.props.match.params.bookId) {
+      onDefaultShelf = false;
+      readStatus = 'Want to Read';
       this.props.clearBookshelfOwnershipErrors();
       this.props.clearModals();
       this.props.fetchBook(props.match.params.bookId).then(() => {}, () => {
         this.props.history.push("/");
       });
       this.props.userBookshelves.forEach((bookshelf) => {
-      if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(this.props.bookId))) {
+      if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(props.bookId))) {
         onDefaultShelf = true;
         readStatus = bookshelf.name;
       }
