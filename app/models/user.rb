@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :books,
   through: :bookshelves
 
+  has_attached_file :photo, default_url: "empty_photo.png", :s3_protocol => :https
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
+
 
   attr_reader :password
 

@@ -21,4 +21,5 @@ json.user do
   json.id review.user.id
   json.username review.user.username
   json.bookshelfIds review.user.bookshelf_ids
+  json.photoUrl asset_path(user.photo.url)
 end

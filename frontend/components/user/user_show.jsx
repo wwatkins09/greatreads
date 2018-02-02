@@ -53,11 +53,11 @@ class UserShow extends React.Component {
           </Link>
         );
     }
-
     return (
       <div className="user-show">
           <h1 className="user-show-title">{finalTitle}</h1>
           <form>
+            <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
             <button>Upload a photo</button>
           </form>
           <BookshelfIndexContainer user={this.props.user} />
