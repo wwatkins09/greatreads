@@ -6,6 +6,10 @@ class UserShow extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {imageUrl: "", imageFile: null};
+
+    this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
+    this.handlePhotoSubmission = this.handlePhotoSubmission.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +31,23 @@ class UserShow extends React.Component {
         this.props.history.push("/");
       });
     }
+  }
+
+  handlePhotoUpload(event) {
+    const reader = new FileReader();
+    const file = event.currentTarget.files[0];
+    reader.onloadend = () =>
+    this.setState({imageUrl: reader.result, imageFile: file});
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({imageUrl: "", imageFile: null});
+    }
+  }
+
+  handlePhotoSubmission(event) {
+
   }
 
   render() {
@@ -56,8 +77,9 @@ class UserShow extends React.Component {
     return (
       <div className="user-show">
           <h1 className="user-show-title">{finalTitle}</h1>
-          <form>
+          <form onSubmit={this.handlePhotoSubmission}>
             <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
+            <input type="file" onChange={this.handlePhotoUpload}></input>
             <button>Upload a photo</button>
           </form>
           <BookshelfIndexContainer user={this.props.user} />
