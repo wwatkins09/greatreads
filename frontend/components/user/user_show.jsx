@@ -60,6 +60,14 @@ class UserShow extends React.Component {
   }
 
   render() {
+
+    let photoClassName;
+    if (this.props.user.photoUrl === "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png") {
+      photoClassName = "user-show-photo-default";
+    } else {
+      photoClassName = "user-show-photo";
+    }
+
     const errorsList = this.props.bookshelfErrors.map((error, idx) => {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);
     });
@@ -70,7 +78,7 @@ class UserShow extends React.Component {
       finalTitle = this.props.title + this.props.user.username + '!';
       photoForm = (
         <form onSubmit={this.handlePhotoSubmission}>
-          <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
+          <img className = {photoClassName} src={this.props.user.photoUrl}></img>
           <input type="file" onChange={this.handlePhotoUpload}></input>
           <button>Upload a photo</button>
         </form>
