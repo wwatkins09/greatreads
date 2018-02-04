@@ -12,12 +12,12 @@ const mapStateToProps = function (state, ownProps) {
   let currentBookId;
   let currentBook;
   let readBookshelf = {name: "", bookIds: []};
-  if (ownProps.match.params.userId) {
-    userId = ownProps.match.params.userId;
-    title = "'s page";
-  } else {
+  if (!ownProps.match.params.userId || parseInt(ownProps.match.params.userId) === state.session.currentUserId) {
     userId = state.session.currentUserId;
     title = "Welcome to your page, ";
+  } else {
+    userId = ownProps.match.params.userId;
+    title = "'s page";
   }
   if (state.entities.users[userId]) {
     user = state.entities.users[userId];

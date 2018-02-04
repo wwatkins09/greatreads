@@ -63,9 +63,18 @@ class UserShow extends React.Component {
     const errorsList = this.props.bookshelfErrors.map((error, idx) => {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);
     });
+
+    let photoForm = (<div></div>);
     let finalTitle;
-    if (this.props.userId === this.props.currentUserId) {
+    if (parseInt(this.props.userId) === this.props.currentUserId) {
       finalTitle = this.props.title + this.props.user.username + '!';
+      photoForm = (
+        <form onSubmit={this.handlePhotoSubmission}>
+          <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
+          <input type="file" onChange={this.handlePhotoUpload}></input>
+          <button>Upload a photo</button>
+        </form>
+      );
     } else {
       finalTitle = this.props.user.username + this.props.title
     }
@@ -86,11 +95,7 @@ class UserShow extends React.Component {
     return (
       <div className="user-show">
           <h1 className="user-show-title">{finalTitle}</h1>
-          <form onSubmit={this.handlePhotoSubmission}>
-            <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
-            <input type="file" onChange={this.handlePhotoUpload}></input>
-            <button>Upload a photo</button>
-          </form>
+          {photoForm}
           <BookshelfIndexContainer user={this.props.user} />
           <ul className="bookshelf-errors-list">{errorsList}</ul>
           <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
