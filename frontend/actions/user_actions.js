@@ -19,6 +19,16 @@ export const createUser = function(user) {
   };
 };
 
+export const updateUserPhoto = function(formData) {
+  return function(dispatch) {
+    return APIUserUtil.updateUserPhoto(formData).then((user) => {
+      dispatch(receiveUser(user));
+    }, (errors) => {
+      console.log(errors);
+    });
+  }
+}
+
 export const receiveUser = function(payload) {
   return {
     type: RECEIVE_USER,

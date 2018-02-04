@@ -47,7 +47,16 @@ class UserShow extends React.Component {
   }
 
   handlePhotoSubmission(event) {
+    event.preventDefault();
+    const file = this.state.imageFile;
 
+    const formData = new FormData();
+    formData.append("user[id]", this.props.user.id);
+    if (file) {
+      formData.append("user[photo]", file);
+    }
+    this.props.updateUserPhoto(formData);
+    this.setState({imageUrl: "", imageFile: null});
   }
 
   render() {
