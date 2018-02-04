@@ -15,7 +15,7 @@ export const createUser = function(user) {
 
 export const updateUserPhoto = function(formData) {
   return $.ajax({
-    method: 'UPDATE',
+    method: 'PATCH',
     url: `api/users/${formData.get("user[id]")}`,
     processData: false,
     contentType: false,
