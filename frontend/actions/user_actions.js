@@ -3,6 +3,7 @@ import {receiveCurrentUser, receiveUserErrors} from './session_actions';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_PHOTO_ERRORS = 'RECEIVE_PHOTO_ERRORS';
+export const CLEAR_PHOTO_ERRORS = 'CLEAR_PHOTO_ERRORS';
 
 export const fetchUser = function(userId) {
   return function(dispatch) {
@@ -42,5 +43,11 @@ export const receivePhotoErrors = function(errors) {
   return {
     type: RECEIVE_PHOTO_ERRORS,
     errors
+  }
+}
+
+export const clearPhotoErrors = function() {
+  return {
+    type: CLEAR_PHOTO_ERRORS
   }
 }

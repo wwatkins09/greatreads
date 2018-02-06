@@ -36,6 +36,7 @@ class UserShow extends React.Component {
 
   handlePhoto(event) {
     event.preventDefault();
+    this.props.clearPhotoErrors();
     this.props.togglePhotoModal();
   }
 
