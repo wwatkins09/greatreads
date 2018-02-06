@@ -73,22 +73,9 @@ class UserShow extends React.Component {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);
     });
 
-    let photoForm = (<div></div>);
     let finalTitle;
     if (parseInt(this.props.userId) === this.props.currentUserId) {
       finalTitle = this.props.title + this.props.user.username + '!';
-      photoForm = (
-        <form className="user-photo-form" onSubmit={this.handlePhotoSubmission}>
-          <input size="25" id="user-photo-input" type="file" onChange={this.handlePhotoUpload}></input>
-          <label htmlFor="user-photo-input">
-            <p className="photo-upload-message">Choose a photo</p>
-            <span className="photo-upload-arrow-container">
-              <content className="photo-upload-arrow"></content>
-            </span>
-            </label>
-          <button className="photo-form-submit">Upload a photo</button>
-        </form>
-      );
     } else {
       finalTitle = this.props.user.username + this.props.title
     }
