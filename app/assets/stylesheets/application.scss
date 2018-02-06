@@ -1361,3 +1361,15 @@ progress::-moz-progress-bar {
   cursor: pointer;
   background-color: #ede6d6;
 }
+
+.photo-errors-list {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-error {
+  color: red;
+  padding: 10px 0px;
+  margin: 0px 10px;
+}

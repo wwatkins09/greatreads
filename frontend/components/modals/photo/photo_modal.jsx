@@ -45,8 +45,10 @@ class PhotoModal extends React.Component {
   render() {
 
     const buttonClassName = this.state.imageUrl === "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png" ? "photo-form-submit-disabled" : "photo-form-submit";
-
     const className = this.props.toggled ? "photo-modal-not-hidden" : "photo-modal-hidden";
+    const errorsList = this.props.errors.map((error, idx) => {
+      return (<li className="photo-error" key={idx}>{error}</li>);
+    });
 
     return (
       <div className={className}>
@@ -62,6 +64,9 @@ class PhotoModal extends React.Component {
               </label>
             <button className={buttonClassName}>Upload photo</button>
           </form>
+          <ul className="photo-errors-list">
+            {errorsList}
+          </ul>
       </div>
     )
   }

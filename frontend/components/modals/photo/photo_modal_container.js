@@ -8,7 +8,8 @@ const mapStateToProps = function (state, ownProps) {
   return {
     userId: ownProps.match.params.bookId,
     user: ownProps.user,
-    toggled: state.ui.photoModal
+    toggled: state.ui.photoModal,
+    errors: state.errors.user
   };
 };
 

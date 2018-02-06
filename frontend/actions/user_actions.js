@@ -2,6 +2,7 @@ import * as APIUserUtil from '../util/api_user_util';
 import {receiveCurrentUser, receiveUserErrors} from './session_actions';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
+export const RECEIVE_PHOTO_ERRORS = 'RECEIVE_PHOTO_ERRORS';
 
 export const fetchUser = function(userId) {
   return function(dispatch) {
@@ -24,7 +25,7 @@ export const updateUserPhoto = function(formData) {
     return APIUserUtil.updateUserPhoto(formData).then((user) => {
       dispatch(receiveUser(user));
     }, (errors) => {
-      console.log(errors);
+      dispatch(receivePhotoErrors(errors.responseJSON))
     });
   }
 }
@@ -36,3 +37,10 @@ export const receiveUser = function(payload) {
     bookshelves: payload.bookshelves
   };
 };
+
+export const receivePhotoErrors = function(errors) {
+  return {
+    type: RECEIVE_PHOTO_ERRORS,
+    errors
+  }
+}
