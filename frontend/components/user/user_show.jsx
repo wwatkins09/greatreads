@@ -136,6 +136,7 @@ class UserShow extends React.Component {
           </content>
         </content>
         <span className="profile-info">
+          <h2>{this.props.user.username}</h2>
           <img className = {photoClassName} src={this.props.user.photoUrl}></img>
           {photoForm}
         </span>

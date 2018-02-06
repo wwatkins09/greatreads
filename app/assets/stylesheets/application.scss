@@ -1304,3 +1304,17 @@ progress::-moz-progress-bar {
   cursor: pointer;
   background-color: #ede6d6;
 }
+
+.photo-modal {
+  position: fixed;
+  top: 12%;
+  left: 25%;
+  height: 450px;
+  width: 600px;
+  color: #333333;
+  background-color: #F4F1EA;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 15px 20px;
+  z-index: 50;
+}
