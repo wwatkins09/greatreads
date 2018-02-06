@@ -9,8 +9,6 @@ class UserShow extends React.Component {
     super(props);
     this.state = {imageUrl: "", imageFile: null};
 
-    this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
-    this.handlePhotoSubmission = this.handlePhotoSubmission.bind(this);
   }
 
   componentDidMount() {
@@ -32,32 +30,6 @@ class UserShow extends React.Component {
         this.props.history.push("/");
       });
     }
-  }
-
-  handlePhotoUpload(event) {
-    const reader = new FileReader();
-    const file = event.currentTarget.files[0];
-    reader.onloadend = () =>
-    this.setState({imageUrl: reader.result, imageFile: file});
-
-    if (file) {
-      reader.readAsDataURL(file);
-    } else {
-      this.setState({imageUrl: "", imageFile: null});
-    }
-  }
-
-  handlePhotoSubmission(event) {
-    event.preventDefault();
-    const file = this.state.imageFile;
-
-    const formData = new FormData();
-    formData.append("user[id]", this.props.user.id);
-    if (file) {
-      formData.append("user[photo]", file);
-    }
-    this.props.updateUserPhoto(formData);
-    this.setState({imageUrl: "", imageFile: null});
   }
 
   render() {

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import UserShow from './user_show';
-import {fetchUser, updateUserPhoto} from '../../actions/user_actions';
+import {fetchUser} from '../../actions/user_actions';
 import {clearModals} from '../../actions/ui_actions';
 import {fetchBookshelf} from '../../actions/bookshelf_actions';
 import {fetchBook} from '../../actions/book_actions';
@@ -51,7 +51,6 @@ const mapDispatchToProps = function (dispatch) {
     clearModals: () => dispatch(clearModals()),
     fetchBookshelf: (bookshelfId) => dispatch(fetchBookshelf(bookshelfId)),
     fetchBook: (bookId) => dispatch(fetchBook(bookId)),
-    updateUserPhoto: (formData) => dispatch(updateUserPhoto(formData))
   };
 };
 
