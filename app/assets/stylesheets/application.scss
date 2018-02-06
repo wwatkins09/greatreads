@@ -1246,23 +1246,25 @@ progress::-moz-progress-bar {
   margin: 4px;
   border-radius: 2px;
   padding: 2px;
+  background-color: #409D69;
 }
 
 #user-photo-input + label * {
   margin: 0;
   font-size: 14px;
   color: white;
-  background-color: #409D69;
 }
 
 #user-photo-input + label:hover {
   cursor: pointer;
+  background-color: #3d9363;
 }
 
 .photo-upload-message {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  padding: 4px 0px 4px 12px;
+  padding: 4px;
+  padding-left: 12px;
   width: 96px;
 }
 
@@ -1283,6 +1285,20 @@ progress::-moz-progress-bar {
   width: 16px;
   height: 16px;
   padding-right: 1px;
+}
 
+.photo-form-submit {
+  background-color: #F4F1EA;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  width: 145px;
+  height: 25px;
+  padding: 2px;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+}
 
+.photo-form-submit:hover {
+  cursor: pointer;
+  background-color: #ede6d6;
 }

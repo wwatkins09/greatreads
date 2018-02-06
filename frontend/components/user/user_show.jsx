@@ -85,7 +85,7 @@ class UserShow extends React.Component {
               <content className="photo-upload-arrow"></content>
             </span>
             </label>
-          <button>Upload a photo</button>
+          <button className="photo-form-submit">Upload a photo</button>
         </form>
       );
     } else {
