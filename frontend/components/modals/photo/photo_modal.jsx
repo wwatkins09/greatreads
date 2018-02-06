@@ -4,10 +4,16 @@ class PhotoModal extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png"}
+    this.state = {imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null}
 
     this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
     this.handlePhotoSubmission = this.handlePhotoSubmission.bind(this);
+  }
+
+  componentWillReceiveProps(props) {
+    if (!props.toggled) {
+      this.setState({imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null});
+    }
   }
 
   handlePhotoUpload(event) {
@@ -44,6 +50,7 @@ class PhotoModal extends React.Component {
 
     return (
       <div className={className}>
+        <h3>Edit Profile Photo</h3>
         <img className = "user-show-photo" src={this.state.imageUrl}></img>
           <form className="user-photo-form" onSubmit={this.handlePhotoSubmission}>
             <input size="25" id="user-photo-input" type="file" onChange={this.handlePhotoUpload}></input>
