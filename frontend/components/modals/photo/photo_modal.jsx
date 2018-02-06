@@ -31,9 +31,9 @@ class PhotoModal extends React.Component {
     formData.append("user[id]", this.props.user.id);
     if (file && file !== "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png") {
       formData.append("user[photo]", file);
+      this.props.updateUserPhoto(formData).then(() => this.props.togglePhotoModal());
+      this.setState({imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null});
     }
-    this.props.updateUserPhoto(formData);
-    this.setState({imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null});
   }
 
   render() {

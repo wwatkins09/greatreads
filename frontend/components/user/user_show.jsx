@@ -99,7 +99,7 @@ class UserShow extends React.Component {
         <span className="profile-info">
           <h2>{this.props.user.username}</h2>
           <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
-          <button onClick={this.handlePhoto}>Edit profile photo</button>
+          <button onClick={this.handlePhoto} className="photo-modal-toggle-button">Edit profile photo</button>
         </span>
       </div>
     );

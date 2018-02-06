@@ -23,7 +23,7 @@ const uiReducer = function (oldState = _nullState, action) {
     case TOGGLE_BOOKSHELF_MODAL:
       return merge({}, oldState, {bookshelfModal: !oldState.bookshelfModal});
     case TOGGLE_PHOTO_MODAL:
-      return merge({}, oldState, {photoModal: !oldState.photoModal});
+      return merge({}, oldState, {photoModal: !oldState.photoModal, fullScreenModal: !oldState.photoModal});
     case CLEAR_SEARCH_BAR:
       return merge({}, oldState, {searchBar: false});
     case CLEAR_MODALS:

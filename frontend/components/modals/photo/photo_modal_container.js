@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {updateUserPhoto} from '../../../actions/user_actions';
+import {togglePhotoModal} from '../../../actions/ui_actions';
 import PhotoModal from './photo_modal';
 
 const mapStateToProps = function (state, ownProps) {
@@ -13,7 +14,8 @@ const mapStateToProps = function (state, ownProps) {
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    updateUserPhoto: (formData) => dispatch(updateUserPhoto(formData))
+    updateUserPhoto: (formData) => dispatch(updateUserPhoto(formData)),
+    togglePhotoModal: () => dispatch(togglePhotoModal())
   };
 };
 
