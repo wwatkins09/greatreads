@@ -1290,7 +1290,8 @@ progress::-moz-progress-bar {
 }
 
 .photo-form-submit {
-  background-color: #F4F1EA;
+  color: white;
+  background-color: #382110;
   border: 1px solid #dddddd;
   border-radius: 3px;
   width: 146px;
@@ -1302,7 +1303,22 @@ progress::-moz-progress-bar {
 
 .photo-form-submit:hover {
   cursor: pointer;
-  background-color: #ede6d6;
+  background-color: #58371F;
+}
+
+.photo-form-submit-disabled {
+  background-color: transparent;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  width: 146px;
+  height: 29px;
+  padding: 2px;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+}
+
+.photo-form-submit-disabled:focus {
+  outline: none;
 }
 
 .photo-modal {

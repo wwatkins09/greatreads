@@ -29,14 +29,17 @@ class PhotoModal extends React.Component {
 
     const formData = new FormData();
     formData.append("user[id]", this.props.user.id);
-    if (file) {
+    if (file && file !== "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png") {
       formData.append("user[photo]", file);
     }
     this.props.updateUserPhoto(formData);
-    this.setState({imageUrl: "", imageFile: null});
+    this.setState({imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null});
   }
 
   render() {
+
+    const buttonClassName = this.state.imageUrl === "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png" ? "photo-form-submit-disabled" : "photo-form-submit";
+
     return (
       <div className="photo-modal">
         <img className = "user-show-photo" src={this.state.imageUrl}></img>
@@ -48,7 +51,7 @@ class PhotoModal extends React.Component {
                 <content className="photo-upload-arrow"></content>
               </span>
               </label>
-            <button className="photo-form-submit">Upload a photo</button>
+            <button className={buttonClassName}>Upload photo</button>
           </form>
       </div>
     )
