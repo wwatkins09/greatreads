@@ -1211,6 +1211,7 @@ progress::-moz-progress-bar {
 .user-show-photo {
   width: 110px;
   height: 110px;
+  margin-bottom: 20px;
 }
 
 .user-show-photo-default {
@@ -1222,6 +1223,7 @@ progress::-moz-progress-bar {
   display: flex;
   flex-direction: column;
   margin-right: 30px;
+  align-items: center;
 }
 
 .user-photo-form {
@@ -1240,5 +1242,47 @@ progress::-moz-progress-bar {
 }
 
 #user-photo-input + label {
-  
+  display: flex;
+  margin: 4px;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+#user-photo-input + label * {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+  background-color: #409D69;
+}
+
+#user-photo-input + label:hover {
+  cursor: pointer;
+}
+
+.photo-upload-message {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 4px 0px 4px 12px;
+  width: 96px;
+}
+
+.photo-upload-arrow-container {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding-right: 4px;
+}
+
+.photo-upload-arrow {
+  background: image-url('upload.png');
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  padding-right: 1px;
+
+
 }

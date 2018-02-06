@@ -79,7 +79,12 @@ class UserShow extends React.Component {
       photoForm = (
         <form className="user-photo-form" onSubmit={this.handlePhotoSubmission}>
           <input size="25" id="user-photo-input" type="file" onChange={this.handlePhotoUpload}></input>
-          <label for="user-photo-input">Choose a photo</label>
+          <label htmlFor="user-photo-input">
+            <p className="photo-upload-message">Choose a photo</p>
+            <span className="photo-upload-arrow-container">
+              <content className="photo-upload-arrow"></content>
+            </span>
+            </label>
           <button>Upload a photo</button>
         </form>
       );
