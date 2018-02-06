@@ -1321,7 +1321,12 @@ progress::-moz-progress-bar {
   outline: none;
 }
 
-.photo-modal {
+.photo-modal-hidden {
+    z-index: 0;
+    display: none;
+}
+
+.photo-modal-not-hidden {
   position: fixed;
   top: 12%;
   left: 25%;

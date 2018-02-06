@@ -40,8 +40,10 @@ class PhotoModal extends React.Component {
 
     const buttonClassName = this.state.imageUrl === "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png" ? "photo-form-submit-disabled" : "photo-form-submit";
 
+    const className = this.props.toggled ? "photo-modal-not-hidden" : "photo-modal-hidden";
+
     return (
-      <div className="photo-modal">
+      <div className={className}>
         <img className = "user-show-photo" src={this.state.imageUrl}></img>
           <form className="user-photo-form" onSubmit={this.handlePhotoSubmission}>
             <input size="25" id="user-photo-input" type="file" onChange={this.handlePhotoUpload}></input>

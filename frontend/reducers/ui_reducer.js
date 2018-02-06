@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import {TOGGLE_REVIEW_MODAL, CLEAR_SEARCH_BAR, TOGGLE_SEARCH_BAR, CLEAR_MODALS, CLEAR_BOOKSHELF_MODAL, TOGGLE_BOOKSHELF_MODAL} from '../actions/ui_actions';
+import {TOGGLE_REVIEW_MODAL, CLEAR_SEARCH_BAR, TOGGLE_SEARCH_BAR, CLEAR_MODALS, CLEAR_BOOKSHELF_MODAL, TOGGLE_BOOKSHELF_MODAL, TOGGLE_PHOTO_MODAL} from '../actions/ui_actions';
 
 const _nullState = {
   fullScreenModal: false,

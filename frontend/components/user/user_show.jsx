@@ -9,6 +9,8 @@ class UserShow extends React.Component {
     super(props);
     this.state = {imageUrl: "", imageFile: null};
 
+    this.handlePhoto = this.handlePhoto.bind(this);
+
   }
 
   componentDidMount() {
@@ -32,14 +34,12 @@ class UserShow extends React.Component {
     }
   }
 
-  render() {
+  handlePhoto(event) {
+    event.preventDefault();
+    this.props.togglePhotoModal();
+  }
 
-    let photoClassName;
-    if (this.props.user.photoUrl === "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png") {
-      photoClassName = "user-show-photo-default";
-    } else {
-      photoClassName = "user-show-photo";
-    }
+  render() {
 
     const errorsList = this.props.bookshelfErrors.map((error, idx) => {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);
@@ -67,6 +67,7 @@ class UserShow extends React.Component {
     }
     return (
       <div className="user-show">
+        <PhotoModalContainer user={this.props.user} />
         <content>
           <h1 className="user-show-title">{finalTitle}</h1>
           <BookshelfIndexContainer user={this.props.user} />
@@ -97,8 +98,8 @@ class UserShow extends React.Component {
         </content>
         <span className="profile-info">
           <h2>{this.props.user.username}</h2>
-          <img className = {photoClassName} src={this.props.user.photoUrl}></img>
-          <PhotoModalContainer user={this.props.user} />
+          <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
+          <button onClick={this.handlePhoto}>Edit profile photo</button>
         </span>
       </div>
     );
