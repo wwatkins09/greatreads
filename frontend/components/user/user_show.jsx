@@ -77,9 +77,9 @@ class UserShow extends React.Component {
     if (parseInt(this.props.userId) === this.props.currentUserId) {
       finalTitle = this.props.title + this.props.user.username + '!';
       photoForm = (
-        <form onSubmit={this.handlePhotoSubmission}>
-          <img className = {photoClassName} src={this.props.user.photoUrl}></img>
-          <input type="file" onChange={this.handlePhotoUpload}></input>
+        <form className="user-photo-form" onSubmit={this.handlePhotoSubmission}>
+          <input size="25" id="user-photo-input" type="file" onChange={this.handlePhotoUpload}></input>
+          <label for="user-photo-input">Choose a photo</label>
           <button>Upload a photo</button>
         </form>
       );
@@ -102,8 +102,8 @@ class UserShow extends React.Component {
     }
     return (
       <div className="user-show">
+        <content>
           <h1 className="user-show-title">{finalTitle}</h1>
-          {photoForm}
           <BookshelfIndexContainer user={this.props.user} />
           <ul className="bookshelf-errors-list">{errorsList}</ul>
           <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
@@ -129,6 +129,11 @@ class UserShow extends React.Component {
               <p className="user-show-current-author">{currentAuthor}</p>
             </span>
           </content>
+        </content>
+        <span className="profile-info">
+          <img className = {photoClassName} src={this.props.user.photoUrl}></img>
+          {photoForm}
+        </span>
       </div>
     );
   }

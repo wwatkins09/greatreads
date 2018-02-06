@@ -306,7 +306,7 @@ li {
 .user-show {
   padding: 30px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
 .user-show-title {
@@ -1216,4 +1216,29 @@ progress::-moz-progress-bar {
 .user-show-photo-default {
   width: 150px;
   height: 200px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.user-photo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#user-photo-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+#user-photo-input + label {
+  
 }
