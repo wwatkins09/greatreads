@@ -4,6 +4,7 @@ class PhotoModal extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png"}
 
     this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
     this.handlePhotoSubmission = this.handlePhotoSubmission.bind(this);
@@ -38,7 +39,7 @@ class PhotoModal extends React.Component {
   render() {
     return (
       <div className="photo-modal">
-        <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
+        <img className = "user-show-photo" src={this.state.imageUrl}></img>
           <form className="user-photo-form" onSubmit={this.handlePhotoSubmission}>
             <input size="25" id="user-photo-input" type="file" onChange={this.handlePhotoUpload}></input>
             <label htmlFor="user-photo-input">
