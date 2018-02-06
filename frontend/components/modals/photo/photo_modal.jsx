@@ -17,6 +17,7 @@ class PhotoModal extends React.Component {
   }
 
   handlePhotoUpload(event) {
+    this.props.clearPhotoErrors();
     const reader = new FileReader();
     const file = event.currentTarget.files[0];
     reader.onloadend = () =>
@@ -25,7 +26,7 @@ class PhotoModal extends React.Component {
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this.setState({imageUrl: "", imageFile: null});
+      this.setState({imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null});
     }
   }
 
