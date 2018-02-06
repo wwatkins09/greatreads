@@ -1,6 +1,7 @@
 import React from 'react';
 import BookshelfIndexContainer from '../bookshelf/bookshelf_index_container';
 import {Link} from 'react-router-dom';
+import PhotoModalContainer from '../modals/photo/photo_modal_container';
 
 class UserShow extends React.Component {
 
@@ -138,7 +139,7 @@ class UserShow extends React.Component {
         <span className="profile-info">
           <h2>{this.props.user.username}</h2>
           <img className = {photoClassName} src={this.props.user.photoUrl}></img>
-          {photoForm}
+          <PhotoModalContainer user={this.props.user} />
         </span>
       </div>
     );

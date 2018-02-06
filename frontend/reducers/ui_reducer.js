@@ -5,7 +5,8 @@ const _nullState = {
   fullScreenModal: false,
   reviewModal: false,
   searchBar: false,
-  bookshelfModal: false
+  bookshelfModal: false,
+  photoModal: false
 };
 
 

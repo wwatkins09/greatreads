@@ -16,4 +16,4 @@ const mapDispatchToProps = function (dispatch) {
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps))(PhotoModal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PhotoModal));
