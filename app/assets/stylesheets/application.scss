@@ -1257,7 +1257,7 @@ progress::-moz-progress-bar {
 .profile-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 375px;
   height: 350px;
@@ -1396,6 +1396,7 @@ progress::-moz-progress-bar {
   font-weight: bold;
   font-family: "Lato", Arial, serif;
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 125px;
 }
 
