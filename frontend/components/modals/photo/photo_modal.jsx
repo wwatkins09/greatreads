@@ -54,7 +54,7 @@ class PhotoModal extends React.Component {
     return (
       <div className={className}>
         <h3>Edit Profile Photo</h3>
-        <img className = "user-show-photo" src={this.state.imageUrl}></img>
+        <img className = "user-show-photo-preview" src={this.state.imageUrl}></img>
           <form className="user-photo-form" onSubmit={this.handlePhotoSubmission}>
             <input size="25" id="user-photo-input" type="file" onChange={this.handlePhotoUpload}></input>
             <label htmlFor="user-photo-input">
