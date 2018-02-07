@@ -4,6 +4,7 @@ export const CLEAR_SEARCH_BAR = 'CLEAR_SEARCH_BAR';
 export const CLEAR_MODALS = 'CLEAR_MODALS';
 export const CLEAR_BOOKSHELF_MODAL = 'CLEAR_BOOKSHELF_MODAL';
 export const TOGGLE_BOOKSHELF_MODAL = 'TOGGLE_BOOKSHELF_MODAL';
+export const TOGGLE_PHOTO_MODAL = 'TOGGLE_PHOTO_MODAL';
 
 export const toggleReviewModal = function() {
   return {
@@ -38,5 +39,11 @@ export const clearBookshelfModal = function() {
 export const toggleBookshelfModal = function() {
   return {
     type: TOGGLE_BOOKSHELF_MODAL
+  };
+};
+
+export const togglePhotoModal = function() {
+  return {
+    type: TOGGLE_PHOTO_MODAL
   };
 };

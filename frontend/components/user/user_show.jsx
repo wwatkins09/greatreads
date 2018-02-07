@@ -1,11 +1,16 @@
 import React from 'react';
 import BookshelfIndexContainer from '../bookshelf/bookshelf_index_container';
 import {Link} from 'react-router-dom';
+import PhotoModalContainer from '../modals/photo/photo_modal_container';
 
 class UserShow extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {imageUrl: "", imageFile: null};
+
+    this.handlePhoto = this.handlePhoto.bind(this);
+
   }
 
   componentDidMount() {
@@ -29,13 +34,23 @@ class UserShow extends React.Component {
     }
   }
 
+  handlePhoto(event) {
+    event.preventDefault();
+    this.props.clearPhotoErrors();
+    this.props.togglePhotoModal();
+  }
+
   render() {
+
     const errorsList = this.props.bookshelfErrors.map((error, idx) => {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);
     });
+
     let finalTitle;
-    if (this.props.userId === this.props.currentUserId) {
+    let editPhotoButton
+    if (parseInt(this.props.userId) === this.props.currentUserId) {
       finalTitle = this.props.title + this.props.user.username + '!';
+      editPhotoButton = (<button onClick={this.handlePhoto} className="photo-modal-toggle-button">Edit profile photo</button>)
     } else {
       finalTitle = this.props.user.username + this.props.title
     }
@@ -54,11 +69,19 @@ class UserShow extends React.Component {
         );
     }
 
+    const photoEl = (this.props.user.photoUrl === '/assets/empty_photo-888af1902142430824fe90eb4da8c097ee30f3df367fdf16610b56b2b0ee09bf.png')
+    ? (<div className="user-show-photo-container">
+      <img className="user-show-photo-default" src={this.props.user.photoUrl}></img>
+    </div>)
+    : (<img className="user-show-photo" src={this.props.user.photoUrl}></img>);
+
     return (
       <div className="user-show">
+        <PhotoModalContainer user={this.props.user} />
+        <content>
           <h1 className="user-show-title">{finalTitle}</h1>
-            <BookshelfIndexContainer user={this.props.user} />
-            <ul className="bookshelf-errors-list">{errorsList}</ul>
+          <BookshelfIndexContainer user={this.props.user} />
+          <ul className="bookshelf-errors-list">{errorsList}</ul>
           <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
           <content className="reading-challenge-content">
             <div className="reading-challenge-left">
@@ -82,6 +105,12 @@ class UserShow extends React.Component {
               <p className="user-show-current-author">{currentAuthor}</p>
             </span>
           </content>
+        </content>
+        <span className="profile-info">
+          <h1 className="profile-info-username">{this.props.user.username}</h1>
+          {photoEl}
+          {editPhotoButton}
+        </span>
       </div>
     );
   }

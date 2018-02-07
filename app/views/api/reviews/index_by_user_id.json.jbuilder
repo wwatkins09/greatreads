@@ -16,6 +16,7 @@ json.user do
   json.username @user.username
   json.reviewIds @user.review_ids
   json.bookshelfIds @user.bookshelf_ids
+  json.photoUrl asset_path(user.photo.url)
 end
 
 json.books do

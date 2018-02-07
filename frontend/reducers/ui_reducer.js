@@ -1,11 +1,12 @@
 import merge from 'lodash/merge';
-import {TOGGLE_REVIEW_MODAL, CLEAR_SEARCH_BAR, TOGGLE_SEARCH_BAR, CLEAR_MODALS, CLEAR_BOOKSHELF_MODAL, TOGGLE_BOOKSHELF_MODAL} from '../actions/ui_actions';
+import {TOGGLE_REVIEW_MODAL, CLEAR_SEARCH_BAR, TOGGLE_SEARCH_BAR, CLEAR_MODALS, CLEAR_BOOKSHELF_MODAL, TOGGLE_BOOKSHELF_MODAL, TOGGLE_PHOTO_MODAL} from '../actions/ui_actions';
 
 const _nullState = {
   fullScreenModal: false,
   reviewModal: false,
   searchBar: false,
-  bookshelfModal: false
+  bookshelfModal: false,
+  photoModal: false
 };
 
 
@@ -21,6 +22,8 @@ const uiReducer = function (oldState = _nullState, action) {
       return merge({}, oldState, {searchBar: true});
     case TOGGLE_BOOKSHELF_MODAL:
       return merge({}, oldState, {bookshelfModal: !oldState.bookshelfModal});
+    case TOGGLE_PHOTO_MODAL:
+      return merge({}, oldState, {photoModal: !oldState.photoModal, fullScreenModal: !oldState.photoModal});
     case CLEAR_SEARCH_BAR:
       return merge({}, oldState, {searchBar: false});
     case CLEAR_MODALS:
