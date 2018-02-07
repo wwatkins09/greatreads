@@ -4,7 +4,8 @@ class PhotoModal extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null}
+    this.defaultUrl = '/assets/empty_photo-888af1902142430824fe90eb4da8c097ee30f3df367fdf16610b56b2b0ee09bf.png'
+    this.state = {imageUrl: this.defaultUrl, imageFile: null}
 
     this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
     this.handlePhotoSubmission = this.handlePhotoSubmission.bind(this);
@@ -12,7 +13,7 @@ class PhotoModal extends React.Component {
 
   componentWillReceiveProps(props) {
     if (!props.toggled) {
-      this.setState({imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null});
+      this.setState({imageUrl: this.defaultUrl, imageFile: null});
     }
   }
 
@@ -26,7 +27,7 @@ class PhotoModal extends React.Component {
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this.setState({imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null});
+      this.setState({imageUrl: this.defaultUrl, imageFile: null});
     }
   }
 
@@ -36,16 +37,27 @@ class PhotoModal extends React.Component {
 
     const formData = new FormData();
     formData.append("user[id]", this.props.user.id);
-    if (file && file !== "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png") {
+    if (file && file !== this.defaultUrl) {
       formData.append("user[photo]", file);
       this.props.updateUserPhoto(formData).then(() => this.props.togglePhotoModal());
-      this.setState({imageUrl: "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png", imageFile: null});
+      this.setState({imageUrl: this.defaultUrl, imageFile: null});
     }
   }
 
   render() {
 
-    const buttonClassName = this.state.imageUrl === "/assets/empty_photo-801bb334399f245ab3eae460c5dfdcb2ea190921403c6f1ee6fb2b60d6cc6764.png" ? "photo-form-submit-disabled" : "photo-form-submit";
+    let buttonClassName;
+    let photoEl;
+    if (this.state.imageUrl === this.defaultUrl) {
+      buttonClassName = 'photo-form-submit-disabled';
+      photoEl = (<div className="user-show-photo-container-preview">
+        <img className="user-show-photo-default-preview" src={this.defaultUrl}></img>
+      </div>)
+    } else {
+      buttonClassName = 'photo-form-submit';
+      photoEl = (<img className="user-show-photo-preview" src={this.state.imageUrl}></img>);
+    }
+
     const className = this.props.toggled ? "photo-modal-not-hidden" : "photo-modal-hidden";
     const errorsList = this.props.errors.map((error, idx) => {
       return (<li className="photo-error" key={idx}>{error}</li>);
@@ -54,7 +66,7 @@ class PhotoModal extends React.Component {
     return (
       <div className={className}>
         <h3>Edit Profile Photo</h3>
-        <img className = "user-show-photo-preview" src={this.state.imageUrl}></img>
+        {photoEl}
           <form className="user-photo-form" onSubmit={this.handlePhotoSubmission}>
             <input size="25" id="user-photo-input" type="file" onChange={this.handlePhotoUpload}></input>
             <label htmlFor="user-photo-input">

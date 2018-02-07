@@ -998,7 +998,7 @@ li {
   margin: 0;
   height: 40px;
   background-color: #F4F1EA;
-  font-size: 11px;
+  font-size: 8px;
   color: #666;
   display: flex;
   align-items: center;
@@ -1083,7 +1083,7 @@ li {
 
 .credits {
   display: flex;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .personal-links {
@@ -1208,11 +1208,43 @@ progress::-moz-progress-bar {
   margin-right: 10px;
 }
 
+.user-show-photo-container {
+  width: 125px;
+  height: 125px;
+  margin-bottom: 20px;
+  border: 1px solid gray;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .user-show-photo {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 20px;
   border-radius: 100px;
+}
+
+.user-show-photo-default {
+  width: 58%;
+  height: 58%;
+}
+
+.user-show-photo-container-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-show-photo-default-preview {
+  width: 58%;
+  height: 58%;
 }
 
 .user-show-photo-preview {

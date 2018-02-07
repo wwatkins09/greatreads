@@ -68,6 +68,13 @@ class UserShow extends React.Component {
           </Link>
         );
     }
+
+    const photoEl = (this.props.user.photoUrl === '/assets/empty_photo-888af1902142430824fe90eb4da8c097ee30f3df367fdf16610b56b2b0ee09bf.png')
+    ? (<div className="user-show-photo-container">
+      <img className="user-show-photo-default" src={this.props.user.photoUrl}></img>
+    </div>)
+    : (<img className="user-show-photo" src={this.props.user.photoUrl}></img>);
+
     return (
       <div className="user-show">
         <PhotoModalContainer user={this.props.user} />
@@ -101,7 +108,7 @@ class UserShow extends React.Component {
         </content>
         <span className="profile-info">
           <h2>{this.props.user.username}</h2>
-          <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
+          {photoEl}
           {editPhotoButton}
         </span>
       </div>
