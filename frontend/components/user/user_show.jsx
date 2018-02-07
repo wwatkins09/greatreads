@@ -47,8 +47,10 @@ class UserShow extends React.Component {
     });
 
     let finalTitle;
+    let editPhotoButton
     if (parseInt(this.props.userId) === this.props.currentUserId) {
       finalTitle = this.props.title + this.props.user.username + '!';
+      editPhotoButton = (<button onClick={this.handlePhoto} className="photo-modal-toggle-button">Edit profile photo</button>)
     } else {
       finalTitle = this.props.user.username + this.props.title
     }
@@ -100,7 +102,7 @@ class UserShow extends React.Component {
         <span className="profile-info">
           <h2>{this.props.user.username}</h2>
           <img className = "user-show-photo" src={this.props.user.photoUrl}></img>
-          <button onClick={this.handlePhoto} className="photo-modal-toggle-button">Edit profile photo</button>
+          {editPhotoButton}
         </span>
       </div>
     );
