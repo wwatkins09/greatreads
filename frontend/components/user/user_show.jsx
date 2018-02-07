@@ -107,7 +107,7 @@ class UserShow extends React.Component {
           </content>
         </content>
         <span className="profile-info">
-          <h2>{this.props.user.username}</h2>
+          <h1 className="profile-info-username">{this.props.user.username}</h1>
           {photoEl}
           {editPhotoButton}
         </span>

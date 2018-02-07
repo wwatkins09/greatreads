@@ -1257,10 +1257,16 @@ progress::-moz-progress-bar {
 .profile-info {
   display: flex;
   flex-direction: column;
-  margin-right: 60px;
+  justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 375px;
+  height: 350px;
   border: 1px solid #D8D8D8;
+}
+
+.profile-info-username {
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .user-photo-form {
