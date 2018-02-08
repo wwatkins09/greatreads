@@ -1,0 +1,245 @@
+.review-toggle-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-toggle-button {
+  display: inline-block;
+  background-color: #F4F1EA;
+  color: #181818;
+  padding: 5px 5px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Lato", Arial, serif;
+  margin-top: 10px;
+  width: 149px;
+}
+
+.review-toggle-button:hover {
+  cursor: pointer;
+  background-color: #ede6d6;
+}
+
+.review-modal-hidden {
+  z-index: 0;
+  display: none;
+}
+
+.review-modal-not-hidden {
+  position: fixed;
+  top: 12%;
+  left: 25%;
+  height: 450px;
+  width: 600px;
+  color: #333333;
+  background-color: #F4F1EA;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 15px 20px;
+  z-index: 50;
+}
+
+.review-modal-title {
+  font-size: 120%;
+  font-family: "Merriweather", serif;
+  color: #333333;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.review-modal-author {
+  font-size: 14px;
+  font-family: "Merriweather", serif;
+  color: #333333;
+}
+
+.review-modal-rating {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+
+.review-modal-body {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #181818;
+  margin-bottom: 10px;
+}
+
+.review-modal-body textarea {
+  resize: none;
+  width: 505px;
+  height: 150px;
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.radio {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.radio input {
+  width: 20px;
+}
+
+.review-submit-button {
+  font-size: 14px;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  font-family: "Lato", sans-serif;
+  color: white;
+  background-color: #382110;
+  padding: 8px 12px;
+}
+
+.review-submit-button:hover {
+  cursor: pointer;
+  background-color: #58371F;
+}
+
+.review-modal-x {
+  padding: 2px 0px;
+  margin: 0;
+  width: 17px;
+  height: 13px;
+  font-family: sans-serif;
+  background: image-url('exit.png');
+  background-size: 100%;
+}
+
+.review-modal-x:hover {
+  cursor: pointer;
+}
+
+.review-modal-x-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.review-errors {
+  padding-left: 0;
+}
+
+.review-error {
+  color: red;
+}
+
+.reviews-list {
+  padding-left: 0;
+  font-size: 14px;
+  color: #181818;
+  font-family: "Lato", sans-serif;
+}
+
+.review-all {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-header {
+  display: flex;
+}
+
+.review-user-name {
+  color: #00635d;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.review-score {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.review-current-user {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #181818;
+  padding-bottom: 20px;
+}
+
+.review-delete-button {
+  width: 100px;
+  background-color: #B80F28;
+  color: white;
+  border-radius: 3px;
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  padding: 4px 6px;
+}
+
+.review-delete-button:hover {
+  cursor: pointer;
+}
+
+.review-body {
+  min-height: 0;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.review-current-user-header {
+  margin: 0;
+  margin-top: 5px;
+}
+
+.review-current-user-rated-it {
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.star-filled {
+  background: image-url('filled_star.png');
+  background-size: 100%;
+  height: 17px;
+  width: 17px;
+}
+
+.star-empty {
+  background: image-url('empty_star.png');
+  background-size: 100%;
+  height: 17px;
+  width: 17px;
+}
+
+.star-filled-selectable {
+  background: image-url('filled_star.png');
+  background-size: 100%;
+  height: 17px;
+  width: 17px;
+}
+
+.star-empty-selectable {
+  background: image-url('empty_star.png');
+  background-size: 100%;
+  height: 17px;
+  width: 17px;
+}
+
+.star-filled-selectable:hover {
+  cursor: pointer;
+}
+
+.star-empty-selectable:hover {
+  cursor: pointer;
+}
+
+.review-modal-stars {
+  display: flex;
+}
+
+.characters-left {
+  margin: 0;
+  width: 517px;
+  text-align: right;
+}

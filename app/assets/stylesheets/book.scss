@@ -1,0 +1,249 @@
+.book-show {
+  width: 965px;
+  margin: 0 auto 20px;
+  display: flex;
+}
+
+.book-show img {
+  max-width: 150px;
+  margin: 20px;
+  height: 230px;
+  box-shadow: 0px 5px 5px black;
+  font-family: "Merriweather", serif;
+}
+
+.book-show-image-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 334px;
+}
+
+.book-show-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.book-show-body {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #181818;
+}
+
+.book-show-body-title {
+  font-size: 20px;
+  color: #382110;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+.book-show-body-author {
+  font-size: 12px;
+  color: #181818;
+}
+
+
+
+.book-index-table {
+  color: #382110;
+  font-weight: bold;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.book-index-table-headers {
+}
+
+.book-index-table th {
+  height: 54px;
+  font-size: 12px;
+  vertical-align: bottom;
+  text-align: left;
+  padding: 12px 0px 5px 0;
+  border-bottom: 2px solid #EBE8D5;
+  margin: 0;
+}
+
+.book-index-table td {
+  color: #181818
+}
+
+.table-field-cover {
+  min-width: 50px;
+}
+
+
+.table-field-cover img {
+  width: 50px;
+  display: block;
+}
+
+.table-field-title {
+  min-width: 60px;
+  max-width: 25%;
+}
+
+.table-field-title a {
+  color: #00635d;
+}
+
+.table-field-author {
+  width: 20%
+}
+
+.table-field-score {
+  width: 20%
+}
+
+.table-field-delete {
+  height: 79px;
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-full-index {
+  width: 965px;
+  margin: 0 auto 20px;
+}
+
+.on-default-shelf-container {
+  width: 120px;
+  padding: 4px 0px 5px 0px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  display: flex;
+  justify-content: center;
+  background: #f2f2f2;
+  background-color: #F4F1EA;
+  border: 1px solid #dddddd;
+}
+
+.not-on-default-shelf-container {
+  width: 120px;
+  padding: 4px 0px 5px 0px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  display: flex;
+  justify-content: center;
+  background-color: #409D69;
+}
+
+.not-on-default-shelf {
+  padding: 0px 5px;
+  width: 100%;
+  font-size: 13px;
+  font-family: "Lato", Arial, serif;
+  font-weight: bold;
+  color: white;
+  text-align:center;
+}
+
+.on-default-shelf {
+  padding: 0px 5px;
+  width: 100%;
+  font-size: 13px;
+  font-family: "Lato", Arial, serif;
+  font-weight: bold;
+  text-align:center;
+}
+
+.not-on-default-shelf:hover {
+  cursor: pointer;
+}
+
+.book-show-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.book-show-button {
+  width: 27px;
+  padding: 5px;
+  border-width: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 1px solid #38883d;
+  color: white;
+  background-color: #409D69;
+}
+
+.book-show-button:hover {
+  cursor: pointer;
+  background-color: #3d9363;
+}
+
+.book-show-button:focus {
+  outline: none;
+}
+
+.book-show-toggle-list {
+  padding: 0;
+  margin: 2px;
+  width: 147px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-top: none;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-left: 1px;
+  height: 80px;
+  transition: height 0.5s ease-out;
+  z-index: 20;
+  overflow: scroll;
+  position: absolute;
+  top: 88%;
+}
+
+.book-show-toggle-list-hidden {
+  padding: 0;
+  margin: 0px;
+  height: 0px;
+  margin-left: 1px;
+  z-index: 0;
+  font-size: 12px;
+  position: absolute;
+  top: 88%;
+}
+
+.book-show-toggle-list li {
+  width: 100%;
+  overflow: none;
+}
+
+.book-show-toggle-list li:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.bookshelf-ownership-errors {
+  color: red;
+}
+
+.remove-book-button {
+  width: 125px;
+  height: 28px;
+  font-size: 14px;
+  background-color: #B80F28;
+  color: white;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+}
+
+.remove-book-button:hover {
+  cursor: pointer;
+}
+
+.book-show-toggle-list-item {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

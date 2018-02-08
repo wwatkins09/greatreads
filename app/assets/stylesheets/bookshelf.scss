@@ -1,0 +1,103 @@
+.bookshelf-link {
+  color: #00635D;
+}
+
+.bookshelf-show {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+}
+
+.bookshelf-show-header {
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.bookshelf-show-sidebar-header {
+  font-weight: bold;
+  color: #382110;
+  line-height: 18px;
+}
+
+.bookshelf-show-sidebar ul {
+  width: 200px;
+  padding: 0;
+}
+
+.bookshelf-show-main {
+
+}
+
+
+.bookshelf-show-link {
+  display: inline;
+  color: #00635d;
+}
+
+.bookshelf-edit-button {
+  width: 50px;
+  height: 28px;
+  font-size: 13px;
+  background-color: #F4F1EA;
+  color: #333333;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+}
+
+.bookshelf-edit-button:hover {
+  cursor: pointer;
+  background-color: #ede6d6;
+}
+
+.bookshelf-delete-button {
+  width: 150px;
+  height: 28px;
+  font-size: 16px;
+  background-color: #B80F28;
+  color: white;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  margin: 5px 0 25px;
+}
+
+.bookshelf-delete-button:hover {
+  cursor: pointer;
+}
+
+.bookshelf-errors-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookshelf-error {
+  color: red;
+  padding: 10px;
+}
+
+.add-bookshelf-button {
+  display: inline-block;
+  background-color: #382110;
+  color: white;
+  padding: 5px 15px;
+  border: 1px solid #382110;
+  border-radius: 3px;
+  font-size: 13px;
+  margin: 2px;
+}
+
+.add-bookshelf-button:hover {
+  background-color: #58371F;
+  cursor: pointer;
+}
+
+.bookshelf-show-sidebar {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin-right: 25px;
+  overflow: hidden;
+}
