@@ -28,6 +28,7 @@ class BookFullIndex extends React.Component {
                 userBookshelves={this.props.userBookshelves}
                 createBookshelfOwnership={this.props.createBookshelfOwnership}
                 history={this.props.history}
+                wantToReadBookshelf={this.props.wantToReadBookshelf}
                 />
           );
         }
