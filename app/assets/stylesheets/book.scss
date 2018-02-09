@@ -169,6 +169,7 @@
 
 .book-show-button {
   width: 27px;
+  height: 25px;
   padding: 5px;
   border-width: 0;
   border-top-right-radius: 3px;
@@ -293,4 +294,13 @@
   color: #999999;
   font-family: "Lato", sans-serif;
   font-size: 11px;
+}
+
+.book-full-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.book-full-button {
+  width: 400px;
 }

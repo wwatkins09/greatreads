@@ -5,6 +5,16 @@ class BookFullIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.handleAddToDefault = this.handleAddToDefault.bind(this);
+  }
+
+  handleAddToDefault(event) {
+
+  }
+
+  toggleBookshelves(event) {
+
   }
 
   render() {
@@ -21,7 +31,16 @@ class BookFullIndexItem extends React.Component {
           <span className="book-full-author">by {this.props.book.author}</span>
           <span className="book-full-avg-score">avg rating: {this.props.book.avgScore}</span>
         </td>
-        <td className="book-full-button">BUTTON</td>
+        <td className="book-full-button">
+          <div className="book-full-button-container">
+            <div className="not-on-default-shelf-container">
+              <span className="not-on-default-shelf" onClick={this.handleAddToDefault}>Want to Read</span>
+            </div>
+            <button className="book-show-button" onClick={this.toggleBookshelves}>▼
+            </button>
+          </div>
+
+        </td>
       </tr>
     );
   }
