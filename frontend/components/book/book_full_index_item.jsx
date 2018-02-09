@@ -5,7 +5,7 @@ class BookFullIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {toggled: false}
+    this.state = {toggled: false, onDefaultShelf: false, readStatus: null}
 
     this.handleAddToDefault = this.handleAddToDefault.bind(this);
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
@@ -16,6 +16,13 @@ class BookFullIndexItem extends React.Component {
     if (!props.toggled) {
       this.setState({toggled: props.toggled});
     }
+    if (this.props.userBookshelves) {
+      this.props.userBookshelves.forEach((bookshelf) => {
+        if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(this.props.book.id)) {
+          this.setState({onDefaultShelf: true, readStatus: bookshelf.name})
+            }
+          })
+        }
   }
 
 
@@ -43,6 +50,9 @@ class BookFullIndexItem extends React.Component {
     const sortBookshelf = function (bookshelf1, bookshelf2) {
       return bookshelf1.id - bookshelf2.id;
     };
+
+    let readStatus = this.state.readStatus || 'Want to Read';
+    let bookClassName = this.state.onDefaultShelf ? 'on-default-shelf' : 'not-on-default-shelf';
 
     let toggleMenu = (
       <ul className={toggleMenuClass}/>
@@ -79,8 +89,8 @@ class BookFullIndexItem extends React.Component {
         </td>
         <td className="book-full-button">
           <div className="book-full-button-container">
-            <div className="not-on-default-shelf-container">
-              <span className="not-on-default-shelf" onClick={this.handleAddToDefault}>Want to Read</span>
+            <div className={`${bookClassName}-container`}>
+              <span className={bookClassName} onClick={this.handleAddToDefault}>{readStatus}</span>
             </div>
             <button className="book-show-button" onClick={this.toggleBookshelves}>▼
             </button>
