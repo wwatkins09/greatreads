@@ -33,6 +33,7 @@ class BookFullIndex extends React.Component {
                 </th>
                 <th className="table-field-title">title</th>
                 <th className="table-field-author">author</th>
+                <th className="table-field-avg-score">avg rating</th>
               </tr>
               {booksList}
             </tbody>
