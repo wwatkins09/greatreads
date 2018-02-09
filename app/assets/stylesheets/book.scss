@@ -282,6 +282,7 @@
   display: flex;
   flex-direction: column;
   height: 90px;
+  margin-right: 25px;
 }
 
 .book-full-title {
@@ -289,6 +290,7 @@
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 14px;
+  max-width: 300px;
 }
 
 .book-full-author {
@@ -309,7 +311,7 @@
 }
 
 .book-full-button {
-  width: 400px;
+  width: 150px;
   position: relative;
 }
 
@@ -375,7 +377,6 @@
   padding-top: 12px;
   padding-bottom: 5px;
   padding-right: 10px;
-  margin: 0;
 }
 
 .book-full-index-table td {
