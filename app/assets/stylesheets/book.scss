@@ -253,3 +253,23 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.book-full-row {
+  height: 90px;
+}
+
+.book-full-number {
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  vertical-align: top;
+}
+
+.book-full-cover img {
+  width: 47px;
+  height: 75px;
+}
+
+.book-full-info {
+  display: flex;
+  flex-direction: column;
+}

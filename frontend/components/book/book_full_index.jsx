@@ -15,10 +15,10 @@ class BookFullIndex extends React.Component {
   render() {
     let booksList;
 
-      booksList = Object.values(this.props.books).map((book) => {
+      booksList = Object.values(this.props.books).map((book, idx) => {
         if (book) {
           return (
-              <BookFullIndexItem book={book} key={book.id} />
+              <BookFullIndexItem book={book} key={book.id} num={idx + 1}/>
           );
         }
       });
@@ -27,13 +27,11 @@ class BookFullIndex extends React.Component {
         <main className="book-full-index">
           <table className="book-index-table">
             <tbody>
-              <tr className="book-index-table-headers">
-                <th className="table-field-cover">
-                  cover
-                </th>
-                <th className="table-field-title">title</th>
-                <th className="table-field-author">author</th>
-                <th className="table-field-avg-score">avg rating</th>
+              <tr className="book-full-index-table-headers">
+                <th className="book-full-number"></th>
+                <th className="book-full-cover"></th>
+                <th className="book-full-info"></th>
+                <th className="book-full-button"></th>
               </tr>
               {booksList}
             </tbody>
