@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import BookFullIndex from './book_full_index';
 import {fetchAllBooks} from '../../actions/book_actions';
 import {withRouter} from 'react-router-dom';
-import {clearModals} from '../../actions/ui_actions';
+import {clearModals, toggleBookshelfModal} from '../../actions/ui_actions';
 
 const mapStateToProps = function (state) {
   return {
@@ -13,7 +13,9 @@ const mapStateToProps = function (state) {
 const mapDispatchToProps = function (dispatch) {
   return {
     fetchAllBooks: () => dispatch(fetchAllBooks()),
-    clearModals: () => dispatch(clearModals())
+    clearModals: () => dispatch(clearModals()),
+    toggleBookshelfModal: () => dispatch(toggleBookshelfModal())
+
   };
 };
 

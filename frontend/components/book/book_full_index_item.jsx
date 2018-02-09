@@ -7,6 +7,7 @@ class BookFullIndexItem extends React.Component {
     super(props);
 
     this.handleAddToDefault = this.handleAddToDefault.bind(this);
+    this.toggleBookshelves = this.toggleBookshelves.bind(this);
   }
 
   handleAddToDefault(event) {
@@ -14,7 +15,7 @@ class BookFullIndexItem extends React.Component {
   }
 
   toggleBookshelves(event) {
-
+    this.props.toggleBookshelfModal();
   }
 
   render() {
