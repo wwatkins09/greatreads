@@ -14,7 +14,14 @@ class App extends React.Component {
     super(props);
 
     this.closeModals = this.closeModals.bind(this);
+  }
 
+  componentDidMount() {
+    if (this.props.currentUserId) {
+      this.props.fetchUserBookshelves(this.props.currentUserId).then(() => {
+        this.props.fetchReviewsByUserId(this.props.currentUserId);
+      });
+    }
   }
 
   closeModals(event) {

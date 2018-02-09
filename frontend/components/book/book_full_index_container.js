@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 import {clearModals, toggleBookshelfModal} from '../../actions/ui_actions';
 import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
 import {createBookshelfOwnership} from '../../actions/bookshelf_ownership_actions';
+import {fetchReviewsByUserId} from '../../actions/review_actions';
 
 const mapStateToProps = function (state) {
 
@@ -21,12 +22,21 @@ const mapStateToProps = function (state) {
     });
   }
 
+  let userReviews;
+
+  if (state.entities.users[state.session.currentUserId]) {
+    userReviews = state.entities.users[state.session.currentUserId].reviewIds.map((review) => {
+      return state.entities.reviews[review.id];
+    })
+  }
+
   return {
     books: state.entities.books,
     userBookshelves,
     wantToReadBookshelf,
     currentUserId: state.session.currentUserId,
-    toggled: state.ui.bookshelfModal
+    toggled: state.ui.bookshelfModal,
+    userReviews
   };
 };
 
@@ -36,7 +46,8 @@ const mapDispatchToProps = function (dispatch) {
     clearModals: () => dispatch(clearModals()),
     toggleBookshelfModal: () => dispatch(toggleBookshelfModal()),
     fetchUserBookshelves: (userId) => dispatch(fetchUserBookshelves(userId)),
-    createBookshelfOwnership: (bookshelfOwnership) => dispatch(createBookshelfOwnership(bookshelfOwnership))
+    createBookshelfOwnership: (bookshelfOwnership) => dispatch(createBookshelfOwnership(bookshelfOwnership)),
+    fetchReviewsByUserId: (userId) => dispatch(fetchReviewsByUserId(userId))
 
   };
 };

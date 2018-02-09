@@ -4,11 +4,11 @@ class Api::ReviewsController < ApplicationController
     if params[:user_id]
       @reviews = Review.where(user_id: params[:user_id])
       @user = User.find(params[:user_id])
-      render "api/reviews/index_by_user_id"
+      render "api/reviews/index_by_user_id" if @reviews
     elsif params[:book_id]
       @reviews = Review.where(book_id: params[:book_id])
       @book = Book.find(params[:book_id])
-      render "api/reviews/index"
+      render "api/reviews/index" if @reviews
     end
   end
 

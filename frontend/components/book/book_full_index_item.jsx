@@ -5,7 +5,7 @@ class BookFullIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {toggled: false, onDefaultShelf: false, readStatus: null}
+    this.state = {toggled: false, onDefaultShelf: false, readStatus: null, reviews: null}
 
     this.handleAddToDefault = this.handleAddToDefault.bind(this);
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
@@ -46,6 +46,14 @@ class BookFullIndexItem extends React.Component {
   toggleBookshelves(event) {
     this.props.toggleBookshelfModal();
     this.setState({toggled: !this.state.toggled})
+  }
+
+  classNameGenerator(score, starValue) {
+    if (score >= starValue) {
+      return 'star-filled';
+    } else {
+      return 'star-empty';
+    }
   }
 
   render() {
@@ -98,7 +106,14 @@ class BookFullIndexItem extends React.Component {
             <button className="book-show-button" onClick={this.toggleBookshelves}>▼
             </button>
           </div>
-
+          <span>My rating:</span>
+            <div className="review-score">
+              <span className={this.classNameGenerator(this.props.reviewScore, 1)}></span>
+              <span className={this.classNameGenerator(this.props.reviewScore, 2)}></span>
+              <span className={this.classNameGenerator(this.props.reviewScore, 3)}></span>
+              <span className={this.classNameGenerator(this.props.reviewScore, 4)}></span>
+              <span className={this.classNameGenerator(this.props.reviewScore, 5)}></span>
+            </div>
         </td>
       </tr>
     );

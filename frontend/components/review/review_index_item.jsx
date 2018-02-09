@@ -32,8 +32,6 @@ class ReviewIndexItem extends React.Component {
           <span className={this.classNameGenerator(this.props.review.score, 3)}></span>
           <span className={this.classNameGenerator(this.props.review.score, 4)}></span>
           <span className={this.classNameGenerator(this.props.review.score, 5)}></span>
-
-
         </div>
       </span>
       <p className="review-body">{this.props.review.body}</p>
