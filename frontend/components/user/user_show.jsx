@@ -16,7 +16,7 @@ class UserShow extends React.Component {
   componentDidMount() {
     this.props.clearModals();
     this.props.fetchUser(this.props.userId).then(() => {
-      this.props.fetchBookshelf(this.props.user.bookshelfIds[0])
+      this.props.fetchUserBookshelves(this.props.user.id)
     }, () => {
       this.props.history.push("/");
     }).then(() => {

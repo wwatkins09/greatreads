@@ -18,7 +18,7 @@ class BookShow extends React.Component {
     this.props.clearModals();
     this.props.fetchBook(this.props.bookId).then(() => {}, () => {
       this.props.history.push("/");
-    }).then(() => this.props.fetchUserBookshelves(this.props.currentUserId)).then(
+    }).then(
       () => this.props.fetchBookshelfOwnershipsByBookId(this.props.bookId)).then(
         () => this.props.userBookshelves.forEach((bookshelf) => {
     if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(parseInt(this.props.bookId))) {

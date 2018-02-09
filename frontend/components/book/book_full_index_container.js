@@ -3,7 +3,6 @@ import BookFullIndex from './book_full_index';
 import {fetchAllBooks} from '../../actions/book_actions';
 import {withRouter} from 'react-router-dom';
 import {clearModals, toggleBookshelfModal} from '../../actions/ui_actions';
-import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
 import {createBookshelfOwnership} from '../../actions/bookshelf_ownership_actions';
 import {fetchReviewsByUserId} from '../../actions/review_actions';
 
@@ -45,7 +44,6 @@ const mapDispatchToProps = function (dispatch) {
     fetchAllBooks: () => dispatch(fetchAllBooks()),
     clearModals: () => dispatch(clearModals()),
     toggleBookshelfModal: () => dispatch(toggleBookshelfModal()),
-    fetchUserBookshelves: (userId) => dispatch(fetchUserBookshelves(userId)),
     createBookshelfOwnership: (bookshelfOwnership) => dispatch(createBookshelfOwnership(bookshelfOwnership)),
     fetchReviewsByUserId: (userId) => dispatch(fetchReviewsByUserId(userId))
 

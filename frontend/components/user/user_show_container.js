@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import UserShow from './user_show';
 import {fetchUser, clearPhotoErrors} from '../../actions/user_actions';
 import {clearModals, togglePhotoModal} from '../../actions/ui_actions';
-import {fetchBookshelf} from '../../actions/bookshelf_actions';
+import {fetchUserBookshelves} from '../../actions/bookshelf_actions';
 import {fetchBook} from '../../actions/book_actions';
 
 const mapStateToProps = function (state, ownProps) {
@@ -49,7 +49,7 @@ const mapDispatchToProps = function (dispatch) {
   return {
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     clearModals: () => dispatch(clearModals()),
-    fetchBookshelf: (bookshelfId) => dispatch(fetchBookshelf(bookshelfId)),
+    fetchUserBookshelves: (userId) => dispatch(fetchUserBookshelves(userId)),
     fetchBook: (bookId) => dispatch(fetchBook(bookId)),
     togglePhotoModal: () => dispatch(togglePhotoModal()),
     clearPhotoErrors: () => dispatch(clearPhotoErrors())

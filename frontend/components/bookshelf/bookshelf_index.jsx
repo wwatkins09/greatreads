@@ -12,7 +12,6 @@ class BookshelfIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserBookshelves(this.props.userId);
   }
 
   componentWillReceiveProps(props) {
