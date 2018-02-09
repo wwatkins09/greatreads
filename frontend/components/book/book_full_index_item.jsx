@@ -5,6 +5,7 @@ class BookFullIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {toggled: false}
 
     this.handleAddToDefault = this.handleAddToDefault.bind(this);
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
@@ -16,9 +17,26 @@ class BookFullIndexItem extends React.Component {
 
   toggleBookshelves(event) {
     this.props.toggleBookshelfModal();
+    this.setState({toggled: true})
   }
 
   render() {
+
+    if (this.state.toggled) {
+      const toggleMenuItems = this.props.userBookshelves.sort(sortBookshelf).map((bookshelf) => {
+        if (bookshelf) {
+          return (
+            <li className="book-show-toggle-list-item" onClick={this.handleBookshelfSelect(bookshelf)} key={bookshelf.id}>{bookshelf.name}</li>
+          );
+        }
+      });
+      toggleMenu = (
+        <ul className={toggleMenuClass}>
+          {toggleMenuItems}
+        </ul>
+      );
+    }
+
     return (
       <tr className="book-full-row">
         <td className="book-full-number">{this.props.num}</td>

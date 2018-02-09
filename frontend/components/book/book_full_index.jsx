@@ -10,6 +10,7 @@ class BookFullIndex extends React.Component {
   componentDidMount() {
     this.props.clearModals();
     this.props.fetchAllBooks();
+    this.props.fetchUserBookshelves(this.props.currentUserId);
   }
 
   render() {
@@ -18,7 +19,13 @@ class BookFullIndex extends React.Component {
       booksList = Object.values(this.props.books).map((book, idx) => {
         if (book) {
           return (
-              <BookFullIndexItem book={book} key={book.id} num={idx + 1} toggleBookshelfModal={this.props.toggleBookshelfModal}/>
+              <BookFullIndexItem
+                book={book}
+                key={book.id}
+                num={idx + 1}
+                toggleBookshelfModal={this.props.toggleBookshelfModal}
+                userBookshelves={this.props.userBookshelves}
+                />
           );
         }
       });
