@@ -264,6 +264,7 @@
   vertical-align: top;
 }
 
+
 .book-full-cover img {
   width: 47px;
   height: 75px;
@@ -272,4 +273,24 @@
 .book-full-info {
   display: flex;
   flex-direction: column;
+}
+
+.book-full-title {
+  color: #333333;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.book-full-author {
+  font-size: 12px;
+  font-weight: normal;
+  color: #333;
+  font-family: "Merriweather", serif;
+}
+
+.book-full-avg-score {
+  color: #999999;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
 }

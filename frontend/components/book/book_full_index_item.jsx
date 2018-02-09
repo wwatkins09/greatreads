@@ -17,9 +17,9 @@ class BookFullIndexItem extends React.Component {
           </Link>
         </td>
         <td className="book-full-info">
-          <Link to={`/books/${this.props.book.id}`}>{this.props.book.title}</Link>
-          <span>by {this.props.book.author}</span>
-          <span>avg rating: {this.props.book.avgRating}</span>
+          <Link className="book-full-title" to={`/books/${this.props.book.id}`}>{this.props.book.title}</Link>
+          <span className="book-full-author">by {this.props.book.author}</span>
+          <span className="book-full-avg-score">avg rating: {this.props.book.avgScore}</span>
         </td>
         <td className="book-full-button">BUTTON</td>
       </tr>
