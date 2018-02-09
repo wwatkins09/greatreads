@@ -33,10 +33,9 @@ class BookFullIndex extends React.Component {
           );
         }
       });
-
       return (
         <main className="book-full-index">
-          <table className="book-index-table">
+          <table className="book-full-index-table">
             <tbody>
               <tr className="book-full-index-table-headers">
                 <th className="book-full-number"></th>

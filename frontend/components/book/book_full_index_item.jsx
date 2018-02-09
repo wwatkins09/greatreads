@@ -63,7 +63,6 @@ class BookFullIndexItem extends React.Component {
     if (this.state.toggled) {
       const toggleMenuItems = this.props.userBookshelves.sort(sortBookshelf).map((bookshelf) => {
         if (bookshelf) {
-          console.log("here!!");
           return (
             <li className="book-show-toggle-list-item" onClick={this.handleBookshelfSelect(bookshelf)} key={bookshelf.id}>{bookshelf.name}</li>
           );

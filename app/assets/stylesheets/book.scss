@@ -257,12 +257,19 @@
 
 .book-full-row {
   height: 90px;
+  border-bottom: 1px solid #E8E8E8;
 }
 
 .book-full-number {
   font-size: 16px;
   font-family: "Lato", sans-serif;
   vertical-align: top;
+}
+
+.book-full-cover {
+  padding-right: 0;
+  margin-right: 0;
+  width: 47px;
 }
 
 
@@ -274,6 +281,7 @@
 .book-full-info {
   display: flex;
   flex-direction: column;
+  height: 90px;
 }
 
 .book-full-title {
@@ -345,4 +353,31 @@
 .full-index-toggle-list li:hover {
   background-color: #f1f1f1;
   cursor: pointer;
+}
+
+.book-full-index-table {
+  color: #382110;
+  font-weight: bold;
+  font-size: 14px;
+  padding-bottom: 20px;
+  border-collapse: collapse;
+
+}
+
+.book-full-index-table-headers {
+}
+
+.book-full-index-table th {
+  height: 54px;
+  font-size: 12px;
+  vertical-align: bottom;
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  margin: 0;
+}
+
+.book-full-index-table td {
+  color: #181818;
 }
