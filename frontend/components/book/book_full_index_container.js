@@ -24,7 +24,8 @@ const mapStateToProps = function (state) {
     books: state.entities.books,
     userBookshelves,
     wantToReadBookshelf,
-    currentUserId: state.session.currentUserId
+    currentUserId: state.session.currentUserId,
+    toggled: state.ui.bookshelfModal
   };
 };
 

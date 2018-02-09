@@ -24,6 +24,7 @@ class BookFullIndex extends React.Component {
                 key={book.id}
                 num={idx + 1}
                 toggleBookshelfModal={this.props.toggleBookshelfModal}
+                toggled={this.props.toggled}
                 userBookshelves={this.props.userBookshelves}
                 />
           );
