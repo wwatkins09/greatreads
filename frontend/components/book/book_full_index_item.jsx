@@ -23,8 +23,15 @@ class BookFullIndexItem extends React.Component {
 
   }
 
-  handleBookshelfSelect(event) {
+  handleBookshelfSelect(bookshelf) {
+      return (event) => {
+        event.preventDefault();
 
+        this.props.createBookshelfOwnership({bookshelf_id: bookshelf.id, book_id: this.props.book.id}).then(() => {
+          this.props.history.push(`/bookshelves/${bookshelf.id}`)
+        })
+
+      }
   }
 
   toggleBookshelves(event) {

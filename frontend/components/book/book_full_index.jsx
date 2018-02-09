@@ -26,6 +26,8 @@ class BookFullIndex extends React.Component {
                 toggleBookshelfModal={this.props.toggleBookshelfModal}
                 toggled={this.props.toggled}
                 userBookshelves={this.props.userBookshelves}
+                createBookshelfOwnership={this.props.createBookshelfOwnership}
+                history={this.props.history}
                 />
           );
         }
