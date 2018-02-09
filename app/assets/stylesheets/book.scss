@@ -308,6 +308,7 @@
 
 .book-full-button-container {
   display: flex;
+  justify-content: center;
 }
 
 .book-full-button-header {
@@ -338,7 +339,8 @@
   z-index: 20;
   overflow: scroll;
   position: absolute;
-  top: 62%;
+  left: 4%;
+  top: 43%;
 }
 
 .full-index-toggle-list-hidden {
@@ -349,7 +351,8 @@
   z-index: 0;
   font-size: 12px;
   position: absolute;
-  top: 61%;
+  left: 4%;
+  top: 43%;
 }
 
 .full-index-toggle-list li {
