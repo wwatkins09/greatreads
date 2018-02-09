@@ -83,6 +83,11 @@ class BookFullIndexItem extends React.Component {
       );
     }
 
+    let reviewScore = 0;
+    if (this.props.review) {
+      reviewScore = this.props.review.score;
+    }
+
     return (
 
       <tr className="book-full-row">
@@ -106,13 +111,13 @@ class BookFullIndexItem extends React.Component {
             <button className="book-show-button" onClick={this.toggleBookshelves}>▼
             </button>
           </div>
-          <span>My rating:</span>
+          <span className="my-rating">My rating:</span>
             <div className="review-score">
-              <span className={this.classNameGenerator(this.props.reviewScore, 1)}></span>
-              <span className={this.classNameGenerator(this.props.reviewScore, 2)}></span>
-              <span className={this.classNameGenerator(this.props.reviewScore, 3)}></span>
-              <span className={this.classNameGenerator(this.props.reviewScore, 4)}></span>
-              <span className={this.classNameGenerator(this.props.reviewScore, 5)}></span>
+              <span className={this.classNameGenerator(reviewScore, 1)}></span>
+              <span className={this.classNameGenerator(reviewScore, 2)}></span>
+              <span className={this.classNameGenerator(reviewScore, 3)}></span>
+              <span className={this.classNameGenerator(reviewScore, 4)}></span>
+              <span className={this.classNameGenerator(reviewScore, 5)}></span>
             </div>
         </td>
       </tr>

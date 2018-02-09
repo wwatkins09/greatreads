@@ -310,9 +310,14 @@
   display: flex;
 }
 
+.book-full-button-header {
+  width: 150px;
+}
+
 .book-full-button {
   width: 150px;
   position: relative;
+  text-align: center;
 }
 
 .full-index-toggle-list {

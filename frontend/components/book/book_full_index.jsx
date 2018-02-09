@@ -17,6 +17,10 @@ class BookFullIndex extends React.Component {
 
       booksList = Object.values(this.props.books).map((book, idx) => {
         if (book) {
+          let review;
+          if (this.props.userReviews[0]) {
+            review = this.props.userReviews.find(review => review.bookId === book.id);
+          }
           return (
               <BookFullIndexItem
                 book={book}
@@ -28,6 +32,7 @@ class BookFullIndex extends React.Component {
                 createBookshelfOwnership={this.props.createBookshelfOwnership}
                 history={this.props.history}
                 wantToReadBookshelf={this.props.wantToReadBookshelf}
+                review={review}
                 />
           );
         }
@@ -40,7 +45,7 @@ class BookFullIndex extends React.Component {
                 <th className="book-full-number"></th>
                 <th className="book-full-cover"></th>
                 <th className="book-full-info"></th>
-                <th className="book-full-button"></th>
+                <th className="book-full-button-header"></th>
               </tr>
               {booksList}
             </tbody>

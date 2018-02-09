@@ -24,8 +24,8 @@ const mapStateToProps = function (state) {
   let userReviews;
 
   if (state.entities.users[state.session.currentUserId]) {
-    userReviews = state.entities.users[state.session.currentUserId].reviewIds.map((review) => {
-      return state.entities.reviews[review.id];
+    userReviews = state.entities.users[state.session.currentUserId].reviewIds.map((reviewId) => {
+      return state.entities.reviews[reviewId];
     })
   }
 
