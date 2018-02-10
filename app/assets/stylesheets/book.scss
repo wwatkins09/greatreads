@@ -375,6 +375,7 @@
 }
 
 .book-full-index-table-headers {
+  border-bottom: 1px solid #E8E8E8;
 }
 
 .book-full-index-table th {
@@ -389,4 +390,10 @@
 
 .book-full-index-table td {
   color: #181818;
+}
+
+.my-rating {
+  color: #999999;
+  font-family: "Lato" sans-serif;
+  font-size: 11px;
 }
