@@ -29,6 +29,7 @@ const mapStateToProps = function (state) {
     })
   }
 
+  console.log(userReviews);
   return {
     books: state.entities.books,
     userBookshelves,

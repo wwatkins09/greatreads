@@ -2,10 +2,11 @@ import merge from 'lodash/merge';
 import {RECEIVE_USER} from '../actions/user_actions';
 import {RECEIVE_CURRENT_USER} from '../actions/session_actions';
 import {RECEIVE_BOOKSHELF, RECEIVE_BOOKSHELVES, REMOVE_BOOKSHELF} from '../actions/bookshelf_actions';
-import {RECEIVE_REVIEW, RECEIVE_REVIEWS, REMOVE_REVIEW} from '../actions/review_actions';
+import {RECEIVE_REVIEW, RECEIVE_REVIEWS, REMOVE_REVIEW, RECEIVE_REVIEWS_WITH_USER} from '../actions/review_actions';
 
 
 const usersReducer = function(oldState={}, action) {
+
   const sortNumber = function (a,b) {
     return a - b;
   };
@@ -44,6 +45,9 @@ const usersReducer = function(oldState={}, action) {
       newState = merge({}, oldState);
       newState[action.user.id].reviewIds = newState[action.user.id].reviewIds.filter(el => el !== action.review.id);
       return newState;
+
+    case RECEIVE_REVIEWS_WITH_USER:
+      return Object.assign({}, oldState, {[action.user.id]: action.user});
 
     default:
       return oldState;

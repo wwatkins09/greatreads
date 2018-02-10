@@ -9,7 +9,9 @@ class BookFullIndex extends React.Component {
 
   componentDidMount() {
     this.props.clearModals();
-    this.props.fetchAllBooks();
+    this.props.fetchAllBooks().then(() => {
+      this.props.fetchReviewsByUserId(this.props.currentUserId);
+    });
   }
 
   render() {
