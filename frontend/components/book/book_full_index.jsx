@@ -19,10 +19,7 @@ class BookFullIndex extends React.Component {
 
       booksList = Object.values(this.props.books).map((book, idx) => {
         if (book) {
-          let review;
-          if (this.props.userReviews[0]) {
-            review = this.props.userReviews.find(review => review.bookId === book.id);
-          }
+            const review = this.props.userReviews.find(review => review && review.bookId === book.id);
           return (
               <BookFullIndexItemContainer
                 book={book}
