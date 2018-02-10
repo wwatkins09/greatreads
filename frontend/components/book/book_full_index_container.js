@@ -2,8 +2,7 @@ import {connect} from 'react-redux';
 import BookFullIndex from './book_full_index';
 import {fetchAllBooks} from '../../actions/book_actions';
 import {withRouter} from 'react-router-dom';
-import {clearModals, toggleBookshelfModal} from '../../actions/ui_actions';
-import {createBookshelfOwnership} from '../../actions/bookshelf_ownership_actions';
+import {clearModals} from '../../actions/ui_actions';
 import {fetchReviewsByUserId} from '../../actions/review_actions';
 
 const mapStateToProps = function (state) {
@@ -29,13 +28,11 @@ const mapStateToProps = function (state) {
     })
   }
 
-  console.log(userReviews);
   return {
     books: state.entities.books,
     userBookshelves,
     wantToReadBookshelf,
     currentUserId: state.session.currentUserId,
-    toggled: state.ui.bookshelfModal,
     userReviews
   };
 };

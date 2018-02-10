@@ -1,5 +1,5 @@
 import React from 'react';
-import BookFullIndexItem from './book_full_index_item';
+import BookFullIndexItemContainer from './book_full_index_item_container';
 
 class BookFullIndex extends React.Component {
 
@@ -24,15 +24,11 @@ class BookFullIndex extends React.Component {
             review = this.props.userReviews.find(review => review.bookId === book.id);
           }
           return (
-              <BookFullIndexItem
+              <BookFullIndexItemContainer
                 book={book}
                 key={book.id}
                 num={idx + 1}
-                toggleBookshelfModal={this.props.toggleBookshelfModal}
-                toggled={this.props.toggled}
                 userBookshelves={this.props.userBookshelves}
-                createBookshelfOwnership={this.props.createBookshelfOwnership}
-                history={this.props.history}
                 wantToReadBookshelf={this.props.wantToReadBookshelf}
                 review={review}
                 />
