@@ -19,14 +19,17 @@ class BookFullIndexItem extends React.Component {
     if (!props.toggled) {
       this.setState({toggled: props.toggled});
     }
-    if (this.props.userBookshelves) {
-      this.props.userBookshelves.forEach((bookshelf) => {
+
+    if (props.userBookshelves) {
+      props.userBookshelves.forEach((bookshelf) => {
         if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(this.props.book.id)) {
           this.setState({onDefaultShelf: true, readStatus: bookshelf.name})
           }
         }
       )
     }
+
+
   }
 
 
