@@ -167,6 +167,21 @@
   padding-bottom: 20px;
 }
 
+.review-edit-button {
+  width: 100px;
+  border-radius: 3px;
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  padding: 4px 6px;
+  margin-right: 10px;
+  background-color: #F4F1EA;
+}
+
+.review-edit-button:hover {
+  cursor: pointer;
+  background-color: #ede6d6;
+}
+
 .review-delete-button {
   width: 100px;
   background-color: #B80F28;
