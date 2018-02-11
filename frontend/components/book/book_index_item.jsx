@@ -5,7 +5,16 @@ class BookIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
+    const canReview = (props.currentUserId === props.bookshelf.userId)
+    console.log(canReview);
+
+    this.state = {canReview, review: this.props.review, score: this.props.review.score, starsFilled: this.props.review.score};
+
     this.handleRemove = this.handleRemove.bind(this);
+    this.fillStar = this.fillStar.bind(this);
+    this.emptyStars = this.emptyStars.bind(this);
+    this.handleStarSelect = this.handleStarSelect.bind(this);
+    this.classNameGenerator = this.classNameGenerator.bind(this);
   }
 
   handleRemove(event) {
@@ -14,10 +23,42 @@ class BookIndexItem extends React.Component {
   }
 
   classNameGenerator(score, starValue) {
+    let className;
     if (score >= starValue) {
-      return 'star-filled';
+      className = 'star-filled';
     } else {
-      return 'star-empty';
+      className = 'star-empty';
+    }
+    if (this.props.canReview) {
+      className = className.concat('-selectable');
+    }
+    return className;
+  }
+
+  fillStar(number) {
+    return (event) => {
+      if (this.props.canReview) {
+        this.setState({starsFilled: number})
+      }
+    };
+  }
+
+  emptyStars(event) {
+    this.setState({starsFilled: this.state.score})
+  }
+
+  handleStarSelect(score) {
+    return (event) => {
+      if (this.props.canReview) {
+        if (this.state.id) {
+          this.props.updateReview(this.state).then(() => this.props.toggleReviewModal());
+        } else {
+          this.props.createReview(this.state).then(() => {this.props.toggleReviewModal();
+          });
+        }
+      } else {
+        console.log("na");
+      }
     }
   }
 
@@ -41,11 +82,11 @@ class BookIndexItem extends React.Component {
         <td className="table-field-avg-score">{this.props.book.avgScore}</td>
         <td className="table-field-score">
           <div className="review-header">
-            <span className={this.classNameGenerator(reviewScore, 1)}></span>
-            <span className={this.classNameGenerator(reviewScore, 2)}></span>
-            <span className={this.classNameGenerator(reviewScore, 3)}></span>
-            <span className={this.classNameGenerator(reviewScore, 4)}></span>
-            <span className={this.classNameGenerator(reviewScore, 5)}></span>
+            <span className={this.classNameGenerator(this.state.starsFilled, 1)} onMouseEnter={this.fillStar(1)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(1)}></span>
+            <span className={this.classNameGenerator(this.state.starsFilled, 2)} onMouseEnter={this.fillStar(2)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(2)}></span>
+            <span className={this.classNameGenerator(this.state.starsFilled, 3)} onMouseEnter={this.fillStar(3)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(3)}></span>
+            <span className={this.classNameGenerator(this.state.starsFilled, 4)} onMouseEnter={this.fillStar(4)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(4)}></span>
+            <span className={this.classNameGenerator(this.state.starsFilled, 5)} onMouseEnter={this.fillStar(5)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(5)}></span>
           </div>
         </td>
         <td className="table-field-delete">

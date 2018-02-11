@@ -27,7 +27,7 @@ class BookIndex extends React.Component {
                 bookshelf={this.props.bookshelf}
                 deleteBookshelfOwnership={this.props.deleteBookshelfOwnership}
                 currentUserId={this.props.currentUserId}
-                review={this.props.reviews[idx]}
+                review={this.props.reviews[idx] || {score: 0}}
               />
           );
         }

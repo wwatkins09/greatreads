@@ -58,7 +58,6 @@ class BookshelfShow extends React.Component {
   }
 
   render() {
-
     let bookshelfEdit;
     if (this.props.currentUserId === this.props.bookshelf.userId && !this.props.bookshelf.defaultShelf) {
       bookshelfEdit = (
@@ -80,7 +79,6 @@ class BookshelfShow extends React.Component {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);
     });
 
-    //make headings links once urls exist!!
     return (
       <div className="bookshelf-show">
 
