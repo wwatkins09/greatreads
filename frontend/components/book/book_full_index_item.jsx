@@ -5,11 +5,14 @@ class BookFullIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {toggled: false, onDefaultShelf: false, readStatus: null, }
+    this.state = {toggled: false, onDefaultShelf: false, readStatus: null, starsFilled: props.review.score, score: props.review.score}
 
     this.handleAddToDefault = this.handleAddToDefault.bind(this);
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
     this.handleBookshelfSelect = this.handleBookshelfSelect.bind(this);
+    this.fillStar = this.fillStar.bind(this);
+    this.emptyStars = this.emptyStars.bind(this);
+    this.handleStarSelect = this.handleStarSelect.bind(this);
   }
 
   componentWillReceiveProps(props) {
@@ -51,9 +54,9 @@ class BookFullIndexItem extends React.Component {
 
   classNameGenerator(score, starValue) {
     if (score >= starValue) {
-      return 'star-filled';
+      return 'star-filled-selectable';
     } else {
-      return 'star-empty';
+      return 'star-empty-selectable';
     }
   }
 
