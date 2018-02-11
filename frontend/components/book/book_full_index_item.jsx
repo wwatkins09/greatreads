@@ -29,6 +29,9 @@ class BookFullIndexItem extends React.Component {
       )
     }
 
+    if (props.review) {
+      this.setState({starsFilled: props.review.score, score: props.review.score})
+    }
 
   }
 
@@ -75,7 +78,12 @@ class BookFullIndexItem extends React.Component {
 
   handleStarSelect(score) {
     return (event) => {
-      this.setState({score})
+      if (this.props.review.id) {
+        this.props.updateReview({id: this.props.review.id, score, body: this.props.review.body, bookId: this.props.book.id, userId: this.props.currentUserId}).then(() => this.props.history.push(`/books/${this.props.book.id}`));
+      } else {
+        this.props.createReview({score, body: '', bookId: this.props.book.id, userId: this.props.currentUserId}).then(() => {this.props.history.push(`/books/${this.props.book.id}`);
+        });
+      }
     }
   }
 
@@ -104,11 +112,6 @@ class BookFullIndexItem extends React.Component {
           {toggleMenuItems}
         </ul>
       );
-    }
-
-    let reviewScore = 0;
-    if (this.props.review) {
-      reviewScore = this.props.review.score;
     }
 
     return (
