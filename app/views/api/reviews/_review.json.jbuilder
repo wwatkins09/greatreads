@@ -6,6 +6,13 @@ json.review do
   json.body review.body
 end
 
+reviews = Review.where({book_id: book.id})
+if reviews.count > 0
+  avg_score = reviews.average(:score).round(1)
+else
+  avg_score = nil
+end
+
 json.book do
   json.id book.id
   json.title book.title
@@ -15,6 +22,7 @@ json.book do
   json.bookshelfIds book.bookshelf_ids
   json.reviewIds book.review_ids
   json.coverUrl asset_path(book.cover.url)
+  json.avgScore avg_score
 end
 
 json.user do
