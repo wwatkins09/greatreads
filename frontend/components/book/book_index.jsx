@@ -28,6 +28,8 @@ class BookIndex extends React.Component {
                 deleteBookshelfOwnership={this.props.deleteBookshelfOwnership}
                 currentUserId={this.props.currentUserId}
                 review={this.props.reviews[idx] || {score: 0}}
+                createReview={this.props.createReview}
+                updateReview={this.props.updateReview}
               />
           );
         }
@@ -36,9 +38,7 @@ class BookIndex extends React.Component {
       <table className="book-index-table">
         <tbody>
           <tr className="book-index-table-headers">
-            <th className="table-field-cover">
-              cover
-            </th>
+            <th className="table-field-cover">cover</th>
             <th className="table-field-title">title</th>
             <th className="table-field-author">author</th>
             <th className="table-field-avg-score">avg rating</th>

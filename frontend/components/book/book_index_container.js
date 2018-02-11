@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 import BookIndex from './book_index';
 import {fetchBooksByBookshelfId} from '../../actions/book_actions';
 import {deleteBookshelfOwnership} from '../../actions/bookshelf_ownership_actions';
-import {fetchReviewsByUserId} from '../../actions/review_actions';
+import {fetchReviewsByUserId, createReview, updateReview} from '../../actions/review_actions';
 
 const mapStateToProps = function (state, ownProps) {
   const bookshelfId = parseInt(ownProps.match.params.bookshelfId);
@@ -28,7 +28,9 @@ const mapDispatchToProps = function (dispatch) {
   return {
     fetchBooksByBookshelfId: (bookshelfId) => dispatch(fetchBooksByBookshelfId(bookshelfId)),
     deleteBookshelfOwnership: (args) => dispatch(deleteBookshelfOwnership(args)),
-    fetchReviewsByUserId: (userId) => dispatch(fetchReviewsByUserId(userId))
+    fetchReviewsByUserId: (userId) => dispatch(fetchReviewsByUserId(userId)),
+    createReview: (review) => dispatch(createReview(review)),
+    updateReview: (review) => dispatch(updateReview(review))
   };
 };
 

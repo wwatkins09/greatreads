@@ -6,7 +6,6 @@ class BookIndexItem extends React.Component {
   constructor(props) {
     super(props);
     const canReview = (props.currentUserId === props.bookshelf.userId)
-    console.log(canReview);
 
     this.state = {canReview, review: this.props.review, score: this.props.review.score, starsFilled: this.props.review.score};
 
@@ -15,6 +14,12 @@ class BookIndexItem extends React.Component {
     this.emptyStars = this.emptyStars.bind(this);
     this.handleStarSelect = this.handleStarSelect.bind(this);
     this.classNameGenerator = this.classNameGenerator.bind(this);
+  }
+
+  componentWillReceiveProps(props) {
+    if (props.review) {
+      this.setState({review: props.review, score: props.review.score, starsFilled: props.review.score})
+    }
   }
 
   handleRemove(event) {
@@ -29,7 +34,7 @@ class BookIndexItem extends React.Component {
     } else {
       className = 'star-empty';
     }
-    if (this.props.canReview) {
+    if (this.state.canReview) {
       className = className.concat('-selectable');
     }
     return className;
@@ -37,7 +42,7 @@ class BookIndexItem extends React.Component {
 
   fillStar(number) {
     return (event) => {
-      if (this.props.canReview) {
+      if (this.state.canReview) {
         this.setState({starsFilled: number})
       }
     };
@@ -49,15 +54,12 @@ class BookIndexItem extends React.Component {
 
   handleStarSelect(score) {
     return (event) => {
-      if (this.props.canReview) {
-        if (this.state.id) {
-          this.props.updateReview(this.state).then(() => this.props.toggleReviewModal());
+      if (this.state.canReview) {
+        if (this.state.review.id) {
+          this.props.updateReview({id: this.state.review.id, score, body: this.state.review.body, userId: this.props.currentUserId, bookId: this.props.book.id});
         } else {
-          this.props.createReview(this.state).then(() => {this.props.toggleReviewModal();
-          });
-        }
-      } else {
-        console.log("na");
+        this.props.createReview({score, body: '', userId: this.props.currentUserId, bookId: this.props.book.id});
+        };
       }
     }
   }
