@@ -6,6 +6,7 @@ class ReviewIndex extends React.Component {
   constructor(props) {
     super(props);
 
+    this.handleEdit = this.handleEdit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
@@ -17,6 +18,12 @@ class ReviewIndex extends React.Component {
     if (props.location.pathname !== this.props.location.pathname) {
       this.props.fetchReviewsByBookId(props.bookId);
     }
+  }
+
+  handleEdit(event) {
+    event.preventDefault();
+    this.props.clearReviewErrors();
+    this.props.toggleReviewModal();
   }
 
   handleDelete(event) {
@@ -46,7 +53,10 @@ class ReviewIndex extends React.Component {
         <content className="review-current-user">
           <p className="review-current-user-header">Your review:</p>
           <ReviewIndexItem review={currentUserReview} key={currentUserReview.id} user={this.props.users[this.props.currentUserId]} />
-          <button className="review-delete-button" onClick={this.handleDelete}>Delete</button>
+          <span className="review-buttons-container">
+            <button className="review-edit-button" onClick={this.handleEdit}>Edit</button>
+            <button className="review-delete-button" onClick={this.handleDelete}>Delete</button>
+          </span>
         </content>
       );
     }

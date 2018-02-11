@@ -1,7 +1,8 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ReviewIndex from './review_index';
-import {fetchReviewsByBookId, deleteReview} from '../../actions/review_actions';
+import {fetchReviewsByBookId, deleteReview, clearReviewErrors} from '../../actions/review_actions';
+import {toggleReviewModal} from '../../actions/ui_actions';
 
 const mapStateToProps = function (state, ownProps) {
   const bookId = parseInt(ownProps.match.params.bookId);
@@ -27,7 +28,9 @@ const mapStateToProps = function (state, ownProps) {
 const mapDispatchToProps = function (dispatch) {
   return {
     fetchReviewsByBookId: (bookId) => dispatch(fetchReviewsByBookId(bookId)),
-    deleteReview: (reviewId) => dispatch(deleteReview(reviewId))
+    deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
+    toggleReviewModal: () => dispatch(toggleReviewModal()),
+    clearReviewErrors: () => dispatch(clearReviewErrors())
   };
 };
 
