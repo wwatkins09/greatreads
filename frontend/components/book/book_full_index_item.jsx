@@ -5,7 +5,7 @@ class BookFullIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {toggled: false, onDefaultShelf: false, readStatus: null, reviews: null}
+    this.state = {toggled: false, onDefaultShelf: false, readStatus: null, }
 
     this.handleAddToDefault = this.handleAddToDefault.bind(this);
     this.toggleBookshelves = this.toggleBookshelves.bind(this);
@@ -20,9 +20,10 @@ class BookFullIndexItem extends React.Component {
       this.props.userBookshelves.forEach((bookshelf) => {
         if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(this.props.book.id)) {
           this.setState({onDefaultShelf: true, readStatus: bookshelf.name})
-            }
-          })
+          }
         }
+      )
+    }
   }
 
 
@@ -53,6 +54,22 @@ class BookFullIndexItem extends React.Component {
       return 'star-filled';
     } else {
       return 'star-empty';
+    }
+  }
+
+  fillStar(number) {
+    return (event) => {
+      this.setState({starsFilled: number})
+    };
+  }
+
+  emptyStars(event) {
+    this.setState({starsFilled: this.state.score})
+  }
+
+  handleStarSelect(score) {
+    return (event) => {
+      this.setState({score})
     }
   }
 
@@ -113,11 +130,11 @@ class BookFullIndexItem extends React.Component {
           </div>
           <span className="my-rating">My rating:</span>
             <div className="review-score">
-              <span className={this.classNameGenerator(reviewScore, 1)}></span>
-              <span className={this.classNameGenerator(reviewScore, 2)}></span>
-              <span className={this.classNameGenerator(reviewScore, 3)}></span>
-              <span className={this.classNameGenerator(reviewScore, 4)}></span>
-              <span className={this.classNameGenerator(reviewScore, 5)}></span>
+              <span className={this.classNameGenerator(this.state.starsFilled, 1)} onMouseEnter={this.fillStar(1)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(1)}></span>
+              <span className={this.classNameGenerator(this.state.starsFilled, 2)} onMouseEnter={this.fillStar(2)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(2)}></span>
+              <span className={this.classNameGenerator(this.state.starsFilled, 3)} onMouseEnter={this.fillStar(3)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(3)}></span>
+              <span className={this.classNameGenerator(this.state.starsFilled, 4)} onMouseEnter={this.fillStar(4)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(4)}></span>
+              <span className={this.classNameGenerator(this.state.starsFilled, 5)} onMouseEnter={this.fillStar(5)} onMouseLeave={this.emptyStars} onClick={this.handleStarSelect(5)}></span>
             </div>
         </td>
       </tr>
