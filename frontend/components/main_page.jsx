@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import BookshelfShowContainer from './bookshelf/bookshelf_show_container';
 import BookShowContainer from './book/book_show_container';
 import BookFullIndexContainer from './book/book_full_index_container';
+import SignInContainer from './session/sign_in_container';
 
 const mapStateToProps = function (state) {
   return {
@@ -27,6 +28,7 @@ const MainPage = (props) => {
         {slashRoute}
         <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
         <ProtectedRoute exact path="/bookshelves/:bookshelfId" component={BookshelfShowContainer}/>
+        <AuthRoute exact path="/signin" component={SignInContainer}/>
         <Switch>
           <ProtectedRoute exact path="/books/:bookId" component={BookShowContainer}/>
           <ProtectedRoute exact path="/books" component={BookFullIndexContainer}/>
