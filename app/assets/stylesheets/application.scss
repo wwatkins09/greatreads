@@ -61,11 +61,13 @@ li {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
 .main-page {
   border-bottom: 1px solid gray;
   min-height: calc(100vh - 100px);
+  margin-top: 50px;
 }
 
 .full-screen-modal-toggled {
