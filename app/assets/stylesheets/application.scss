@@ -14,8 +14,13 @@
  *= require_self
  */
 
+ html {
+   height: 100vh;
+ }
+
 body {
   margin: 0;
+  height: 100%;
   font-family: "Lato", sans-serif;
   background-color: rgba(244,241,234,0.5);
 }
@@ -48,14 +53,19 @@ li {
   list-style: none;
 }
 
+#root {
+  height: 100%;
+}
+
 .app {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .main-page {
   border-bottom: 1px solid gray;
-  min-height: calc(100vh - 122px);
+  min-height: calc(100vh - 100px);
 }
 
 .full-screen-modal-toggled {
