@@ -1,12 +1,23 @@
 .homepage {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.homepage-welcome {
+  height: 2000px;
   background: image_url('homepage_background.jpg');
   background-attachment: fixed;
   margin: 0;
   color: white;
 }
 
-.homepage-welcome {
+.homepage-welcome h1 {
   margin: 0;
+}
+
+.homepage-books {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
 }
