@@ -1,8 +1,10 @@
 .homepage {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background: image_url('homepage_background.jpg');
+  background-attachment: fixed;
   margin: 0;
+  color: white;
 }
 
 .homepage-welcome {
