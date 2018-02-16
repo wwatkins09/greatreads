@@ -1,5 +1,5 @@
 .navbar {
-  min-height: 60px;
+  min-height: 50px;
   background-color: #F4F1EA;
   display: flex;
   justify-content: space-between;
@@ -14,34 +14,43 @@
   display: flex;
 }
 
- .logo-homepage {
-   font-size: 24px;
-   width: 200px;
-   height: 130px;
-   justify-content: center;
-   padding: 0px 20px;
-   margin-left: 40px;
+ // .logo-homepage {
+ //   font-size: 24px;
+ //   width: 200px;
+ //   height: 130px;
+ //   justify-content: center;
+ //   padding: 0px 20px;
+ //   margin-left: 40px;
+ //   display: flex;
+ //   align-items: center;
+ //   background: image-url('greatreads.png');
+ //   background-size: 100%;
+ // }
+ //
+ // .logo-logged-in {
+ //   font-size: 24px;
+ //   width: 100px;
+ //   height: 80px;
+ //   justify-content: center;
+ //   padding: 0px 20px;
+ //   margin-left: 20px;
+ //   display: flex;
+ //   align-items: center;
+ //   background: image-url('greatreads.png');
+ //   background-size: 100%;
+ // }
+ //
+ // .logo:hover {
+ //   text-decoration: none;
+ // }
+
+ .nav-session-links {
    display: flex;
-   align-items: center;
-   background: image-url('greatreads.png');
-   background-size: 100%;
+
  }
 
- .logo-logged-in {
-   font-size: 24px;
-   width: 100px;
-   height: 80px;
-   justify-content: center;
-   padding: 0px 20px;
-   margin-left: 20px;
-   display: flex;
-   align-items: center;
-   background: image-url('greatreads.png');
-   background-size: 100%;
- }
-
- .logo:hover {
-   text-decoration: none;
+ .nav-session-links a {
+   margin: 0 10px;
  }
 
  .navbar-links-container {
@@ -75,7 +84,6 @@
 
  .navbar-link-container a:hover {
    text-decoration: none;
-
  }
 
  .navbar-form-container {
