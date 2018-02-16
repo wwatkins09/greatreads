@@ -21,7 +21,7 @@ const MainPage = (props) => {
   if (props.currentUserId) {
     slashRoute = (<Route exact path="/" component={UserShowContainer} />);
   } else {
-    slashRoute = (<Route path="/" component={NewUserFormContainer} />);
+    slashRoute = (<Route exact path="/" component={NewUserFormContainer} />);
   }
     return (
       <div className="main-page">
