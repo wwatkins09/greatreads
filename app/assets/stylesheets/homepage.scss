@@ -12,11 +12,22 @@
   margin: 0;
   color: white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .homepage-welcome h1 {
   margin: 0;
+  margin-top: 20px;
+}
+
+.homepage-ideas {
+  display: flex;
+}
+
+.homepage-ideas span {
+  display: flex;
+  flex-direction: column;
 }
 
 .homepage-books {
