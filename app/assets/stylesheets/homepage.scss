@@ -14,6 +14,7 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .homepage-ideas span {
@@ -22,11 +23,38 @@
   border: 1px solid black;
   width: 300px;
   text-align: center;
+}
 
+.homepage-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage-registration span {
+  margin: 5px 0;
 }
 
 #homepage-registration-button {
   background-color: green;
+}
+
+.homepage-or {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 16px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.homepage-line {
+  width: 115px;
+  height: 1px;
+  top: 62%;
+  background-color: white;
+  position: absolute;
 }
 
 .homepage-books {

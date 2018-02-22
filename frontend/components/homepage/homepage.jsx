@@ -33,7 +33,11 @@ class Homepage extends React.Component {
           </article>
         <span className="homepage-registration">
           <span id="homepage-registration-button" className="registration-button" onClick={() => this.props.history.push('/signup')}>Create an account</span>
-          <div></div>
+          <span className="homepage-or">
+            <div id="line-left" className="homepage-line"></div>
+            <p>or</p>
+            <div id="line-right" className="homepage-line"></div>
+          </span>
           <span id="homepage-registration-button" className="registration-button" onClick={this.handleDemoSignin}>Demo Login</span>
         </span>
       </div>
