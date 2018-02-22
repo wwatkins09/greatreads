@@ -38,11 +38,11 @@ class SignUp extends React.Component {
           <div className="registration-form">
               <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.username} placeholder="Username"></input>
               <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password} placeholder="Password"></input>
-              <span className="registration-button" onClick={this.handleSignup}>Sign up</span>
+              <span id="signup-button" className="registration-button" onClick={this.handleSignup}>Sign up</span>
               <ul className="user-errors-list">
                 {errorsList}
               </ul>
-              <p>Already have an account?</p>
+              <p className="registration-bottom-message">Already have an account?</p>
               <Link to="/signin">Sign in</Link>
             </div>
         </content>

@@ -49,7 +49,7 @@ class SignIn extends React.Component {
           <div className="registration-form">
               <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.username} placeholder="Username"></input>
               <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password} placeholder="Password"></input>
-              <span className="signin-button" onClick={this.handleSignin}>Log In</span>
+              <span className="registration-button" onClick={this.handleSignin}>Log In</span>
               <span className="signin-or">
                 <div id="line-left" className="signin-line"></div>
                 <p>or</p>
@@ -59,7 +59,7 @@ class SignIn extends React.Component {
               <ul className="session-errors-list">
                 {sessionErrorsList}
               </ul>
-              <p>Don't have an account?</p>
+              <p className="registration-bottom-message">Don't have an account?</p>
               <Link to="/signup">Sign up</Link>
             </div>
         </content>

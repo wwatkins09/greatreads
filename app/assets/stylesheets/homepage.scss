@@ -77,6 +77,10 @@
   cursor: pointer;
 }
 
+#signup-button {
+  margin-top: 10px;
+}
+
 .signin-or {
   display: flex;
   justify-content: center;
@@ -129,4 +133,9 @@
 .registration-error {
   color: red;
   margin: 2px 0;
+  text-align: center;
+}
+
+.registration-bottom-message {
+  margin: 5px 0;
 }
