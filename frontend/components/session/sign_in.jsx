@@ -39,14 +39,14 @@ class SignIn extends React.Component {
 
   render() {
     const sessionErrorsList = this.props.sessionErrors.map((error, idx) => {
-      return (<li className="session-error" key={idx}>{error}</li>);
+      return (<li className="registration-error" key={idx}>{error}</li>);
     });
 
     return (
-      <main className="signin">
-        <content className="signin-content">
+      <main className="registration">
+        <content className="registration-content">
           <h2>Sign in</h2>
-          <div className="signin-form">
+          <div className="registration-form">
               <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.username} placeholder="Username"></input>
               <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password} placeholder="Password"></input>
               <span className="signin-button" onClick={this.handleSignin}>Log In</span>
@@ -55,7 +55,7 @@ class SignIn extends React.Component {
                 <p>or</p>
                 <div id="line-right" className="signin-line"></div>
               </span>
-              <span className="signin-button" onClick={this.handleDemoSignin}>Demo Login</span>
+              <span className="registration-button" onClick={this.handleDemoSignin}>Demo Login</span>
               <ul className="session-errors-list">
                 {sessionErrorsList}
               </ul>

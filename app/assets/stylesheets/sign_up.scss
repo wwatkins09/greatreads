@@ -9,69 +9,69 @@
 //   min-height: calc(100vh - 70px);
 // }
 
-.signup-content {
-  width: 280px;
-  height: 158;
-  margin-bottom: 50px;
-  margin-right: 200px;
-  margin-top: 100px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #F4F1EA;
-}
-
-.signup-content p {
-  text-align: center;
-  margin-top: 8px;
-  margin-bottom: 0;
-  font-size: 18px;
-  color: #000;
-}
-
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.signup-form input {
-  margin: 10px 0px;
-}
-
-.signup-button {
-  width: 120px;
-  background-color: #fdd05f;
-  padding: 5px;
-  font-size: 16px;
-  line-height: 22px;
-  border-radius: 4px;
-  color: #333333;
-  text-align: center;
-}
-
-.signup-button:hover {
-  background-color: #FFD56D;
-  cursor: pointer;
-}
-
-
-.signup-form label {
-  margin: 10px 0;
-}
-
-.user-errors-list {
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-}
-
-.user-error {
-  color: red;
-  padding: 10px 0px;
-  margin: 0px 10px;
-}
+// .signup-content {
+//   width: 280px;
+//   height: 158;
+//   margin-bottom: 50px;
+//   margin-right: 200px;
+//   margin-top: 100px;
+//
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   background-color: #F4F1EA;
+// }
+//
+// .signup-content p {
+//   text-align: center;
+//   margin-top: 8px;
+//   margin-bottom: 0;
+//   font-size: 18px;
+//   color: #000;
+// }
+//
+// .signup-form {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+// }
+//
+// .signup-form input {
+//   margin: 10px 0px;
+// }
+//
+// .signup-button {
+//   width: 120px;
+//   background-color: #fdd05f;
+//   padding: 5px;
+//   font-size: 16px;
+//   line-height: 22px;
+//   border-radius: 4px;
+//   color: #333333;
+//   text-align: center;
+// }
+//
+// .signup-button:hover {
+//   background-color: #FFD56D;
+//   cursor: pointer;
+// }
+//
+//
+// .signup-form label {
+//   margin: 10px 0;
+// }
+//
+// .user-errors-list {
+//   padding: 0px;
+//   display: flex;
+//   flex-direction: column;
+// }
+//
+// .user-error {
+//   color: red;
+//   padding: 10px 0px;
+//   margin: 0px 10px;
+// }
 
 
 .session-error {
