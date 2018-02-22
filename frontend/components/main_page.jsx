@@ -9,7 +9,7 @@ import BookShowContainer from './book/book_show_container';
 import BookFullIndexContainer from './book/book_full_index_container';
 import SignInContainer from './session/sign_in_container';
 import SignUpContainer from './user/sign_up_container';
-import Homepage from './homepage/homepage';
+import HomepageContainer from './homepage/homepage_container';
 
 const mapStateToProps = function (state) {
   return {
@@ -23,7 +23,7 @@ const MainPage = (props) => {
   if (props.currentUserId) {
     slashRoute = (<Route exact path="/" component={UserShowContainer} />);
   } else {
-    slashRoute = (<Route exact path="/" component={Homepage} />);
+    slashRoute = (<Route exact path="/" component={HomepageContainer} />);
   }
     return (
       <div className="main-page">
