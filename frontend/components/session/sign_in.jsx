@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class SignIn extends React.Component {
 
@@ -6,8 +7,9 @@ class SignIn extends React.Component {
     super(props);
 
     this.state = {username: "", password: ""};
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSignin = this.handleSignin.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleDemoSignin = this.handleDemoSignin.bind(this);
   }
 
   handleChange(field) {
@@ -17,12 +19,10 @@ class SignIn extends React.Component {
   }
 
 
-  handleSubmit(event) {
+  handleSignin(event) {
     event.preventDefault();
 
-    this.props.signIn(this.state).then(() => {
-      this.props.history.push('/');
-    }, () => {
+    this.props.signIn(this.state).then(() => {}, () => {
       this.setState( {username: "", password: ""} )
       });
   }
@@ -30,9 +30,7 @@ class SignIn extends React.Component {
   handleDemoSignin(event) {
     event.preventDefault();
 
-    this.props.signIn({username: "Demo User", password: "starwars"}).then(() => {
-      this.props.push('/');
-    })
+    this.props.signIn({username: "Demo User", password: "starwars"});
   }
 
   componentWillUnmount() {
@@ -51,17 +49,19 @@ class SignIn extends React.Component {
           <div className="signin-form">
               <input className="input-field" onChange={this.handleChange('username')} type="text" value={this.state.username} placeholder="Username"></input>
               <input className="input-field" onChange={this.handleChange('password')} type="password" value={this.state.password} placeholder="Password"></input>
-              <span className="signin-button" onClick={this.handleSubmit}>Log In</span>
+              <span className="signin-button" onClick={this.handleSignin}>Log In</span>
               <span className="signin-or">
                 <div id="line-left" className="signin-line"></div>
                 <p>or</p>
                 <div id="line-right" className="signin-line"></div>
-
               </span>
-          </div>
-          <ul className="session-errors-list">
-            {sessionErrorsList}
-          </ul>
+              <span className="signin-button" onClick={this.handleDemoSignin}>Demo Login</span>
+              <ul className="session-errors-list">
+                {sessionErrorsList}
+              </ul>
+              <p>Don't have an account?</p>
+              <Link to="/signup">Sign up</Link>
+            </div>
         </content>
     </main>
     );
