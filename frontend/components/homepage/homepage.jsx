@@ -20,7 +20,10 @@ const Homepage = (props) => {
             <p>Leave a review to show whether you couldn't put it down or couldn't stand it. If you're not sure whether it's worth a try, check out what other users have said.</p>
           </span>
         </article>
-      <span className="homepage-signup">
+      <span className="homepage-registration">
+        <span className="registration-button">Create an account</span>
+        <div></div>
+        <span className="registration-button">Demo Login</span>
       </span>
     </div>
   )
