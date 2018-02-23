@@ -8,13 +8,33 @@
 }
 
 .homepage-welcome {
-  width: 100%;
+  width: 80%;
   height: 800px;
   background: image_url('homepage_background4.jpeg');
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.homepage-demo {
+  display: flex;
+  justify-content: center;
+  width: 180px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+}
+
+.homepage-demo p {
+  transition: color 0.4s ease 0s;
+}
+
+.homepage-demo:hover {
+  background-color: white;
+  color: orange;
+  cursor: pointer;
 }
 
 .homepage-ideas {
