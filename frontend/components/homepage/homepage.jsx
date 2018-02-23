@@ -15,8 +15,10 @@ class Homepage extends React.Component {
   render() {
     return (
       <div className="homepage">
-        <h1>Looking for a great read?</h1>
-        <h2>We're here to help.</h2>
+        <content className="homepage-welcome">
+          <h1>Looking for a great read?</h1>
+          <h2>We're here to help.</h2>
+        </content>
           <article className="homepage-ideas">
             <span>
               <p>Looking for something new?</p>
