@@ -22,8 +22,8 @@ class Homepage extends React.Component {
             <p>Demo</p>
           </span>
         </content>
+        <h4>What will <em>you</em> discover?</h4>
         <article className="homepage-discover">
-          <h4>What will <em>you</em> discover?</h4>
           <span className="homepage-discover-example">
             <content className="homepage-example-before">
               <p>Because Flora liked...</p>
@@ -39,6 +39,25 @@ class Homepage extends React.Component {
             <content className="homepage-example-after">
               <p>She discovered:</p>
               <img src="https://s3.amazonaws.com/aa-greatreads-dev/pale_fire.jpg" />
+            </content>
+          </span>
+        </article>
+        <article className="homepage-discover">
+          <span className="homepage-discover-example">
+            <content className="homepage-example-before">
+              <p>Because Nathan liked...</p>
+              <span className="homepage-book-list">
+                <img src="https://s3.amazonaws.com/aa-greatreads-dev/if_on_a_winters_night_a_traveler.jpg" />
+                <img src="https://s3.amazonaws.com/aa-greatreads-dev/catch_22.jpg" />
+                <img src="https://s3.amazonaws.com/aa-greatreads-dev/the_wasteland.jpg" />
+              </span>
+            </content>
+            <content className="homepage-example-arrow">
+              <p>=></p>
+            </content>
+            <content className="homepage-example-after">
+              <p>He discovered:</p>
+              <img src="https://s3.amazonaws.com/aa-greatreads-dev/the_wind_up_bird_chronicle.jpg" />
             </content>
           </span>
         </article>
