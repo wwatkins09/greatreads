@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import NavBar from './nav_bar';
+import {signIn} from '../../actions/session_actions';
 
 const mapStateToProps = function (state) {
   return {
@@ -9,7 +10,7 @@ const mapStateToProps = function (state) {
 
 const mapDispatchToProps = function (dispatch) {
   return {
-
+    signIn: (credentials) => dispatch(signIn(credentials))
   };
 };
 

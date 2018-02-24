@@ -8,6 +8,12 @@ class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.handleDemoSignin = this.handleDemoSignin.bind(this);
+  }
+
+  handleDemoSignin(event) {
+    this.props.signIn({username: "Demo User", password: "starwars"})
   }
 
   render() {
@@ -31,6 +37,7 @@ class NavBar extends React.Component {
       sessionLinks = (<span className="nav-session-links">
         <Link to="/signin">Sign in</Link>
         <Link to="/signup">Sign up</Link>
+        <p className="navbar-demo" onClick={this.handleDemoSignin}>Demo</p>
       </span>);
       navLinks = <span className="navbar-links"></span>;
     }

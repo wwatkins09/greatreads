@@ -22,6 +22,11 @@
   margin-left: 15px;
 }
 
+.navbar-demo:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
  // .logo-homepage {
  //   font-size: 24px;
  //   width: 200px;
@@ -54,7 +59,7 @@
 
  .nav-session-links {
    display: flex;
-
+   align-items: center;
  }
 
  .nav-session-links a {
@@ -96,9 +101,6 @@
 
  .navbar-form-container {
    padding: 0px 30px;
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
  }
 
 
