@@ -39,13 +39,15 @@ class NavBar extends React.Component {
         <Link to="/signup">Sign up</Link>
         <p className="navbar-demo" onClick={this.handleDemoSignin}>Demo</p>
       </span>);
-      navLinks = <span className="navbar-links"></span>;
+      navLinks = (<span className="navbar-links">
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </span>);
     }
     return (
       <main className="navbar">
-        <Link className="navbar-logo" to="/">
-        </Link>
         <content className="navbar-left">
+          <Link className="navbar-logo" to="/"></Link>
           <div className="navbar-links-container">
             {navLinks}
           </div>
