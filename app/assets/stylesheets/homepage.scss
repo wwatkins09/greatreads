@@ -6,15 +6,16 @@
 }
 
 .homepage-welcome {
-  width: 80%;
+  width: 90%;
   height: 1200px;
-  background: image_url('homepage_background4.jpeg');
-  // box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.1);
+  background: image_url('homepage_background3.jpeg');
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  color: white;
 }
 
 .homepage-demo {
@@ -39,9 +40,9 @@
 }
 
 .homepage-ideas {
-  width: 100%;
+  width: 90%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 50px;
 }
 
