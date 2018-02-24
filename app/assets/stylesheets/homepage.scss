@@ -40,10 +40,18 @@
 }
 
 .homepage-discover {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+}
+
+.homepage-book-list {
+  display: flex;
+}
+
+.homepage-book-list img {
+  height: 100px;
 }
 
 .homepage-ideas {

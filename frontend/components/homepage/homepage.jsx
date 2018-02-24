@@ -27,7 +27,12 @@ class Homepage extends React.Component {
           <span className="homepage-discover-example">
             <content className="homepage-example-before">
               <p>Because Flora liked...</p>
-              <span className="homepage-book-list">books here</span>
+              <span className="homepage-book-list">
+                <img src="https://s3.amazonaws.com/aa-greatreads-dev/anna_karenina.jpg" />
+                <img src="https://s3.amazonaws.com/aa-greatreads-dev/crime_and_punishment.jpg" />
+                <img src="https://s3.amazonaws.com/aa-greatreads-dev/eugene_onegin.jpg" />
+
+              </span>
             </content>
           </span>
         </article>
