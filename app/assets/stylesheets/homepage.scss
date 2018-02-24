@@ -46,12 +46,21 @@
   align-items: center;
 }
 
+.homepage-discover-example {
+  display: flex;
+}
+
 .homepage-book-list {
   display: flex;
 }
 
-.homepage-book-list img {
+.homepage-book-list img, .homepage-example-after img {
   height: 100px;
+}
+
+.homepage-example-arrow {
+  display: flex;
+  align-items: center;
 }
 
 .homepage-ideas {
