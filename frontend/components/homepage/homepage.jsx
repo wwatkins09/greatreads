@@ -23,8 +23,9 @@ class Homepage extends React.Component {
           </span>
         </content>
         <content className="homepage-discover-container">
-          <h4>What will <em>you</em> discover?</h4>
-          <article className="homepage-discover">
+          <div className="homepage-discover">
+            <div className="homepage-discover-example-container">
+              <h4>What will <em>you</em> discover?</h4>
             <span className="homepage-discover-example">
               <content className="homepage-example-before">
                 <p>Because Flora liked...</p>
@@ -42,8 +43,6 @@ class Homepage extends React.Component {
                 <img src="https://s3.amazonaws.com/aa-greatreads-dev/pale_fire.jpg" />
               </content>
             </span>
-          </article>
-          <article className="homepage-discover">
             <span className="homepage-discover-example">
               <content className="homepage-example-before">
                 <p>Because Nathan liked...</p>
@@ -61,17 +60,19 @@ class Homepage extends React.Component {
                 <img src="https://s3.amazonaws.com/aa-greatreads-dev/the_wind_up_bird_chronicle.jpg" />
               </content>
             </span>
-          </article>
-        </content>
-        <span className="homepage-registration">
-          <span id="homepage-registration-button" className="registration-button" onClick={() => this.props.history.push('/signup')}>Create an account</span>
-          <span className="homepage-or">
-            <div id="line-left" className="homepage-line"></div>
-            <p>or</p>
-            <div id="line-right" className="homepage-line"></div>
+            </div>
+          <span className="homepage-registration">
+            <h4>Find out today!</h4>
+            <span id="homepage-registration-button1" className="homepage-registration-button" onClick={() => this.props.history.push('/signup')}>Create an account</span>
+            <span className="homepage-or">
+              <div id="line-left" className="homepage-line"></div>
+              <p>or</p>
+              <div id="line-right" className="homepage-line"></div>
+            </span>
+            <span id="homepage-registration-button2" className="homepage-registration-button" onClick={this.handleDemoSignin}>Demo Login</span>
           </span>
-          <span id="homepage-registration-button" className="registration-button" onClick={this.handleDemoSignin}>Demo Login</span>
-        </span>
+        </div>
+        </content>
       </div>
     );
   }
