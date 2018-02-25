@@ -42,6 +42,7 @@ class NavBar extends React.Component {
       navLinks = (<span className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
       </span>);
     }
     return (
