@@ -115,19 +115,21 @@
   width: 250px;
   height: 25px;
   padding: 0 5px;
-  background-color: #297429;
-  color: #ffffff;
+  background-color: transparent;
+  color: black;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid gray;
   border-radius: 1px;
-  transition: background-color 0.4s ease 0s;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
 }
 
 .homepage-registration-button:hover {
-  background-color: #235C23;
+  background-color: #63213C;
+  color: white;
+  cursor: pointer;
 }
 
 #homepage-registration-button1 {
