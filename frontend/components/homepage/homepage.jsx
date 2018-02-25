@@ -19,48 +19,50 @@ class Homepage extends React.Component {
           <h1>Looking for a great read?</h1>
           <h2>We're here to help.</h2>
           <span className="homepage-demo">
-            <p>Demo</p>
+            <p onClick={this.handleDemoSignin}>Demo</p>
           </span>
         </content>
-        <h4>What will <em>you</em> discover?</h4>
-        <article className="homepage-discover">
-          <span className="homepage-discover-example">
-            <content className="homepage-example-before">
-              <p>Because Flora liked...</p>
-              <span className="homepage-book-list">
-                <img src="https://s3.amazonaws.com/aa-greatreads-dev/anna_karenina.jpg" />
-                <img src="https://s3.amazonaws.com/aa-greatreads-dev/crime_and_punishment.jpg" />
-                <img src="https://s3.amazonaws.com/aa-greatreads-dev/eugene_onegin.jpg" />
-              </span>
-            </content>
-            <content className="homepage-example-arrow">
-              <p>=></p>
-            </content>
-            <content className="homepage-example-after">
-              <p>She discovered:</p>
-              <img src="https://s3.amazonaws.com/aa-greatreads-dev/pale_fire.jpg" />
-            </content>
-          </span>
-        </article>
-        <article className="homepage-discover">
-          <span className="homepage-discover-example">
-            <content className="homepage-example-before">
-              <p>Because Nathan liked...</p>
-              <span className="homepage-book-list">
-                <img src="https://s3.amazonaws.com/aa-greatreads-dev/if_on_a_winters_night_a_traveler.jpg" />
-                <img src="https://s3.amazonaws.com/aa-greatreads-dev/catch_22.jpg" />
-                <img src="https://s3.amazonaws.com/aa-greatreads-dev/the_wasteland.jpg" />
-              </span>
-            </content>
-            <content className="homepage-example-arrow">
-              <p>=></p>
-            </content>
-            <content className="homepage-example-after">
-              <p>He discovered:</p>
-              <img src="https://s3.amazonaws.com/aa-greatreads-dev/the_wind_up_bird_chronicle.jpg" />
-            </content>
-          </span>
-        </article>
+        <content className="homepage-discover-container">
+          <h4>What will <em>you</em> discover?</h4>
+          <article className="homepage-discover">
+            <span className="homepage-discover-example">
+              <content className="homepage-example-before">
+                <p>Because Flora liked...</p>
+                <span className="homepage-book-list">
+                  <img src="https://s3.amazonaws.com/aa-greatreads-dev/anna_karenina.jpg" />
+                  <img src="https://s3.amazonaws.com/aa-greatreads-dev/crime_and_punishment.jpg" />
+                  <img src="https://s3.amazonaws.com/aa-greatreads-dev/eugene_onegin.jpg" />
+                </span>
+              </content>
+              <content className="homepage-example-arrow">
+                <p>=></p>
+              </content>
+              <content className="homepage-example-after">
+                <p>She discovered:</p>
+                <img src="https://s3.amazonaws.com/aa-greatreads-dev/pale_fire.jpg" />
+              </content>
+            </span>
+          </article>
+          <article className="homepage-discover">
+            <span className="homepage-discover-example">
+              <content className="homepage-example-before">
+                <p>Because Nathan liked...</p>
+                <span className="homepage-book-list">
+                  <img src="https://s3.amazonaws.com/aa-greatreads-dev/if_on_a_winters_night_a_traveler.jpg" />
+                  <img src="https://s3.amazonaws.com/aa-greatreads-dev/catch_22.jpg" />
+                  <img src="https://s3.amazonaws.com/aa-greatreads-dev/the_wasteland.jpg" />
+                </span>
+              </content>
+              <content className="homepage-example-arrow">
+                <p>=></p>
+              </content>
+              <content className="homepage-example-after">
+                <p>He discovered:</p>
+                <img src="https://s3.amazonaws.com/aa-greatreads-dev/the_wind_up_bird_chronicle.jpg" />
+              </content>
+            </span>
+          </article>
+        </content>
         <span className="homepage-registration">
           <span id="homepage-registration-button" className="registration-button" onClick={() => this.props.history.push('/signup')}>Create an account</span>
           <span className="homepage-or">
