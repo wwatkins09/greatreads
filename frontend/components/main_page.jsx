@@ -10,6 +10,7 @@ import BookFullIndexContainer from './book/book_full_index_container';
 import SignInContainer from './session/sign_in_container';
 import SignUpContainer from './user/sign_up_container';
 import HomepageContainer from './homepage/homepage_container';
+import About from './homepage/about';
 
 const mapStateToProps = function (state) {
   return {
@@ -27,6 +28,7 @@ const MainPage = (props) => {
   }
     return (
       <div className="main-page">
+        <Route exact path="/about" component={About} />
         {slashRoute}
         <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
         <ProtectedRoute exact path="/bookshelves/:bookshelfId" component={BookshelfShowContainer}/>
