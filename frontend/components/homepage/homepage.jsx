@@ -18,8 +18,8 @@ class Homepage extends React.Component {
         <content className="homepage-welcome">
           <h1>Looking for a great read?</h1>
           <h2>We're here to help.</h2>
-          <span className="homepage-demo">
-            <p onClick={this.handleDemoSignin}>Demo</p>
+          <span className="homepage-demo" onClick={this.handleDemoSignin}>
+            <p>Demo</p>
           </span>
         </content>
         <content className="homepage-discover-container">
