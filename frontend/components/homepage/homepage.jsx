@@ -33,10 +33,10 @@ class Homepage extends React.Component {
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/anna_karenina.jpg" />
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/crime_and_punishment.jpg" />
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/eugene_onegin.jpg" />
+                  ▶
                 </span>
               </content>
               <content className="homepage-example-arrow">
-                <p>=></p>
               </content>
               <content className="homepage-example-after">
                 <p>Now she's reading:</p>
@@ -50,10 +50,10 @@ class Homepage extends React.Component {
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/if_on_a_winters_night_a_traveler.jpg" />
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/catch_22.jpg" />
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/the_wasteland.jpg" />
+                  ▶
                 </span>
               </content>
               <content className="homepage-example-arrow">
-                <p>=></p>
               </content>
               <content className="homepage-example-after">
                 <p>Now he's reading:</p>
