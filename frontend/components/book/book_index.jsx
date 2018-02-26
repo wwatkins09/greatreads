@@ -8,7 +8,11 @@ class BookIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBooksByBookshelfId(this.props.bookshelfId);
+    if (this.props.bookshelfId) {
+      this.props.fetchBooksByBookshelfId(this.props.bookshelfId);
+    } else {
+      this.props.fetchAllBooks();
+    }
   }
 
   componentWillReceiveProps(props) {
@@ -18,8 +22,8 @@ class BookIndex extends React.Component {
   }
 
   render() {
-    let booksList;
-      booksList = Object.values(this.props.bookshelfBooks).map((book, idx) => {
+    let books = (this.props.bookshelfBooks) ? this.props.bookshelfBooks : this.props.books;
+      const booksList = Object.values(books).map((book, idx) => {
         if (book) {
           return (
               <BookIndexItem book={book}

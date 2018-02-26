@@ -5,7 +5,7 @@ class BookIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
-    const canReview = (props.currentUserId === props.bookshelf.userId)
+    const canReview = (!props.bookshelf || (props.currentUserId === props.bookshelf.userId));
 
     this.state = {canReview, review: this.props.review, score: this.props.review.score, starsFilled: this.props.review.score};
 
@@ -66,7 +66,7 @@ class BookIndexItem extends React.Component {
 
   render() {
     let button;
-    if (this.props.currentUserId === this.props.bookshelf.userId) {
+    if (this.state.canReview) {
       button = (<button className="remove-book-button" onClick={this.handleRemove}>Remove book</button>);
     }
     const reviewScore = this.props.review ? this.props.review.score : null;
