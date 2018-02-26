@@ -195,17 +195,19 @@
 .registration-button {
   width: 250px;
   height: 25px;
-  border: 1px solid black;
+  border: 1px solid #63213C;
   padding: 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #63213C;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
 }
 
 .registration-button:hover {
+  background-color: #63213C;
+  color: white;
   cursor: pointer;
-  color: #1656F7;
-  border: 1px solid #1656F7;
 }
 
 #signup-button {

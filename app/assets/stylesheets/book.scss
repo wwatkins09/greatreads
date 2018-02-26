@@ -171,19 +171,16 @@
   width: 27px;
   height: 25px;
   padding: 5px;
-  border-width: 0;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-left: 1px solid #38883d;
-  color: white;
-  background-color: #409D69;
+  color: #63213C;
+  border: 1px solid #63213C;
+  border-left: none;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
 }
 
 .book-show-button:hover {
+  color: white;
+  background-color: #63213C;
   cursor: pointer;
-  background-color: #3d9363;
 }
 
 .book-show-button:focus {
