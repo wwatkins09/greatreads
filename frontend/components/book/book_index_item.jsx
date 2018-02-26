@@ -66,7 +66,7 @@ class BookIndexItem extends React.Component {
 
   render() {
     let button;
-    if (this.state.canReview) {
+    if (this.state.canReview && this.props.bookshelf) {
       button = (<button className="remove-book-button" onClick={this.handleRemove}>Remove book</button>);
     }
     const reviewScore = this.props.review ? this.props.review.score : null;

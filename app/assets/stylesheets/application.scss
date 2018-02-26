@@ -63,6 +63,8 @@ li {
   border-bottom: 1px solid gray;
   min-height: calc(100vh - 100px);
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .full-screen-modal-toggled {
