@@ -158,21 +158,6 @@ progress::-moz-progress-bar {
   margin-bottom: 20px;
 }
 
-.profile-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 375px;
-  height: 350px;
-  border: 1px solid #D8D8D8;
-}
-
-.profile-info-username {
-  margin: 0;
-  margin-bottom: 20px;
-}
-
 .user-name-link {
   color: #00635d;
 }
@@ -321,4 +306,9 @@ progress::-moz-progress-bar {
   color: red;
   padding: 10px 0px;
   margin: 0px 10px;
+}
+
+.user-profile-info {
+  display: flex;
+  flex-direction: column;
 }

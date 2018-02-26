@@ -46,13 +46,9 @@ class UserShow extends React.Component {
       return (<li className="bookshelf-error" key={idx}>{error}</li>);
     });
 
-    let finalTitle;
     let editPhotoButton
     if (parseInt(this.props.userId) === this.props.currentUserId) {
-      finalTitle = this.props.title + this.props.user.username + '!';
       editPhotoButton = (<button onClick={this.handlePhoto} className="photo-modal-toggle-button">Edit profile photo</button>)
-    } else {
-      finalTitle = this.props.user.username + this.props.title
     }
     const bookNum = this.props.readBookshelf.bookIds.length;
 
@@ -78,10 +74,13 @@ class UserShow extends React.Component {
     return (
       <div className="user-show">
         <PhotoModalContainer user={this.props.user} />
-        <content>
-          <h1 className="user-show-title">{finalTitle}</h1>
+        <content className="user-profile-info">
+          <h2>{this.props.user.username}</h2>
+          {photoEl}
+          {editPhotoButton}
           <BookshelfIndexContainer user={this.props.user} />
           <ul className="bookshelf-errors-list">{errorsList}</ul>
+        </content>
           <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
           <content className="reading-challenge-content">
             <div className="reading-challenge-left">
@@ -105,12 +104,6 @@ class UserShow extends React.Component {
               <p className="user-show-current-author">{currentAuthor}</p>
             </span>
           </content>
-        </content>
-        <span className="profile-info">
-          <h1 className="profile-info-username">{this.props.user.username}</h1>
-          {photoEl}
-          {editPhotoButton}
-        </span>
       </div>
     );
   }

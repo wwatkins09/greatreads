@@ -42,8 +42,8 @@ class BookshelfIndex extends React.Component {
       newBookshelfForm = (
         <div>
           <form onSubmit={this.handleCreate}>
-            <label>Add a new bookshelf:
-              <input onChange={this.handleChange} type="text" value={this.state.name} placeholder="Bookshelf name"></input>
+            <label>
+              <input onChange={this.handleChange} type="text" value={this.state.name} placeholder="Add bookshelf"></input>
               <button className="add-bookshelf-button">Add</button>
             </label>
           </form>
