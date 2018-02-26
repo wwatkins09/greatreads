@@ -11,14 +11,13 @@ class NavBar extends React.Component {
 
   }
 
-
   render() {
 
     let sessionLinks;
     let navLinks;
     if (this.props.currentUserId) {
       sessionLinks = (<SignOutFormContainer />);
-      navLinks = <span className="navbar-links">
+      navLinks = <span id="navbar-links-signedin" className="navbar-links">
         <div className="navbar-link-container">
           <Link to="/">Home</Link>
         </div>
@@ -34,7 +33,7 @@ class NavBar extends React.Component {
         <Link to="/signin">Sign in</Link>
         <Link to="/signup">Sign up</Link>
       </span>);
-      navLinks = (<span className="navbar-links">
+      navLinks = (<span id="navbar-links-signedout" className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>

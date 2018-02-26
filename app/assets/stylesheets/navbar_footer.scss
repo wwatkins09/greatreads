@@ -19,14 +19,10 @@
 
 .navbar-logo {
   background: image_url('greatreads.png');
-  width: 90px;
+  background-size: 100%;
+  width: 225px;
   height: 100%;
   margin-left: 15px;
-}
-
-.navbar-demo:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }
 
  // .logo-homepage {
@@ -78,20 +74,21 @@
    align-items: center;
  }
 
- .navbar-links * {
-   margin: 0 15px;
- }
-
  .navbar-link-container {
    height: 100%;
    display: flex;
    align-items: center;
-   color: #382110;
+   color: #63213C;
+   transition: background-color 0.4s ease 0s, color 0.4s ease 0s, color 0.4s ease 0s;
+ }
+
+ #navbar-links-signedout * {
+   margin: 0 15px;
  }
 
  .navbar-link-container:hover {
-   color: #FFFFFF;
-   background-color: #382110;
+   color: white;
+   background-color: #63213C;
  }
 
  .navbar-link-container a {
@@ -134,18 +131,19 @@
 
  .signout-button {
    display: inline-block;
-   background-color: #382110;
-   color: white;
+   background-color: transparent;
+   color: #63213C;
    padding: 5px 15px;
-   border: 1px solid #382110;
-   border-radius: 3px;
+   border: 2px solid #63213C;
    font-size: 13px;
    margin: 2px;
    margin-left: 20px;
+   transition: background-color 0.4s ease 0s, color 0.4s ease 0s, color 0.4s ease 0s;
  }
 
  .signout-button:hover {
-   background-color: #58371F;
+   background-color: #63213C;
+   color: white;
    cursor: pointer;
  }
 
