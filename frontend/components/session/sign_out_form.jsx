@@ -10,8 +10,9 @@ class SignOutForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.signOut();
-    return (<Redirect to="/" />);
+    this.props.signOut().then(() => {
+      this.props.history.push('/');
+    });
   }
 
   render() {
