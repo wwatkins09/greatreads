@@ -56,7 +56,7 @@ class BookshelfIndex extends React.Component {
     return (
       <main>
         <h3>Bookshelves:</h3>
-        <ul>
+        <ul className="user-bookshelf-list">
           <BookshelvesList bookshelves={this.props.userBookshelves}/>
         </ul>
         {newBookshelfForm}

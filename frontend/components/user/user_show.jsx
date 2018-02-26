@@ -81,8 +81,16 @@ class UserShow extends React.Component {
           <BookshelfIndexContainer user={this.props.user} />
           <ul className="bookshelf-errors-list">{errorsList}</ul>
         </content>
-          <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
+        <content className="user-currently-reading">
+            <h3>CURRENTLY READING</h3>
+            {currentCover}
+            <span className="user-show-current-info">
+              {currentTitle}
+              <p className="user-show-current-author">{currentAuthor}</p>
+            </span>
+        </content>
           <content className="reading-challenge-content">
+            <h3 className="reading-challenge-title">2018 READING CHALLENGE</h3>
             <div className="reading-challenge-left">
               <span className="reading-challenge-year">2018</span>
               <span className="reading-challenge-image"></span>
@@ -96,14 +104,7 @@ class UserShow extends React.Component {
               <progress value={`${bookNum * 2}`} max="100"></progress>
             </div>
           </content>
-          <h3 className="user-show-current-header">CURRENTLY READING</h3>
-          <content className="user-show-current">
-            {currentCover}
-            <span className="user-show-current-info">
-              {currentTitle}
-              <p className="user-show-current-author">{currentAuthor}</p>
-            </span>
-          </content>
+
       </div>
     );
   }

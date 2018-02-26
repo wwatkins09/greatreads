@@ -17,6 +17,7 @@
 
 .reading-challenge-content {
   display: flex;
+  flex-direction: column;
 }
 
 .reading-challenge-left {
@@ -75,12 +76,6 @@ progress::-moz-progress-bar {
 
 .user-show-current {
   display: flex;
-}
-
-.user-show-current-header {
-  width: 360px;
-  padding-top: 20px;
-  border-top: 1px solid #D8D8D8;
 }
 
 .user-show-current-info {
@@ -311,4 +306,10 @@ progress::-moz-progress-bar {
 .user-profile-info {
   display: flex;
   flex-direction: column;
+}
+
+.user-currently-reading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
