@@ -55,6 +55,7 @@
 }
 
 .book-index-table-headers {
+  border-bottom: 1px solid gray;
 }
 
 .book-index-table th {
@@ -65,13 +66,23 @@
   padding-top: 12px;
   padding-bottom: 5px;
   padding-right: 10px;
-  border-bottom: 2px solid #EBE8D5;
   margin: 0;
 }
 
 .book-index-table td {
   color: #181818;
   padding-right: 10px;
+}
+
+table {
+  border-collapse: collapse;
+}
+tr {
+  border: solid;
+  border-width: 1px 0;
+}
+tr:first-child {
+  border: none;
 }
 
 .table-field-cover {
@@ -390,4 +401,8 @@
   color: #999999;
   font-family: "Lato" sans-serif;
   font-size: 11px;
+}
+
+.table-border {
+  background-color: gray;
 }
