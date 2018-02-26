@@ -48,7 +48,7 @@
 .book-index-table {
   color: #382110;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 18px;
   padding-bottom: 20px;
   margin-right: 20px;
   margin-bottom: 10px;
@@ -91,8 +91,9 @@ tr:first-child {
 
 
 .table-field-cover img {
-  width: 50px;
+  width: 100px;
   display: block;
+  margin: 10px 0;
 }
 
 .table-field-title {
@@ -112,7 +113,7 @@ tr:first-child {
 }
 
 .table-field-avg-score {
-  width: 80px;
+  width: 15%;
 }
 
 .table-field-delete {
