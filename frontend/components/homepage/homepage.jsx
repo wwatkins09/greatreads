@@ -39,7 +39,7 @@ class Homepage extends React.Component {
                 <p>=></p>
               </content>
               <content className="homepage-example-after">
-                <p>She discovered:</p>
+                <p>Now she's reading:</p>
                 <img src="https://s3.amazonaws.com/aa-greatreads-dev/pale_fire.jpg" />
               </content>
             </span>
@@ -56,7 +56,7 @@ class Homepage extends React.Component {
                 <p>=></p>
               </content>
               <content className="homepage-example-after">
-                <p>He discovered:</p>
+                <p>Now he's reading:</p>
                 <img src="https://s3.amazonaws.com/aa-greatreads-dev/the_wind_up_bird_chronicle.jpg" />
               </content>
             </span>
@@ -80,25 +80,3 @@ class Homepage extends React.Component {
 }
 
 export default Homepage;
-
-// <content className="homepage-welcome">
-//   <h1>Looking for a great read?</h1>
-//   <h2>Look no further.</h2>
-//   <article className="homepage-ideas">
-//     <span>
-//       <p>Looking for something new?</p>
-//       <p>Browse our collection of books and see if something catches your eye. You can make your own bookshelves to sort books by genre, time period, country - whatever you want!</p>
-//     </span>
-//     <span>
-//       <p>Can't remember all the books you've read?</p>
-//       <p>Keep track of what books you've already read, as well as books you're reading now or want to read in the future.</p>
-//     </span>
-//     <span>
-//       <p>Have an opinion?</p>
-//       <p>Leave a review to show whether you couldn't put it down or couldn't stand it. If you're not sure whether it's worth a try, check out what other users have said.</p>
-//     </span>
-//   </article>
-// </content>
-// <content className="homepage-books">
-//   <p>more stuff here!</p>
-// </content>

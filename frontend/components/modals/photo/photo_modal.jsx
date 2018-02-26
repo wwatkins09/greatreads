@@ -9,6 +9,7 @@ class PhotoModal extends React.Component {
 
     this.handlePhotoUpload = this.handlePhotoUpload.bind(this);
     this.handlePhotoSubmission = this.handlePhotoSubmission.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
   }
 
   componentWillReceiveProps(props) {
@@ -44,6 +45,10 @@ class PhotoModal extends React.Component {
     }
   }
 
+  handleModalClose() {
+    this.props.togglePhotoModal();
+  }
+
   render() {
 
     let buttonClassName;
@@ -65,6 +70,9 @@ class PhotoModal extends React.Component {
 
     return (
       <div className={className}>
+        <div className="photo-modal-x-container">
+          <span onClick={this.handleModalClose} className="photo-modal-x"></span>
+        </div>
         <h3>Edit Profile Photo</h3>
         {photoEl}
           <form className="user-photo-form" onSubmit={this.handlePhotoSubmission}>
