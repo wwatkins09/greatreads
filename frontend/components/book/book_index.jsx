@@ -11,7 +11,9 @@ class BookIndex extends React.Component {
     if (this.props.bookshelfId) {
       this.props.fetchBooksByBookshelfId(this.props.bookshelfId);
     } else {
-      this.props.fetchAllBooks();
+      this.props.fetchAllBooks().then(() => {
+        this.props.fetchReviewsByUserId(this.props.currentUserId)
+      });
     }
   }
 

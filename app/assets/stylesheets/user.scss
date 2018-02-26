@@ -184,6 +184,7 @@ progress::-moz-progress-bar {
   margin-bottom: 10px;
   color: #63213C;
   border: 1px solid #63213C;
+  background-color: white;
   transition: background-color 0.4s ease 0s, color 0.4s ease 0s;}
 
 #user-photo-input + label * {
@@ -243,7 +244,7 @@ progress::-moz-progress-bar {
 
 .photo-form-submit-disabled {
   background-color: transparent;
-  border: 1px solid #dddddd;
+  border: 1px solid #63213C;
   width: 146px;
   height: 29px;
   padding: 2px;
@@ -267,9 +268,8 @@ progress::-moz-progress-bar {
   height: 400px;
   width: 500px;
   color: #333333;
-  background-color: #F4F1EA;
+  background-color: #E6E6EF;
   border: 1px solid #000000;
-  border-radius: 4px;
   padding: 15px 20px;
   z-index: 50;
   display: flex;
