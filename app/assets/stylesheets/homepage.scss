@@ -297,3 +297,19 @@
 .about-content a {
   color: #7AB5EF;
 }
+
+.contact {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.34);
+  margin-top: 20px;
+}
+
+.contact p {
+  text-align: center;
+  width: 300px;
+}
