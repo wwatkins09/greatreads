@@ -119,24 +119,20 @@
 
 .on-default-shelf-container {
   width: 120px;
-  padding: 4px 0px 5px 0px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  background: #f2f2f2;
-  background-color: #F4F1EA;
-  border: 1px solid #dddddd;
+  border: 1px solid #63213C;
+  color: #63213C;
 }
 
 .not-on-default-shelf-container {
   width: 120px;
-  padding: 4px 0px 5px 0px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
   display: flex;
   justify-content: center;
-  background-color: #409D69;
+  background-color: #63213C;
+  color: white;
+  align-items: center;
 }
 
 .not-on-default-shelf {
