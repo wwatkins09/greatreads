@@ -195,21 +195,21 @@ progress::-moz-progress-bar {
 #user-photo-input + label {
   display: flex;
   margin: 4px;
-  border-radius: 2px;
   padding: 2px;
   margin-bottom: 10px;
-  background-color: #409D69;
-}
+  color: #63213C;
+  border: 1px solid #63213C;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;}
 
 #user-photo-input + label * {
   margin: 0;
   font-size: 14px;
-  color: white;
 }
 
 #user-photo-input + label:hover {
   cursor: pointer;
-  background-color: #3d9363;
+  background-color: #63213C;
+  color: white;
 }
 
 .photo-upload-message {
@@ -240,10 +240,9 @@ progress::-moz-progress-bar {
 }
 
 .photo-form-submit {
-  color: white;
-  background-color: #382110;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
+  color: #63213C;
+  border: 1px solid #63213C;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
   width: 146px;
   height: 29px;
   padding: 2px;
@@ -253,13 +252,13 @@ progress::-moz-progress-bar {
 
 .photo-form-submit:hover {
   cursor: pointer;
-  background-color: #58371F;
+  background-color: #63213C;
+  color: white;
 }
 
 .photo-form-submit-disabled {
   background-color: transparent;
   border: 1px solid #dddddd;
-  border-radius: 3px;
   width: 146px;
   height: 29px;
   padding: 2px;
@@ -295,11 +294,9 @@ progress::-moz-progress-bar {
 
 .photo-modal-toggle-button {
   display: inline-block;
-  background-color: #F4F1EA;
-  color: #181818;
-  padding: 5px 5px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
+  color: #63213C;
+  border: 1px solid #63213C;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;  padding: 5px 5px;
   font-size: 13px;
   font-weight: bold;
   font-family: "Lato", Arial, serif;
@@ -310,7 +307,8 @@ progress::-moz-progress-bar {
 
 .photo-modal-toggle-button:hover {
   cursor: pointer;
-  background-color: #ede6d6;
+  background-color: #63213C;
+  color: white;
 }
 
 .photo-errors-list {

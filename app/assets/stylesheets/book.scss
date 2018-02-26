@@ -237,14 +237,15 @@
   width: 125px;
   height: 28px;
   font-size: 14px;
-  background-color: #B80F28;
-  color: white;
-  border: 1px solid #D6D0C4;
-  border-radius: 3px;
+  color: #63213C;
+  border: 1px solid #63213C;;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
 }
 
 .remove-book-button:hover {
   cursor: pointer;
+  background-color: #63213C;
+  color: white;
 }
 
 .book-show-toggle-list-item {

@@ -41,30 +41,31 @@
   width: 50px;
   height: 28px;
   font-size: 13px;
-  background-color: #F4F1EA;
-  color: #333333;
-  border: 1px solid #D6D0C4;
-  border-radius: 3px;
+  color: #63213C;
+  border: 1px solid #63213C;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
 }
 
 .bookshelf-edit-button:hover {
   cursor: pointer;
-  background-color: #ede6d6;
+  background-color: #63213C;
+  color: white;
 }
 
 .bookshelf-delete-button {
   width: 150px;
   height: 28px;
   font-size: 16px;
-  background-color: #B80F28;
-  color: white;
-  border: 1px solid #D6D0C4;
-  border-radius: 3px;
+  color: #63213C;
+  border: 1px solid #63213C;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
   margin: 5px 0 25px;
 }
 
 .bookshelf-delete-button:hover {
   cursor: pointer;
+  background-color: #63213C;
+  color: white;
 }
 
 .bookshelf-errors-list {
@@ -81,17 +82,17 @@
 
 .add-bookshelf-button {
   display: inline-block;
-  background-color: #382110;
-  color: white;
+  color: #63213C;
+  border: 1px solid #63213C;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
   padding: 5px 15px;
-  border: 1px solid #382110;
-  border-radius: 3px;
   font-size: 13px;
   margin: 2px;
 }
 
 .add-bookshelf-button:hover {
-  background-color: #58371F;
+  background-color: #63213C;
+  color: white;
   cursor: pointer;
 }
 
