@@ -4,20 +4,24 @@
   justify-content: space-between;
 }
 
+.user-show-name {
+  margin: 0;
+}
+
 .user-show-title {
   margin: 0;
 }
 
 .reading-challenge-title {
   font-weight: bold;
-  padding-top: 20px;
   width: 360px;
-  border-top: 1px solid #D8D8D8;
 }
 
 .reading-challenge-content {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .reading-challenge-left {
@@ -29,7 +33,6 @@
   align-items: center;
   color: #ffffff;
   font-weight: bold;
-  margin-right: 10px;
 }
 
 .reading-challenge-year {
@@ -82,7 +85,6 @@ progress::-moz-progress-bar {
   display: flex;
   flex-direction: column;
   color: #333333;
-  font-family: "Merriweather", serif;
 }
 
 .user-show-current-info p {
@@ -98,6 +100,7 @@ progress::-moz-progress-bar {
 .user-show-current-author {
   font-size: 14px;
   margin-top: 10px;
+  text-align: center;
 }
 
 .user-show-current-cover {
@@ -306,6 +309,7 @@ progress::-moz-progress-bar {
 .user-profile-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .user-currently-reading {

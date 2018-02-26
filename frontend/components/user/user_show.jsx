@@ -75,7 +75,7 @@ class UserShow extends React.Component {
       <div className="user-show">
         <PhotoModalContainer user={this.props.user} />
         <content className="user-profile-info">
-          <h2>{this.props.user.username}</h2>
+          <h2 className="user-show-name">{this.props.user.username}</h2>
           {photoEl}
           {editPhotoButton}
           <BookshelfIndexContainer user={this.props.user} />
