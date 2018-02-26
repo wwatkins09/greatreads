@@ -91,9 +91,8 @@ class BookshelfShow extends React.Component {
 
         <main className="bookshelf-show-main">
           <content className="bookshelf-show-header-container">
-            <Link className="bookshelf-show-header user-name-link" to={`/users/${this.props.owner.id}`}>{this.props.owner.username}</Link>
-            <p className="bookshelf-show-header"> > </p>
-            <p className="bookshelf-show-header">Books: {this.props.bookshelf.name}</p>
+            <Link className="bookshelf-show-header user-name-link" to={`/users/${this.props.owner.id}`}>{this.props.owner.username}:</Link>
+            <p className="bookshelf-show-header">{this.props.bookshelf.name}</p>
           </content>
           <BookIndexContainer bookshelf={this.props.bookshelf} reviews={this.props.reviews}></BookIndexContainer>
           {bookshelfEdit}
