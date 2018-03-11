@@ -122,6 +122,7 @@ tr:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .book-full-index {
@@ -345,8 +346,8 @@ tr:first-child {
   z-index: 20;
   overflow: scroll;
   position: absolute;
-  left: 4%;
-  top: 43%;
+  left: 0%;
+  top: 56%;
 }
 
 .full-index-toggle-list-hidden {

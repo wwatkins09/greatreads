@@ -32,6 +32,7 @@ class BookIndex extends React.Component {
                 key={book.id}
                 bookshelf={this.props.bookshelf}
                 review={this.props.reviews[idx] || {score: 0}}
+                userBookshelves={this.props.userBookshelves}
               />
           );
         }

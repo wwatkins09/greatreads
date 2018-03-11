@@ -1,13 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+const sortBookshelf = function (bookshelf1, bookshelf2) {
+  return bookshelf1.id - bookshelf2.id;
+};
+
 class BookIndexItem extends React.Component {
 
   constructor(props) {
     super(props);
     const canReview = (!props.bookshelf || (props.currentUserId === props.bookshelf.userId));
 
-    this.state = {canReview, review: this.props.review, score: this.props.review.score, starsFilled: this.props.review.score};
+    this.state = {canReview, toggled: false, review: this.props.review, score: this.props.review.score, starsFilled: this.props.review.score};
 
     this.handleRemove = this.handleRemove.bind(this);
     this.fillStar = this.fillStar.bind(this);
@@ -20,6 +24,9 @@ class BookIndexItem extends React.Component {
   }
 
   componentWillReceiveProps(props) {
+    if (!props.toggled) {
+      this.setState({toggled: props.toggled});
+    }
     if (props.review) {
       this.setState({review: props.review, score: props.review.score, starsFilled: props.review.score})
     }
@@ -90,6 +97,25 @@ class BookIndexItem extends React.Component {
   }
 
   render() {
+    let toggleMenuClass = this.state.toggled ? "full-index-toggle-list" : "full-index-toggle-list-hidden";
+
+    let toggleMenu = (
+      <ul className={toggleMenuClass}/>
+    );
+    if (this.state.toggled) {
+      const toggleMenuItems = this.props.userBookshelves.sort(sortBookshelf).map((bookshelf) => {
+        if (bookshelf) {
+          return (
+            <li className="book-show-toggle-list-item" onClick={this.handleBookshelfSelect(bookshelf)} key={bookshelf.id}>{bookshelf.name}</li>
+          );
+        }
+      });
+      toggleMenu = (
+        <ul className={toggleMenuClass}>
+          {toggleMenuItems}
+        </ul>
+      );
+    }
     let button;
     if (this.state.canReview && this.props.bookshelf) {
       button = (<button className="remove-book-button" onClick={this.handleRemove}>Remove book</button>);
@@ -129,6 +155,7 @@ class BookIndexItem extends React.Component {
           </div>
         </td>
         <td className="table-field-delete">
+          {toggleMenu}
           {button}
         </td>
       </tr>
