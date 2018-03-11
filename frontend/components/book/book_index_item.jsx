@@ -38,6 +38,7 @@ class BookIndexItem extends React.Component {
         }
       )
     }
+    this.setState({canReview: (!props.bookshelf || (props.currentUserId === props.bookshelf.userId))});
   }
 
   handleRemove(event) {
