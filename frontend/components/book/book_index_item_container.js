@@ -14,7 +14,7 @@ const mapStateToProps = function (state, ownProps) {
     key: ownProps.book.id,
     num: ownProps.num,
     toggled: state.ui.bookshelfModal,
-    userBookshelves: ownProps.userBookshelves,
+    userBookshelves: Object.values(state.entities.bookshelves).filter((bookshelf) => bookshelf.userId === currentUser.id),
     wantToReadBookshelf: state.entities.bookshelves[currentUser.bookshelfIds[0]],
     currentUserId: state.session.currentUserId
   };
