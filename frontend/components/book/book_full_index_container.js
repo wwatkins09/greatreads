@@ -7,6 +7,8 @@ import {fetchReviewsByUserId, createReview, updateReview} from '../../actions/re
 
 const mapStateToProps = function (state) {
 
+  const currentUserId = state.session.currentUserId;
+
   let userBookshelves;
   let wantToReadBookshelf;
   if (state.entities.users[state.session.currentUserId]) {
@@ -20,19 +22,17 @@ const mapStateToProps = function (state) {
     });
   }
 
-  let reviews;
-
-  if (state.entities.users[state.session.currentUserId]) {
-    reviews = state.entities.users[state.session.currentUserId].reviewIds.map((reviewId) => {
-      return state.entities.reviews[reviewId];
-    })
-  }
+  const reviews = Object.values(state.entities.books).map((book) => {
+    if (book) {
+      return Object.values(state.entities.reviews).find((review) => (review.bookId === book.id && review.userId === currentUserId))
+    }
+  })
 
   return {
     books: state.entities.books,
     userBookshelves,
     wantToReadBookshelf,
-    currentUserId: state.session.currentUserId,
+    currentUserId,
     reviews
   };
 };
