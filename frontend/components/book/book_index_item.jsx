@@ -11,7 +11,7 @@ class BookIndexItem extends React.Component {
     super(props);
     const canReview = (!props.bookshelf || (props.currentUserId === props.bookshelf.userId));
 
-    this.state = {canReview, toggled: false, review: this.props.review, score: this.props.review.score, starsFilled: this.props.review.score};
+    this.state = {canReview, toggled: false, onDefaultShelf: false, review: this.props.review, score: this.props.review.score, starsFilled: this.props.review.score};
 
     this.handleRemove = this.handleRemove.bind(this);
     this.fillStar = this.fillStar.bind(this);
@@ -29,6 +29,14 @@ class BookIndexItem extends React.Component {
     }
     if (props.review) {
       this.setState({review: props.review, score: props.review.score, starsFilled: props.review.score})
+    }
+    if (props.userBookshelves) {
+      props.userBookshelves.forEach((bookshelf) => {
+        if (bookshelf && bookshelf.defaultShelf === true && bookshelf.bookIds.includes(this.props.book.id)) {
+          this.setState({onDefaultShelf: true, readStatus: bookshelf.name})
+          }
+        }
+      )
     }
   }
 

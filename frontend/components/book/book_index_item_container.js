@@ -6,6 +6,7 @@ import {toggleBookshelfModal} from '../../actions/ui_actions';
 import {createReview, updateReview} from '../../actions/review_actions';
 
 const mapStateToProps = function (state, ownProps) {
+  const currentUser = state.entities.users[state.session.currentUserId];
   return {
     book: ownProps.book,
     bookshelf: ownProps.bookshelf,
@@ -14,7 +15,7 @@ const mapStateToProps = function (state, ownProps) {
     num: ownProps.num,
     toggled: state.ui.bookshelfModal,
     userBookshelves: ownProps.userBookshelves,
-    wantToReadBookshelf: ownProps.wantToReadBookshelf,
+    wantToReadBookshelf: state.entities.bookshelves[currentUser.bookshelfIds[0]],
     currentUserId: state.session.currentUserId
   };
 };
