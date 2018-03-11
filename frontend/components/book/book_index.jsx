@@ -1,5 +1,5 @@
 import React from 'react';
-import BookIndexItem from './book_index_item';
+import BookIndexItemContainer from './book_index_item_container';
 
 class BookIndex extends React.Component {
 
@@ -28,14 +28,10 @@ class BookIndex extends React.Component {
       const booksList = Object.values(books).map((book, idx) => {
         if (book) {
           return (
-              <BookIndexItem book={book}
+              <BookIndexItemContainer book={book}
                 key={book.id}
                 bookshelf={this.props.bookshelf}
-                deleteBookshelfOwnership={this.props.deleteBookshelfOwnership}
-                currentUserId={this.props.currentUserId}
                 review={this.props.reviews[idx] || {score: 0}}
-                createReview={this.props.createReview}
-                updateReview={this.props.updateReview}
               />
           );
         }
