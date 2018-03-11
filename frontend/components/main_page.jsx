@@ -6,7 +6,7 @@ import UserShowContainer from './user/user_show_container';
 import {connect} from 'react-redux';
 import BookshelfShowContainer from './bookshelf/bookshelf_show_container';
 import BookShowContainer from './book/book_show_container';
-import BookIndexContainer from './book/book_index_container';
+import BookFullIndexContainer from './book/book_full_index_container';
 import SignInContainer from './session/sign_in_container';
 import SignUpContainer from './user/sign_up_container';
 import HomepageContainer from './homepage/homepage_container';
@@ -38,7 +38,7 @@ const MainPage = (props) => {
         <AuthRoute exact path="/signup" component={SignUpContainer}/>
         <Switch>
           <ProtectedRoute exact path="/books/:bookId" component={BookShowContainer}/>
-          <ProtectedRoute exact path="/books" component={BookIndexContainer}/>
+          <ProtectedRoute exact path="/books" component={BookFullIndexContainer}/>
         </Switch>
       </div>
     );

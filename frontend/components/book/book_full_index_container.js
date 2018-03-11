@@ -1,9 +1,9 @@
 import {connect} from 'react-redux';
-import BookFullIndex from './book_full_index';
+import BookIndex from './book_index';
 import {fetchAllBooks} from '../../actions/book_actions';
 import {withRouter} from 'react-router-dom';
 import {clearModals} from '../../actions/ui_actions';
-import {fetchReviewsByUserId} from '../../actions/review_actions';
+import {fetchReviewsByUserId, createReview, updateReview} from '../../actions/review_actions';
 
 const mapStateToProps = function (state) {
 
@@ -20,10 +20,10 @@ const mapStateToProps = function (state) {
     });
   }
 
-  let userReviews;
+  let reviews;
 
   if (state.entities.users[state.session.currentUserId]) {
-    userReviews = state.entities.users[state.session.currentUserId].reviewIds.map((reviewId) => {
+    reviews = state.entities.users[state.session.currentUserId].reviewIds.map((reviewId) => {
       return state.entities.reviews[reviewId];
     })
   }
@@ -33,7 +33,7 @@ const mapStateToProps = function (state) {
     userBookshelves,
     wantToReadBookshelf,
     currentUserId: state.session.currentUserId,
-    userReviews
+    reviews
   };
 };
 
@@ -43,9 +43,11 @@ const mapDispatchToProps = function (dispatch) {
     clearModals: () => dispatch(clearModals()),
     toggleBookshelfModal: () => dispatch(toggleBookshelfModal()),
     createBookshelfOwnership: (bookshelfOwnership) => dispatch(createBookshelfOwnership(bookshelfOwnership)),
-    fetchReviewsByUserId: (userId) => dispatch(fetchReviewsByUserId(userId))
+    fetchReviewsByUserId: (userId) => dispatch(fetchReviewsByUserId(userId)),
+    createReview: (review) => dispatch(createReview(review)),
+    updateReview: (review) => dispatch(updateReview(review))
 
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BookFullIndex));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BookIndex));
