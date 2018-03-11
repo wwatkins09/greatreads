@@ -14,6 +14,9 @@ class BookIndexItem extends React.Component {
     this.emptyStars = this.emptyStars.bind(this);
     this.handleStarSelect = this.handleStarSelect.bind(this);
     this.classNameGenerator = this.classNameGenerator.bind(this);
+    this.handleAddToDefault = this.handleAddToDefault.bind(this);
+    this.handleBookshelfSelect = this.handleBookshelfSelect.bind(this);
+    this.toggleBookshelves = this.toggleBookshelves.bind(this);
   }
 
   componentWillReceiveProps(props) {
@@ -64,10 +67,44 @@ class BookIndexItem extends React.Component {
     }
   }
 
+  handleAddToDefault(event) {
+    if (this.state.onDefaultShelf === false && this.props.wantToReadBookshelf) {
+      this.handleBookshelfSelect(this.props.wantToReadBookshelf)(event);
+    }
+  }
+
+  handleBookshelfSelect(bookshelf) {
+      return (event) => {
+        event.preventDefault();
+
+        this.props.createBookshelfOwnership({bookshelf_id: bookshelf.id, book_id: this.props.book.id}).then(() => {
+          this.props.history.push(`/bookshelves/${bookshelf.id}`)
+        })
+
+      }
+  }
+
+  toggleBookshelves(event) {
+    this.props.toggleBookshelfModal();
+    this.setState({toggled: !this.state.toggled})
+  }
+
   render() {
     let button;
     if (this.state.canReview && this.props.bookshelf) {
       button = (<button className="remove-book-button" onClick={this.handleRemove}>Remove book</button>);
+    } else {
+      const readStatus = this.state.readStatus || 'Want to Read';
+      const bookClassName = this.state.onDefaultShelf ? 'on-default-shelf' : 'not-on-default-shelf';
+      button = (
+        <div className="book-full-button-container">
+          <div className={`${bookClassName}-container`}>
+            <span className={bookClassName} onClick={this.handleAddToDefault}>{readStatus}</span>
+          </div>
+          <button className="book-show-button" onClick={this.toggleBookshelves}>▼
+          </button>
+        </div>
+      );
     }
     const reviewScore = this.props.review ? this.props.review.score : null;
     return (
