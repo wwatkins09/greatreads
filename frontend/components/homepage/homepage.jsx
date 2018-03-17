@@ -28,7 +28,7 @@ class Homepage extends React.Component {
               <h4>What will <em>you</em> discover?</h4>
             <span className="homepage-discover-example">
               <content className="homepage-example-before">
-                <p>Because Flora liked...</p>
+                <p>Flora liked...</p>
                 <span className="homepage-book-list">
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/anna_karenina.jpg" />
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/crime_and_punishment.jpg" />
@@ -45,7 +45,7 @@ class Homepage extends React.Component {
             </span>
             <span className="homepage-discover-example">
               <content className="homepage-example-before">
-                <p>Because Nathan liked...</p>
+                <p>Nathan liked...</p>
                 <span className="homepage-book-list">
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/if_on_a_winters_night_a_traveler.jpg" />
                   <img src="https://s3.amazonaws.com/aa-greatreads-dev/catch_22.jpg" />
